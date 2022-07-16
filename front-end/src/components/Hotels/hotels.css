@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+    /* background-color: aquamarine; */
+    color: rgb(40, 40, 40);
+}
+
+.title {
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+.box{
+    padding: 5px;
+    margin: 5px;
+    width: 25%;
+}
+
+.room {
+    max-height: 25px;
+    max-width: 60%;
+}
+
+.hotel-container {
+    width: 100%;
+    height: 200px;
+    background-color: #CDDDFC;
+}
+
+.hotel-img {
+    margin: 5px;
+    width: 400px;
+}
+
+.address {
+    color: rgb(105, 105, 105);
+}
+
+.reviews {
+    color: rgb(7, 7, 219);
+}
+
+.book {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin-right: 20px;
+    background-color: #5565F2;
+    border-radius: 5px;
+    border: none;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import {BrowserRouter, BrowserRouter as Routes, Route} from 'react-router-dom';
+import Hotels from './pages/Hotels';
 import Login from './pages/Login'
+import Welcomepage from './pages/Welcomepage';
 
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
                     <Route> 
                           <Route path = "/" exact component = {Login}></Route>
                           <Route path = "/login"  component = {Login}></Route>
+                          <Route path = "/welcome"  component = {Welcomepage}></Route>
+                          <Route path = "/hotels"  component = {Hotels}></Route>
 
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
