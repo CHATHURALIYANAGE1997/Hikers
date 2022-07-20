@@ -10,7 +10,13 @@
     "bootstrap": "^4.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+<<<<<<< HEAD
     "react-router-dom": "^5.3.3",
+=======
+    "react-icons": "^4.4.0",
+    "react-phone-number-input": "^3.2.4",
+    "react-router-dom": "^5.2.0",
+>>>>>>> 612264d1958787d058906b56ac0a4f9511bbbb69
     "react-scripts": "3.4.1"
   },
   "scripts": {
