@@ -5,8 +5,11 @@
 .signinform{
     color: blue;
     width:500px;
-     margin-top: 50px;
+    margin-top: 20px;
 }
-.loginbtn{
-    width:100%;
+@media only screen and (max-width:700px){
+    .signinpic{
+        max-width:100%;
+        width:500px;
+    }
 }

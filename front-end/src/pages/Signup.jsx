@@ -57,7 +57,7 @@ const Signup = () => {
                             </div>
                         </div>
                         <div class="col-6 mt-3 mx-auto text-center">
-                            <input class="btn btn-primary" widthtype="submit" value="Register" />
+                            <input class="btn btn-primary" type="submit" value="Register" />
                         </div>
                     </form>
                 </div>

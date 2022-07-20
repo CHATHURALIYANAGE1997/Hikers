@@ -8,3 +8,11 @@
     display: flex;
     justify-content: right;
 }
+.logo {
+    margin: 5px;
+    width: 50px;
+}
+.userpic {
+    margin: 5px;
+    width: 50px;
+}

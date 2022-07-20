@@ -16,8 +16,9 @@ const Signin = () => {
             <div className="mt-5 p-5 text-left container">
                 <div class="shadow p-3 mb-5 bg-white rounded ">
                     <img src={signinpic} className="float-left signinpic" alt="signuppic"></img>
-                    <h1 className="p-2 text-center">Sign In</h1>
-                    <form class="row g-3 signinform">
+                    <h1 className="p-2 text-center">Hello, <br></br>Welcome Back</h1>
+
+                    <form class="row g-3">
                         <div class="col-12">
                             <br></br>
                             <input type="email" class="form-control" placeholder="Email-Address" />
@@ -26,7 +27,7 @@ const Signin = () => {
                             <br></br>
                             <Passwordhidden/>
                         </div>
-                        <div class="col-12">
+                        <div class="col-6">
                             <div class="mt-3 form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck" />
                                 <label class="form-check-label" for="gridCheck">
@@ -34,8 +35,14 @@ const Signin = () => {
                                 </label>
                             </div>
                         </div>
+                        <div class="col-6">
+                            <div class="mt-3 form-check">
+                                
+                            <a href="url">Forgot Password</a>
+                            </div>
+                        </div>
                         <div class="col-6 mt-3 mx-auto text-center loginbtn">
-                            <input class="btn btn-primary" widthtype="submit" value="Log in" />
+                            <input class="btn btn-primary" type="submit" value="Log in" />
                         </div>
                     </form>
                 </div>

@@ -7,6 +7,7 @@ import Signup from './pages/Signup'
 import Signin from './pages/Signin'
 import Welcomepage from './pages/Welcomepage';
 import LandingPage from './pages/landing';
+import Articles from './pages/Articles';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                           <Route path = "/hotels"  component = {Hotels}></Route>
                           <Route path = "/hotel/"  component = {HotelInfo}></Route>
                           <Route path = "/landingPage/" component= {LandingPage}></Route>
+                          <Route path = "/articles/" component= {Articles}></Route>
 
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
