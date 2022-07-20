@@ -4,6 +4,7 @@ import HotelInfo from './components/Hotels/HotelInfo';
 import Hotels from './pages/Hotels';
 import Login from './pages/Login'
 import Welcomepage from './pages/Welcomepage';
+import LandingPage from './pages/landing';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
                           <Route path = "/welcome"  component = {Welcomepage}></Route>
                           <Route path = "/hotels"  component = {Hotels}></Route>
                           <Route path = "/hotel/"  component = {HotelInfo}></Route>
+                          <Route path = "/landingPage/" component= {LandingPage}></Route>
 
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
