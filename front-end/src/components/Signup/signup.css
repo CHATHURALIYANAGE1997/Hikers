@@ -23,9 +23,13 @@ p{
     width:100%;
 
 }
-.signup-img {
+.signuppic {
     margin: 5px;
     width: 500px;
+}
+.logo {
+    margin: 5px;
+    width: 50px;
 }
 .password-field{
 padding:0.5rem 1rem;
@@ -48,7 +52,7 @@ background-color: blue;
     cursor:pointer;
 }
 @media only screen and (max-width:700px){
-    .signup-img{
+    .signuppic{
         max-width:100%;
         width:500px;
     }

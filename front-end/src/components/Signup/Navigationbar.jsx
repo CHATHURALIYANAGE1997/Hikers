@@ -7,7 +7,7 @@ const Navigationbar = () => {
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
                 <a class="navbar-brand" href="#">
-                <img src={logo} alt="" width="70" height="40" />
+                <img src={logo} className="logo" alt="" width="70" height="40" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@ const Navigationbar = () => {
                             <a class="nav-link" href="#">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Register</a>
+                            <a class="nav-link" href="#">Register</a>
                         </li>
                     </ul>
                 </div>

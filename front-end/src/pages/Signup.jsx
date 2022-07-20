@@ -16,7 +16,7 @@ const Signup = () => {
 
             <div className="mt-5 p-5 text-left container">
                 <div class="shadow p-3 mb-5 bg-white rounded ">
-                    <img src={signuppic} className="float-left signup-img" alt="signuppic"></img>
+                    <img src={signuppic} className="float-left signuppic" alt="signuppic"></img>
                     <h2 className="p-2 text-center">Sign Up</h2>
                     <form class="row g-3">
                         <div class="col-md-6">
@@ -57,7 +57,7 @@ const Signup = () => {
                             </div>
                         </div>
                         <div class="col-6 mt-3 mx-auto text-center">
-                            <input class="btn btn-primary" type="submit" value="Register" />
+                            <input class="btn btn-primary" widthtype="submit" value="Register" />
                         </div>
                     </form>
                 </div>
@@ -65,13 +65,6 @@ const Signup = () => {
 
             </div>
         </div >
-
-
-
-
-
     )
 }
-
-
 export default Signup
