@@ -31,9 +31,9 @@
     width: 100%;
 }
 
-.info-container {
+.l-container {
     width: 100%;
-    margin-left: 0 !important;
+    margin-left: 0px !important;
 }
 
 .location {
@@ -65,19 +65,11 @@
     margin-bottom: 0;
 }
 
-.right-side {
-    width: 100%;
-}
-
 .btn-info {
     background-color: #CDDDFC !important;
     color: rgb(40, 40, 40) !important;
     border-radius: 0 !important;
     border: none !important;
-}
-
-.header2 {
-    margin-right: 5px;
 }
 
 .t-head{
