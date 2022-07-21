@@ -6,8 +6,8 @@ const HotelInfo = () => {
     return (
         <div>
             <Navbar />
-            <div className="p-5 text-left container">
-                <h2 className="mb-3 title font-weight-bold">The Epitome</h2>
+            <div className="p-5 mt-3 text-left container">
+                <h2 className="mb-3 title font-weight-bold hotel-name">The Epitome</h2>
                 <div className="d-flex flex-row">
                     <div className="d-flex flex-column left-side">
                         <div className="d-flex flex-column hotel-pic">
@@ -32,16 +32,11 @@ const HotelInfo = () => {
                                 <h6 className="font-weight-bold">Check-Out date</h6>
                                 <div className="bg-light text-center mb-2 text-muted  data">Sunday 17 July 2022</div>
                                 <h6 className="font-weight-bold">3- night stay</h6>
-                                <div className="bg-light text-center mb-2 text-muted data l-box">Adults - 2, Children - 0
-                                    1 room</div>
+                                <div className="d-flex flex-column bg-light text-center mb-2 text-muted data l-box"><span>Adults - 2, Children - 0</span><span>01 room</span></div>
                             </div>
                         </div>
                     </div>
                     <div className="ml-2 d-flex flex-column right-side">
-                        {/* <div className="p-2 mr-2 text-center bg-dark text-light w-25 d-flex align-items-center"><span className="m-auto">Hotel Infor and Price</span></div>
-                            <div className="p-2 mr-2 text-center bg-dark text-light w-25 d-flex align-items-center"><span className="m-auto">Facilities</span></div>
-                            <div className="p-2 mr-2 text-center bg-dark text-light w-25 d-flex align-items-center"><span className="m-auto">Hotel Rules</span></div>
-                            <div className="p-2 text-center bg-dark text-light w-25 d-flex align-items-center"><span className="m-auto">Guest Reviews</span></div> */}
                         <div className="btn-group w-100 mb-2">
                             <button className="btn btn-info font-weight-bold w-25 header2">Hotel Info & Price</button>
                             <button className="btn btn-info font-weight-bold w-25 header2">Facilities</button>
@@ -49,8 +44,8 @@ const HotelInfo = () => {
                             <button className="btn btn-info font-weight-bold w-25">Guest Reviews</button>
                         </div>
                         <div className="d-flex w-100">
-                            <table className="table table-hover">
-                                <thead>
+                            <table className="table table-hover align-middle mb-0 ">
+                                <thead class="t-head">
                                     <th scope="col">Room type</th>
                                     <th scope="col">Sleeps</th>
                                     <th scope="col">Price of the room</th>
@@ -74,7 +69,18 @@ const HotelInfo = () => {
                                                 <span>+ 10% Taxes and charges</span>
                                             </div>
                                         </td>
-                                        <td>1</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    0
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" href="#">Action</a>
+                                                    <a class="dropdown-item" href="#">Another action</a>
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <a href="#"><button className="btn btn-primary">Reserve</button></a>
                                         </td>

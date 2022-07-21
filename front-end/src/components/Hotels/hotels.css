@@ -7,20 +7,37 @@
     color: rgb(40, 40, 40);
 }
 
-.title {
-    margin-top: 25px;
+.hotel-name {
+    margin-top: 35px;
     margin-left: 5px;
+    text-align: left;
 }
 
 .box{
     padding: 5px;
     margin: 5px;
     width: 25%;
+    text-align: start;
 }
 
-.room {
+.r-div {
+    width: 15%;
+}
+
+.r-label {
+    margin: auto;
+    margin-right: 5px;
+}
+
+.rooms {
     max-height: 25px;
-    max-width: 60%;
+    max-width: 50px !important;
+    margin: auto;
+    margin-left: 0;
+}
+
+.g-div {
+    width: 35%;
 }
 
 .hotel-container {
@@ -31,23 +48,80 @@
 
 .hotel-img {
     margin: 5px;
-    width: 400px;
+    width: 300px;
+}
+
+.info-container {
+    text-align: left;
+    margin-left: 20px !important;
+}
+
+.info-container h5 {
+    font-weight: bold;
+    font-size:x-large;
+    margin-top: 0;
+    padding-top: 0;
+    color: rgb(40, 40, 40);
+
 }
 
 .address {
     color: rgb(105, 105, 105);
+    font-weight: bold;
+}
+
+.stars {
+    font-weight: bold;
+
+}
+
+.rate {
+    color: rgb(40, 40, 40);
+    font-weight: bold;
+    font-size: medium;
 }
 
 .reviews {
     color: rgb(7, 7, 219);
+    font-size: medium;
+    font-weight: bold;
 }
 
-.book {
-    width: auto;
-    height: auto;
-    padding: 10px;
-    margin-right: 20px;
+.b-now {
+    border-radius: 4px;
     background-color: #5565F2;
-    border-radius: 5px;
     border: none;
-}
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .b-now span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .b-now span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .b-now:hover span {
+    padding-right: 25px;
+  }
+  
+  .b-now:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

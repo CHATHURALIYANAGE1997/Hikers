@@ -15,6 +15,7 @@
 
 .left-side {
     max-width: 40%;
+    margin-right: 10px;
 }
 
 .hotel-pic {
@@ -32,10 +33,11 @@
 
 .info-container {
     width: 100%;
+    margin-left: 0 !important;
 }
 
 .location {
-    
+    margin-right: 5px;
 }
 
 .book-info {
@@ -43,15 +45,24 @@
     height: max-content;
 }
 
+.book-info h6 {
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 5px;
+}
+
 .data {
-    width: 100%;
+    width: 90%;
     height: 30px;
+    margin: auto;
     padding-left: 5px;
     padding-right: 5px;
 }
 
 .l-box {
     height: max-content;
+    margin-bottom: 0;
 }
 
 .right-side {
@@ -67,4 +78,15 @@
 
 .header2 {
     margin-right: 5px;
+}
+
+.t-head{
+    background-color: #5565F2;
+    height: 56px;
+}
+
+.t-head th {
+    margin-top: 0;
+    text-align: center;
+    line-height: 56px;
 }
