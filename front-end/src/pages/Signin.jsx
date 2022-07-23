@@ -31,7 +31,7 @@ const Signin = () => {
                             <div class="mt-3 form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck" />
                                 <label class="form-check-label" for="gridCheck">
-                                    Remember Password
+                                    Remember 
                                 </label>
                             </div>
                         </div>

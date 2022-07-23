@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import Navigationbar from "../components/Signup/Navigationbar";
 import articles from "../components/Articles/articles.css"
 import mountain1 from "../components/images/mountain1.JPG";
 import mountain2 from "../components/images/mountain2.jpg";
@@ -8,7 +7,7 @@ import mountain2 from "../components/images/mountain2.jpg";
 const Articles = () => {
     return (
         <div>
-            <Navigationbar />
+            <Navbar />
             <div className="p-5 mt-5 text-left container">
                 <div className="mt-3 pl-5 p-1 search-container">
                     <form class="form-inline">
