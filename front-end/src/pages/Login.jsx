@@ -1,5 +1,5 @@
 import React from "react"
-import login from "../components/Login/login.css"
+import "../components/Login/login.css"
 
 
 import { useTitle } from "../components/Title/Title"
