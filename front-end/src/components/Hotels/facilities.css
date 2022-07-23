@@ -33,3 +33,16 @@
     color: #434040;
     padding: 10px;
 }
+
+.review-title {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+    color: #0556F2;
+}
+
+.review-traveler {
+    color: #434040b8;
+    font-size: small;
+    font-weight: bold;
+}

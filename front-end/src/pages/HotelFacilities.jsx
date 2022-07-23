@@ -8,6 +8,7 @@ import hotelview from "../components/Hotels/hotelview.png";
 import food from "../components/Hotels/food.png";
 import pool from "../components/Hotels/pool.png";
 import Facilities from "../components/Hotels/Facilities";
+import Reviews from "../components/Hotels/Review";
 
 
 
@@ -34,6 +35,7 @@ const HotelFacilities = () => {
                     <div className=" d-flex flex-column hf-right-side">
                         <HotelNav />
                         <Facilities />
+                        {/* <Reviews /> */}
                     </div>
                 </div>
             </div>

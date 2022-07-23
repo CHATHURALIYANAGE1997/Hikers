@@ -5,7 +5,7 @@
 
 .header2 {
     margin-right: 5px;
-    border-radius: 0 !important;
+    width: 100%;
 }
 
 .hn-bg {
@@ -16,7 +16,7 @@
     color: #0C0C0C;
     margin-top: auto;
     margin-bottom: auto;
-    height: fit-content;
+    cursor: pointer;
 }
 
 .hn-bg2 {
@@ -27,4 +27,9 @@
     margin-top: auto;
     margin-bottom: auto;
     height: fit-content;
+    cursor: pointer;
+}
+
+.hn-bg:hover, .hn-bg2:hover {
+    background-color: #434040df !important;
 }
