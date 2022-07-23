@@ -38,6 +38,7 @@
 
 .location {
     margin-right: 5px;
+    width: 50%;
 }
 
 .book-info {
@@ -81,4 +82,19 @@
     margin-top: 0;
     text-align: center;
     line-height: 56px;
+}
+
+.bed-type, .r-price {
+    font-weight: bold;
+    text-align: left;
+}
+
+.r-facility {
+    text-align: left;
+}
+
+.rooms {
+    border: none;
+    outline: none;
+
 }

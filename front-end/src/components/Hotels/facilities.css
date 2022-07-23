@@ -1,0 +1,35 @@
+.hf-page-container {
+    width: 100%;
+}
+
+.hf-h-img {
+    width: 200px;
+    height: auto;
+}
+
+.hf-pool-img {
+    width: 100%;
+}
+
+.hf-left-side {
+    width: 40%;
+    margin-right: 10px;
+}
+
+.hf-right-side {
+    width: 100%;
+}
+
+.hf-bg {
+    background-color: #CDDDFC;
+    padding-top: 5px;
+}
+
+.hf-box {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: left;
+    color: #434040;
+    padding: 10px;
+}
