@@ -5,4 +5,26 @@
 
 .header2 {
     margin-right: 5px;
+    border-radius: 0 !important;
+}
+
+.hn-bg {
+    background-color: #43404094 !important;
+    margin-right: 5px;
+    padding: 5px;
+    font-weight: bold;
+    color: #0C0C0C;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: fit-content;
+}
+
+.hn-bg2 {
+    background-color: #43404094 !important;
+    padding: 5px;
+    font-weight: bold;
+    color: #0C0C0C;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: fit-content;
 }
