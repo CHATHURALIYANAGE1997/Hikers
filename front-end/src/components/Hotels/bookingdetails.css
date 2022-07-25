@@ -1,0 +1,43 @@
+.bd-booking-details {
+    color: #434040 !important;
+}
+
+.bd-change {
+    color: #1C17EB;
+}
+
+.price-booking {
+    background-color: #aef5bf71;
+    color: #434040 !important;
+}
+
+.price-currency {
+    color: #434040c4;
+}
+
+.price-line {
+    border-top: 1px solid #441592;
+
+}
+
+.df-form-details {
+    background-color: #CDDDFC;
+    color: #434040;
+}
+
+.df-form-container {
+    width: 80%;
+}
+
+.df-required {
+    color: #FC0909 !important;
+}
+
+.df-notice {
+    color: #434040c5;
+    font-size: small;
+}
+
+.df-special-request {
+    min-height: 100px;
+}

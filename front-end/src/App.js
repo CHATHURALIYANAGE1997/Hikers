@@ -9,6 +9,7 @@ import Welcomepage from './pages/Welcomepage';
 import LandingPage from './pages/landing';
 import Articles from './pages/Articles';
 import HotelFacilities from './pages/HotelFacilities';
+import HotelBooking from './pages/HotelBooking';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                           <Route path = "/signup"  component = {Signup}></Route>
                           <Route path = "/signin"  component = {Signin}></Route>
                           <Route path = "/welcome"  component = {Welcomepage}></Route>
+                          <Route path = "/reserve"  component = {HotelBooking}></Route>
                           <Route path = "/hotels"  component = {Hotels}></Route>
                           <Route path = "/hotel"  component = {HotelInfo}></Route>
                           <Route path = "/facilities"  component = {HotelFacilities}></Route>
