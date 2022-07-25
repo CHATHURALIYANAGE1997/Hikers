@@ -8,8 +8,8 @@ public class Hutils {
     private Hutils() {
     }
 
-    public static ResponseEntity<String> getResponseEntity(){
-        return  new ResponseEntity<String>("message", HttpStatus.ACCEPTED);
+    public static ResponseEntity<String> getResponseEntity(String responseMessage, HttpStatus httpStatus){
+        return new ResponseEntity<String>("{\"message\":\""+responseMessage+"\"}", httpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }
