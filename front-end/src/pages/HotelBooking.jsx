@@ -3,6 +3,7 @@ import BookingDetails from "../components/Hotels/BookingDetails";
 import DetailsForm from "../components/Hotels/DetailsForm";
 import Price from "../components/Hotels/Price";
 import Navbar from "../components/Navbar/Navbar";
+import "../components/Hotels/bookingdetails.css";
 
 
 

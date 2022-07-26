@@ -1,9 +1,18 @@
 .bd-booking-details {
     color: #434040 !important;
+    text-align: left;
+}
+
+.bd-check {
+    margin-right: 20px;
 }
 
 .bd-change {
     color: #1C17EB;
+}
+
+.bd-icon {
+    margin-left: 10px;
 }
 
 .price-booking {
@@ -11,8 +20,13 @@
     color: #434040 !important;
 }
 
+.price-price {
+    font-weight: bold;
+}
+
 .price-currency {
     color: #434040c4;
+    text-align: left;
 }
 
 .price-line {
@@ -21,12 +35,33 @@
 }
 
 .df-form-details {
-    background-color: #CDDDFC;
     color: #434040;
 }
 
 .df-form-container {
     width: 80%;
+}
+
+.df-row {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.df-column {
+    margin-left: 10px;
+}
+
+.df-special {
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
 }
 
 .df-required {
@@ -40,4 +75,18 @@
 
 .df-special-request {
     min-height: 100px;
+}
+
+.df-icon {
+    margin-left: 10px;
+}
+
+.df-booking-btn {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.hf-right-side {
+    background-color: #CDDDFC;
 }
