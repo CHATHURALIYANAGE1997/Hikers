@@ -12,7 +12,7 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path = "/user")
 public interface UserRest {
-    
+
     @PostMapping(path="/signup")
     public ResponseEntity<String> signUp(@RequestBody(required=true) Map<String, String> requestMap);
 
