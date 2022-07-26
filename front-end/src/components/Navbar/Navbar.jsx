@@ -1,6 +1,8 @@
 import React from "react"
-import navbar from "./navbar.css"
+import "./navbar.css"
 import logo from "../images/logo.png";
+
+
 
 const Navbar = () => {
     return (
@@ -17,7 +19,7 @@ const Navbar = () => {
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav navbar-ul">
                         <li class="nav-item active">
                             <a class="nav-link" href='http://localhost:3001/home' >Hotels <span class="sr-only">(current)</span></a>
                         </li>

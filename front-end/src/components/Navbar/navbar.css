@@ -4,6 +4,10 @@
     justify-content: right !important;
 }
 
+.navbar-ul {
+    margin-left: auto !important;
+}
+
 .top {
     display: flex;
     justify-content: right;
