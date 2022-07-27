@@ -40,4 +40,17 @@ public class UserServiceImpl implements UserService {
         }
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
+  
+      private User getUserFromMap(Map<String,String> requestMap){
+        User user=new User();
+        user.setName(requestMap.get("name"));
+        user.setContactNumber(requestMap.get("contactNumber"));
+        user.setEmail(requestMap.get("email"));
+        user.setPassword(passwordEncoder.encode(requestMap.get("password")));
+        //user.setPassword(requestMap.get("password"));
+        user.setAccountstatus(requestMap.get("accountstatus"));
+        user.setRole(requestMap.get("role"));
+        return user;
+
+    }
 }
