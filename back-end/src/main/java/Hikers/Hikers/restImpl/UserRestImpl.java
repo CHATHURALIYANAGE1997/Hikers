@@ -28,24 +28,15 @@ public class UserRestImpl implements UserRest {
         }
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
     }
-<<<<<<< Updated upstream
-
-    @Override
+ @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
         try {
 
-=======
-
-    @Override
-    public ResponseEntity<String> login(Map<String, String> requestMap) {
-        try {
-
->>>>>>> Stashed changes
             return userService.login(requestMap);
         }catch (Exception ex){
             ex.printStackTrace();
         }
-        return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
+        return CafeUntils.getResponseEntity(CafeConstents.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
 
