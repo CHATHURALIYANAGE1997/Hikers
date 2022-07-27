@@ -8,8 +8,8 @@ import hotelview from "../components/Hotels/hotelview.png";
 import food from "../components/Hotels/food.png";
 import pool from "../components/Hotels/pool.png";
 import Facilities from "../components/Hotels/Facilities";
-import Reviews from "../components/Hotels/Review";
-
+import "../components/Hotels/Review";
+import HotelName from "../components/Hotels/HotelName";
 
 
 const HotelFacilities = () => {
@@ -17,7 +17,7 @@ const HotelFacilities = () => {
         <div>
             <Navbar />
             <div class="p-5 mt-3 text-left container">
-                <h2 className="mb-3 title font-weight-bold hotel-name">The Epitome</h2>
+                <HotelName/>
                 <div className="d-flex flex-row hf-page-container">
                     <div className="d-flex flex-column hf-left-side">
                         <div className="d-flex flex-row">
@@ -36,6 +36,7 @@ const HotelFacilities = () => {
                         <HotelNav />
                         <Facilities />
                         {/* <Reviews /> */}
+                        
                     </div>
                 </div>
             </div>

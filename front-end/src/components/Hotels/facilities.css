@@ -22,7 +22,7 @@
 
 .hf-bg {
     background-color: #CDDDFC;
-    padding-top: 5px;
+    padding-top: 3px;
 }
 
 .hf-box {
@@ -45,4 +45,16 @@
     color: #434040b8;
     font-size: small;
     font-weight: bold;
+}
+
+.PrivateTabIndicator-colorSecondary-5 {
+    background-color: #0556F2 !important;
+}
+
+.bt-hotel-nav {
+    color: #434040;
+}
+
+.bt-items {
+    font-weight: bold !important;
 }
