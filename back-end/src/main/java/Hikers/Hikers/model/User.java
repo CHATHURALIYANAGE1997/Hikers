@@ -32,8 +32,8 @@ public class User implements Serializable{
     @Column(name="password")
     private String password;
 
-    @Column(name="Accountstatus")
-    private String status;
+    @Column(name="accountstatus")
+    private String accountstatus;
 
     @Column(name="role")
     private String role;
