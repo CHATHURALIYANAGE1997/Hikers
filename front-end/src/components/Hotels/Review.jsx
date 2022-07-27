@@ -20,7 +20,7 @@ const Reviews = () => {
                         <div className="review-traveler">Bimalka Peiris : June 20,2022 : 9.45 AM</div>
                     </div>
                     <h6>The facilities are superb.Planning to stay in  this hotel again with my friends
-in the next month .The food in the restaurant is fabulous</h6>
+                        in the next month .The food in the restaurant is fabulous</h6>
                 </div>
                 <div className="bg-white hf-box">
                     <div className="d-flex flex-row mb-2 justify-content-between">

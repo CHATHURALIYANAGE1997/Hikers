@@ -1,10 +1,15 @@
-.container {
+.hr-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 80%;
     /* background-color: aquamarine; */
     color: rgb(40, 40, 40);
+    padding: 0rem !important;
+}
+
+.MuiBox-root-10 {
+    padding: 0 !important;
 }
 
 .title {
@@ -15,7 +20,6 @@
 
 .left-side {
     max-width: 40%;
-    margin-right: 10px;
 }
 
 .hotel-pic {
@@ -44,6 +48,9 @@
 .book-info {
     background-color: #F6AD40;
     height: max-content;
+    display: flex;
+    flex-direction: row;
+    width: 100% !important;
 }
 
 .book-info h6 {

@@ -18,7 +18,7 @@ const HotelBooking = () => {
                     <BookingDetails/>
                     <Price/>
                 </div>
-                <div className=" d-flex flex-column hf-right-side">
+                <div className=" d-flex flex-column hb-right-side">
                     <DetailsForm/>
                 </div>
             </div>
