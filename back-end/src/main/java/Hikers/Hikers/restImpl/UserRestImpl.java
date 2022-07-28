@@ -36,6 +36,6 @@ public class UserRestImpl implements UserRest {
         }catch (Exception ex){
             ex.printStackTrace();
         }
-        return CafeUntils.getResponseEntity(CafeConstents.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
+        return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

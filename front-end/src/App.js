@@ -1,18 +1,37 @@
 import React from 'react';
 import {BrowserRouter, BrowserRouter as Routes, Route} from 'react-router-dom';
+// import {Switch as Switch} from  'react-router-dom';
 // import HotelInfo from './pages/HotelInfo';
 import Hotels from './pages/Hotels';
-import Login from './pages/Login'
 import Signup from './pages/Signup'
-import Signin from './pages/Signin'
+import Login from './pages/Login'
+import Home from "./pages/Home";
 import Welcomepage from './pages/Welcomepage';
 import LandingPage from './pages/landing';
 import Articles from './pages/Articles';
 import HotelBooking from './pages/HotelBooking';
 import BasicTabs from './pages/HotelDetails';
-
+import { useSelector } from "react-redux";
+import authToken from "./utils/authToken";
 
 function App() {
+    window.onbeforeunload = (event) => {
+        const e = event || window.event;
+        e.preventDefault();
+        if (e) {
+            e.returnValue = "";
+        }
+        return "";
+    };
+
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+
+    }
+    const auth = useSelector((state) => state.auth);
+    console.log(auth);
+    console.log(auth.isLoggedIn);
+    console.log(localStorage);
   return (
     <div>
       <BrowserRouter>
@@ -22,7 +41,7 @@ function App() {
                           <Route path = "/" exact component = {Login}></Route>
                           <Route path = "/login"  component = {Login}></Route>
                           <Route path = "/signup"  component = {Signup}></Route>
-                          <Route path = "/signin"  component = {Signin}></Route>
+                          <Route path = "/home" exact component= {Home}></Route>
                           <Route path = "/welcome"  component = {Welcomepage}></Route>
                           <Route path = "/reserve"  component = {HotelBooking}></Route>
                           <Route path = "/hotels"  component = {Hotels}></Route>
@@ -30,6 +49,12 @@ function App() {
                           <Route path = "/landingPage/" component= {LandingPage}></Route>
                           <Route path = "/articles/" component= {Articles}></Route>
 
+                    {/*    <Switch>*/}
+                    {/*    { auth.isLoggedIn*/}
+                    {/*        ?<Route path = "/home" exact component= {Home}></Route>*/}
+                    {/*        :<Route path = "/" exact component= {Login}></Route>*/}
+                    {/*    }*/}
+                    {/*</Switch>*/}
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
                 </div>

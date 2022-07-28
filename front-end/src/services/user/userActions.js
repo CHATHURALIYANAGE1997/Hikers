@@ -2,7 +2,7 @@ import * as UT from "./userTypes";
 import axios from "axios";
 
 //const REGISTER_URL = "http://localhost:8081/rest/user/register";
-const REGISTER_URL = "http://localhost:4300/user/signup";
+const REGISTER_URL = "http://localhost:8080/user/signup";
 
 // export const fetchUsers = () => {
 //   return (dispatch) => {
