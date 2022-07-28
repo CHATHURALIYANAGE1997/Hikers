@@ -3,10 +3,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authenticateUser } from "../services/index";
 import { useTitle } from "../components/Title/Title"
-import signin from "../components/Signin/signin.css"
+
 import Navigationbar from "../components/Signup/Navigationbar";
 import signinpic from "../components/images/signinpic.jpg";
-import Passwordhidden from "../components/Signup/Passwordhidden"
+
 import { Alert, } from "react-bootstrap";
 
 const Login = (props) => {
@@ -33,7 +33,7 @@ const Login = (props) => {
         // console.log(user);
         dispatch(authenticateUser(user.email, user.password))
             .then((response) => {
-                //  console.log(response.data);
+                console.log(response.data);
                 return props.history.push("/home");
             })
             .catch((error) => {
