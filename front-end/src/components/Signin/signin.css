@@ -11,7 +11,7 @@ h1{
 .loginiconem{
     position:absolute;
     right:365px;
-    bottom:58px;
+    bottom:47px;
     height:100%;
     display:flex;
     align-items:center;
@@ -25,7 +25,18 @@ h1{
 .loginiconpw{
     position:absolute;
     right:365px;
-    top:20px;
+    top:60px;
+    height:100%;
+    display:flex;
+    align-items:center;
+    color: black;
+    cursor:pointer;
+}
+.pbtn{
+    position:absolute;
+    right:40px;
+    top:60px;
+    bottom:0;
     height:100%;
     display:flex;
     align-items:center;

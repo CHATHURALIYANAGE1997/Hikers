@@ -1,8 +1,11 @@
 import React from "react";
+import signin from "../components/Signin/signin.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { authenticateUser } from "../services/index";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useTitle } from "../components/Title/Title"
+
 
 import Navigationbar from "../components/Signup/Navigationbar";
 import signinpic from "../components/images/signinpic.jpg";
@@ -48,6 +51,19 @@ const Login = (props) => {
         setUser(initialState);
     };
 
+    const [passwordType, setPasswordType] = useState('password')
+    const [passwordIcon, setPasswordIcon] = useState(<FaEyeSlash />);
+
+    const handelToggle = () => {
+        if (passwordType === 'password') {
+            setPasswordType('text');
+            setPasswordIcon(FaEye);
+        } else {
+            setPasswordType('password');
+            setPasswordIcon(FaEyeSlash);
+        }
+    }
+
     useTitle("Hikers")
 
     return (
@@ -55,41 +71,56 @@ const Login = (props) => {
         <div>
             <Navigationbar />
 
-            <div className="mt-5 p-5 text-left container">
-                <div class="shadow p-3 mb-5 bg-white rounded ">
-                    <img src={signinpic} className="float-left signinpic" alt="signuppic"></img>
-                    <h1 className="p-2 text-center">Hello, <br></br>Welcome Back</h1>
+            <div className="mt-5 p-5 text-left signincontainer">
+                <div className="row px-3">
+                    <div class="col-lg-10 col-xl-9 card flex-row mx-auto shadow p-3 mb-5 bg-white rounded ">
+                        <div className="d-none d-md-flex loginimage">
+                            <img src={signinpic} className="float-left signinpic" alt="signuppic"></img>
+                        </div>
+                        <form class="loginform-box px-3 row g-3">
+                        <div className="login-body">
+                            <h1 className="p-2 text-center">Hello, <br></br>Welcome Back</h1>
+                            {/* <form class="loginform-box px-3 row g-3"> */}
+                                <div class="loginform-input col-12">
 
-                    <form class="row g-3">
-                        <div className="col-12">
-
-                            {show && props.message && (
-                                <Alert variant="success" onClose={() => setShow(false)} dismissible>
-                                    {props.message}
-                                </Alert>
-                            )}
-                            {show && error && (
-                                <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-                                    {error}
-                                </Alert>
-                            )}
+                                    {show && props.message && (
+                                        <Alert variant="success" onClose={() => setShow(false)} dismissible>
+                                            {props.message}
+                                        </Alert>
+                                    )}
+                                    {show && error && (
+                                        <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+                                            {error}
+                                        </Alert>
+                                    )}
+                                </div>
+                                <div class="col-12">
+                                    <br></br>
+                                    <div class="loginform-input">
+                                    <span className="loginiconem"><i class="fa fa-envelope-o"></i></span>
+                                    <input type="email" class="form-control" placeholder="Email-Address" value={user.email} onChange={credentialChange} name="email" />
+                                    </div>
+                                </div>
+                               
                         </div>
                         <div class="col-12">
-
                             <br></br>
-                            <input type="email" class="form-control" placeholder="Email-Address" value={user.email} onChange={credentialChange} name="email" />
+                            {/* {<Passwordhidden value={user.password} onChange={credentialChange} name="password"/> }
+                                    <input className="password-field" type="password" class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />*/ }
+
                         </div>
-                        <div class="col-12">
-                            <br></br>
-                            {/* <Passwordhidden value={user.password} onChange={credentialChange} name="password"/> */}
-                            <input className="password-field" type="password" class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />
-
+                        <div class="loginform-input">
+                            <span className="loginiconpw"><i class="fa fa-key"></i></span>
+                            <input className="password-field" type={passwordType} class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />
+                            <span className="pbtn" onClick={handelToggle}>
+                                {passwordIcon}
+                            </span>
                         </div>
                         <div class="col-6">
                             <div class="mt-3 form-check">
                                 <input class="form-check-input" type="checkbox" id="gridCheck" />
                                 <label class="form-check-label" for="gridCheck">
-                                    Remember Password
+                                    Remember me
                                 </label>
                             </div>
                         </div>
@@ -101,14 +132,14 @@ const Login = (props) => {
                             </div>
                         </div>
                         <div class="col-6 mt-3 mx-auto text-center loginbtn">
-                            <button class="btn btn-primary" type="submit" type="button" variant="success" onClick={validateUser} >Login</button>
+                            <button class="btn btn-primary" type="submit" variant="success" onClick={validateUser} >Login</button>
                         </div>
                     </form>
                 </div>
-
-
             </div>
-        </div >
+        </div>
+
+            </div >
     )
 }
 
