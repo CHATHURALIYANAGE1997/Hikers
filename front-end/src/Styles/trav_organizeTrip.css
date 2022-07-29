@@ -1,0 +1,23 @@
+.formContainer {
+    /* position: fixed; */
+    width: 45%;
+    /* background-color: blueviolet; */
+    padding: 4%;
+    margin: 0 auto;
+
+}
+.input-group.has-validation>.dropdown-toggle:nth-last-child(n+4), .input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-control, .input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-select, .input-group.has-validation>:nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+    /* border-top-right-radius: 0; */
+    /* border-bottom-right-radius: 0; */
+    border: none;
+    border-radius: 0%;
+
+}
+.form-control {
+    border: none !important;
+    border-radius: 0% !important;
+    /* background-color: brown !important; */
+    border-bottom: 1px solid #ced4da !important;
+    font-size: large;
+    background-color: #f8f9fa !important;
+}
