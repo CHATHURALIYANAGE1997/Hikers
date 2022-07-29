@@ -8,3 +8,13 @@
     display: flex;
     justify-content: right;
 }
+
+
+.navbar-ul {
+    margin-left: auto !important;
+}
+.logo {
+    margin: 5px;
+    width: 50px;
+}
+

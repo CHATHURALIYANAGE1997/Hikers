@@ -17,10 +17,13 @@ const Passwordhidden = () => {
     }
     return (
         <>
-            <input className="password-field" type={passwordType} class="form-control" placeholder="Password" />
+            <div class="loginform-input">
+            <span className="loginiconpw"><i class="fa fa-key"></i></span>
+            <input className="password-field" type={passwordType} class="form-control" placeholder="Password" required />
             <span className="pbtn" onClick={handelToggle}>
                 {passwordIcon}
             </span>
+            </div>
         </>
     );
 }

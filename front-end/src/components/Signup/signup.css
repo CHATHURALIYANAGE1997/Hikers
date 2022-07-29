@@ -1,17 +1,17 @@
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 80vw;
-    /* background-color: aquamarine; */
-    color: rgb(40, 40, 40);
-}
 p{
     text-align: left;
 }
 .container{
     color:rgb(12, 25, 206)
+}
+h2{
+    color:#1869f5;
+}
+.sentence{
+    color:gray;
+}
+.signupcontainer{
+    text-align: left;
 }
 .signup-container {
     width: 100%;
@@ -42,8 +42,8 @@ background-color: blue;
 }
 .pbtn{
     position:absolute;
-    right:20px;
-    top:11px;
+    right:40px;
+    top:20px;
     bottom:0;
     height:100%;
     display:flex;

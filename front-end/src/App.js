@@ -9,11 +9,13 @@ import Home from "./pages/Home";
 import Welcomepage from './pages/Welcomepage';
 import LandingPage from './pages/landing';
 import Articles from './pages/Articles';
+import Equipments from './pages/Equipments';
 import HotelBooking from './pages/HotelBooking';
 import BasicTabs from './pages/HotelDetails';
 import { useSelector } from "react-redux";
 import authToken from "./utils/authToken";
 import oraganizeTrip from './pages/trav_organizeTrip';
+
 
 function App() {
     window.onbeforeunload = (event) => {
@@ -49,13 +51,8 @@ function App() {
                           <Route path = "/hoteldetails"  component = {BasicTabs}></Route>
                           <Route path = "/landingPage/" component= {LandingPage}></Route>
                           <Route path = "/articles/" component= {Articles}></Route>
-                          <Route path = "/trav_organizeTrip/" component = {oraganizeTrip}></Route>
-                    {/*    <Switch>*/}
-                    {/*    { auth.isLoggedIn*/}
-                    {/*        ?<Route path = "/home" exact component= {Home}></Route>*/}
-                    {/*        :<Route path = "/" exact component= {Login}></Route>*/}
-                    {/*    }*/}
-                    {/*</Switch>*/}
+                          <Route path = "/equipments/" component= {Equipments}></Route>
+
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
                 </div>
