@@ -8,19 +8,15 @@
     padding: 0rem !important;
 }
 
-.MuiBox-root-10 {
-    padding: 0 !important;
-}
-
 .title {
     margin-top: 25px;
     margin-left: 5px;
     color: #0556F2;
 }
 
-.left-side {
+/* .left-side {
     max-width: 40%;
-}
+} */
 
 .hotel-pic {
     max-width: 40%;
@@ -35,9 +31,26 @@
     width: 100%;
 }
 
-.l-container {
+/* .l-container {
     width: 100%;
     margin-left: 0px !important;
+} */
+
+.hr-info {
+    background-color: #F6AD40;
+    margin-bottom: 10px;
+    padding: 5px;
+    justify-content: space-between;
+    width: 100% !important;
+}
+
+.hr-data {
+    width: max-content;
+    margin-right: 5px;
+}
+
+.hr-nights {
+    margin-right: 10px;
 }
 
 .location {
@@ -81,7 +94,7 @@
 }
 
 .t-head{
-    background-color: #5565F2;
+    background-color: #bac0f683;
     height: 56px;
 }
 
@@ -103,5 +116,15 @@
 .rooms {
     border: none;
     outline: none;
+}
 
+.hr-reserve {
+    justify-content: right;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.hr-reserve-btn {
+    width: 200px;
+    font-weight: bold !important;
 }

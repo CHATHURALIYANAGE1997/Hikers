@@ -56,7 +56,7 @@ const Hotels = () => {
                         <div className="d-flex flex-row justify-content-between">
                             <h8 className="pl-4 rate">Very Good | <h8 className="reviews">215 reviews</h8></h8>
                             <div className="float-right">
-                                <a href="/hotel/"><button className="h4 rounded b-now"><span>Book Now</span></button></a>
+                                <a href="/hoteldetails"><button className="h4 rounded b-now"><span>Book Now</span></button></a>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@ const Hotels = () => {
                         <div className="d-flex flex-row justify-content-between">
                             <h8 className="pl-4 rate">Very Good | <h8 className="reviews">215 reviews</h8></h8>
                             <div className="float-right">
-                                <a href="/hotel/"><button className="h4 rounded b-now"><span>Book Now</span></button></a>
+                                <a href="/hoteldetails"><button className="h4 rounded b-now"><span>Book Now</span></button></a>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@ const Hotels = () => {
                         <div className="d-flex flex-row justify-content-between">
                             <h8 className="pl-4 rate">Very Good | <h8 className="reviews">215 reviews</h8></h8>
                             <div className="float-right">
-                                <a href="/hotel/"><button className="h4 rounded b-now"><span>Book Now</span></button></a>
+                                <a href="/hoteldetails"><button className="h4 rounded b-now"><span>Book Now</span></button></a>
                             </div>
                         </div>
                     </div>

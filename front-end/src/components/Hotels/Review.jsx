@@ -4,10 +4,10 @@ import "./facilities.css";
 const Reviews = () => {
     return (
         <div>
-            <div className="pb-3 hf-bg">
+            <div className="p-2 hf-bg">
                 <h5 className="review-title">Recent Guest Reviews</h5>
                 <div className="bg-white hf-box">
-                    <div className="d-flex flex-row mb-2 justify-content-between">
+                    <div className="d-flex flex-row justify-content-between">
                         <div>Stars</div>
                         <div className="review-traveler">Bimalka Peiris : June 20,2022 : 9.45 AM</div>
                     </div>
@@ -15,15 +15,15 @@ const Reviews = () => {
                         they have an excellent customer service and the facilities are very good all the rooms are in good condition.Will recommend everyone</h6>
                 </div>
                 <div className="bg-white hf-box">
-                    <div className="d-flex flex-row mb-2 justify-content-between">
+                    <div className="d-flex flex-row justify-content-between">
                         <div>Stars</div>
                         <div className="review-traveler">Bimalka Peiris : June 20,2022 : 9.45 AM</div>
                     </div>
                     <h6>The facilities are superb.Planning to stay in  this hotel again with my friends
                         in the next month .The food in the restaurant is fabulous</h6>
                 </div>
-                <div className="bg-white hf-box">
-                    <div className="d-flex flex-row mb-2 justify-content-between">
+                <div className="bg-white hf-box-2">
+                    <div className="d-flex flex-row justify-content-between">
                         <div>Stars</div>
                         <div className="review-traveler">Bimalka Peiris : June 20,2022 : 9.45 AM</div>
                     </div>

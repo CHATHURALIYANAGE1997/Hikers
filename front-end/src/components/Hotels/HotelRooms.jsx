@@ -6,20 +6,32 @@ const HotelRooms = () => {
 
         <div className="text-left hr-container w-100">
             <div className="d-flex flex-column">
-                <div className="d-flex flex-column left-side">
-                    <div className="d-flex flex-row l-container">
-
+                <div className="d-flex flex-row hr-info">
+                    <div className="d-flex flex-column hr-data">
+                        <span>District</span>
+                        <div className="bg-white p-1">Kurunagale</div>
+                    </div>
+                    <div className="d-flex flex-column hr-data">
+                        <span>Check-In date</span>
+                        <div className="bg-white p-1">Thu 14 Jul 2022</div>
+                    </div>
+                    <div className="d-flex flex-column hr-data">
+                        <span>Check-Out date</span>
+                        <div className="bg-white p-1">Sat 23 Jul 2022</div>
+                    </div>
+                    <div className="d-flex flex-column">
+                        <span>3-night stay</span>
+                        <div className="d-flex flex-row bg-white p-1"><span className="hr-nights">Adults-2</span><span className="hr-nights">Children-0</span><span>1 room</span></div>
                     </div>
                 </div>
                 <div className=" d-flex flex-column hr-right-side">
-                    <div className="d-flex w-100">
+                    <div className="d-flex flex-column w-100">
                         <table className="table table-hover align-middle mb-0 ">
                             <thead class="t-head">
                                 <th scope="col">Room type</th>
                                 <th scope="col">Sleeps</th>
                                 <th scope="col">Price of the room</th>
                                 <th scope="col">Rooms</th>
-                                <th scope="col"></th>
                             </thead>
                             <tbody>
                                 <tr>
@@ -48,9 +60,6 @@ const HotelRooms = () => {
                                             </select>
                                         </div>
                                     </td>
-                                    <td>
-                                        <a href="#"><button className="btn btn-primary">Reserve</button></a>
-                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -77,9 +86,6 @@ const HotelRooms = () => {
                                                 <option value="3">3</option>
                                             </select>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <a href="#"><button className="btn btn-primary">Reserve</button></a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -108,12 +114,12 @@ const HotelRooms = () => {
                                             </select>
                                         </div>
                                     </td>
-                                    <td>
-                                        <a href="#"><button className="btn btn-primary">Reserve</button></a>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+                        <div className="d-flex hr-reserve">
+                            <a href="/reserve"><button className="btn btn-primary hr-reserve-btn">Reserve</button></a>
+                        </div>
                     </div>
 
                 </div>

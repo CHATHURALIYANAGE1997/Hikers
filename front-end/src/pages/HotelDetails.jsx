@@ -79,10 +79,10 @@ export default function BasicTabs() {
             <Box sx={{ width: '100%' }}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs className='bg-light bt-hotel-nav' value={value} onChange={handleChange} aria-label="basic tabs example">
-                  <Tab label="Hotel Info & Price" {...a11yProps(0)} />
-                  <Tab label="Facilities" {...a11yProps(1)} />
-                  <Tab label="Hotel Rules" {...a11yProps(2)} />
-                  <Tab label="Guests Reviews" {...a11yProps(3)} />
+                  <Tab className='w-25' label="Hotel Info & Price" {...a11yProps(0)} />
+                  <Tab className='w-25' label="Facilities" {...a11yProps(1)} />
+                  <Tab className='w-25' label="Hotel Rules" {...a11yProps(2)} />
+                  <Tab className='w-25' label="Guests Reviews" {...a11yProps(3)} />
                 </Tabs>
               </Box>
               <TabPanel value={value} index={0}>
