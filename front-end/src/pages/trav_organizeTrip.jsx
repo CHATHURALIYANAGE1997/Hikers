@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import "../Styles/trav_organizeTrip.css"
+import Container from 'react-bootstrap/Container';
 
 function oraganizeTrip() {
   const [validated, setValidated] = useState(false);
@@ -20,68 +21,153 @@ function oraganizeTrip() {
   };
 
   return (
+    <div>
+      <p className="txtOrganizeTrip">Organize it</p>
     <div className="formContainer">
+        
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row className="mb-3">
+          
+      <Row className="mb-3">                                                {/* Name */}
         <Form.Group as={Row} md="4" controlId="validationCustom01">
-          <Form.Label>First name</Form.Label>
+          <Form.Label>Full name</Form.Label>
           <Form.Control
             required
             type="text"
             placeholder="First name"
-            defaultValue="Mark"
+            // defaultValue="Mark"
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+              You must enter the name.
+            </Form.Control.Feedback>
+          
         </Form.Group>
-        <Form.Group as={Row} md="4" controlId="validationCustom02">
-          <Form.Label>Last name</Form.Label>
+        
+      </Row>
+                                                                          {/* # of crowd */}
+      <Row className="mb-3">                                                                                   
+        <Form.Group as={Col} md="4" controlId="validationCustom01">
+          <Form.Label>No of Crowd</Form.Label>
+          
+        </Form.Group>
+        <Form.Group as={Col} md="4" controlId="validationCustom02">
+          <Form.Label>Adults</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="Last name"
-            defaultValue="Otto"
+            placeholder="Less than 20"
+            
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+              Please a valid number
+            </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Row} md="4" controlId="validationCustomUsername">
-          <Form.Label>Username</Form.Label>
+        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+          <Form.Label>Children</Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
             <Form.Control
               type="text"
-              placeholder="Username"
+              placeholder="Less than 20"
               aria-describedby="inputGroupPrepend"
               required
             />
             <Form.Control.Feedback type="invalid">
-              Please choose a username.
+              Please a valid number
             </Form.Control.Feedback>
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
       </Row>
-      <Row className="mb-3">
+      
+      <Row className="mb-3">                                                {/* Date */}
         <Form.Group as={Row} md="6" controlId="validationCustom03">
-          <Form.Label>City</Form.Label>
-          <Form.Control type="text" placeholder="City" required />
+          <Form.Label>Date</Form.Label>
+          <Form.Control type="text" placeholder="DD/MM/YYYY" required />
           <Form.Control.Feedback type="invalid">
             Please provide a valid city.
           </Form.Control.Feedback>
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Row} md="3" controlId="validationCustom04">
-          <Form.Label>State</Form.Label>
-          <Form.Control type="text" placeholder="State" required />
+        
+        <Form.Group as={Row} md="3" controlId="validationCustom04">             {/* Location */}
+          <Form.Label>Location</Form.Label>
+          {/* <Form.Control type="text" placeholder="State" required /> */}
+          <Form.Select aria-label="Select a location">
+            <option>Select a location</option>
+            <option value="1">Dolukanda</option>
+            <option value="2">Bathalegala</option>
+            <option value="3">Hulangala</option>
+
+          </Form.Select>
           <Form.Control.Feedback type="invalid">
             Please provide a valid state.
           </Form.Control.Feedback>
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Row} md="3" controlId="validationCustom05">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control type="text" placeholder="Zip" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid zip.
-          </Form.Control.Feedback>
-        </Form.Group>
+        
       </Row>
+      
+      {/* <Form.Check reverse aria-label="option 1" label="Option"/> */}
+      {/* <Row className='OptinalDiv'>
+          <Col className='txtOptional'></Col>
+      </Row> */}
+      <Container>
+        <Row>
+          <Col className = "col_1">
+          <Form.Label>Optional</Form.Label>
+
+          </Col>
+          <Col className = "col_2">
+            <Row classname="col_2_row_1">
+            <Form.Check
+              // required
+              label="Hotel"
+
+            />
+            </Row>
+            <Row className='col_2_row_2'>
+              <Form.Check
+                // required
+                label="BBQ"
+
+              />
+            </Row>
+            
+          </Col>
+          <Col className="col_3">
+            <Row className="col_3_row_1">
+            <Form.Check
+              // required
+              label="Transport"
+
+            />
+            </Row>
+            <Row className="col_3_row_2">
+            <Form.Check
+              // required
+              label="Photoshoot"
+
+            />
+            </Row>
+          
+          </Col>
+          <Col className='col_4'>
+            <Row className="col_4_row_1">
+              <Form.Check
+                // required
+                label="Abseilling"
+
+              />
+            </Row>
+            <Row className ="col_4_row_2">
+              
+            </Row>
+          </Col>
+          
+        </Row>
+    </Container>
+
       <Form.Group className="mb-3">
         <Form.Check
           required
@@ -93,6 +179,8 @@ function oraganizeTrip() {
       <Button type="submit">Submit form</Button>
     </Form>
     </div>
+    </div>
+    
   );
 }
 

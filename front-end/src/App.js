@@ -52,7 +52,7 @@ function App() {
                           <Route path = "/landingPage/" component= {LandingPage}></Route>
                           <Route path = "/articles/" component= {Articles}></Route>
                           <Route path = "/equipments/" component= {Equipments}></Route>
-
+                          <Route path = "/trav_organizeTrip/" component = {oraganizeTrip}></Route>
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
                 </div>

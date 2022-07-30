@@ -51,18 +51,18 @@ const Login = (props) => {
         setUser(initialState);
     };
 
-    const [passwordType, setPasswordType] = useState('password')
-    const [passwordIcon, setPasswordIcon] = useState(<FaEyeSlash />);
+    // const [passwordType, setPasswordType] = useState('password')
+    // const [passwordIcon, setPasswordIcon] = useState(<FaEyeSlash />);
 
-    const handelToggle = () => {
-        if (passwordType === 'password') {
-            setPasswordType('text');
-            setPasswordIcon(FaEye);
-        } else {
-            setPasswordType('password');
-            setPasswordIcon(FaEyeSlash);
-        }
-    }
+    // const handelToggle = () => {
+    //     if (passwordType === 'password') {
+    //         setPasswordType('text');
+    //         setPasswordIcon(FaEye);
+    //     } else {
+    //         setPasswordType('password');
+    //         setPasswordIcon(FaEyeSlash);
+    //     }
+    // }
 
     useTitle("Hikers")
 
@@ -111,10 +111,8 @@ const Login = (props) => {
                         </div>
                         <div class="loginform-input">
                             <span className="loginiconpw"><i class="fa fa-key"></i></span>
-                            <input className="password-field" type={passwordType} class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />
-                            <span className="pbtn" onClick={handelToggle}>
-                                {passwordIcon}
-                            </span>
+                            <input className="password-field" type="password" class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />
+                        
                         </div>
                         <div class="col-6">
                             <div class="mt-3 form-check">

@@ -4,6 +4,9 @@
     /* background-color: blueviolet; */
     padding: 4%;
     margin: 0 auto;
+    border: 1px solid #b6b6b8 ;
+    border-radius: 4%;text-align: center;
+    padding-top: 2%;
 
 }
 .input-group.has-validation>.dropdown-toggle:nth-last-child(n+4), .input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-control, .input-group.has-validation>.form-floating:nth-last-child(n+3)>.form-select, .input-group.has-validation>:nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
@@ -20,4 +23,42 @@
     border-bottom: 1px solid #ced4da !important;
     font-size: large;
     background-color: #f8f9fa !important;
+
+}
+.txtOrganizeTrip {
+    width: 100%;
+    /* margin: 0 auto; */
+    font-family: "Helvetica Neue", "Arial", sans-serif;
+    /* font-style: italic; */
+    font-weight: 100;
+    font-variant-ligatures: normal;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-align: center;
+
+}
+.form-label {
+    margin-bottom: 0% !important;
+    margin-top: 5% !important;
+    /* font-size: 100%; */
+    font-weight: 500;
+    margin-left: 0% !important;
+    text-align: left !important;
+
+}
+/* @media (min-width: 768px) */
+.col-md-4 {
+    text-align: left !important;
+    
+}
+.form-select {
+    border-radius: 0% !important;
+    border: none !important;
+    border-bottom: 1px solid #ced4da !important;
+    background-color: #f8f9fa !important;
+
+}
+.col {
+    color: black;
+    
 }
