@@ -15,6 +15,7 @@ import BasicTabs from './pages/HotelDetails';
 import { useSelector } from "react-redux";
 import authToken from "./utils/authToken";
 import oraganizeTrip from './pages/trav_organizeTrip';
+import TravelingGuide from './pages/TravelingGuide';
 
 
 function App() {
@@ -53,6 +54,8 @@ function App() {
                           <Route path = "/articles/" component= {Articles}></Route>
                           <Route path = "/equipments/" component= {Equipments}></Route>
                           <Route path = "/trav_organizeTrip/" component = {oraganizeTrip}></Route>
+                          <Route path = "/guide" component = {TravelingGuide}></Route>
+
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
                 </div>

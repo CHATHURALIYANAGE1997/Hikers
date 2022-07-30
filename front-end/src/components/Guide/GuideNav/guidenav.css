@@ -1,0 +1,24 @@
+.tg-nav {
+    margin-top: 76px;
+}
+
+.tg-guide-nav {
+    display: flex;
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+}
+
+.tg-nav .MuiTabs-flexContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.tg-section {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+.tg-content {
+    margin-left: 250px;
+}
