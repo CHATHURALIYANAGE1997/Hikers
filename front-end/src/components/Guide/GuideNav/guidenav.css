@@ -1,24 +1,47 @@
-.tg-nav {
-    margin-top: 76px;
-}
-
-.tg-guide-nav {
-    display: flex;
-    position: fixed;
+.gn-container {
+    background-color: #081C62;
     width: 250px;
-    height: 100vh;
+    height: 100%;
+    top: 76px;
+    position: fixed;
+    padding-top: 60px;
 }
 
-.tg-nav .MuiTabs-flexContainer {
+.gn-list {
+    height: auto;
+    width: 100%;
+    padding: 0;
+    text-align: left;
+}
+
+.gn-row {
+    width: 100%;
+    height: 60px;
+    list-style-type: none;
+    margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    color: white;
+    justify-content: center;
+    align-items: center;
 }
 
-.tg-section {
-    margin-bottom: 10px !important;
-    margin-top: 10px !important;
+.gn-row:hover {
+    cursor: pointer;
+    background-color: #0c288d;
 }
 
-.tg-content {
-    margin-left: 250px;
+.gn-list #active {
+   background-color: #0c288d; 
 }
+
+#gn-icon {
+    flex: 30%;
+    display: grid;
+    place-items: center;
+}
+
+#gn-title {
+    flex: 70%;
+}
+
