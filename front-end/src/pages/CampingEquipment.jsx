@@ -11,11 +11,18 @@ import { useTitle } from "../components/Title/Title";
 const CampingEquipment = () => {
     useTitle("Hikers")
 
-
     return (
-        <div className="campingContainer">
+        <div className="d-flex flex-column campingContainer">
             <Navbar/>
-            <Sidebar/>
+         <div className="d-flex flex-row campingContainersub">
+            
+            
+                <Sidebar/>
+            
+            
+        </div>   
+            
+            
                              
        </div>
            

@@ -7,14 +7,14 @@
     padding: 0;
   }
   .campingSidebar{
-    margin-top: 6%;
+    margin-top: 76px;
     height:100%;
     width:250px;
     box-shadow: 1px 2px 4px grey; 
     background-color:white;
   }
   .campingSidebarList{
-    height:auto;
+    height:100%;
     padding:0;
     width: 100%;
   }
@@ -46,5 +46,9 @@
   .campingSidebarRow #campingsidebartitle{
     flex:70%;
     text-align: left;
+  }
+  .campingContainersub{
+    height: 100%;
+    background-color: aqua;
   }
  
