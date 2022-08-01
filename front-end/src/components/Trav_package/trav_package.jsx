@@ -3,8 +3,6 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import "./trav_package.css"
 
-// import { Component } from "react";
-
 const Package = (props) => {
     console.log (props.name)
     return (
@@ -13,8 +11,14 @@ const Package = (props) => {
                 label={props.name}
             />
             <Row>
+                <div className="divDecText">
+                    <h5>{props.des}</h5>
+
+                </div>
+            </Row>
+            <Row>
                 <div>
-                    <h5 className="txtLocal"><u>Local -</u></h5>
+                    <h5 className="txtLocal"><u>{props.topic_1}</u></h5>
 
                 </div>
             </Row>
@@ -26,7 +30,7 @@ const Package = (props) => {
             </Row>
             <Row>
                 <div>
-                    <h5 className="txtForiegn"><u>Foriegn -</u></h5>
+                    <h5 className="txtForiegn"><u>{props.topic_2}</u></h5>
 
                 </div>
             </Row>
@@ -35,8 +39,7 @@ const Package = (props) => {
                     <p className="ForiegnDes">Rs. {props.fPrice} per person.</p>
 
                 </div>
-            </Row>
-            
+            </Row>            
         </div>
     )
 }

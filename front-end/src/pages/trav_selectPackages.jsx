@@ -10,7 +10,9 @@ const selectPackages = () => {
             <div className="packageContainer mx-auto">
                 <h3>Select Yours</h3>
             <Stack gap={1} className="col-md-5 mx-auto">
-                <Package name="One Day Hike" lPrice="1000" fPrice="2000"/>
+                <Package name="One Day Hike" des="" topic_1="Local" topic_2="Foriegn" lPrice="1000" fPrice="2000"/>
+                <Package name="Camping" des="" topic_1="Local" topic_2="Foriegn" lPrice="1000" fPrice="2000"/>
+                <Package name="Camping" des="Rs.20000 per person" topic_1="Local" topic_2="Foriegn" lPrice="1000" fPrice="2000"/>
                 
             </Stack>
             </div>

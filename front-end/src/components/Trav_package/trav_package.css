@@ -1,8 +1,12 @@
 .package_1 {
-    background-color: aqua;
+    /* background-color: aqua; */
+    border: 1px solid rgb(124, 124, 124);
+    border-radius: 7%;
+    padding: 5%;
+
 
 }
-.txtLocal, .txtForiegn {
+.txtLocal, .txtForiegn, .divDecText {
     text-align: left !important;
 
 }
