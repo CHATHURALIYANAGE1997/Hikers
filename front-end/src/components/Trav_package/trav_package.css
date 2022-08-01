@@ -2,3 +2,7 @@
     background-color: aqua;
 
 }
+.txtLocal, .txtForiegn {
+    text-align: left !important;
+
+}
