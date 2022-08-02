@@ -18,8 +18,7 @@ import oraganizeTrip from './pages/trav_organizeTrip';
 import TravelingGuide from './pages/TravelingGuide';
 import selectPackages from './pages/trav_selectPackages';
 import CampingEquipment from "./pages/CampingEquipment";
-
-
+import GuideTrips from './pages/GuideTrips';
 
 function App() {
     window.onbeforeunload = (event) => {
@@ -57,10 +56,10 @@ function App() {
                           <Route path = "/articles/" component= {Articles}></Route>
                           <Route path = "/equipments/" component= {Equipments}></Route>
                           <Route path = "/trav_organizeTrip" component = {oraganizeTrip}></Route>
-                          <Route path = "/guide" component = {TravelingGuide}></Route>
+                          <Route path = "/guide/trips" component = {GuideTrips}></Route>
+                          {/* <Route path = "/guide" component = {TravelingGuide}></Route> */}
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>
-                      
 
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
