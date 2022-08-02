@@ -1,6 +1,7 @@
 import React from "react"
 import "./navbar.css"
 import logo from "../images/logo.png";
+import { NavBarData } from './NavBarData';
 
 
 
@@ -12,7 +13,7 @@ const Navbar = () => {
                     <div class="logo"></div>
                 </a> */}
                 <a class="navbar-brand" href="#">
-                <img src={logo} className="logo" alt="" width="70" height="40" />
+                    <img src={logo} className="logo" alt="" width="70" height="40" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,21 +21,19 @@ const Navbar = () => {
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav navbar-ul">
-                        <li class="nav-item active">
-                            <a class="nav-link" href='http://localhost:3001/home' >Hotels <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Camping Equipments</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Articles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Forums</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Donations</a>
-                        </li>
+                        {NavBarData.map((val, key) => {
+                            return (
+                                <li key={key}
+                                    className="nb-list"
+                                    id={window.location.pathname == val.link ? "active" : ""}
+                                    onClick={() => { window.location.pathname = val.link }}>
+                                    <div className="nb-title">
+                                        {val.title}
+                                    </div>
+                                </li>
+                            );
+                        })}
+
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
