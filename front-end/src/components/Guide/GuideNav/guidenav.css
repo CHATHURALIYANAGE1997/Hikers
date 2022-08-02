@@ -1,5 +1,5 @@
 .gn-container {
-    background-color: #081C62;
+    background-color: #F6F5F5;
     width: 250px;
     height: 100%;
     top: 76px;
@@ -21,18 +21,20 @@
     margin: 0;
     display: flex;
     flex-direction: row;
-    color: white;
+    color: #276678;
     justify-content: center;
     align-items: center;
 }
 
 .gn-row:hover {
     cursor: pointer;
-    background-color: #0c288d;
+    background-color: #1687A7;
+    color: #F6F5F5;
 }
 
 .gn-list #active {
-   background-color: #0c288d; 
+   background-color: #1687A7; 
+   color: #F6F5F5;
 }
 
 #gn-icon {
