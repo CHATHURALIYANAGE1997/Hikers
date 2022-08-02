@@ -78,7 +78,7 @@ export default function BasicTabs() {
           <div className=" d-flex flex-column hf-right-side">
             <Box sx={{ width: '100%' }}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs className='bg-light bt-hotel-nav' value={value} onChange={handleChange} aria-label="basic tabs example">
+                <Tabs className='bt-hotel-nav' value={value} onChange={handleChange} aria-label="basic tabs example">
                   <Tab className='w-25' label="Hotel Info & Price" {...a11yProps(0)} />
                   <Tab className='w-25' label="Facilities" {...a11yProps(1)} />
                   <Tab className='w-25' label="Hotel Rules" {...a11yProps(2)} />

@@ -37,7 +37,7 @@
 } */
 
 .hr-info {
-    background-color: #F6AD40;
+    background-color: #F6F5F5;
     margin-bottom: 10px;
     padding: 5px;
     justify-content: space-between;
@@ -94,7 +94,7 @@
 }
 
 .t-head{
-    background-color: #bac0f683;
+    background-color: #D3E0EA;
     height: 56px;
 }
 
@@ -127,4 +127,5 @@
 .hr-reserve-btn {
     width: 200px;
     font-weight: bold !important;
+    background-color: #1687A7 !important;
 }

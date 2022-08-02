@@ -60,8 +60,7 @@ function App() {
                           <Route path = "/guide" component = {TravelingGuide}></Route>
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>
-                       
-
+                      
 
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>

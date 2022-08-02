@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     width: 80vw;
+    margin-top: 20px;
     /* background-color: aquamarine; */
     color: rgb(40, 40, 40);
 }
@@ -11,6 +12,7 @@
     margin-top: 35px;
     margin-left: 5px;
     text-align: left;
+    color: #1687A7 !important;
 }
 
 .box{
@@ -18,6 +20,7 @@
     margin: 5px;
     width: 25%;
     text-align: start;
+    background-color: #1687A7;
 }
 
 .r-div {
@@ -43,7 +46,7 @@
 .hotel-container {
     width: 100%;
     height: 200px;
-    background-color: #CDDDFC;
+    background-color: #F6F5F5;
 }
 
 .hotel-img {
@@ -72,7 +75,7 @@
 
 .stars {
     font-weight: bold;
-
+    color: #1687A7;
 }
 
 .rate {
@@ -82,14 +85,14 @@
 }
 
 .reviews {
-    color: rgb(7, 7, 219);
+    color: #1687A7;
     font-size: medium;
     font-weight: bold;
 }
 
 .b-now {
     border-radius: 4px;
-    background-color: #5565F2;
+    background-color: #1687A7;
     border: none;
     color: #FFFFFF;
     text-align: center;

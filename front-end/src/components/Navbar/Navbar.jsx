@@ -7,7 +7,7 @@ import logo from "../images/logo.png";
 const Navbar = () => {
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top nb-container">
                 {/* <a class="navbar-brand" href='http://localhost:3001'>
                     <div class="logo"></div>
                 </a> */}

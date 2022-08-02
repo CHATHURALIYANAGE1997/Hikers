@@ -1,3 +1,8 @@
+.navbar {
+    /* background-color: #0c288d; */
+    background-color: #276678;
+}
+
 .nav-bar {
     width: 100%;
     display: flex !important;
@@ -19,4 +24,8 @@
 .userpic {
     margin: 5px;
     width: 50px;
+}
+
+.nav-link {
+    color: #F6F5F5 !important;
 }
