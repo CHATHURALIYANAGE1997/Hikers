@@ -20,6 +20,7 @@ import selectPackages from './pages/trav_selectPackages';
 import CampingEquipment from "./pages/CampingEquipment";
 import GuideTrips from './pages/GuideTrips';
 import transport from './pages/trav_tranpotation_1';
+import editTrip from './pages/trav_editTrip';
 
 
 function App() {
@@ -61,6 +62,8 @@ function App() {
                           <Route path = "/guide" component = {TravelingGuide}></Route>
                           <Route path = "/selectPackages" component={selectPackages}></Route>
                           <Route path = "/transport" component={transport}></Route>
+                          <Route path = "/editTrip" component={editTrip}></Route>
+                          
 
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>
