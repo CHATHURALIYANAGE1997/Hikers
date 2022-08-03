@@ -36,7 +36,7 @@ const Package = (props) => {
             </Row>
             <Row>
                 <div>
-                    <p className="ForiegnDes">Rs. {props.fPrice} per person.</p>
+                    <p className="foriegnDes">Rs. {props.fPrice} per person.</p>
 
                 </div>
             </Row>            
