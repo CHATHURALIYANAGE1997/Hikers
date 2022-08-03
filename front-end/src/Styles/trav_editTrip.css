@@ -1,0 +1,11 @@
+.et_mainDiv {
+    /* background-color: bisque; */
+    width: 50%;
+    margin: 0 auto;
+
+}
+.input-group>.form-floating:not(:first-child)>.form-control, .input-group>.form-floating:not(:first-child)>.form-select, .input-group>:not(:first-child):not(.dropdown-menu):not(.form-floating):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    background-color: aquamarine;
+    border-top: 1px solid black;
+
+}
