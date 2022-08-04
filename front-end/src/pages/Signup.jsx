@@ -1,7 +1,7 @@
 import React from "react"
 import signup from "../components/Signup/signup.css"
 import Phone from "../components/Signup/Phone.js"
-import Navigationbar from "../components/Signup/Navigationbar";
+import Navbar from "../components/Navbar/Navbar";
 import signuppic from "../components/images/signuppic.jpg";
 import Passwordhidden from "../components/Signup/Passwordhidden"
 
@@ -12,7 +12,7 @@ const Signup = () => {
 
     return (
         <div>
-            <Navigationbar />
+            <Navbar />
 
             <div className="mt-5 p-5 text-left signupcontainer">
                 <div className="row px-3">

@@ -1,6 +1,6 @@
 import React from "react"
 import signin from "../components/Signin/signin.css"
-import Navigationbar from "../components/Signup/Navigationbar";
+import Navbar from "../components/Navbar/Navbar";
 import signinpic from "../components/images/signinpic.jpg";
 import Passwordhidden from "../components/Signup/Passwordhidden"
 import { useTitle } from "../components/Title/Title"
@@ -11,7 +11,7 @@ const Signin = () => {
 
     return (
         <div>
-            <Navigationbar />
+            <Navbar />
             <div className="mt-5 p-5 text-left signincontainer">
                 <div className="row px-3">
                     <div class="col-lg-10 col-xl-9 card flex-row mx-auto shadow p-3 mb-5 bg-white rounded ">

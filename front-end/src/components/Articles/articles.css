@@ -11,21 +11,19 @@
     color: rgb(105, 105, 105);
 }
 .author {
-    color:darkslategray;
+    color:rgb(59, 79, 47);
     justify-content: left;
-    text-align: left;
 }
 .views {
-    color:darkblue;
+    color:rgb(70, 3, 226);
     text-align: right;
-    align-items: right;
-    justify-content: left;
 }
+
 .articlesSearchbutton{
     color:black;
     width: 100px;
     position: absolute;
-    left:220px;
+    left:250px;
     top:125px;
    
 }
@@ -42,5 +40,14 @@
 }
 .articlesSearchfield{
     color:blue;
+    border:none;
+}
+.searchbtn{
+    height:35px;
+    text-align: center;
+    position:absolute;
+    right:285px;
+    top:120px;
+
 }
 

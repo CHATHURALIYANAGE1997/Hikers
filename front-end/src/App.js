@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Welcomepage from './pages/Welcomepage';
 import LandingPage from './pages/landing';
 import Articles from './pages/Articles';
+import ArticleInfo from './pages/ArticleInfo';
 import Equipments from './pages/Equipments';
 import HotelBooking from './pages/HotelBooking';
 import BasicTabs from './pages/HotelDetails';
@@ -21,6 +22,10 @@ import CampingEquipment from "./pages/CampingEquipment";
 import GuideTrips from './pages/GuideTrips';
 import transport from './pages/trav_tranpotation_1';
 import editTrip from './pages/trav_editTrip';
+
+
+import Donations from './pages/Donations';
+
 
 
 function App() {
@@ -57,13 +62,17 @@ function App() {
                           <Route path = "/hoteldetails"  component = {BasicTabs}></Route>
                           <Route path = "/landingPage/" component= {LandingPage}></Route>
                           <Route path = "/articles/" component= {Articles}></Route>
+                          <Route path = "/articleinfo/" component= {ArticleInfo}></Route>
                           <Route path = "/equipments/" component= {Equipments}></Route>
                           <Route path = "/organizeTrip" component = {oraganizeTrip}></Route>
                           <Route path = "/guide" component = {TravelingGuide}></Route>
                           <Route path = "/selectPackages" component={selectPackages}></Route>
                           <Route path = "/transport" component={transport}></Route>
                           <Route path = "/editTrip" component={editTrip}></Route>
-                          
+                          <Route path = "/trav_selectPackages" component={selectPackages}></Route>
+                          <Route path = "/camping/" component= {CampingEquipment}></Route>
+                          <Route path = "/donations/" component= {Donations}></Route>
+
 
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>

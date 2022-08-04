@@ -5,9 +5,7 @@ import { useDispatch } from "react-redux";
 import { authenticateUser } from "../services/index";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useTitle } from "../components/Title/Title"
-
-
-import Navigationbar from "../components/Signup/Navigationbar";
+import Navbar from "../components/Navbar/Navbar";
 import signinpic from "../components/images/signinpic.jpg";
 
 import { Alert, } from "react-bootstrap";
@@ -69,7 +67,7 @@ const Login = (props) => {
     return (
 
         <div>
-            <Navigationbar />
+            <Navbar />
 
             <div className="mt-5 p-5 text-left signincontainer">
                 <div className="row px-3">
