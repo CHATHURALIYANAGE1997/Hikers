@@ -3,21 +3,17 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import "../Styles/trav_editTrip.css"
 import Stack from 'react-bootstrap/Stack';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 
 const editTrip = () => {
     return (
         <div>
             <br></br>
-            <h4>Check the trip...</h4>
-            {/* <InputGroup className="mb-3">
-                <InputGroup.Text id="inputGroup-sizing-default">
-                Default
-                </InputGroup.Text>
-                <Form.Control
-                aria-label="Default"
-                aria-describedby="inputGroup-sizing-default"
-                />
-            </InputGroup> */}
+            <h4>Check your trip...</h4>
+            <br></br>
             <div className="et_mainDiv">
                 <Stack gap={3}>
                 <InputGroup className="nameRow" gap={3}>                    {/* name */}       
@@ -79,7 +75,18 @@ const editTrip = () => {
                     </InputGroup.Text>
                     <Form.Control className="inputTranspotation"/>
                 </InputGroup>
+                <Row className="et_btnRow">
+                    
+                        <Col className="editbtnCol">
+                            <Button className="btnEdit" variant="outline-primary">Edit</Button>{' '}            {/* Edit btn */}
 
+                        </Col>
+                        <Col className="conirmTripCol">
+                            <Button className="btnConfirm" variant="outline-success">Confirm</Button>{' '}                                 {/* Confirm btn */}
+
+                        </Col>
+                   
+                </Row>
 
                 </Stack>
                 
