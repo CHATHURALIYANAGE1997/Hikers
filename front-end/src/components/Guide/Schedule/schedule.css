@@ -1,0 +1,20 @@
+.gs-schedule {
+    margin-top: 86px;
+    margin-left: 260px;
+    width: 100%;
+}
+
+.today-card {
+    width: 50%;
+    background-color: antiquewhite;
+    text-align: left;
+    padding: 10px;
+}
+
+.today-title {
+    margin-right: 10px;
+}
+
+.today-date {
+    
+}
