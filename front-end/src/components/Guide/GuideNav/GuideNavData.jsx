@@ -6,7 +6,7 @@ export const GuideNavData = [
     {
         title: "Profile",
         icon: <FontAwesomeIcon icon={faHome}/>,
-        link: "/guide"
+        link: "/guide/profile"
     },
     {
         title: "Trips",
@@ -26,11 +26,11 @@ export const GuideNavData = [
     {
         title: "Payments",
         icon: <FontAwesomeIcon icon={faMoneyCheckDollar}/>,
-        link: "/guide/issues"
+        link: "/guide/payments"
     },
     {
         title: "Issues",
         icon: <FontAwesomeIcon icon={faCircleExclamation}/>,
-        link: "/hotels"
+        link: "/guide/issues"
     }
 ]
