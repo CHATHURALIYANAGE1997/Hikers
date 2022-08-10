@@ -1,0 +1,28 @@
+.gh-page {
+    margin-right: 10px;
+}
+
+.history-container {
+    margin-right: 10px !important;
+    width: 100%;
+}
+
+.history-search-btn {
+    background-color: #0d6efd !important;
+}
+
+.history-input {
+    border: 1px solid #cccdcd !important;
+    background-color: white !important;
+    border-radius: 5px !important;
+}
+
+.history-table {
+    margin-right: 10px;
+}
+
+.history-see-more-btn {
+    width: 100px;
+    margin: auto;
+}
+

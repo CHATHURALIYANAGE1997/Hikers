@@ -25,6 +25,7 @@ import editTrip from './pages/trav_editTrip';
 import Donations from './pages/Donations';
 import GuideSchedule from './pages/GuideSchedule';
 import GuidePayements from './pages/GuidePayements';
+import GuideHistory from './pages/GuideHistory';
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
                           <Route path = "/guide/profile" component = {TravelingGuide}></Route>
                           <Route path = "/guide/trips" component = {GuideTrips}></Route>
                           <Route path = "/guide/schedules" component = {GuideSchedule}></Route>
+                          <Route path = "/guide/history" component = {GuideHistory}></Route>
                           <Route path = "/guide/payments" component = {GuidePayements}></Route>
 
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
