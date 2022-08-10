@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCarSide, faVanShuttle } from "@fortawesome/free-solid-svg-icons";
 import './schedule.css';
 
-const Today = () => {
+const Upcoming = () => {
     return (
-        <div class="today-container">
-            <div className="d-flex flex-column today-card">
+        <div class="today-container w-100">
+            <div className="d-flex flex-column upcoming-card">
                 <div className="d-flex flex-row justify-content-between">
                     <h5 className="today-title">Today</h5>
                     <h7 className="today-date">27th July 2022</h7>
                 </div>
                 <h7>Starting : </h7>
                 <h7>Ending : </h7>
-                <h3 className="today-trip">Trip to Hanthana</h3>
+                <h3 className="upcoming-trip">Trip to Hanthana</h3>
                 <div className="today-transport mb-3 d-flex flex-row">
                     <div className="d-flex flex-column w-50 text-left">
                         <h6 className="today-transport-mode">Transport</h6>
@@ -35,7 +35,7 @@ const Today = () => {
                         <h7 className="today-food">The Epitome</h7>
                     </div>
                 </div>
-                <hr/>
+                <hr />
                 <h6>Team details</h6>
                 <div className="d-flex flex-row">
                     <div className="d-flex flex-column today-members">
@@ -56,4 +56,4 @@ const Today = () => {
     );
 }
 
-export default Today;
+export default Upcoming;

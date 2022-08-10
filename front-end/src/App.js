@@ -72,7 +72,7 @@ function App() {
 
                           <Route path = "/guide/profile" component = {TravelingGuide}></Route>
                           <Route path = "/guide/trips" component = {GuideTrips}></Route>
-                          <Route path = "/guide/schedule" component = {GuideSchedule}></Route>
+                          <Route path = "/guide/schedules" component = {GuideSchedule}></Route>
                           <Route path = "/guide/payments" component = {GuidePayements}></Route>
 
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
