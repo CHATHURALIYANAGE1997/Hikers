@@ -25,7 +25,7 @@ const Signup = () => {
                         <form class="signupform-box px-3 row g-3">
                             <h2 className="p-2">Sign up to hikers</h2>
                             <div class="text-center mt-0 sentence">
-                                Already have an account <a href="/signin">Login</a>
+                                Already have an account <a href="/Login">Login</a>
                                 </div>
                             <div class="col-md-6">
                                 <input type="text" class="form-control" placeholder="First name" aria-label="First name" />

@@ -76,9 +76,9 @@ const Login = (props) => {
                             <img src={signinpic} className="float-left signinpic" alt="signuppic"></img>
                         </div>
                         <form class="loginform-box px-3 row g-3">
-                        <div className="login-body">
-                            <h1 className="p-2 text-center">Hello, <br></br>Welcome Back</h1>
-                            {/* <form class="loginform-box px-3 row g-3"> */}
+                            <div className="login-body">
+                                <h1 className="p-2 text-center">Hello, <br></br>Welcome Back</h1>
+                                {/* <form class="loginform-box px-3 row g-3"> */}
                                 <div class="loginform-input col-12">
 
                                     {show && props.message && (
@@ -95,47 +95,51 @@ const Login = (props) => {
                                 <div class="col-12">
                                     <br></br>
                                     <div class="loginform-input">
-                                    <span className="loginiconem"><i class="fa fa-envelope-o"></i></span>
-                                    <input type="email" class="form-control" placeholder="Email-Address" value={user.email} onChange={credentialChange} name="email" />
+                                        <span className="loginiconem"><i class="fa fa-envelope-o"></i></span>
+                                        <input type="email" class="form-control" placeholder="Email-Address" value={user.email} onChange={credentialChange} name="email" />
                                     </div>
                                 </div>
-                               
-                        </div>
-                        <div class="col-12">
-                            <br></br>
-                            {/* {<Passwordhidden value={user.password} onChange={credentialChange} name="password"/> }
+
+                            </div>
+                            <div class="col-12">
+                                <br></br>
+                                {/* {<Passwordhidden value={user.password} onChange={credentialChange} name="password"/> }
                                     <input className="password-field" type="password" class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />*/ }
 
-                        </div>
-                        <div class="loginform-input">
-                            <span className="loginiconpw"><i class="fa fa-key"></i></span>
-                            <input className="password-field" type="password" class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />
-                        
-                        </div>
-                        <div class="col-6">
-                            <div class="mt-3 form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck" />
-                                <label class="form-check-label" for="gridCheck">
-                                    Remember me
-                                </label>
                             </div>
-                        </div>
+                            <div class="loginform-input">
+                                <span className="loginiconpw"><i class="fa fa-key"></i></span>
+                                <input className="password-field" type="password" class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />
 
-                        <div class="col-6">
-                            <div class="mt-3 form-check">
-
-                                <a href="url">Forgot Password</a>
                             </div>
-                        </div>
-                        <div class="col-6 mt-3 mx-auto text-center loginbtn">
-                            <button class="btn btn-primary" type="submit" variant="success" onClick={validateUser} >Login</button>
-                        </div>
-                    </form>
+                            <div class="col-6">
+                                <div class="mt-3 form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck" />
+                                    <label class="form-check-label" for="gridCheck">
+                                        Remember me
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="mt-3 form-check">
+
+                                    <a href="url">Forgot Password</a>
+                                </div>
+                            </div>
+                            <div class="col-6 mt-3 mx-auto text-center loginbtn">
+                                <button class="btn btn-primary" type="submit" variant="success" onClick={validateUser} >Login</button>
+                            </div>
+                            <hr ></hr>
+                            <div class="text-center mb-2">
+                                Don't have an account? <a href="/signup">Register Here</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
-            </div >
+        </div >
     )
 }
 
