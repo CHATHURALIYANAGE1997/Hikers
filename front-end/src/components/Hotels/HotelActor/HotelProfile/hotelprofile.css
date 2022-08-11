@@ -1,0 +1,81 @@
+.details-address {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.rating-icon {
+    width: 50px;
+    height: 50px;
+    color: rgb(190, 190, 37);
+}
+
+.rating-change-icon {
+    color: rgb(33, 32, 32);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.rating-change-icon:hover {
+    transform: scale(1.1);
+}
+
+.details-col1 {
+    text-align: left;
+    font-weight: bold !important;
+}
+
+.details-col2 {
+    margin-left: 10px;
+}
+
+.details-facilities {
+    text-align: left;
+    color: #1687A7;
+}
+
+.details-facilities-plus {
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 40px;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.rating-plus-icon {
+    margin: auto;
+    margin-right: 5px;
+}
+
+.details-add-facility {
+    margin: auto;
+}
+
+.details-facility-container {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(34, 34, 34);
+}
+
+.details-facility-name {
+    margin-bottom: 10px;
+}
+
+.rating-trash-icon {
+    margin-right: 20px;
+}
+
+.rating-trash-icon:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.rating-pencil-icon:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
