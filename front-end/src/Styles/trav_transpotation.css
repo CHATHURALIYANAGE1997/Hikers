@@ -12,8 +12,23 @@
     background-color: blueviolet;
     height: 100%;
     width: 100%;
-    padding: 2%;
-    padding-right: 8%;
-    padding-left: 8%;
+    padding: 3%;
+    padding-right: 4%;
+    padding-left: 4%;
 
+}
+.tr_leftColLowerDiv {
+    background-color: brown;
+
+}
+.tr_menuDiv {
+    /* padding-left: 15% !important;
+    padding-right: 15% !important; */
+    background-color: rgb(119, 110, 128);
+    padding-top: 2%;
+    padding-left: 10% !important;
+
+}
+.tr_mainMenuRow {
+    padding: 1%;
 }

@@ -20,7 +20,7 @@ import TravelingGuide from './pages/TravelingGuide';
 import selectPackages from './pages/trav_selectPackages';
 import CampingEquipment from "./pages/CampingEquipment";
 import GuideTrips from './pages/GuideTrips';
-import transport from './pages/trav_tranpotation_1';
+import Transport from './pages/trav_tranpotation_1';
 import editTrip from './pages/trav_editTrip';
 import Donations from './pages/Donations';
 import GuideSchedule from './pages/GuideSchedule';
@@ -67,7 +67,7 @@ function App() {
                           <Route path = "/organizeTrip" component = {oraganizeTrip}></Route>
                           {/* <Route path = "/guide" component = {TravelingGuide}></Route> */}
                           <Route path = "/selectPackages" component={selectPackages}></Route>
-                          <Route path = "/transport" component={transport}></Route>
+                          <Route path = "/transport" component={Transport}></Route>
                           <Route path = "/editTrip" component={editTrip}></Route>
                           <Route path = "/trav_organizeTrip" component = {oraganizeTrip}></Route>
 

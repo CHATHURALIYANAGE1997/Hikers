@@ -2,9 +2,11 @@ import React from "react";
 import "../Styles/trav_transpotation.css"
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import transportMenu from "../components/Trav_transpotationMenu/trav_transpotationMenu";
+import TranspMenuIcon from "../components/Trav_transportMenuIcon/trav_transportMenuIcon";
+import Stack from 'react-bootstrap/Stack';
+import { AiOutlineCar } from 'react-icons/ai';
 
-const transport = () => {
+const Transport = () => {
         return (
             <div className="tr_main">
                 
@@ -13,14 +15,30 @@ const transport = () => {
                 <Row>
                     <Col className="tr_leftCol">
                         <Row className="tr_mainMenuRow">
-                            <p>Main menu</p>                                     
-                            <transportMenu/>
+                            {/* <p>Main menu</p>                                      */}
+                            <div className="tr_menuDiv">
+                                <Stack className="tr_mainMenu" direction="horizontal" gap={5}>
+                                    <div className="tr_firstMenuIcon">
+                                        <TranspMenuIcon name="Ride" icon={<AiOutlineCar size={60}/>}>
 
+                                        </TranspMenuIcon>
+                                    </div>
+                                    <div className="tr_secondMenuIcon"><TranspMenuIcon/></div>
+                                    <div className="tr_thirdMenuIcon"><TranspMenuIcon/></div>
+                                    <div className="tr_fourthMenuIcon"><TranspMenuIcon/></div>
+
+                                </Stack>
+                            </div>
+                            <br></br>
+                            <div className="tr_leftColLowerDiv">
+                                <h3>Shirantha</h3>
+                            </div>
                         </Row>
+
                     </Col>
                     <Col className="tr_rightCol"></Col>
                 </Row>    
             </div>
         )
 }
-export default transport
+export default Transport

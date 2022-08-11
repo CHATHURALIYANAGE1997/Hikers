@@ -1,7 +1,8 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import "./trav_package.css"
+import "./trav_package.css";
+// import TranspMenuIcon from "../Trav_transportMenuIcon/trav_transportMenuIcon";
 
 const Package = (props) => {
     console.log (props.name)
