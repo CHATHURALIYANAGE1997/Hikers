@@ -5,6 +5,9 @@ import Col from 'react-bootstrap/Col';
 import TranspMenuIcon from "../components/Trav_transportMenuIcon/trav_transportMenuIcon";
 import Stack from 'react-bootstrap/Stack';
 import { AiOutlineCar } from 'react-icons/ai';
+import { TiLocationArrowOutline } from "react-icons/ti";
+import { GoLocation } from 'react-icons/go';
+import { AiOutlineSave } from 'react-icons/ai';
 
 const Transport = () => {
         return (
@@ -19,13 +22,31 @@ const Transport = () => {
                             <div className="tr_menuDiv">
                                 <Stack className="tr_mainMenu" direction="horizontal" gap={5}>
                                     <div className="tr_firstMenuIcon">
-                                        <TranspMenuIcon name="Ride" icon={<AiOutlineCar size={60}/>}>
+                                        <TranspMenuIcon 
+                                            name="Ride" 
+                                            icon={<AiOutlineCar size={60}/>}>
 
                                         </TranspMenuIcon>
                                     </div>
-                                    <div className="tr_secondMenuIcon"><TranspMenuIcon/></div>
-                                    <div className="tr_thirdMenuIcon"><TranspMenuIcon/></div>
-                                    <div className="tr_fourthMenuIcon"><TranspMenuIcon/></div>
+                                    <div className="tr_secondMenuIcon">
+                                        <TranspMenuIcon
+                                            name="Start"
+                                            icon={<TiLocationArrowOutline size={60}/>}>
+
+                                        </TranspMenuIcon></div>
+                                    <div className="tr_thirdMenuIcon">
+                                        <TranspMenuIcon
+                                            name="Destination"
+                                            icon={<GoLocation size={60}/>}>
+                                                
+                                        </TranspMenuIcon></div>
+                                    <div className="tr_fourthMenuIcon">
+                                        <TranspMenuIcon
+                                            name="Saved"
+                                            icon={<AiOutlineSave size={60}/>}>
+                                                
+                                        </TranspMenuIcon>
+                                    </div>
 
                                 </Stack>
                             </div>
