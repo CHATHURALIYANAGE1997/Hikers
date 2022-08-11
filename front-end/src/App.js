@@ -28,6 +28,7 @@ import GuidePayements from './pages/GuidePayements';
 import GuideHistory from './pages/GuideHistory';
 import GuideIssues from './pages/GuideIssues';
 import HotelProfile from './pages/HotelProfile';
+import HotelRoom from './pages/HotelRoom';
 
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
                           <Route path = "/guide/issues" component = {GuideIssues}></Route>
 
                           <Route path = "/hotel/profile" component = {HotelProfile}></Route>
+                          <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
 
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>

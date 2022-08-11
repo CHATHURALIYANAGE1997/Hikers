@@ -1,0 +1,77 @@
+.rooms-rooms {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.rooms-plus {
+    margin-right: 10px;
+}
+
+.rooms-card {
+    border: 1px solid #1687A7;
+    width: 180px;
+    height: 260px;
+    padding: 5px;
+    color: #276678;
+    border-radius: 5px;
+    background-color: #D3E0EA;
+    margin-right: 10px;
+
+}
+
+.rooms-price {
+    /* background-color: #276678; */
+    border: 1px solid #276678;
+    color: #276678;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+.rooms-card:hover {
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.rooms-icon {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.room-packages-plus {
+    margin-right: 10px;
+}
+
+.room-package-card {
+    width: 50%;
+    height: 200px;
+    margin-right: 10px;
+    /* background-color: #D3E0EA; */
+    border: 1px solid #276678;
+    border-radius: 5px;
+    padding: 5px;
+    color: #276678;
+}
+
+.room-package-card:hover {
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.room-package-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+.room-package-meal {
+    font-size: large;
+}
+
+.room-package-price {
+    color: #276678;
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 5px;
+    margin-top: auto;
+}
