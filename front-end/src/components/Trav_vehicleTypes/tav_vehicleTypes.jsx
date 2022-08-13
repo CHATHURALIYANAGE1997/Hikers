@@ -6,11 +6,14 @@ import { FaShuttleVan } from "react-icons/fa";
 import { IoBusOutline } from 'react-icons/io5';
 import Stack from 'react-bootstrap/Stack';
 import { RiMotorbikeLine } from "react-icons/ri";
+import Transport from "../../pages/trav_tranpotation_1";
 
 const VehicleTypes = () => {
     return (
         <Stack className="trv_vehicleMenu" direction="horizontal" gap={5}>
-                                    <div className="trv_firstMenuIcon"
+                                    <div 
+                                        className="trv_firstMenuIcon"
+                                        onClick={() => Transport.update}
                                         >
                                         <TranspMenuIcon 
                                             name="Bike" 
