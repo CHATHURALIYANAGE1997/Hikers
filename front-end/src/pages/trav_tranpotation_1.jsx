@@ -8,6 +8,7 @@ import { AiOutlineCar } from 'react-icons/ai';
 import { TiLocationArrowOutline } from "react-icons/ti";
 import { GoLocation } from 'react-icons/go';
 import { AiOutlineSave } from 'react-icons/ai';
+import VehicleTypes from "../components/Trav_vehicleTypes/tav_vehicleTypes";
 
 const Transport = () => {
         return (
@@ -21,7 +22,8 @@ const Transport = () => {
                             {/* <p>Main menu</p>                                      */}
                             <div className="tr_menuDiv">
                                 <Stack className="tr_mainMenu" direction="horizontal" gap={5}>
-                                    <div className="tr_firstMenuIcon">
+                                    <div className="tr_firstMenuIcon"
+                                        >
                                         <TranspMenuIcon 
                                             name="Ride" 
                                             icon={<AiOutlineCar size={60}/>}>
@@ -52,12 +54,18 @@ const Transport = () => {
                             </div>
                             <br></br>
                             <div className="tr_leftColLowerDiv">
-                                <h3>Shirantha</h3>
+                                {/* <h3>Shirantha</h3> */}
+                                <div className="tr_contMenu">
+                                    <VehicleTypes/>
+
+                                </div>
+                                {/* <VehicleTypes/> */}
+
                             </div>
                         </Row>
 
                     </Col>
-                    <Col className="tr_rightCol"></Col>
+                    <Col className="tr_rightCol ms-auto" ></Col>
                 </Row>    
             </div>
         )

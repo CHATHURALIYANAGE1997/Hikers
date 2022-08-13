@@ -26,7 +26,7 @@ import Donations from './pages/Donations';
 import GuideSchedule from './pages/GuideSchedule';
 import GuidePayements from './pages/GuidePayements';
 import GuideHistory from './pages/GuideHistory';
-import GuideIssues from './pages/GuideIssues';
+// import GuideIssues from './pages/GuideIssues';
 import HotelProfile from './pages/HotelProfile';
 import HotelRoom from './pages/HotelRoom';
 
@@ -79,7 +79,7 @@ function App() {
                           <Route path = "/guide/schedules" component = {GuideSchedule}></Route>
                           <Route path = "/guide/history" component = {GuideHistory}></Route>
                           <Route path = "/guide/payments" component = {GuidePayements}></Route>
-                          <Route path = "/guide/issues" component = {GuideIssues}></Route>
+                          {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}
 
                           <Route path = "/hotel/profile" component = {HotelProfile}></Route>
                           <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
