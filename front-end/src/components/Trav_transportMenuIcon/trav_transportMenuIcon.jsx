@@ -1,19 +1,19 @@
 import React from "react";
 import "./trav_transportMenuIcon.css"
-// import { AiOutlineCar } from 'react-icons/ai';
+import { useState } from "react";
 
 const TranspMenuIcon = (props) => {
     return (
         <div>
-            {/* <h2>Shirantha</h2> */}
-            <div className="trm_wholeIcon">
-                <div className="trm_icon">
-                    {/* <AiOutlineCar size={60}/> */}
-                    {props.icon}
-                </div>
+            <div className="trm_wholeIcon" id="trm_wholeIcon">
+                    <div className="trm_icon">
+                        {props.icon}
+                      
+                    </div>       
                 {props.name}
+                
             </div>
-        </div>
+        </div> 
     )
 }
 export default TranspMenuIcon
