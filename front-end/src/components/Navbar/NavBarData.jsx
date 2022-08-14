@@ -3,26 +3,26 @@ import React from "react";
 export const NavBarData = [
     {
         title: "Hotels",
-        link: "/"
+        link: "/hotels"
     },
     {
         title: "Camping Equipements",
-        link: "/"
+        link: "/camping"
     },
-    {
-        title: "Profile",
-        link: "/"
-    },
+    // {
+    //     title: "Profile",
+    //     link: "/"
+    // },
     {
         title: "Articles",
-        link: "/"
+        link: "/articles"
     },
     {
         title: "Forums",
-        link: "/"
+        link: "/forums"
     },
     {
         title: "Donations",
-        link: "/"
+        link: "/donations"
     },
 ]

@@ -6,7 +6,7 @@ import Hotels from './pages/Hotels';
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Home from "./pages/Home";
-import Welcomepage from './pages/Welcomepage';
+// import Welcomepage from './pages/Welcomepage';
 import LandingPage from './pages/landing';
 import Articles from './pages/Articles';
 import ArticleInfo from './pages/ArticleInfo';
@@ -59,7 +59,7 @@ function App() {
                           <Route path = "/login"  component = {Login}></Route>
                           <Route path = "/signup"  component = {Signup}></Route>
                           <Route path = "/home" exact component= {Home}></Route>
-                          <Route path = "/welcome"  component = {Welcomepage}></Route>
+                          {/* <Route path = "/welcome"  component = {Welcomepage}></Route> */}
                           <Route path = "/reserve"  component = {HotelBooking}></Route>
                           <Route path = "/hotels"  component = {Hotels}></Route>
                           <Route path = "/hoteldetails"  component = {BasicTabs}></Route>
