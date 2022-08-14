@@ -6,7 +6,7 @@
 
 }
 .tr_rightCol {
-    /* background-color: blanchedalmond; */
+    background-color: blanchedalmond;
 
 }
 .tr_main {
@@ -38,4 +38,12 @@
 }
 .tr_contMenu {
     /* background-color: beige; */
+}
+.tr_rightColUpperDiv {
+    background-color: rgb(250, 144, 15);
+    height: 40%;
+    text-align: left;
+    border-bottom: 2px solid gray;
+    padding-top: 10%;
+    font-size: larger;
 }

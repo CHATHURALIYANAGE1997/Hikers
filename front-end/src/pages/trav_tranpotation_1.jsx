@@ -95,7 +95,8 @@ const Transport = () => {
                                                 
                                         </TranspMenuIcon></div>
                                     <div 
-                                        className="trv_fourthMenuIcon">
+                                        className="trv_fourthMenuIcon"
+                                        onClick={() => updateStatus ("van")}>
                                             
                                         <TranspMenuIcon
                                             name="Van"
@@ -103,7 +104,9 @@ const Transport = () => {
                                                 
                                         </TranspMenuIcon>
                                     </div>
-                                    <div className="trv_fifthMenuIcon">
+                                    <div 
+                                        className="trv_fifthMenuIcon"
+                                        onClick={() => updateStatus ("bus")}>
                                         <TranspMenuIcon
                                             name="Bus"
                                             icon={<IoBusOutline size={60}/>}>
@@ -119,10 +122,15 @@ const Transport = () => {
 
                     </Col>
                     <Col className="tr_rightCol ms-auto" >
+                        <div className="tr_rightColUpperDiv">
+                            <p className="textRide">Details</p>
+                        </div>
                         <div className="tr_rightContainer">
                             {currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0}/>}
                             {currentStatus === "tuk" && <VehicleDetails data={vehicleDetails} vehiInd={1}/>}
                             {currentStatus === "car" && <VehicleDetails data={vehicleDetails} vehiInd={2}/>}
+                            {currentStatus === "van" && <VehicleDetails data={vehicleDetails} vehiInd={3}/>}
+                            {currentStatus === "bus" && <VehicleDetails data={vehicleDetails} vehiInd={4}/>}
                             
                         </div>
                     </Col>

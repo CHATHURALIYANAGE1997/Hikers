@@ -11,7 +11,7 @@ import Transport from "../../pages/trav_tranpotation_1";
 const VehicleTypes = () => {
     return (
         <Stack className="trv_vehicleMenu" direction="horizontal" gap={5}>
-                                    <div 
+                                    <div                                                        
                                         className="trv_firstMenuIcon"
                                         onClick={() => Transport.update}
                                         >
