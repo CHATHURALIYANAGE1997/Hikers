@@ -18,9 +18,11 @@ import { IoBusOutline } from 'react-icons/io5';
 // import Stack from 'react-bootstrap/Stack';
 import { RiMotorbikeLine } from "react-icons/ri";
 import vehicleDetails from "../components/Trav_vehicleDetails/vehicleDetails";
+import TransportStart from "../components/Tav_transportStart/trav_transportStart";
 
 const Transport = () => {
-    const [currentStatus, updateStatus] = useState ("bike")
+    const [currentMainStatus, updateCurrentMainStatus] = useState ("")
+    const [currentStatus, updateStatus] = useState ("")
         return (
             <div className="tr_main">
                 
@@ -32,7 +34,9 @@ const Transport = () => {
                             {/* <p>Main menu</p>                                      */}
                             <div className="tr_menuDiv">
                                 <Stack className="tr_mainMenu" direction="horizontal" gap={5}>
-                                    <div className="tr_firstMenuIcon"
+                                    <div 
+                                        className="tr_firstMenuIcon"
+                                        onClick={() => updateCurrentMainStatus ("ride")}
                                         >
                                         <TranspMenuIcon 
                                             name="Ride" 
@@ -40,19 +44,31 @@ const Transport = () => {
 
                                         </TranspMenuIcon>
                                     </div>
-                                    <div className="tr_secondMenuIcon">
+                                    <div 
+                                        className="tr_secondMenuIcon"
+                                        onClick={() => updateCurrentMainStatus ("start")}
+                                        >
                                         <TranspMenuIcon
                                             name="Start"
                                             icon={<TiLocationArrowOutline size={60}/>}>
 
-                                        </TranspMenuIcon></div>
-                                    <div className="tr_thirdMenuIcon">
+                                        </TranspMenuIcon>
+
+                                    </div>
+                                    <div 
+                                        className="tr_thirdMenuIcon"
+                                        onClick={() => updateCurrentMainStatus ("destination")}
+                                        >
                                         <TranspMenuIcon
                                             name="Destination"
                                             icon={<GoLocation size={60}/>}>
                                                 
-                                        </TranspMenuIcon></div>
-                                    <div className="tr_fourthMenuIcon">
+                                        </TranspMenuIcon>
+                                    </div>
+                                    <div 
+                                        className="tr_fourthMenuIcon"
+                                        onClick={() => updateCurrentMainStatus ("saved")}
+                                        >
                                         <TranspMenuIcon
                                             name="Saved"
                                             icon={<AiOutlineSave size={60}/>}>
@@ -64,10 +80,22 @@ const Transport = () => {
                             </div>
                             <br></br>
                             <div className="tr_leftColLowerDiv">
-                                {/* <h3>Shirantha</h3> */}
+                              
                                 <div className="tr_contMenu">
-                                    {/* <VehicleTypes/> */}
-                                    <Stack className="trv_vehicleMenu" direction="horizontal" gap={5}>
+                                    {currentMainStatus === "start" && 
+                                        <TransportStart labelName = "Start"/>
+
+                                    }
+                                    {currentMainStatus === "destination" && 
+                                        <TransportStart labelName = "Destination"/>
+
+                                    }
+                                    {currentMainStatus === "ride" && 
+                                    <Stack 
+                                        className="trv_vehicleMenu" 
+                                        direction="horizontal" 
+                                        gap={5}
+                                    >
                                     <div 
                                         className="trv_firstMenuIcon"
                                         onClick={() => updateStatus ("bike")}
@@ -114,6 +142,7 @@ const Transport = () => {
                                         </TranspMenuIcon>
                                     </div>
                                 </Stack>
+                                }
                                 </div>
                                 {/* <VehicleTypes/> */}
 
@@ -123,14 +152,29 @@ const Transport = () => {
                     </Col>
                     <Col className="tr_rightCol ms-auto" >
                         <div className="tr_rightColUpperDiv">
-                            <p className="textRide">Details</p>
+                            {currentMainStatus === "ride" && 
+                                <p className="textRide">Details</p>
+
+                            }  
+                            {currentMainStatus === "start" && 
+                                <p className="textStart">Choose</p>
+                            
+                            }  
+                            {currentMainStatus === "destination" && 
+                                <p className="textDestination">Choose</p>
+                            
+                            }  
+                            {currentMainStatus === "saved" && 
+                                <p className="textSaved">Select</p>
+                            
+                            }        
                         </div>
                         <div className="tr_rightContainer">
-                            {currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0}/>}
-                            {currentStatus === "tuk" && <VehicleDetails data={vehicleDetails} vehiInd={1}/>}
-                            {currentStatus === "car" && <VehicleDetails data={vehicleDetails} vehiInd={2}/>}
-                            {currentStatus === "van" && <VehicleDetails data={vehicleDetails} vehiInd={3}/>}
-                            {currentStatus === "bus" && <VehicleDetails data={vehicleDetails} vehiInd={4}/>}
+                            {currentMainStatus === "ride" && currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0}/>}
+                            {currentMainStatus === "ride" && currentStatus === "tuk" && <VehicleDetails data={vehicleDetails} vehiInd={1}/>}
+                            {currentMainStatus === "ride" && currentStatus === "car" && <VehicleDetails data={vehicleDetails} vehiInd={2}/>}
+                            {currentMainStatus === "ride" && currentStatus === "van" && <VehicleDetails data={vehicleDetails} vehiInd={3}/>}
+                            {currentMainStatus === "ride" && currentStatus === "bus" && <VehicleDetails data={vehicleDetails} vehiInd={4}/>}
                             
                         </div>
                     </Col>
