@@ -54,7 +54,7 @@ public class JwtFilter  extends OncePerRequestFilter {
         }
     }
 
-    public boolean isAdmin(){
+public boolean isAdmin(){
         return "Admin".equalsIgnoreCase((String) claims.get("role"));
     }
 
@@ -62,8 +62,32 @@ public class JwtFilter  extends OncePerRequestFilter {
         return "User".equalsIgnoreCase((String) claims.get("role"));
     }
 
+    public boolean isHotel(){
+        return "Hotel".equalsIgnoreCase((String) claims.get("role"));
+    }
+
+    public boolean isEquprovider(){
+        return "Equprovider".equalsIgnoreCase((String) claims.get("role"));
+    }
+
+    public boolean isTraprovider(){
+        return "Traprovider".equalsIgnoreCase((String) claims.get("role"));
+    }
+
+    public boolean isTravelguide(){
+        return "Travelguide".equalsIgnoreCase((String) claims.get("role"));
+    }
+
+    public boolean isCoAdmin(){
+        return "Co-Admin".equalsIgnoreCase((String) claims.get("role"));
+    }
+
     public String getCurrentUser(){
         return username;
+    }
+
+    public String getCurrentUserRole(){
+        return role;
     }
 
 
