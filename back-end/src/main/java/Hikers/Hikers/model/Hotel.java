@@ -12,13 +12,40 @@ import java.io.Serializable;
 @DynamicUpdate
 @DynamicInsert
 @Table(name = "hotel")
-
-public class Hotel implements  Serializable{
+public class Hotel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "hotel_id")
+    @Column(name="id")
     private Long hotel_id;
 
-    @Column(name = "hotel_name")
-    private String hotel_name;
+    @Column(name="name")
+    private String name;
+
+    @Column(name="email")
+    private String email;
+
+    @Column(name="password")
+    private String password;
+
+    @Column(name="accountstatus")
+    private String accountstatus;
+
+    @Column(name="contactNumber")
+    private String contactNumber;
+
+    @Column(name="no_of_rooms")
+    private String no_of_rooms;
+
+    @Column(name="rate")
+    private String rate;
+
+    @Column(name="address")
+    private String address;
+
+    @Column(name="role")
+    private String role;
+
+
+
 }
+
