@@ -29,6 +29,25 @@ public class UserRestImpl implements UserRest {
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
     }
     @Override
+    public ResponseEntity<String> signUphotel(Map<String, String> requestMap) {
+        try {
+            return userService.signUpHotel(requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<String> signUptransportprovider(Map<String, String> requestMap) {
+        try {
+            return userService.signUpTransportProvider(requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
         try {
 
