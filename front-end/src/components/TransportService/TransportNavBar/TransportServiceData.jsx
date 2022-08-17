@@ -31,6 +31,6 @@ export const TransportServiceData = [
     {
         title: "Calendar",
         icon: <FontAwesomeIcon icon={faCalendarDays}/>,
-        link: "/transportservice/issues"
+        link: "/transportservice/calendar"
     }
 ]

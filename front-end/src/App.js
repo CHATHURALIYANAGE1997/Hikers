@@ -33,6 +33,7 @@ import TransportProviderProfile from './pages/TransportProviderProfile';
 import TransportProviderTrip from './pages/TransportProviderTrips';
 import TransportProviderTripHistory from './pages/TransportProviderTripHistory';
 import TransportProviderPaymemts from './pages/TransportProviderPayments';
+import TransportProviderIssues from './pages/TransportProviderIssues';
 
 
 function App() {
@@ -89,6 +90,7 @@ function App() {
                           <Route path = "/transportservice/trips" component = {TransportProviderTrip}></Route>
                           <Route path = "/transportservice/history" component = {TransportProviderTripHistory}></Route>
                           <Route path = "/transportservice/payments" component = {TransportProviderPaymemts}></Route>
+                          <Route path = "/transportservice/issues" component = {TransportProviderIssues}></Route>
 
                           <Route path = "/hotel/profile" component = {HotelProfile}></Route>
                           <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
