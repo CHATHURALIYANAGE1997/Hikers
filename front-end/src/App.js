@@ -30,6 +30,7 @@ import GuideHistory from './pages/GuideHistory';
 import HotelProfile from './pages/HotelProfile';
 import HotelRoom from './pages/HotelRoom';
 import TransportProviderProfile from './pages/TransportProviderProfile';
+import TransportProviderTrip from './pages/TransportProviderTrips';
 
 
 function App() {
@@ -83,6 +84,7 @@ function App() {
                           {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}
 
                           <Route path = "/transportservice/profile" component = {TransportProviderProfile}></Route>
+                          <Route path = "/transportservice/trips" component = {TransportProviderTrip}></Route>
 
                           <Route path = "/hotel/profile" component = {HotelProfile}></Route>
                           <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
