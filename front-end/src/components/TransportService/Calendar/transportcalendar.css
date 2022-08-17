@@ -1,0 +1,61 @@
+.gs-schedule {
+    margin-top: 86px;
+    margin-left: 260px;
+    width: 100%;
+}
+
+.transport-today-card {
+    width: 50%;
+    background-color: #c1e1bb;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.transport-today-title {
+    margin-right: 10px;
+}
+
+.transport-today-trip {
+    background-color: #c1e1bb !important;
+    /* color: #276678; */
+    margin-bottom: 10px;
+}
+
+.transport-today-transport-mode {
+    margin: 0;
+}
+
+.today-icon {
+    color: #464646;
+}
+
+.today-vehicle-number {
+    margin-left: 10px;
+    color: #464646;
+}
+
+.today-food {
+    color: #464646;
+}
+
+.today-members {
+    color: #464646;
+    margin-right: 15px;
+}
+
+.upcoming-card {
+    border: 2px solid #1687A7;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.upcoming-trip {
+    background-color: white !important;
+    margin-bottom: 10px;
+}
