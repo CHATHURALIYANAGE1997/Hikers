@@ -1,0 +1,61 @@
+.gp-payment {
+    margin-right: 10px;
+}
+
+.transport-total-travels-container {
+    background-color: #F6F5F5;
+    width: max-content;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.transport-total-profit-container {
+    background-color: #F6F5F5;
+    width: max-content;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.transport-payments-month {
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.travels-numbers {
+    font-size: large;
+}
+
+.payment-table {
+    margin-right: 10px;
+    margin-top: 20px;
+    text-align: left;
+    font-size: large;
+    padding: 10px;
+}
+
+.payment-table-top {
+    margin-right: 10px;
+    text-align: left;
+    font-size: large;
+    padding: 10px;
+}
+
+.payment-history-travel {
+    font-size: large;
+    text-align: left;
+}
+
+.payment-history-date {
+    text-align: right;
+}
+
+.payment-history-amount {
+    text-align: right;
+}
+
+.payment-history-line {
+    margin-right: 10px;
+    margin-top: 0;
+}

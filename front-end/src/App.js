@@ -32,6 +32,7 @@ import HotelRoom from './pages/HotelRoom';
 import TransportProviderProfile from './pages/TransportProviderProfile';
 import TransportProviderTrip from './pages/TransportProviderTrips';
 import TransportProviderTripHistory from './pages/TransportProviderTripHistory';
+import TransportProviderPaymemts from './pages/TransportProviderPayments';
 
 
 function App() {
@@ -87,6 +88,7 @@ function App() {
                           <Route path = "/transportservice/profile" component = {TransportProviderProfile}></Route>
                           <Route path = "/transportservice/trips" component = {TransportProviderTrip}></Route>
                           <Route path = "/transportservice/history" component = {TransportProviderTripHistory}></Route>
+                          <Route path = "/transportservice/payments" component = {TransportProviderPaymemts}></Route>
 
                           <Route path = "/hotel/profile" component = {HotelProfile}></Route>
                           <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
