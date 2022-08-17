@@ -29,6 +29,7 @@ import GuideHistory from './pages/GuideHistory';
 // import GuideIssues from './pages/GuideIssues';
 import HotelProfile from './pages/HotelProfile';
 import HotelRoom from './pages/HotelRoom';
+import TransportProviderProfile from './pages/TransportProviderProfile';
 
 
 function App() {
@@ -80,6 +81,8 @@ function App() {
                           <Route path = "/guide/history" component = {GuideHistory}></Route>
                           <Route path = "/guide/payments" component = {GuidePayements}></Route>
                           {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}
+
+                          <Route path = "/transportservice/profile" component = {TransportProviderProfile}></Route>
 
                           <Route path = "/hotel/profile" component = {HotelProfile}></Route>
                           <Route path = "/hotel/rooms" component = {HotelRoom}></Route>

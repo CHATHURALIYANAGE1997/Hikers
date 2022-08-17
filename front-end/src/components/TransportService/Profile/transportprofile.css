@@ -1,0 +1,122 @@
+.tp-profile {
+    margin-top: 86px;
+    margin-left: 260px;
+    height: 100%;
+}
+
+.tg-reviews {
+    width: 100%;
+    height: 100%;
+}
+
+.tp-container {
+    width: 50% !important;
+}
+
+.tp-card {
+    border: 1px solid rgb(9, 9, 9);
+    padding: 10px;
+    margin-right: 5px;
+    height: 100%;
+}
+
+.tp-pic {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-top: auto;
+}
+
+.tv-pic {
+    height: 100px;
+    width: 150px;
+}
+
+.tp-name {
+    color: #276678 !important;
+}
+
+.transport-profile-details-container {
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.transport-profile-details-title {
+    font-weight: bold;
+}
+
+.transport-profile-change-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.transport-profile-change-icon:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.transport-profile-details-right {
+    color: rgb(107, 105, 105) !important;
+}
+
+.pd-container {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 250px;
+    border: 1px solid rgb(9, 9, 9);
+}
+
+.pd-row {
+    width: 100%;
+    height: 56px;
+    padding: 10px;
+}
+
+.pd-h6 {
+    width: 30%;
+    text-align: left;
+}
+
+.pd-details {
+    color: rgb(121, 121, 121) !important;
+}
+
+
+.pd-edit-btn {
+    background-color: #1687A7;
+    color: #F6F5F5;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+}
+
+.pd-edit-btn:hover {
+    background-color: #276678;
+}
+
+.transport-review-container {
+    /* width: 100%; */
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 260px;
+    border: 1px solid  rgb(9, 9, 9);
+}
+
+.transport-review-card {
+    width: 80%;
+    margin-left: 20px;
+    text-align: left;
+    background-color: none !important;
+    /* width: max-content; */
+}
+
+.gr-progress {
+    width: 60%;
+    align-items: center;
+    margin: auto;
+}
