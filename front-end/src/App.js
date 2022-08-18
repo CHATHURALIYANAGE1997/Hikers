@@ -3,7 +3,9 @@ import {BrowserRouter, BrowserRouter as Routes, Route} from 'react-router-dom';
 // import {Switch as Switch} from  'react-router-dom';
 // import HotelInfo from './pages/HotelInfo';
 import Hotels from './pages/Hotels';
-import Signup from './pages/Signup'
+import TravelerSignup from './pages/trav_signup'
+import GuideSignup from './pages/GuideSignup'
+import EquipmentSignup from './pages/EquipmentSignup'
 import Login from './pages/Login'
 import Home from "./pages/Home";
 // import Welcomepage from './pages/Welcomepage';
@@ -63,7 +65,9 @@ function App() {
                     <Route> 
                           <Route path = "/" exact component = {Login}></Route>
                           <Route path = "/login"  component = {Login}></Route>
-                          <Route path = "/signup"  component = {Signup}></Route>
+                          <Route path = "/travsignup"  component = {TravelerSignup}></Route>
+                          <Route path = "/guidesignup"  component = {GuideSignup}></Route>
+                          <Route path = "/equipmentsignup"  component = {EquipmentSignup}></Route>
                           <Route path = "/home" exact component= {Home}></Route>
                           {/* <Route path = "/welcome"  component = {Welcomepage}></Route> */}
                           <Route path = "/reserve"  component = {HotelBooking}></Route>

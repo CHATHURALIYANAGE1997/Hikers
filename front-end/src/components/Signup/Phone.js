@@ -3,15 +3,19 @@ import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react';
 import './signup.css';
 
-const Phone = ()=> {
+const Phone = () => {
   const [value, setValue] = useState()
   return (
     <div>
-    <PhoneInput
-    className='phone'
-      placeholder="Telephone number"
-      value={value}
-      onChange={setValue}/>
+      <div class="col-6">
+        <div className="form-control">
+          <PhoneInput
+            className='phone'
+            placeholder="Telephone number"
+            value={value}
+            onChange={setValue} />
+        </div>
+      </div>
     </div>
   )
 

@@ -4,11 +4,20 @@ p{
 .container{
     color:rgb(12, 25, 206)
 }
-h2{
+.travsuph2{
     color:#1869f5;
+}
+.guidesuph2{
+    color:#1869f5;
+    text-align: center;
+    margin-top: 500px;
 }
 .sentence{
     color:gray;
+}
+.guidesentence{
+    color:gray;
+    text-align: center;
 }
 .signupcontainer{
     text-align: left;
@@ -20,8 +29,7 @@ h2{
     margin-top:40%;
 }
 .phone{
-    width:100%;
-
+    width:90%;
 }
 .signuppic {
     margin: 5px;
@@ -50,6 +58,64 @@ background-color: blue;
     align-items:center;
     color: black;
     cursor:pointer;
+}
+.signupbtns{
+position:relative;
+margin-bottom: 10px;
+
+}
+.signuptoggle-trbtn{
+background: #1688a7c0; 
+cursor:pointer;
+padding: 5px 10px;
+outline:none;
+margin-left: 42px;
+border:none;
+color:white;
+border-radius: 10px;
+margin-top:10px;
+}
+.signuptoggle-epbtn{
+    background: #1688a786; 
+    cursor:pointer;
+    padding: 5px 10px;
+    outline:none;
+    margin-left: 42px;
+    border:none;
+    color:white;
+    border-radius: 10px;
+    margin-top:10px;
+}
+.signuptoggle-tgbtn{
+    background: #1688a786; 
+    cursor:pointer;
+    padding: 5px 10px;
+    outline:none;
+    margin-left: 42px;
+    border:none;
+    color:white;
+    border-radius: 10px;
+    margin-top:10px;
+}
+.eqahref:link,.eqahref:visited,.tgahref:link,.tgahref:visited,.traahref:link,.traahref:visited{
+    color:white;
+    text-decoration: none;
+}
+.loginahref{
+    color:rgb(13, 65, 236);
+    text-decoration: none;
+}
+.guideDOB{
+    color:gray;
+    position:absolute;
+    right:520px;
+    top:365px;
+}
+#travelersignup{
+left:50px;
+}
+#equipmentsignup{
+left:55px;
 }
 @media only screen and (max-width:700px){
     .signuppic{

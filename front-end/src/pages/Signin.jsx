@@ -53,7 +53,7 @@ const Signin = () => {
                                 </div>
                                 <hr ></hr>
                                 <div class="text-center mb-2">
-                                Don't have an account? <a href="/signup">Register Here</a>
+                                Don't have an account? <a href="/travsignup">Register Here</a>
                                 </div>
                             </form>
                         </div>
