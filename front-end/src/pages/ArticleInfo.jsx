@@ -1,8 +1,8 @@
 import React from "react";
 import articles from "../components/Articles/articles.css"
 import Navbar from "../components/Navbar/Navbar";
-import mountain1 from "../components/images/mountain1.JPG";
-import mountain3 from "../components/images/dolukanda.jpg";
+import mountain1 from "../components/Articles/mountain1.JPG";
+import mountain3 from "../components/Articles/dolukanda.jpg";
 import { useTitle } from "../components/Title/Title"
 
 const ArticleInfo = () => {
@@ -30,6 +30,19 @@ const ArticleInfo = () => {
                         </div>
                         <div className="mt-2 viewsarticle">25 views</div>
                         <div className="authorarticle">by Mahesh Vimalasena</div>
+                        <h5 className="articleinfoh5">Most asked questions in the forum about this mountain</h5>
+
+                        <div className="mt-1 forum-container">
+                    <div className="d-flew flex-column w-100">
+                        <a href="/ArticleInfo"><h3 className="pt-1 pb-2 pl-4 font-weight-bold articlesheadline">Know before you go : Dolukanda Mountain</h3></a>
+                        <div className=" font-weight-bold articlesaddress">Dolukanda Mountain is a well known mountain range due to the Dolukanda Raja Maha Viharaya (Dolukanda Buddhist Temple) and it is believed that
+                            the mountain is directly linked to the great Indian epic, Ramayana Trail in Sri Lanka.Nowadays this place is very famous for hiking.
+                        </div>
+                        <div className="mt-2 articleviews">25 views</div>
+                        <div className="articleauthor">by Mahesh Vimalasena  | <h8 className="articledate">Jul 5,2022  10.00 PM</h8></div>
+                    </div>
+                    <img src={mountain1} className="float-left mountain-img" alt="Mountain1"></img>
+                </div>
                     </div>
 
                     <div className="mt-4 col-sm-4">
@@ -38,6 +51,7 @@ const ArticleInfo = () => {
                         <img src={mountain3} className="mountain-img" alt="Mountain3"></img>
                     </div>
                 </div>
+                
             </div>
         </div>
 

@@ -2,8 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import articleSearchbar from "../components/Articles/articleSearchbar";
 import articles from "../components/Articles/articles.css"
-import mountain1 from "../components/images/mountain1.JPG";
-import mountain2 from "../components/images/mountain2.jpg";
+import mountain1 from "../components/Articles/mountain1.JPG";
+import mountain2 from "../components/Articles/mountain2.jpg";
 import { FaSearchLocation } from 'react-icons/fa';
 import { useTitle } from "../components/Title/Title"
 
@@ -59,9 +59,7 @@ const Articles = () => {
                     </div>
                     <img src={mountain2} className="float-left mountain-img" alt="Mountain2"></img>
                 </div>
-
             </div>
-
         </div>
     );
 }

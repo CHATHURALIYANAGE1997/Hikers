@@ -6,6 +6,8 @@ import Hotels from './pages/Hotels';
 import TravelerSignup from './pages/trav_signup'
 import GuideSignup from './pages/GuideSignup'
 import EquipmentSignup from './pages/EquipmentSignup'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
 import Login from './pages/Login'
 import Home from "./pages/Home";
 // import Welcomepage from './pages/Welcomepage';
@@ -68,6 +70,8 @@ function App() {
                           <Route path = "/travsignup"  component = {TravelerSignup}></Route>
                           <Route path = "/guidesignup"  component = {GuideSignup}></Route>
                           <Route path = "/equipmentsignup"  component = {EquipmentSignup}></Route>
+                          <Route path = "/forgotpassword"  component = {ForgotPassword}></Route>
+                          <Route path = "/resetpassword"  component = {ResetPassword}></Route>
                           <Route path = "/home" exact component= {Home}></Route>
                           {/* <Route path = "/welcome"  component = {Welcomepage}></Route> */}
                           <Route path = "/reserve"  component = {HotelBooking}></Route>

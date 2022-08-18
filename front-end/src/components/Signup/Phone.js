@@ -7,7 +7,7 @@ const Phone = () => {
   const [value, setValue] = useState()
   return (
     <div>
-      <div class="col-6">
+      <div class="col-12">
         <div className="form-control">
           <PhoneInput
             className='phone'

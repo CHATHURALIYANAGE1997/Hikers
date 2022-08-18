@@ -1,7 +1,7 @@
 import React from "react"
 import signin from "../components/Signin/signin.css"
 import Navbar from "../components/Navbar/Navbar";
-import signinpic from "../components/images/signinpic.jpg";
+import signinpic from "../components/Signin/signinpic.jpg";
 import Passwordhidden from "../components/Signup/Passwordhidden"
 import { useTitle } from "../components/Title/Title"
 

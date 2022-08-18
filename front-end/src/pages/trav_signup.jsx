@@ -2,7 +2,7 @@ import React from "react"
 import signup from "../components/Signup/signup.css"
 import Phone from "../components/Signup/Phone.js"
 import Navbar from "../components/Navbar/Navbar";
-import signuppic from "../components/images/signuppic.jpg";
+import signuppic from "../components/Signup/signuppic.jpg";
 import Passwordhidden from "../components/Signup/Passwordhidden"
 import BasicInfo from "../components/Signup/BasicInfo";
 import Password from "../components/Signup/Password";

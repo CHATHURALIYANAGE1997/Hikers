@@ -6,7 +6,7 @@ import { authenticateUser } from "../services/index";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useTitle } from "../components/Title/Title"
 import Navbar from "../components/Navbar/Navbar";
-import signinpic from "../components/images/signinpic.jpg";
+import signinpic from "../components/Signin/signinpic.jpg";
 
 import { Alert, } from "react-bootstrap";
 
