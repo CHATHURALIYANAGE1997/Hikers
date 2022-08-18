@@ -1,0 +1,21 @@
+
+.card-group{
+    gap: 2%;
+
+}
+.card{
+    width:18rem;
+}
+.campingcard-img-top{
+    width:50%;
+    padding: 10px;
+    height: 100px;
+}
+.camping-price{
+    margin-top: 2px;
+    text-align: right;
+    color:#de7c0b;
+}
+.card-title{
+    text-align:left;
+}

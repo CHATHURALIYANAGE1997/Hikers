@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar/Navbar";
 import Sidebar from "../components/CampingEquipment/CampingNav/Sidebar";
 import Wall from "../components/CampingEquipment/Wall/Wall";
+import GroupExample from "../components/CampingEquipment/CampingProduct/CampingProduct";
 import { useTitle } from "../components/Title/Title";
 
 
@@ -16,15 +17,14 @@ const CampingEquipment = () => {
                     <div>
                     <Sidebar/>
                     </div>
-                    <div class="d-flex flex-column campingWall">   
+                    <div className="d-flex flex-column campingWall">   
                     <Wall/>
-                    </div>  
+                        <div className="d-flex flex-row campingProduct">
+                           <GroupExample/>
+                        </div>
+                    </div>
                 </div>                       
-            </div>
-       
-       
-    
-        
+            </div>       
     )
 
 }
