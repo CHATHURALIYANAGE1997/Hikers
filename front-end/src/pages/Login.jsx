@@ -7,8 +7,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useTitle } from "../components/Title/Title"
 import Navbar from "../components/Navbar/Navbar";
 import signinpic from "../components/Signin/signinpic.jpg";
-
 import { Alert, } from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const Login = (props) => {
 
@@ -132,7 +132,7 @@ const Login = (props) => {
                             </div>
                             <hr ></hr>
                             <div class="text-center mb-2">
-                                Don't have an account? <a href="/signup">Register Here</a>
+                                Don't have an account? <Link to={"/signup"}>Register Here</Link>
                             </div>
                         </form>
                     </div>

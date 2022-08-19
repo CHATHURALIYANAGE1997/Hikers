@@ -13,6 +13,11 @@
     margin-left: auto !important;
 }
 
+.navbar-ul-signup {
+    margin-left: auto ;
+    margin-right: 20px;
+}
+
 .top {
     display: flex;
     justify-content: right;
@@ -34,10 +39,6 @@
     margin-top: 5px;
     margin-bottom: 5px;
     align-items: center;
-}
-
-.nb-title-signup {
-    margin-right: 20px;
 }
 
 .nb-list {

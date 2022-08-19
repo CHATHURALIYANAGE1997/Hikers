@@ -80,6 +80,12 @@
     border: 1px solid  rgb(9, 9, 9);
 }
 
+.gr-experience {
+    margin-left: 10px;
+    text-align: left;
+    width: 10%;
+}
+
 .gr-progress {
     width: 60%;
     align-items: center;

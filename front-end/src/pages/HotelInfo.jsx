@@ -75,9 +75,6 @@ const HotelInfo = () => {
                                                 </select>
                                             </div>
                                         </td>
-                                        <td>
-                                            <a href="#"><button className="btn btn-primary">Reserve</button></a>
-                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -104,9 +101,6 @@ const HotelInfo = () => {
                                                     <option value="3">3</option>
                                                 </select>
                                             </div>
-                                        </td>
-                                        <td>
-                                            <a href="#"><button className="btn btn-primary">Reserve</button></a>
                                         </td>
                                     </tr>
                                     <tr>

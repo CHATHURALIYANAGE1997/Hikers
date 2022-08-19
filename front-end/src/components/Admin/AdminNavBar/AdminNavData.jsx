@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faPersonHiking, faCalendarCheck, faClockRotateLeft, faMoneyCheckDollar, faCircleExclamation} from '@fortawesome/free-solid-svg-icons'
+import { faHome, faHotel, faTaxi, faNewspaper, faTent, faClock} from '@fortawesome/free-solid-svg-icons'
 
 export const AdminNavData = [
     {
@@ -10,27 +10,28 @@ export const AdminNavData = [
     },
     {
         title: "Hotels",
-        icon: <FontAwesomeIcon icon={faPersonHiking}/>,
+        icon: <FontAwesomeIcon icon={faHotel}/>,
         link: "/admin/hotels"
     },
     {
         title: "Transpotations",
-        icon: <FontAwesomeIcon icon={faCalendarCheck}/>,
+        icon: <FontAwesomeIcon icon={faTaxi}/>,
         link: "/admin/transportation"
     },
     {
         title: "Articles",
-        icon: <FontAwesomeIcon icon={faClockRotateLeft}/>,
+        icon: <FontAwesomeIcon icon={faNewspaper}/>,
         link: "/admin/articles"
     },
     {
-        title: "Ongoing Orders",
-        icon: <FontAwesomeIcon icon={faMoneyCheckDollar}/>,
-        link: "/admin/ongoingorders"
+        title: "Camping Equipemnts",
+        icon: <FontAwesomeIcon icon={faTent}/>,
+        link: "/admin/campingequipemnts"
     },
     {
-        title: "Camping Equipemnts",
-        icon: <FontAwesomeIcon icon={faCircleExclamation}/>,
-        link: "/admin/campingequipemnts"
+        title: "Ongoing Orders",
+        icon: <FontAwesomeIcon icon={faClock}/>,
+        link: "/admin/ongoingorders"
     }
+    
 ]

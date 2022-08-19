@@ -5,6 +5,7 @@ import { faPlus, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-i
 import HotelShowModal from './HotelShowModal';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import {Link} from "react-router-dom";
 
 function AllHotels() {
     const [modalShow, setModalShow] = React.useState(false);
@@ -18,7 +19,7 @@ function AllHotels() {
         <div className="d-flex flex-column all-hotels-container">
             <div className="d-flex flex-row justify-content-between">
                 <h4>Current Hotels</h4>
-                <a href='/admin/addhotel'><button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Hotel</button></a>
+                <Link to={"/admin/addhotel"}><button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Hotel</button></Link>
             </div>
             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
                 <span className="all-articles-title">Araliya Villa Spa - Sigiriya</span>

@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import MyVerticallyCenteredModal from './ArticleShowModal';
 import ArticleEditModal from './ArticleEditModel';
 import ArticleAddModal from './ArticleAddModal';
+import {Link} from "react-router-dom";
 
 function AllArticles() {
 
@@ -29,7 +30,7 @@ function AllArticles() {
 
             <div className="d-flex flex-row justify-content-between mb-2">
                 <h5>Articles</h5>
-                <a href='/admin/addarticle'><button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Article</button></a>
+                <Link to={"/admin/addarticle"}><button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Article</button></Link>
             </div>
             <div className="input-group w-100 justify-content-center mb-3">
                 <div className="form-outline w-75 mr-auto ml-auto">

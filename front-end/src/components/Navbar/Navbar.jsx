@@ -62,12 +62,14 @@ const Navbar = () => {
 
                         </ul>
                         :
-                        <ul class="navbar-nav navbar-ul">
+                        <ul class="navbar-nav navbar-ul-signup">
+                            <Link to={"/signup"} className="nb-list">
                             <li className="nb-list">
-                                <div className="nb-title-signup">
+                                <div className="nb-title">
                                     Signup
                                 </div>
                             </li>
+                            </Link>
                         </ul>
                     }
                 </div>
