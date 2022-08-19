@@ -8,7 +8,7 @@ const AllHotels = () => {
         <div className="d-flex flex-column all-hotels-container">
             <div className="d-flex flex-row justify-content-between">
                 <h4>Current Hotels</h4>
-                <button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Hotel</button>
+                <a href='/admin/addhotel'><button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Hotel</button></a>
             </div>
             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
                 <span>Araliya Villa Spa - Sigiriya</span>
