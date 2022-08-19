@@ -128,7 +128,7 @@ const Login = (props) => {
                                 </div>
                             </div>
                             <div class="col-6 mt-3 mx-auto text-center loginbtn">
-                                <button class="btn btn-primary" type="submit" variant="success" onClick={validateUser} >Login</button>
+                                <button class="btn btn-primary" type="submit" type="button" variant="success" onClick={validateUser} >Login</button>
                             </div>
                             <hr ></hr>
                             <div class="text-center mb-2">
