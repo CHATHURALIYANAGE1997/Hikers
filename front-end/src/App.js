@@ -42,6 +42,7 @@ import TransportProviderCalendar from './pages/TransportProviderCalendar';
 import AdminHome from './pages/AdminHome';
 import AdminHotels from './pages/AdminHotels';
 import AdminTranspotation from './pages/AdminTranspotation';
+import AdminArticles from './pages/AdminArticles';
 
 
 function App() {
@@ -111,6 +112,7 @@ function App() {
                           <Route path = "/admin/home" component = {AdminHome}></Route>
                           <Route path = "/admin/hotels" component = {AdminHotels}></Route>
                           <Route path = "/admin/transportation" component = {AdminTranspotation}></Route>
+                          <Route path = "/admin/articles" component = {AdminArticles}></Route>
 
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>
