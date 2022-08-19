@@ -39,6 +39,7 @@ import TransportProviderTripHistory from './pages/TransportProviderTripHistory';
 import TransportProviderPaymemts from './pages/TransportProviderPayments';
 import TransportProviderIssues from './pages/TransportProviderIssues';
 import TransportProviderCalendar from './pages/TransportProviderCalendar';
+import AdminHome from './pages/AdminHome';
 
 
 function App() {
@@ -104,6 +105,8 @@ function App() {
 
                           <Route path = "/hotel/profile" component = {HotelProfile}></Route>
                           <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
+
+                          <Route path = "/admin/home" component = {AdminHome}></Route>
 
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>

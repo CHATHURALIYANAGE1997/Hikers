@@ -1,0 +1,39 @@
+.admin-page-content{
+    margin-top: 86px;
+}
+
+.overview-chart {
+    width: 60%;
+}
+
+.home-container {
+    width: 100%;
+    margin-left: 260px;
+}
+
+.overview-chart-title-description {
+    margin-bottom: 10px !important;
+}
+
+.popular-places-container {
+    width: 40%;
+    background-color: #F6F5F5;
+    margin-right: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.popular-places-province {
+    text-align: left;
+}
+
+.valuable-customer-profile-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.valuable-customers {
+    margin-bottom: 5px;
+}
