@@ -36,6 +36,10 @@
     align-items: center;
 }
 
+.nb-title-signup {
+    margin-right: 20px;
+}
+
 .nb-list {
     margin: auto;
     height: 100%;

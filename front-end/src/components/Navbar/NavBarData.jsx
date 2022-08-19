@@ -9,10 +9,6 @@ export const NavBarData = [
         title: "Camping Equipements",
         link: "/camping"
     },
-    // {
-    //     title: "Profile",
-    //     link: "/"
-    // },
     {
         title: "Articles",
         link: "/articles"
