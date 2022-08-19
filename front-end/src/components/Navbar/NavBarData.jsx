@@ -23,6 +23,6 @@ export const NavBarData = [
     },
     {
         title: "Donations",
-        link: "/donations"
+        link: "/donationsHome"
     },
 ]

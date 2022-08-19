@@ -10,6 +10,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
 import Login from './pages/Login'
 import Home from "./pages/Home";
+import DonationsHome from "./pages/DonationsHome";
 // import Welcomepage from './pages/Welcomepage';
 import LandingPage from './pages/landing';
 import Articles from './pages/Articles';
@@ -80,6 +81,7 @@ function App() {
                           <Route path = "/forgotpassword"  component = {ForgotPassword}></Route>
                           <Route path = "/resetpassword"  component = {ResetPassword}></Route>
                           <Route path = "/home" exact component= {Home}></Route>
+                          <Route path = "/donationshome" exact component= {DonationsHome}></Route>
                           {/* <Route path = "/welcome"  component = {Welcomepage}></Route> */}
                           <Route path = "/reserve"  component = {HotelBooking}></Route>
                           <Route path = "/hotels"  component = {Hotels}></Route>
