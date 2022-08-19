@@ -9,7 +9,7 @@ const AllTransportProviders = () => {
         <div className="d-flex flex-column all-hotels-container">
             <div className="d-flex flex-row justify-content-between">
                 <h4>Current Transport Service Providers</h4>
-                <button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Transporter</button>
+                <a href='/admin/addtransporter'><button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Transporter</button></a>
             </div>
             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
                 <div>
