@@ -3,8 +3,15 @@ import './admintranspotation.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import profile from './Picture.png';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import TransporterShowModal from "./TransporterShowModal";
 
-const AllTransportProviders = () => {
+function AllTransportProviders() {
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+
     return (
         <div className="d-flex flex-column all-hotels-container">
             <div className="d-flex flex-row justify-content-between">
@@ -15,6 +22,11 @@ const AllTransportProviders = () => {
                 <div>
                     <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
                     <span className="all-transpotation-provider-name">Kasun Perera</span>
+                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                    <TransporterShowModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
                 </div>
                 <div className="all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
@@ -26,6 +38,11 @@ const AllTransportProviders = () => {
                 <div>
                     <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
                     <span className="all-transpotation-provider-name">Kasun Perera</span>
+                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                    <TransporterShowModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
                 </div>
                 <div className="all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
@@ -37,6 +54,11 @@ const AllTransportProviders = () => {
                 <div>
                     <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
                     <span className="all-transpotation-provider-name">Kasun Perera</span>
+                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                    <TransporterShowModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
                 </div>
                 <div className="all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
@@ -48,28 +70,11 @@ const AllTransportProviders = () => {
                 <div className="all-hotels-icons">
                     <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
                     <span className="all-transpotation-provider-name">Kasun Perera</span>
-                </div>
-                <div className="all-hotels-icons">
-                    <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
-                    <FontAwesomeIcon icon={faTrashCan} className="all-hotels-edit-icon" />
-                </div>
-            </div>
-            <hr className="all-hotels-hr" />
-            <div className="d-flex flex-row justify-content-between all-hotels-hotel">
-                <div>
-                    <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
-                    <span className="all-transpotation-provider-name">Kasun Perera</span>
-                </div>
-                <div className="all-hotels-icons">
-                    <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
-                    <FontAwesomeIcon icon={faTrashCan} className="all-hotels-edit-icon" />
-                </div>
-            </div>
-            <hr className="all-hotels-hr" />
-            <div className="d-flex flex-row justify-content-between all-hotels-hotel">
-                <div>
-                    <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
-                    <span className="all-transpotation-provider-name">Kasun Perera</span>
+                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                    <TransporterShowModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
                 </div>
                 <div className="all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
@@ -81,6 +86,43 @@ const AllTransportProviders = () => {
                 <div>
                     <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
                     <span className="all-transpotation-provider-name">Kasun Perera</span>
+                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                    <TransporterShowModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
+                </div>
+                <div className="all-hotels-icons">
+                    <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
+                    <FontAwesomeIcon icon={faTrashCan} className="all-hotels-edit-icon" />
+                </div>
+            </div>
+            <hr className="all-hotels-hr" />
+            <div className="d-flex flex-row justify-content-between all-hotels-hotel">
+                <div>
+                    <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
+                    <span className="all-transpotation-provider-name">Kasun Perera</span>
+                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                    <TransporterShowModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
+                </div>
+                <div className="all-hotels-icons">
+                    <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
+                    <FontAwesomeIcon icon={faTrashCan} className="all-hotels-edit-icon" />
+                </div>
+            </div>
+            <hr className="all-hotels-hr" />
+            <div className="d-flex flex-row justify-content-between all-hotels-hotel">
+                <div>
+                    <img src={profile} className="all-transporter-profile-img" alt="Profile Picture"></img>
+                    <span className="all-transpotation-provider-name">Kasun Perera</span>
+                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                    <TransporterShowModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
                 </div>
                 <div className="all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
