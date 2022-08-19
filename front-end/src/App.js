@@ -43,6 +43,9 @@ import AdminHome from './pages/AdminHome';
 import AdminHotels from './pages/AdminHotels';
 import AdminTranspotation from './pages/AdminTranspotation';
 import AdminArticles from './pages/AdminArticles';
+import AdminAddArticle from './pages/AdminAddArticle';
+import AdminAddHotel from './pages/AdminAddHotel';
+import AdminAddTransporter from './pages/AdminAddTransporter';
 
 
 function App() {
@@ -113,6 +116,9 @@ function App() {
                           <Route path = "/admin/hotels" component = {AdminHotels}></Route>
                           <Route path = "/admin/transportation" component = {AdminTranspotation}></Route>
                           <Route path = "/admin/articles" component = {AdminArticles}></Route>
+                          <Route path = "/admin/addarticle" component = {AdminAddArticle}></Route>
+                          <Route path = "/admin/addhotel" component = {AdminAddHotel}></Route>
+                          <Route path = "/admin/addtransporter" component = {AdminAddTransporter}></Route>
 
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>
