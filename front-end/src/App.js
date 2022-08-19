@@ -40,6 +40,7 @@ import TransportProviderPaymemts from './pages/TransportProviderPayments';
 import TransportProviderIssues from './pages/TransportProviderIssues';
 import TransportProviderCalendar from './pages/TransportProviderCalendar';
 import AdminHome from './pages/AdminHome';
+import AdminHotels from './pages/AdminHotels';
 
 
 function App() {
@@ -107,6 +108,7 @@ function App() {
                           <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
 
                           <Route path = "/admin/home" component = {AdminHome}></Route>
+                          <Route path = "/admin/hotels" component = {AdminHotels}></Route>
 
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>
