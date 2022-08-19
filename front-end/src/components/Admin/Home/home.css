@@ -4,11 +4,19 @@
 
 .overview-chart {
     width: 60%;
+    /* border: 1px solid black; */
+    margin-bottom: 10px;
+    margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
 }
 
 .home-container {
     width: 100%;
     margin-left: 260px;
+}
+
+.overview-chart-container {
 }
 
 .overview-chart-title-description {
@@ -17,7 +25,7 @@
 
 .popular-places-container {
     width: 40%;
-    background-color: #F6F5F5;
+    background-color: #D3E0EA;
     margin-right: 10px;
     padding: 10px;
     margin-bottom: 10px;

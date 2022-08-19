@@ -1,6 +1,9 @@
 .all-hotels-container {
     width: 60%;
     padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
+    margin-right: 10px;
 }
 
 .all-hotels-icon {
@@ -19,7 +22,18 @@
 }
 
 .all-hotels-hotel {
-    margin-top: 10px;
+    margin-top: 5px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.all-hotels-hotel:hover {
+    background-color: #D3E0EA;
+}
+
+.all-hotels-icons {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .all-hotels-edit-icon {
@@ -39,12 +53,16 @@
 }
 
 .hotel-income-chart {
-    width: 95%;
+    width: 99%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 .hotel-income-title-description {
     text-align: left;
     margin-bottom: 10px;
     margin-top: 10px;
+    margin-left: 10px;
     width: 50%;
 }

@@ -70,7 +70,7 @@ function OverViewChart() {
 			<h3 className="text-heading overview-chart-title-description">
 				Overall Orders
 			</h3>
-			<ResponsiveContainer width="100%" aspect={3}>
+			<ResponsiveContainer width="100%" aspect={3} className="overview-chart-container">
 				<LineChart data={pdata} margin={{ right: 300 }}>
 					<CartesianGrid />
 					<XAxis dataKey="name"
