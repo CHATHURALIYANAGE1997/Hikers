@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +36,7 @@ public class UserRestImpl implements UserRest {
     private TraProviderService traProviderService;
 
     @Override
-    public ResponseEntity<String> signUp(Map<String, String> requestMap) {
+    public ResponseEntity<String> signUp(Map<String, String> requestMap ) {
         try {
 
             return userService.signUp(requestMap);
@@ -95,7 +97,6 @@ public class UserRestImpl implements UserRest {
         }
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
-<<<<<<< Updated upstream
 
     @Override
     public ResponseEntity<String> addCoAdmin(Map<String, String> requestMap) {
@@ -105,18 +106,11 @@ public class UserRestImpl implements UserRest {
             }else {
                return Hutils.getResponseEntity(Hcons.ACCESS_DINAED,HttpStatus.UNAUTHORIZED);
            }
-=======
-    @Override
-    public ResponseEntity<String> SendTripData(Map<String, String> requestMap) {
-        try {
-            return userService.SendTripData(requestMap);
->>>>>>> Stashed changes
         }catch (Exception ex){
             ex.printStackTrace();
         }
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
-<<<<<<< Updated upstream
 
     @Override
     public ResponseEntity<?> userprofile() {
@@ -158,7 +152,15 @@ public class UserRestImpl implements UserRest {
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
+    @Override
+    public ResponseEntity<?> verifyUser(String code) {
+        try {
+            return userService.verifyUser(code);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+
 }
-=======
-}
->>>>>>> Stashed changes
