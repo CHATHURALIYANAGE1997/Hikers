@@ -48,7 +48,7 @@ import AdminAddArticle from './pages/AdminAddArticle';
 import AdminAddHotel from './pages/AdminAddHotel';
 import AdminAddTransporter from './pages/AdminAddTransporter';
 import DayDistribution from './pages/trav_dayDistribution';
-
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
     window.onbeforeunload = (event) => {
