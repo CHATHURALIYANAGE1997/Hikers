@@ -3,6 +3,8 @@ package Hikers.Hikers.service;
 import Hikers.Hikers.model.Transportprovider;
 import Hikers.Hikers.model.User;
 import org.springframework.http.ResponseEntity;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -10,7 +12,6 @@ import java.util.Optional;
 public interface UserService {
 
     ResponseEntity<String> login(Map<String,String> requestMap);
-
 
     ResponseEntity<String> signUp(Map<String,String> requestMap);
 
@@ -30,6 +31,6 @@ public interface UserService {
 
     ResponseEntity<Optional<Transportprovider>> getTraProvide(Long service_provider_id);
 
-    ResponseEntity<String> SendTripData (Map<String,String> requestMap);
 
+    ResponseEntity<?> verifyUser(String code);
 }
