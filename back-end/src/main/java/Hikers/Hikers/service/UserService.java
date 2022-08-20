@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface UserService {
 
     ResponseEntity<String> login(Map<String,String> requestMap);
-<<<<<<< Updated upstream
+
 
     ResponseEntity<String> signUp(Map<String,String> requestMap);
 
@@ -29,7 +29,7 @@ public interface UserService {
     ResponseEntity<User> getUser(Long id);
 
     ResponseEntity<Optional<Transportprovider>> getTraProvide(Long service_provider_id);
-=======
+
     ResponseEntity<String> SendTripData (Map<String,String> requestMap);
->>>>>>> Stashed changes
+
 }
