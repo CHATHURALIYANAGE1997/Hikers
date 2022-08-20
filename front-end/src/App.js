@@ -115,7 +115,8 @@ function App() {
                           <Route path = "/hotel/profile" component = {HotelProfile}></Route>
                           <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
 
-                          <Route path = "/admin/home" component = {AdminHome}></Route>
+                           {auth.isLoggedIn===true && auth.role==="Admin" ?
+                             <Route path = "/admin/home" component = {AdminHome}></Route>:<Route component={NotFoundPage} />}
                           <Route path = "/admin/hotels" component = {AdminHotels}></Route>
                           <Route path = "/admin/transportation" component = {AdminTranspotation}></Route>
                           <Route path = "/admin/articles" component = {AdminArticles}></Route>
