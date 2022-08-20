@@ -9,7 +9,7 @@ public class Hutils {
     }
 
     public static ResponseEntity<String> getResponseEntity(String responseMessage, HttpStatus httpStatus){
-        return new ResponseEntity<String>("{\"message\":\""+responseMessage+"\"}", httpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<String>("{\"message\":\""+responseMessage+"\"}", httpStatus);
     }
 
 }

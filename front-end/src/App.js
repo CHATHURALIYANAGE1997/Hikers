@@ -47,6 +47,7 @@ import AdminArticles from './pages/AdminArticles';
 import AdminAddArticle from './pages/AdminAddArticle';
 import AdminAddHotel from './pages/AdminAddHotel';
 import AdminAddTransporter from './pages/AdminAddTransporter';
+import DayDistribution from './pages/trav_dayDistribution';
 
 
 function App() {
@@ -125,7 +126,7 @@ function App() {
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>
                           <Route path = "/donations/" component= {Donations}></Route>
-
+                          <Route path = "/daydistribution" component= {DayDistribution}></Route>
 
                            {/*<Route path = "/home" exact component = {}></Route> */}
                     </Route>

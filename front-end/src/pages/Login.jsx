@@ -26,6 +26,7 @@ const Login = (props) => {
     const credentialChange = (event) => {
         const { name, value } = event.target;
         setUser({ ...user, [name]: value });
+        
     };
 
     const dispatch = useDispatch();

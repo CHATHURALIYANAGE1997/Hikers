@@ -6,26 +6,64 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import "../Styles/trav_organizeTrip.css"
 import Container from 'react-bootstrap/Container';
+import { useDispatch } from "react-redux";
+import { authenticateUser } from "../services/index";
+import Axios from 'axios';
 
 function oraganizeTrip() {
   const [validated, setValidated] = useState(false);
 
+  const url = "localhost:8080/user/senddata"
+
+  const initialState = {
+    name : "",
+    adults : "",
+    children : "",
+    date : "",
+
+  };
+  const [data, setData] = useState(initialState);
+
+  const handle = (e) => {
+    const newData = {...data}
+    newData [e.target.id] = e.target.value
+    setData (newData)
+    console.log (newData)
+
+  }
+  const submit = (e) => {
+    e.preventDefault ()
+    
+  }
+  
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+      Axios.post (url, {
+        name : data.name,
+        adults : parseInt (data.adults),
+        children : parseInt (data.children),
+        date : data.date
+  
+      })
+      .then (res => {
+        console.log (res.data)
+  
+      })
+
     }
 
     setValidated(true);
-  };
+  }  
 
   return (
     <div>
       <p className="txtOrganizeTrip">Organize it</p>
     <div className="formContainer">
         
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
           
       <Row className="mb-3">                                                {/* Name */}
         <Form.Group as={Row} md="4" controlId="validationCustom01">
@@ -34,7 +72,11 @@ function oraganizeTrip() {
             required
             type="text"
             placeholder="First name"
-            // defaultValue="Mark"
+            name='name'
+            id='name'
+            value={data.name}
+            onChange={handle}
+
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
           <Form.Control.Feedback type="invalid">
@@ -54,8 +96,12 @@ function oraganizeTrip() {
           <Form.Label>Adults</Form.Label>
           <Form.Control
             required
-            type="text"
+            type="number"
             placeholder="Less than 20"
+            name='adults'
+            id='adults'
+            value={data.adults}
+            onChange={handle}
             
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -67,10 +113,14 @@ function oraganizeTrip() {
           <Form.Label>Children</Form.Label>
           <InputGroup hasValidation>
             <Form.Control
-              type="text"
+              type="number"
               placeholder="Less than 20"
               aria-describedby="inputGroupPrepend"
+              name='children'
               required
+              id='children'
+              value={data.children}
+              onChange={handle}
             />
             <Form.Control.Feedback type="invalid">
               Please a valid number
@@ -83,7 +133,15 @@ function oraganizeTrip() {
       <Row className="mb-3">                                                {/* Date */}
         <Form.Group as={Row} md="6" controlId="validationCustom03">
           <Form.Label>Date</Form.Label>
-          <Form.Control type="text" placeholder="DD/MM/YYYY" required />
+          <Form.Control 
+            type="date" 
+            // placeholder="DD/MM/YYYY" 
+            name='date'
+            id='date'
+            value={data.date}
+            onChange={(e) => handle (e)}
+            required 
+            />
           <Form.Control.Feedback type="invalid">
             Please provide a valid city.
           </Form.Control.Feedback>
@@ -121,14 +179,14 @@ function oraganizeTrip() {
           <Col className = "col_2">
             <Row classname="col_2_row_1">
             <Form.Check
-              // required
+              required
               label="Hotel"
 
             />
             </Row>
             <Row className='col_2_row_2'>
               <Form.Check
-                // required
+                required
                 label="BBQ"
 
               />
@@ -138,14 +196,14 @@ function oraganizeTrip() {
           <Col className="col_3">
             <Row className="col_3_row_1">
             <Form.Check
-              // required
+              required
               label="Transport"
 
             />
             </Row>
             <Row className="col_3_row_2">
             <Form.Check
-              // required
+              required
               label="Photoshoot"
 
             />
@@ -155,7 +213,7 @@ function oraganizeTrip() {
           <Col className='col_4'>
             <Row className="col_4_row_1">
               <Form.Check
-                // required
+                required
                 label="Abseilling"
 
               />

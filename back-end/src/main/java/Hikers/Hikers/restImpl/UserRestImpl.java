@@ -95,6 +95,7 @@ public class UserRestImpl implements UserRest {
         }
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
+<<<<<<< Updated upstream
 
     @Override
     public ResponseEntity<String> addCoAdmin(Map<String, String> requestMap) {
@@ -104,11 +105,18 @@ public class UserRestImpl implements UserRest {
             }else {
                return Hutils.getResponseEntity(Hcons.ACCESS_DINAED,HttpStatus.UNAUTHORIZED);
            }
+=======
+    @Override
+    public ResponseEntity<String> SendTripData(Map<String, String> requestMap) {
+        try {
+            return userService.SendTripData(requestMap);
+>>>>>>> Stashed changes
         }catch (Exception ex){
             ex.printStackTrace();
         }
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
+<<<<<<< Updated upstream
 
     @Override
     public ResponseEntity<?> userprofile() {
@@ -151,3 +159,6 @@ public class UserRestImpl implements UserRest {
     }
 
 }
+=======
+}
+>>>>>>> Stashed changes

@@ -50,6 +50,8 @@ public interface UserRest {
     @GetMapping(path="/gettrasprovider/{service_provider_id}")
     public ResponseEntity<Optional<Transportprovider>> getTraProvide(@PathVariable Long service_provider_id);
 
+    @PostMapping (path = "/senddata")
+    public ResponseEntity<String> SendTripData (@RequestBody(required = true) Map<String, String> requestMap);
 
 }
 

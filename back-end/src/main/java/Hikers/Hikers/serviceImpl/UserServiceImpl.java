@@ -4,8 +4,15 @@ import Hikers.Hikers.cons.Hcons;
 import Hikers.Hikers.jwt.CustomerUserDetailsService;
 import Hikers.Hikers.jwt.JwtFilter;
 import Hikers.Hikers.jwt.JwtUtil;
+<<<<<<< Updated upstream
 import Hikers.Hikers.model.*;
 import Hikers.Hikers.repository.*;
+=======
+import Hikers.Hikers.model.Trip;
+import Hikers.Hikers.model.User;
+import Hikers.Hikers.repository.TripRepo;
+import Hikers.Hikers.repository.UserRepo;
+>>>>>>> Stashed changes
 import Hikers.Hikers.service.UserService;
 import Hikers.Hikers.utils.Hutils;
 import lombok.extern.slf4j.Slf4j;
@@ -316,6 +323,7 @@ public class UserServiceImpl implements UserService {
 
     }
 
+<<<<<<< Updated upstream
     private Hotel getHotelFromMap(Map<String,String> requestMap){
         Hotel hotel=new Hotel();
         hotel.setName(requestMap.get("name"));
@@ -381,5 +389,72 @@ public class UserServiceImpl implements UserService {
         travelingguide.setAccountstatus(requestMap.get("accountstatus"));
         return travelingguide;
     }
+=======
+    private Trip getTripFromMap(Map<String,String> requestMap){
+        Trip trip = new Trip();
+        trip.setName(requestMap.get("name"));
+        trip.setDate(requestMap.get("date"));
+        trip.setAdults(requestMap.get("adults"));
+        trip.setChildren(requestMap.get("children"));
+        return trip;
+    }
+    @Override
+    public ResponseEntity<String> login(Map<String, String> requestMap) {
+        log.info("Inside login");
+        try {
+            JSONObject jsonObject = new JSONObject();
+            Authentication auth= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestMap.get("email"),requestMap.get("password")));
+            if(auth.isAuthenticated()){
+                if(customerUserDetailsService.getUserDetails().getAccountstatus().equalsIgnoreCase("ture")){
+//                   return new ResponseEntity<String>("{\"token\":\""+jwtUtil.generateToken(customerUserDetailsService.getUserDetails().getEmail(),customerUserDetailsService.getUserDetails().getRole())
+//                   +"\"},{\"username\":\""+customerUserDetailsService.getUserDetails().getEmail()+"\"}",HttpStatus.OK);
+                    jsonObject.put("token", jwtUtil.generateToken(customerUserDetailsService.getUserDetails().getEmail(), customerUserDetailsService.getUserDetails().getRole()));
+                    jsonObject.put("name", customerUserDetailsService.getUserDetails().getEmail());
+                    jsonObject.put("role", customerUserDetailsService.getUserDetails().getRole());
+                    return new ResponseEntity<String>(jsonObject.toString(), HttpStatus.OK);
+                }
+                else {
+                    return new ResponseEntity<String>("{\"message\":\""+"Your account is temporarly suspennded,So wait for admin aprove."+"\"}",HttpStatus.BAD_REQUEST);
+                }
+            }
+        }catch (Exception ex){
+            log.error("{}",ex);
+        }
+        return new ResponseEntity<String>("{\"message\":\""+"Bad Credentials."+"\"}",HttpStatus.BAD_REQUEST);
+    }
+
+    @Autowired
+    private TripRepo tripRepo;
+    @Override
+    public ResponseEntity<String> SendTripData(Map<String, String> requestMap) {
+        log.info("Inside logdddddddddddddddin");
+        try {
+
+            if (!Objects.isNull(getTripFromMap(requestMap))) {
+                tripRepo.save(getTripFromMap(requestMap));
+                log.info("Inside logdddddddddddddddin");
+                return Hutils.getResponseEntity("SuccessFully Registrered", HttpStatus.OK);
+            } else {
+                return Hutils.getResponseEntity("Object is not returned", HttpStatus.BAD_REQUEST);
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
+        return Hutils.getResponseEntity("Something went wrong.", HttpStatus.INTERNAL_SERVER_ERROR);
+
+    }
+
+//    public Trip SendTripData(Map<String, String> requestMap) {
+//        Trip trip = new Trip();
+//        trip.setName(requestMap.get("name"));
+//        trip.setAdults(requestMap.get("adults"));
+//        trip.setChildren(requestMap.get("children"));
+//        trip.setDate(requestMap.get("date"));
+//        return trip;
+//    }
+
+>>>>>>> Stashed changes
 
 }

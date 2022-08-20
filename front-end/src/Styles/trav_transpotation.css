@@ -6,7 +6,8 @@
 
 }
 .tr_rightCol {
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
+    /* height: 100%; */
 
 }
 .tr_main {
@@ -20,16 +21,20 @@
 }
 .tr_leftColLowerDiv {
     /* background-color: brown; */
-    border-top: 2px solid gray;
-    padding: 5%;
+    /* border-top: 1px solid gray; */
+    padding: 20%;
+    padding-bottom: 2%;
+    position: relative;
+    top: 40%;
 
 }
 .tr_menuDiv {
-    /* padding-left: 15% !important;
-    padding-right: 15% !important; */
-    /* background-color: rgb(119, 110, 128); */
     padding-top: 2%;
     padding-left: 10% !important;
+    height: 100px !important;
+    /* background-color: darksalmon; */
+    height: 35%;
+    padding-bottom: 5%;
 
 }
 .tr_mainMenuRow {
@@ -40,10 +45,21 @@
     /* background-color: beige; */
 }
 .tr_rightColUpperDiv {
-    background-color: rgb(250, 144, 15);
-    height: 40%;
-    text-align: left;
-    border-bottom: 2px solid gray;
-    padding-top: 10%;
-    font-size: larger;
+    /* background-color: rgb(250, 144, 15); */
+    /* border-bottom: 1px solid gray; */
+    /* padding-top: 10%; */
+    /* padding-bottom: 0% !important; */
+    font-size: 30px;
+
+}
+.trnspd_vehicleType {
+    /* color: blue; */
+    font-size: 20px;
+
+}
+.tr_rightContainer {
+    background-color: rosybrown;
+    position: relative;
+    top: 20%;
+    
 }
