@@ -20,5 +20,7 @@ public interface UserRepo  extends JpaRepository<User,Long> {
     List<User> findByRole(@Param("role") String role);
 
     Optional<User> findById(@Param("id") Long id);
+
+    User findByVerificationCode( String code);
 }
 
