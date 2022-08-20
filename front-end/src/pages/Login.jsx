@@ -36,7 +36,13 @@ const Login = (props) => {
         dispatch(authenticateUser(user.email, user.password))
             .then((response) => {
                 console.log(response.data);
-                return props.history.push("/home");
+                if(response.data.role==="Admin") {
+                    return props.history.push("/admin/home"); }
+                if(response.data.role==="User") {
+                    return props.history.push("/guidehome");
+                }else {
+                    return props.history.push("/home");
+                }
             })
             .catch((error) => {
                 console.log(error.message);
