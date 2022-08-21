@@ -8,6 +8,7 @@ import Hikers.Hikers.model.*;
 import Hikers.Hikers.repository.*;
 import Hikers.Hikers.service.UserService;
 import Hikers.Hikers.utils.Hutils;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.extern.slf4j.Slf4j;
 import net.bytebuddy.utility.RandomString;
 import org.json.JSONObject;
@@ -22,12 +23,15 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
+import java.awt.*;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
+import java.util.List;
 
 
 @Slf4j
@@ -119,7 +123,8 @@ public class UserServiceImpl implements UserService {
         try {
             User user = userRepo.findByEmail(requestMap.get("email"));
             User user1=userRepo.findByContactNumber(requestMap.get("contactNumber"));
-            if (Objects.isNull(user)  && requestMap.get("email")==null && requestMap.get("password")==null) {
+            int stringSize= requestMap.get("password").trim().length();
+            if (Objects.isNull(user)  && requestMap.get("email")!=null && stringSize>4) {
                 //user.setPassword(passwordEncoder.encode(user.getPassword()));
                 if(Objects.isNull(user1)) {
                     User user2 =userRepo.save(getUserFromMap(requestMap));
@@ -193,6 +198,37 @@ public class UserServiceImpl implements UserService {
 
     }
 
+
+    private void sendVerificationEmailToEquProvider(Equipmentprovider equipmentprovider, String siteURL) throws MessagingException, UnsupportedEncodingException {
+        // SimpleMailMessage message=new SimpleMailMessage();
+        String toAddress =equipmentprovider.getEmail();
+        String fromAddress = "Hikers023@gmail.com";
+        String senderName = "Hikers";
+        String subject = "Please verify your registration";
+        String content = "Dear [[name]],<br>"
+                + "Please click the link below to verify your registration:<br>"
+                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
+                + "Thank you,<br>"
+                + "Your company name.";
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(fromAddress, senderName);
+        helper.setTo(toAddress);
+        helper.setSubject(subject);
+
+        content = content.replace("[[name]]", equipmentprovider.getFirstname());
+        String verifyURL = siteURL + "/verify?id=" + equipmentprovider.getVerificationCode();
+
+        content = content.replace("[[URL]]", verifyURL);
+
+        helper.setText(content, true);
+
+        mailSender.send(message);
+
+    }
+
     @Override
     public ResponseEntity<String> signUpTransportProvider(Map<String, String> requestMap) {
         try{
@@ -219,17 +255,25 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<String> signUpEquipmentProvider(Map<String, String> requestMap) {
         try {
-            // log.info("Inside signupequipmentprovider{}",requestMap);
+             log.info("Inside 1");
             Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmail(requestMap.get("email"));
             Equipmentprovider equipmentprovider1=equipmentproviderRepo.findByContactNumber(requestMap.get("contactNumber"));
-            if(Objects.isNull(equipmentprovider)){
-                if(Objects.isNull(equipmentprovider1)){
-                    equipmentproviderRepo.save(getEquipmentProviderFromMap(requestMap));
+            log.info(requestMap.get("password"));
+            log.info(requestMap.get("email"));
+            int stringSize= requestMap.get("password").trim().length();
+            if(Objects.isNull(equipmentprovider)&& requestMap.get("email")!=null && stringSize>4 ){
+                if(Objects.isNull(equipmentprovider1) ){
+                    Equipmentprovider equipmentprovider2= equipmentproviderRepo.save(getEquipmentProviderFromMap(requestMap));
+                    String siteURL="http://localhost:3000";
+                    sendVerificationEmailToEquProvider(equipmentprovider2, siteURL);
+                    log.info("Inside 2");
                     return Hutils.getResponseEntity("SuccessFully Registrered", HttpStatus.OK);
                 }else {
+                    log.info("Inside 3");
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
                 }
             }else {
+                log.info("Inside 4");
                 return Hutils.getResponseEntity("Email  is already used", HttpStatus.BAD_REQUEST);
             }
         }catch (Exception ex){
@@ -244,9 +288,12 @@ public class UserServiceImpl implements UserService {
             // log.info("Inside signuptravelingguide{}",requestMap);
             Travelingguide travelingguide=travelingguideRepo.findByEmail(requestMap.get("email"));
             Travelingguide travelingguide1=travelingguideRepo.findByContactNumber(requestMap.get("contactNumber"));
-            if(Objects.isNull(travelingguide)){
+            int stringSize= requestMap.get("password").trim().length();
+            if(Objects.isNull(travelingguide) && requestMap.get("email")!=null && stringSize>4){
                 if(Objects.isNull(travelingguide1)){
-                    travelingguideRepo.save(getTravelingGuideFromMap(requestMap));
+                   Travelingguide travelingguide2= travelingguideRepo.save(getTravelingGuideFromMap(requestMap));
+                    String siteURL="http://localhost:3000";
+                    sendVerificationEmailToTravelguide(travelingguide2,siteURL);
                     return Hutils.getResponseEntity("SuccessFully Registrered", HttpStatus.OK);
                 }else {
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
@@ -348,15 +395,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<?> verifyUser(String code) {
         try {
-
+            log.info(code);
             User user=userRepo.findByVerificationCode(code);
-            if(Objects.isNull(user)|| user==null ||user.isEnabled() ||code==null){
+            log.info("q");
+            if(user == null || user.isEnabled()){
+                log.info("2");
                 return Hutils.getResponseEntity("Not Valid Requst", HttpStatus.BAD_REQUEST);
             }else{
                 user.setVerificationCode(null);
                 user.setEnabled(true);
                 user.setAccountstatus("ture");
                 userRepo.save(user);
+                log.info("3");
                 return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
 
             }
@@ -365,6 +415,60 @@ public class UserServiceImpl implements UserService {
         }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+
+
+//    @Override
+//    public ResponseEntity<?> verifyUser(String code) {
+//        try {
+////            String Role;
+////            int stringSize= code.trim().length();
+////            if(stringSize==64){
+////                Role="User";
+////            }else if(stringSize==68){
+////                Role="Travelguide";
+////            }else {
+////                Role="Eqprovider";
+////            }
+//            User user=userRepo.findByVerificationCode(code);
+////            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByVerificationCode(code);
+////            Travelingguide travelingguide=travelingguideRepo.findByVerificationCode(code);
+////            if( ObjectUtils.isEmpty(user)  &&stringSize==64){
+////                user.setVerificationCode(null);
+////                user.setEnabled(true);
+////                user.setAccountstatus("ture");
+////                userRepo.save(user);
+////                return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
+////            }else if( ObjectUtils.isEmpty(equipmentprovider) && stringSize==72){
+////                equipmentprovider.setVerificationCode(null);
+////                equipmentprovider.setEnabled(true);
+////                equipmentprovider.setAccountstatus("ture");
+////                equipmentproviderRepo.save(equipmentprovider);
+////                return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
+////            }else if(ObjectUtils.isEmpty(travelingguide)   && stringSize==68){
+////                equipmentprovider.setVerificationCode(null);
+////                equipmentprovider.setEnabled(true);
+////                equipmentprovider.setAccountstatus("false");
+////                equipmentproviderRepo.save(equipmentprovider);
+////                log.info("fefsdfdfds");
+////                return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
+////            }else {
+////                return Hutils.getResponseEntity("Not Valid Requst", HttpStatus.BAD_REQUEST);
+////            }
+//            if(Objects.isNull(user)|| user==null ||user.isEnabled() || code==null){
+//                return Hutils.getResponseEntity("Not Valid Requst", HttpStatus.BAD_REQUEST);
+//            }else{
+//                user.setVerificationCode(null);
+//                user.setEnabled(true);
+//                user.setAccountstatus("ture");
+//                userRepo.save(user);
+//                return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
+//            }
+//        }catch (Exception ex){
+//            ex.printStackTrace();
+//        }
+//        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+//    }
 
 
     private User getUserFromMap(Map<String,String> requestMap){
@@ -422,13 +526,19 @@ public class UserServiceImpl implements UserService {
 
     private Equipmentprovider getEquipmentProviderFromMap(Map<String,String> requestMap) {
         Equipmentprovider equipmentprovider=new Equipmentprovider();
-        equipmentprovider.setFullname(requestMap.get("fullname"));
+        equipmentprovider.setFirstname(requestMap.get("firstname"));
+        equipmentprovider.setLastname(requestMap.get("lastname"));
         equipmentprovider.setEmail(requestMap.get("email"));
         equipmentprovider.setPassword(passwordEncoder.encode(requestMap.get("password")));
         equipmentprovider.setContactNumber(requestMap.get("contactNumber"));
         equipmentprovider.setAddress(requestMap.get("address"));
         equipmentprovider.setAccountstatus(requestMap.get("accountstatus"));
         equipmentprovider.setRole(requestMap.get("role"));
+        equipmentprovider.setEnabled(false);
+        equipmentprovider.setNicimg(requestMap.get("nicimg"));
+        equipmentprovider.setProfileimg(requestMap.get("profileimg"));
+        String randomCode = RandomString.make(64);
+        equipmentprovider.setVerificationCode(randomCode);
         return equipmentprovider;
     }
 
@@ -438,7 +548,7 @@ public class UserServiceImpl implements UserService {
         travelingguide.setLastname(requestMap.get("lastname"));
         travelingguide.setAddress(requestMap.get("address"));
         travelingguide.setDob(requestMap.get("dob"));
-        travelingguide.setEducation_level(requestMap.get("education_level"));
+//      travelingguide.setEducation_level(requestMap.get("education_level"));
         travelingguide.setProlice_report(requestMap.get("prolice_report"));
         travelingguide.setGender(requestMap.get("gender"));
         travelingguide.setExperience(requestMap.get("experience"));
@@ -450,7 +560,39 @@ public class UserServiceImpl implements UserService {
         travelingguide.setRole(requestMap.get("role"));
         travelingguide.setContactNumber(requestMap.get("contactNumber"));
         travelingguide.setAccountstatus(requestMap.get("accountstatus"));
+        String randomCode = RandomString.make(64);
+        travelingguide.setVerificationCode(randomCode);
         return travelingguide;
+    }
+
+    private void sendVerificationEmailToTravelguide(Travelingguide travelingguide, String siteURL) throws MessagingException, UnsupportedEncodingException {
+        // SimpleMailMessage message=new SimpleMailMessage();
+        String toAddress =travelingguide.getEmail();
+        String fromAddress = "Hikers023@gmail.com";
+        String senderName = "Hikers";
+        String subject = "Please verify your registration";
+        String content = "Dear [[name]],<br>"
+                + "Please click the link below to verify your registration:<br>"
+                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
+                + "Thank you,<br>"
+                + "Your company name.";
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(fromAddress, senderName);
+        helper.setTo(toAddress);
+        helper.setSubject(subject);
+
+        content = content.replace("[[name]]", travelingguide.getFirstname());
+        String verifyURL = siteURL + "/verify?id=" + travelingguide.getVerificationCode();
+
+        content = content.replace("[[URL]]", verifyURL);
+
+        helper.setText(content, true);
+
+        mailSender.send(message);
+
     }
 
 

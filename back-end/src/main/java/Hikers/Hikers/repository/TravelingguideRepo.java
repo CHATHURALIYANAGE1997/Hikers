@@ -15,4 +15,6 @@ public interface TravelingguideRepo extends JpaRepository<Travelingguide,Long> {
    Travelingguide findByContactNumber(@Param("contactNumber") String contactNumber);
 
    List<Travelingguide> findAll();
+
+   Travelingguide findByVerificationCode( String code);
 }

@@ -42,12 +42,12 @@ const TravelerSignup = (props) => {
     const dispatch = useDispatch();
 
     const travsignup = () => {
-        if (document.getElementById('male').checked) {
-            user.gender = document.getElementById('male').value;
-                if(!user.gender==="male"){
-                    user.gender="female";
-                }
-        }
+        // if (document.getElementById('male').checked) {
+        //     user.gender = document.getElementById('male').value;
+        //         if(!user.gender==="male"){
+        //             user.gender="female";
+        //         }
+        // }
         console.log(user);
         dispatch(registerUser(user)).then((response) => {
             setShow(true);
@@ -56,7 +56,7 @@ const TravelerSignup = (props) => {
             console.log(error.message);
             setShow(true);
             resetLoginForm();
-            setError("Invalid email and password");
+            setError("Invalid data");
         });
     };
 
@@ -123,15 +123,15 @@ const TravelerSignup = (props) => {
                                 />
                             </div>
                             <div className="col-md-6">
-                                <input type="text" className="form-control" placeholder="NIC or Passport" value={user.nic} onChange={credentialChange} name="repassword"
+                                <input type="text" className="form-control" placeholder="NIC or Passport" value={user.nic} onChange={credentialChange} name="nic"
                                 />
                             </div>
-                            <div className="col-md-6">
-                                <input type="radio" id="male" name="male" value="male"  onChange={credentialChange} name="gender"></input>
-                                    <label >Male</label><br/>
-                                <input type="radio" id="female" name="female" value="female" onChange={credentialChange} name="gender"></input>
-                                        <label>Female</label>
-                            </div>
+                            {/*<div className="col-md-6">*/}
+                            {/*    <input type="radio" id="male" name="male" value="male"  onChange={credentialChange} name="gender"></input>*/}
+                            {/*        <label >Male</label><br/>*/}
+                            {/*    <input type="radio" id="female" name="female" value="female" onChange={credentialChange} name="gender"></input>*/}
+                            {/*            <label>Female</label>*/}
+                            {/*</div>*/}
                             <br></br>
                             <div className="col-6 mt-3 mx-auto text-center loginbtn">
                                 <button className="btn btn-primary" type="submit" type="button" variant="success" onClick={travsignup}

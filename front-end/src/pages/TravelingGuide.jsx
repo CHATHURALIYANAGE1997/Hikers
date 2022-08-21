@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import GuideNav from "../components/Guide/GuideNav/GuideNav";
 import GuideReview from "../components/Guide/Profile/GuideReview";
 import ProfileCard from "../components/Guide/Profile/ProfileCard";

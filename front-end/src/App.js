@@ -49,6 +49,7 @@ import AdminAddHotel from './pages/AdminAddHotel';
 import AdminAddTransporter from './pages/AdminAddTransporter';
 import DayDistribution from './pages/trav_dayDistribution';
 import NotFoundPage from "./pages/NotFoundPage";
+
 import verifyaccount from "./pages/verifyaccount";
 import TravelerProfile from './pages/TravelerProfile';
 import TravelerTrips from './pages/TravelerTrips';

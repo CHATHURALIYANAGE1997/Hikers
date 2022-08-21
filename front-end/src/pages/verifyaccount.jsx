@@ -24,6 +24,7 @@ const verifyaccount = (props) => {
     const dispatch = useDispatch();
 
      const verifyaccountUser=()=>{
+         //axios.get(api);
          dispatch(verifyuserr(code)).then((response) => {
              setShow(true);
              setError("Acoount Create SuccessFul")

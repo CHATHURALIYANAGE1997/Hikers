@@ -10,4 +10,5 @@ public interface EquipmentproviderRepo extends JpaRepository<Equipmentprovider,L
 
     Equipmentprovider findByEmail(@Param("email") String email);
     Equipmentprovider findByContactNumber(@Param("contactNumber") String contactNumber);
+    Equipmentprovider findByVerificationCode(@Param("verificationCode") String verificationCode);
 }
