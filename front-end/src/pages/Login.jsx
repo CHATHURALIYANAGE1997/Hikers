@@ -40,11 +40,15 @@ const Login = (props) => {
                     return props.history.push("/admin/home"); }
                 if(response.data.role==="User") {
                     return props.history.push("/home");
-                }else {
                 }
                 if(response.data.role === "Travelguide"){
-                    console.log(response.data.role);
                     return props.history.push("/guide/profile");
+                }
+                if(response.data.role === "Eqprovider"){
+                    return props.history.push("/camping");
+                }
+                if(response.data.role === "Hotel"){
+                    return props.history.push("/hotel/profile");
                 }
                 else {
                     return props.history.push("/home");
@@ -108,7 +112,7 @@ const Login = (props) => {
                                 <div class="col-12">
                                     <br></br>
                                     <div class="loginform-input">
-                                        <span className="loginiconem"><i class="fa fa-envelope-o"></i></span>
+                                        {/* <span className="loginiconem"><i class="fa fa-envelope-o"></i></span> */}
                                         <input type="email" class="form-control" placeholder="Email-Address" value={user.email} onChange={credentialChange} name="email" />
                                     </div>
                                 </div>
@@ -121,7 +125,7 @@ const Login = (props) => {
 
                             </div>
                             <div class="loginform-input">
-                                <span className="loginiconpw"><i class="fa fa-key"></i></span>
+                                {/* <span className="loginiconpw"><i class="fa fa-key"></i></span> */}
                                 <input className="password-field" type="password" class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />
 
                             </div>
