@@ -5,7 +5,6 @@ import ProfileCard from "../components/Guide/Profile/ProfileCard";
 import ProfileDetails from "../components/Guide/Profile/ProfileDetails";
 import Navbar from "../components/Navbar/Navbar";
 import authToken from "../utils/authToken";
-import { useEffect } from "react";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { useSelector } from "react-redux";
 import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
