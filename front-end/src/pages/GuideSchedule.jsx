@@ -11,39 +11,45 @@ import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
 
 const GuideSchedule = (props) => {
 
-    if(localStorage.jwtToken){
+    if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
     }
 
     const auth = useSelector((state) => state.auth);
-    
-    useEffect(() => {
-        if(auth.isLoggedIn === true && auth.role === "Travelguide"){
-            return propTypes.history.push("/guide/schedule");
-        }
-        else {
-            localStorage.clear();
-            return props.history.push("/");
-        }
-    },[]);
 
-    return (
-        <div className="d-flex flex-column tg-container">
-        <GuideHeader />
-        <div className="d-flex flex-row tg-page">
-            <GuideNav />
-            <div className="d-flex flex-column gs-schedule">
-                <Today />
-                <div className="d-flex flex-row gs-upcoming">
-                    <Upcoming />
-                    <Upcoming />   
+    // useEffect(() => {
+    //     if(auth.isLoggedIn === true && auth.role === "Travelguide"){
+    //         return propTypes.history.push("/guide/schedule");
+    //     }
+    //     else {
+    //         localStorage.clear();
+    //         return props.history.push("/");
+    //     }
+    // },[]);
+
+    if (auth.isLoggedIn === true && auth.role === "Travelguide") {
+        return (
+            <div className="d-flex flex-column tg-container">
+                <GuideHeader />
+                <div className="d-flex flex-row tg-page">
+                    <GuideNav />
+                    <div className="d-flex flex-column gs-schedule">
+                        <Today />
+                        <div className="d-flex flex-row gs-upcoming">
+                            <Upcoming />
+                            <Upcoming />
+                        </div>
+
+                    </div>
                 </div>
-                 
-            </div>
-        </div>
 
-    </div>
-    );
+            </div>
+        );
+    }
+    else {
+        localStorage.clear();
+        return props.history.push("/");
+    }
 }
 
 export default GuideSchedule;

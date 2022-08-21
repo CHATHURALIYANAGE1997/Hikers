@@ -10,33 +10,40 @@ import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
 
 const GuideHistory = (props) => {
 
-    if(localStorage.jwtToken){
+    if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
     }
 
     const auth = useSelector((state) => state.auth);
-    
-    useEffect(() => {
-        if(auth.isLoggedIn === true && auth.role === "Travelguide"){
-            return propTypes.history.push("/guide/payments");
-        }
-        else {
-            localStorage.clear();
-            return props.history.push("/");
-        }
-    },[]);
 
-    return (
-        <div className="d-flex flex-column tg-container">
-        <GuideHeader />
-        <div className="d-flex flex-row gh-page">
-            <GuideNav />
-            <div className="d-flex flex-column gs-schedule">
-                <History />
+    // useEffect(() => {
+    //     if(auth.isLoggedIn === true && auth.role === "Travelguide"){
+    //         return propTypes.history.push("/guide/payments");
+    //     }
+    //     else {
+    //         localStorage.clear();
+    //         return props.history.push("/");
+    //     }
+    // },[]);
+
+    if (auth.isLoggedIn === true && auth.role === "Travelguide") {
+
+        return (
+            <div className="d-flex flex-column tg-container">
+                <GuideHeader />
+                <div className="d-flex flex-row gh-page">
+                    <GuideNav />
+                    <div className="d-flex flex-column gs-schedule">
+                        <History />
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    );
+        );
+    }
+    else {
+        localStorage.clear();
+        return props.history.push("/");
+    }
 }
 
 export default GuideHistory;
