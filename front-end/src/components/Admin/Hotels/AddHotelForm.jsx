@@ -28,10 +28,12 @@ function AddHotelForm() {
 
                 <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicPassword">
                     <Form.Label>Upload Front Photo</Form.Label>
+                    <Form.Control type="file" className="form-control" />        
                 </Form.Group>
 
                 <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicPassword">
                     <Form.Label>Upload Inside Photo</Form.Label>
+                    <Form.Control type="file" className="form-control" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit" className='w-100'>

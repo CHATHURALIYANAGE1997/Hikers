@@ -42,9 +42,10 @@ function AddTransporterForm() {
 
                 <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicPassword">
                     <Form.Label>Upload Profile Photo</Form.Label>
+                    <Form.Control type="file" className="form-control" />
                 </Form.Group>
 
-                <h6>Vehicle Details</h6>
+                <h6 className="add-transport-vehicle">Vehicle Details</h6>
                 <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicEmail">
                     <Form.Label className="add-articles-label">Vehicle Type</Form.Label>
                     <Form.Control type="text" placeholder="Enter vehicle type" />
@@ -58,6 +59,11 @@ function AddTransporterForm() {
                 <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicPassword">
                     <Form.Label>Maximum Passenger Count</Form.Label>
                     <Form.Control type="number" min={1} placeholder="Enter passenger count" />
+                </Form.Group>
+
+                <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicPassword">
+                    <Form.Label>Upload Vehicle Photo</Form.Label>
+                    <Form.Control type="file" className="form-control" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit" className='w-50'>
