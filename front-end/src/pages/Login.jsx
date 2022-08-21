@@ -41,6 +41,12 @@ const Login = (props) => {
                 if(response.data.role==="User") {
                     return props.history.push("/home");
                 }else {
+                }
+                if(response.data.role === "Travelguide"){
+                    console.log(response.data.role);
+                    return props.history.push("/guide/profile");
+                }
+                else {
                     return props.history.push("/home");
                 }
             })
