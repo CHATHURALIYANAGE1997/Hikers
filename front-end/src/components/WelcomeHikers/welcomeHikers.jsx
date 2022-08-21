@@ -7,7 +7,8 @@ class WelcomeHikers extends Component {
     render () {
         return (
             <div className="welcomeDiv">
-                <h1>Welcome to Hikers</h1>
+                <h1 className="welcomeNote">Welcome to Hikers</h1>
+                <br />  
                 <button type="button" class="btn btn-outline-primary">Let's Travel</button>
             </div>
         )

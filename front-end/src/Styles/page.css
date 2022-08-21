@@ -1,0 +1,11 @@
+.backImg {
+    background-image: url('../images/OIP.jpg');
+    /* opacity/: 80%; */
+    height: 100vh;
+    background-size: cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 20%;
+
+}

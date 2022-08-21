@@ -6,13 +6,14 @@ import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import Navbar from "../components/Navbar/Navbar";
 
 const editTrip = () => {
     return (
-        <div>
+        <div className="tret_mainDiv">
+            <Navbar/>
             <br></br>
-            <h4>Check your trip...</h4>
+            <h4 className="tred_mainText">Check Your Trip...</h4>
             <br></br>
             <div className="et_mainDiv">
                 <Stack gap={3}>

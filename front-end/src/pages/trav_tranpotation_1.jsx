@@ -22,13 +22,14 @@ import TransportStart from "../components/Tav_transportStart/trav_transportStart
 import Table from 'react-bootstrap/Table';
 import savedPlaces from "../components/Trav_savedPlaces/savedPlaces";
 import SavedPlaces from "../components/Trav_savedPlaces/trav_savedPlaces";
+import Navbar from "../components/Navbar/Navbar";
 
 const Transport = () => {
     const [currentMainStatus, updateCurrentMainStatus] = useState ("")
     const [currentStatus, updateStatus] = useState ("")
         return (
             <div className="tr_main">
-                
+                <Navbar/>
                 {/* <span className="tr_leftDiv"></span>
                 <span className="tr_rightDiv"></span> */}
                 <Row>

@@ -104,6 +104,7 @@ public class UserRestImpl implements UserRest {
             if(jwtFilter.isAdmin() || jwtFilter.isCoAdmin()) {
                 return userService.signUp(requestMap);
             }else {
+<<<<<<< Updated upstream
                return Hutils.getResponseEntity(Hcons.ACCESS_DINAED,HttpStatus.UNAUTHORIZED);
            }
         }catch (Exception ex){
@@ -111,44 +112,65 @@ public class UserRestImpl implements UserRest {
         }
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
+=======
+                return Hutils.getResponseEntity(Hcons.ACCESS_DINAED,HttpStatus.UNAUTHORIZED);
+            }
+=======
+            @Override
+            public ResponseEntity<String> SendTripData(Map<String, String> requestMap) {
+                try {
+                    return userService.SendTripData(requestMap);
+>>>>>>> Stashed changes
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+                return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 
-    @Override
-    public ResponseEntity<?> userprofile() {
-        try {
-            return userService.userProfile();
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+            @Override
+            public ResponseEntity<?> userprofile() {
+                try {
+                    return userService.userProfile();
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+                return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+            }
 
-    @Override
-    public ResponseEntity<List<Hotel>> gethotels() {
-        try{
-            return hotelService.getHotels();
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+            @Override
+            public ResponseEntity<List<Hotel>> gethotels() {
+                try{
+                    return hotelService.getHotels();
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+                return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+            }
 
-    @Override
-    public ResponseEntity<Optional<Hotel>> getHotel(Long hotel_id) {
-        try{
-            return hotelService.getHotel(hotel_id);
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
-        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
-    }
+            @Override
+            public ResponseEntity<Optional<Hotel>> getHotel(Long hotel_id) {
+                try{
+                    return hotelService.getHotel(hotel_id);
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+            }
 
-    @Override
-    public ResponseEntity<Optional<Transportprovider>> getTraProvide(Long service_provider_id) {
-        try{
-            return userService.getTraProvide(service_provider_id);
-        }catch (Exception ex){
-            ex.printStackTrace();
+            @Override
+            public ResponseEntity<Optional<Transportprovider>> getTraProvide(Long service_provider_id) {
+                try{
+                    return userService.getTraProvide(service_provider_id);
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                }
+                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+            }
+
         }
+<<<<<<< Updated upstream
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
@@ -164,3 +186,8 @@ public class UserRestImpl implements UserRest {
 
 
 }
+=======
+=======
+    }
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes

@@ -9,6 +9,9 @@ import Container from 'react-bootstrap/Container';
 import { useDispatch } from "react-redux";
 import { authenticateUser } from "../services/index";
 import Axios from 'axios';
+import Navbar from "../components/Navbar/Navbar";
+import Package from '../components/Trav_package/trav_package';
+import Stack from 'react-bootstrap/Stack';
 
 function oraganizeTrip() {
   const [validated, setValidated] = useState(false);
@@ -59,9 +62,13 @@ function oraganizeTrip() {
   }  
 
   return (
-    <div>
-      <p className="txtOrganizeTrip">Organize it</p>
-    <div className="formContainer">
+    <div className='trot_mainDiv'>
+      <Navbar/>
+      <div className="trot_mainTextDiv">
+        <p className="txtOrganizeTrip">Organize Your Trip...</p>
+      </div>
+      
+      <div className="formContainer">
         
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
           
@@ -148,21 +155,66 @@ function oraganizeTrip() {
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
         
-        <Form.Group as={Row} md="3" controlId="validationCustom04">             {/* Location */}
-          <Form.Label>Location</Form.Label>
+        <Row>
+          <Col>
+
+          </Col>
+        </Row>
+        <Form.Group as={Row} md="3" controlId="validationCustom04" className="d-flex flex-column">  
+          <Row  >
+            <Form.Label>Location</Form.Label>  
+          </Row>           {/* Location */}
+          <br />
           {/* <Form.Control type="text" placeholder="State" required /> */}
-          <Form.Select aria-label="Select a location">
+          <Row>
+            <Col sm={8} className="proviceDrop">
+              <Form.Select aria-label="" className='trot_dropDown' place>
+                <option>Select a location</option>
+                <option value="1">Dolukanda</option>
+                <option value="2">Bathalegala</option>
+                <option value="3">Hulangala</option>
+
+              </Form.Select>              
+            </Col>
+            <Col sm={8}>
+            <Form.Select aria-label="" className='trot_dropDown'>
+              <option>Select a location</option>
+              <option value="1">Dolukanda</option>
+              <option value="2">Bathalegala</option>
+              <option value="3">Hulangala</option>
+
+            </Form.Select>
+            </Col>
+          </Row>
+          {/* <Form.Select aria-label="" className='trot_dropDown'>
             <option>Select a location</option>
             <option value="1">Dolukanda</option>
             <option value="2">Bathalegala</option>
             <option value="3">Hulangala</option>
 
-          </Form.Select>
+          </Form.Select> */}
           <Form.Control.Feedback type="invalid">
             Please provide a valid state.
           </Form.Control.Feedback>
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
+        <br />
+        <Form.Group as={Row} md="3" controlId="validationCustom04">             {/* Location */}
+          <Form.Label>Packages</Form.Label>
+          {/* <Form.Control type="text" placeholder="State" required /> */}
+          
+          <Form.Control.Feedback type="invalid">
+            Please provide a valid state.
+          </Form.Control.Feedback>
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+        </Form.Group>
+        <br />
+        <Row className="trsp_packageRow">
+                <Col sm={4}><Package className="pkgOneDay" name="One Day Hike" des=" " topic_1="Local" topic_2="Foriegn" lPrice="1000" fPrice="2000"/></Col>
+                <Col sm={4}><Package className="pkgCamping" name="Camping" des=" " topic_1="Local" topic_2="Foriegn" lPrice="1000" fPrice="2000"/></Col>
+                <Col sm={4}><Package className="pkgAbseiling" name="Abseiling" des="" topic_1="Local" topic_2="Foriegn" lPrice="10000" fPrice="20000"/></Col>
+
+        </Row>
         
       </Row>
       
@@ -234,7 +286,16 @@ function oraganizeTrip() {
           feedbackType="invalid"
         />
       </Form.Group>
-      <Button type="submit">Next</Button>
+      <div className='btnSection'>
+      <Stack direction="horizontal" gap={3}>
+        {/* <div className="bg-light border">First item</div> */}
+        <Button variant="outline-primary">Primary</Button>{' '}
+        {/* <div className="bg-light border ms-auto">Second item</div> */}
+        <Button variant="outline-success ms-auto">Success</Button>{' '}
+     
+    </Stack>
+      </div>
+      
     </Form>
     </div>
     </div>
