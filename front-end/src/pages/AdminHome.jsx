@@ -1,31 +1,58 @@
 import React from "react";
+import { useEffect } from "react";
+import { propTypes } from "react-bootstrap/esm/Image";
+import { useSelector } from "react-redux";
+import AdminHeader from "../components/Admin/AdminHeader/AdminHeader";
 import AdminNav from "../components/Admin/AdminNavBar/AdminNav";
 import IncomeChart from "../components/Admin/Home/IncomeChart";
 import OverViewChart from "../components/Admin/Home/OverviewChart";
 import PopularPlaces from "../components/Admin/Home/PopularPlaces";
 import ValuableCustomer from "../components/Admin/Home/ValuableCustomer";
-import Navbar from "../components/Navbar/Navbar";
+import authToken from "../utils/authToken";
 
+const AdminHome = (props) => {
 
-const AdminHome = () => {
-    return (
-        <div className="d-flex flex-column w-100">
-            <Navbar />
-            <div className="d-flex flex-row w-100 admin-page-content">
-                <AdminNav />
-                <div className="d-flex flex-column home-container">
-                    <div className="d-flex flex-row">
-                        <OverViewChart />
-                        <PopularPlaces />
-                    </div>
-                    <div className="d-flex flex-row">
-                        <IncomeChart />
-                        <ValuableCustomer />
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
+
+    const auth = useSelector((state) => state.auth);
+
+    // useEffect(() => {
+    //     if(auth.isLoggedIn === true && auth.role === "Admin"){
+    //         return propTypes.history.push("/admin/home");
+    //     }
+    //     else {
+    //         localStorage.clear();
+    //         return props.history.push("/");
+    //     }
+    // },[]);
+
+    if (auth.isLoggedIn === true && auth.role === "Admin") {
+
+        return (
+            <div className="d-flex flex-column w-100">
+                <AdminHeader />
+                <div className="d-flex flex-row w-100 admin-page-content">
+                    <AdminNav />
+                    <div className="d-flex flex-column home-container">
+                        <div className="d-flex flex-row">
+                            <OverViewChart />
+                            <PopularPlaces />
+                        </div>
+                        <div className="d-flex flex-row">
+                            <IncomeChart />
+                            <ValuableCustomer />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
+    else {
+        localStorage.clear();
+        return props.history.push("/");
+    }
 }
 
 export default AdminHome;
