@@ -39,7 +39,7 @@ const Login = (props) => {
                 if(response.data.role==="Admin") {
                     return props.history.push("/admin/home"); }
                 if(response.data.role==="User") {
-                    return props.history.push("/home");
+                    return props.history.push("/welcome");
                 }
                 if(response.data.role === "Travelguide"){
                     return props.history.push("/guide/profile");
@@ -54,7 +54,7 @@ const Login = (props) => {
                     return props.history.push("/transportservice/profile");
                 }
                 else {
-                    return props.history.push("/home");
+                    return props.history.push("/");
                 }
             })
             .catch((error) => {
