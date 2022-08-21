@@ -1,6 +1,6 @@
 import React from 'react';
-import {BrowserRouter, BrowserRouter as Routes, Route} from 'react-router-dom';
-import {Switch as Switch} from  'react-router-dom';
+import { BrowserRouter, BrowserRouter as Routes, Route } from 'react-router-dom';
+import { Switch as Switch } from 'react-router-dom';
 // import HotelInfo from './pages/HotelInfo';
 import Hotels from './pages/Hotels';
 import TravelerSignup from './pages/trav_signup'
@@ -50,155 +50,171 @@ import AdminAddTransporter from './pages/AdminAddTransporter';
 import DayDistribution from './pages/trav_dayDistribution';
 import NotFoundPage from "./pages/NotFoundPage";
 import verifyaccount from "./pages/verifyaccount";
+import TravelerProfile from './pages/TravelerProfile';
+import TravelerTrips from './pages/TravelerTrips';
+import TravelerIssues from './pages/TravelerIssues';
 
 function App() {
-    window.onbeforeunload = (event) => {
-        const e = event || window.event;
-        e.preventDefault();
-        if (e) {
-            e.returnValue = "";
-        }
-        return "";
-    };
-
-    if (localStorage.jwtToken) {
-        authToken(localStorage.jwtToken);
-
+  window.onbeforeunload = (event) => {
+    const e = event || window.event;
+    e.preventDefault();
+    if (e) {
+      e.returnValue = "";
     }
-    const auth = useSelector((state) => state.auth);
-    console.log(auth);
-    console.log(auth.isLoggedIn);
-    console.log(localStorage);
+    return "";
+  };
+
+  if (localStorage.jwtToken) {
+    authToken(localStorage.jwtToken);
+
+  }
+  const auth = useSelector((state) => state.auth);
+  console.log(auth);
+  console.log(auth.isLoggedIn);
+  console.log(localStorage);
   return (
     <div>
       <BrowserRouter>
         <Routes>
-                <div className="text-center">
-                    <Switch>
+          <div className="text-center">
+            <Switch>
 
 
 
-                            <Route path = "/" exact component = {Login}></Route>
-                            <Route path = "/login"  component = {Login}></Route>
-                         <Route path = "/verify/:id?"  component = {verifyaccount}/>
-                            <Route path = "/travsignup"  component = {TravelerSignup}></Route>
-                            <Route path = "/guidesignup"  component = {GuideSignup}></Route>
-                            <Route path = "/equipmentsignup"  component = {EquipmentSignup}></Route>
-                            <Route path = "/forgotpassword"  component = {ForgotPassword}></Route>
-                            <Route path = "/resetpassword"  component = {ResetPassword}></Route>
-                            <Route path = "/travsignup"  component = {TravelerSignup}></Route>
-                            {/*{auth.isLoggedIn===true && auth.role==="User" ?<Route path = "/home" exact component= {Home}></Route>:<Route component={NotFoundPage} />}*/}
-                            <Route path = "/donationshome" exact component= {DonationsHome}></Route>
-                            {/* <Route path = "/welcome"  component = {Welcomepage}></Route> */}
-                            <Route path = "/reserve"  component = {HotelBooking}></Route>
-                            <Route path = "/hotels"  component = {Hotels}></Route>
-                            <Route path = "/hoteldetails"  component = {BasicTabs}></Route>
-                            <Route path = "/landingPage/" component= {LandingPage}></Route>
-                            <Route path = "/articles/" component= {Articles}></Route>
-                            <Route path = "/articleinfo/" component= {ArticleInfo}></Route>
-                            <Route path = "/equipments/" component= {Equipments}></Route>
-                            <Route path = "/organizeTrip" component = {oraganizeTrip}></Route>
-                            {/* <Route path = "/guide" component = {TravelingGuide}></Route> */}
-                            <Route path = "/selectPackages" component={selectPackages}></Route>
-                            <Route path = "/transport" component={Transport}></Route>
-                            <Route path = "/editTrip" component={editTrip}></Route>
-                            <Route path = "/trav_organizeTrip" component = {oraganizeTrip}></Route>
+              <Route path="/" exact component={Login}></Route>
+              <Route path="/login" component={Login}></Route>
+              <Route path="/verify/:id?" component={verifyaccount} />
+              <Route path="/travsignup" component={TravelerSignup}></Route>
+              <Route path="/guidesignup" component={GuideSignup}></Route>
+              <Route path="/equipmentsignup" component={EquipmentSignup}></Route>
+              <Route path="/forgotpassword" component={ForgotPassword}></Route>
+              <Route path="/resetpassword" component={ResetPassword}></Route>
+              <Route path="/travsignup" component={TravelerSignup}></Route>
+              {/*{auth.isLoggedIn===true && auth.role==="User" ?<Route path = "/home" exact component= {Home}></Route>:<Route component={NotFoundPage} />}*/}
+              <Route path="/donationshome" exact component={DonationsHome}></Route>
+              {/* <Route path = "/welcome"  component = {Welcomepage}></Route> */}
+              <Route path="/reserve" component={HotelBooking}></Route>
+              <Route path="/hotels" component={Hotels}></Route>
+              <Route path="/hoteldetails" component={BasicTabs}></Route>
+              <Route path="/landingPage/" component={LandingPage}></Route>
+              <Route path="/articles/" component={Articles}></Route>
+              <Route path="/articleinfo/" component={ArticleInfo}></Route>
+              <Route path="/equipments/" component={Equipments}></Route>
+              <Route path="/organizeTrip" component={oraganizeTrip}></Route>
+              {/* <Route path = "/guide" component = {TravelingGuide}></Route> */}
+              <Route path="/selectPackages" component={selectPackages}></Route>
+              <Route path="/transport" component={Transport}></Route>
+              <Route path="/editTrip" component={editTrip}></Route>
+              <Route path="/trav_organizeTrip" component={oraganizeTrip}></Route>
 
-                            <Route path = "/guide/profile" component = {TravelingGuide}></Route>
-                            <Route path = "/guide/trips" component = {GuideTrips}></Route>
-                            <Route path = "/guide/schedules" component = {GuideSchedule}></Route>
-                            <Route path = "/guide/history" component = {GuideHistory}></Route>
-                            <Route path = "/guide/payments" component = {GuidePayements}></Route>
-                            {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}
+              <Route path="/guide/profile" component={TravelingGuide}></Route>
+              <Route path="/guide/trips" component={GuideTrips}></Route>
+              <Route path="/guide/schedules" component={GuideSchedule}></Route>
+              <Route path="/guide/history" component={GuideHistory}></Route>
+              <Route path="/guide/payments" component={GuidePayements}></Route>
+              {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}
 
-                            <Route path = "/transportservice/profile" component = {TransportProviderProfile}></Route>
-                            <Route path = "/transportservice/trips" component = {TransportProviderTrip}></Route>
-                            <Route path = "/transportservice/history" component = {TransportProviderTripHistory}></Route>
-                            <Route path = "/transportservice/payments" component = {TransportProviderPaymemts}></Route>
-                            <Route path = "/transportservice/issues" component = {TransportProviderIssues}></Route>
-                            <Route path = "/transportservice/calendar" component = {TransportProviderCalendar}></Route>
+              <Route path="/transportservice/profile" component={TransportProviderProfile}></Route>
+              <Route path="/transportservice/trips" component={TransportProviderTrip}></Route>
+              <Route path="/transportservice/history" component={TransportProviderTripHistory}></Route>
+              <Route path="/transportservice/payments" component={TransportProviderPaymemts}></Route>
+              <Route path="/transportservice/issues" component={TransportProviderIssues}></Route>
+              <Route path="/transportservice/calendar" component={TransportProviderCalendar}></Route>
 
-                            <Route path = "/hotel/profile" component = {HotelProfile}></Route>
-                            <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
+              <Route path="/hotel/profile" component={HotelProfile}></Route>
+              <Route path="/hotel/rooms" component={HotelRoom}></Route>
 
-                         {auth.isLoggedIn===true && auth.role==="Admin" ?
-                                <Route path = "/admin/home" component = {AdminHome}></Route>:<Route component={NotFoundPage} />}
-                            <Route path = "/admin/hotels" component = {AdminHotels}></Route>
-                            <Route path = "/admin/transportation" component = {AdminTranspotation}></Route>
-                            <Route path = "/admin/articles" component = {AdminArticles}></Route>
-                            <Route path = "/admin/addarticle" component = {AdminAddArticle}></Route>
-                            <Route path = "/admin/addhotel" component = {AdminAddHotel}></Route>
-                            <Route path = "/admin/addtransporter" component = {AdminAddTransporter}></Route>
+              {auth.isLoggedIn === true && auth.role === "Admin" ?
+                <Route path="/admin/home" component={AdminHome}></Route> : <Route component={NotFoundPage} />}
+              <Route path="/admin/hotels" component={AdminHotels}></Route>
+              <Route path="/admin/transportation" component={AdminTranspotation}></Route>
+              <Route path="/admin/articles" component={AdminArticles}></Route>
+              <Route path="/admin/addarticle" component={AdminAddArticle}></Route>
+              <Route path="/admin/addhotel" component={AdminAddHotel}></Route>
+              <Route path="/admin/addtransporter" component={AdminAddTransporter}></Route>
 
-                            <Route path = "/trav_selectPackages" component={selectPackages}></Route>
-                            <Route path = "/camping/" component= {CampingEquipment}></Route>
-                            <Route path = "/donations/" component= {Donations}></Route>
-                            <Route path = "/daydistribution" component= {DayDistribution}></Route>
+              <Route path="/trav_selectPackages" component={selectPackages}></Route>
+              <Route path="/camping/" component={CampingEquipment}></Route>
+              <Route path="/donations/" component={Donations}></Route>
+              <Route path="/daydistribution" component={DayDistribution}></Route>
 
-                        {/*  <Route path = "/" exact component = {Login}></Route>*/}
-                        {/*  <Route path = "/login"  component = {Login}></Route>*/}
-                        {/*  <Route path = "/travsignup"  component = {TravelerSignup}></Route>*/}
-                        {/*  <Route path = "/guidesignup"  component = {GuideSignup}></Route>*/}
-                        {/*  <Route path = "/equipmentsignup"  component = {EquipmentSignup}></Route>*/}
-                        {/*  <Route path = "/forgotpassword"  component = {ForgotPassword}></Route>*/}
-                        {/*  <Route path = "/resetpassword"  component = {ResetPassword}></Route>*/}
-                        {/*{auth.isLoggedIn===true && auth.role==="User" ?*/}
-                        {/*  <Route path = "/userhome" exact component= {Home}></Route>:<Route component={NotFoundPage} />}*/}
-                        {/*  <Route path = "/donationshome" exact component= {DonationsHome}></Route>*/}
-                        {/*  /!* <Route path = "/welcome"  component = {Welcomepage}></Route> *!/*/}
-                        {/*  <Route path = "/reserve"  component = {HotelBooking}></Route>*/}
-                        {/*  <Route path = "/hotels"  component = {Hotels}></Route>*/}
-                        {/*  <Route path = "/hoteldetails"  component = {BasicTabs}></Route>*/}
-                        {/*  <Route path = "/landingPage/" component= {LandingPage}></Route>*/}
-                        {/*  <Route path = "/articles/" component= {Articles}></Route>*/}
-                        {/*  <Route path = "/articleinfo/" component= {ArticleInfo}></Route>*/}
-                        {/*  <Route path = "/equipments/" component= {Equipments}></Route>*/}
-                        {/*  <Route path = "/organizeTrip" component = {oraganizeTrip}></Route>*/}
-                        {/*  /!* <Route path = "/guide" component = {TravelingGuide}></Route> *!/*/}
-                        {/*  <Route path = "/selectPackages" component={selectPackages}></Route>*/}
-                        {/*  <Route path = "/transport" component={Transport}></Route>*/}
-                        {/*  <Route path = "/editTrip" component={editTrip}></Route>*/}
-                        {/*  <Route path = "/trav_organizeTrip" component = {oraganizeTrip}></Route>*/}
+            </Switch>
+            <Route>
+              <Route path="/" exact component={Login}></Route>
+              <Route path="/login" component={Login}></Route>
+              <Route path="/travsignup" component={TravelerSignup}></Route>
+              <Route path="/guidesignup" component={GuideSignup}></Route>
+              <Route path="/equipmentsignup" component={EquipmentSignup}></Route>
+              <Route path="/forgotpassword" component={ForgotPassword}></Route>
+              <Route path="/resetpassword" component={ResetPassword}></Route>
+              <Route path="/home" exact component={Home}></Route>
+              <Route path="/donationshome" exact component={DonationsHome}></Route>
+              {/* <Route path = "/welcome"  component = {Welcomepage}></Route> */}
+              <Route path="/reserve" component={HotelBooking}></Route>
+              <Route path="/hotels" component={Hotels}></Route>
+              <Route path="/hoteldetails" component={BasicTabs}></Route>
+              <Route path="/landingPage/" component={LandingPage}></Route>
+              <Route path="/articles/" component={Articles}></Route>
+              <Route path="/articleinfo/" component={ArticleInfo}></Route>
+              <Route path="/equipments/" component={Equipments}></Route>
+              <Route path="/organizeTrip" component={oraganizeTrip}></Route>
+              {/* <Route path = "/guide" component = {TravelingGuide}></Route> */}
+              <Route path="/selectPackages" component={selectPackages}></Route>
+              <Route path="/transport" component={Transport}></Route>
+              <Route path="/editTrip" component={editTrip}></Route>
+              <Route path="/trav_organizeTrip" component={oraganizeTrip}></Route>
 
-                        {/*  <Route path = "/guide/profile" component = {TravelingGuide}></Route>*/}
-                        {/*  <Route path = "/guide/trips" component = {GuideTrips}></Route>*/}
-                        {/*  <Route path = "/guide/schedules" component = {GuideSchedule}></Route>*/}
-                        {/*  <Route path = "/guide/history" component = {GuideHistory}></Route>*/}
-                        {/*  <Route path = "/guide/payments" component = {GuidePayements}></Route>*/}
-                        {/*  /!* <Route path = "/guide/issues" component = {GuideIssues}></Route> *!/*/}
-
-                        {/*  <Route path = "/transportservice/profile" component = {TransportProviderProfile}></Route>*/}
-                        {/*  <Route path = "/transportservice/trips" component = {TransportProviderTrip}></Route>*/}
-                        {/*  <Route path = "/transportservice/history" component = {TransportProviderTripHistory}></Route>*/}
-                        {/*  <Route path = "/transportservice/payments" component = {TransportProviderPaymemts}></Route>*/}
-                        {/*  <Route path = "/transportservice/issues" component = {TransportProviderIssues}></Route>*/}
-                        {/*  <Route path = "/transportservice/calendar" component = {TransportProviderCalendar}></Route>*/}
-
-                        {/*  <Route path = "/hotel/profile" component = {HotelProfile}></Route>*/}
-                        {/*  <Route path = "/hotel/rooms" component = {HotelRoom}></Route>*/}
+              {/* Traveler */}
+              <Route path="/traveler/profile" component={TravelerProfile}></Route>
+              <Route path="/traveler/trips" component={TravelerTrips}></Route>
+              <Route path="/traveler/issues" component={TravelerIssues}></Route>
 
 
-                        {/*     <Route path = "/admin/home" component = {AdminHome}></Route>*/}
-                        {/*  <Route path = "/admin/hotels" component = {AdminHotels}></Route>*/}
-                        {/*  <Route path = "/admin/transportation" component = {AdminTranspotation}></Route>*/}
-                        {/*  <Route path = "/admin/articles" component = {AdminArticles}></Route>*/}
-                        {/*  <Route path = "/admin/addarticle" component = {AdminAddArticle}></Route>*/}
-                        {/*  <Route path = "/admin/addhotel" component = {AdminAddHotel}></Route>*/}
-                        {/*  <Route path = "/admin/addtransporter" component = {AdminAddTransporter}></Route>*/}
+              {/* Guide */}
+              <Route path="/guide/profile" component={TravelingGuide}></Route>
+              <Route path="/guide/trips" component={GuideTrips}></Route>
+              <Route path="/guide/schedules" component={GuideSchedule}></Route>
+              <Route path="/guide/history" component={GuideHistory}></Route>
+              <Route path="/guide/payments" component={GuidePayements}></Route>
 
-                        {/*  <Route path = "/trav_selectPackages" component={selectPackages}></Route>*/}
-                        {/*  <Route path = "/camping/" component= {CampingEquipment}></Route>*/}
-                        {/*  <Route path = "/donations/" component= {Donations}></Route>*/}
-                        {/*  <Route path = "/daydistribution" component= {DayDistribution}></Route>*/}
+              {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}
+
+              {/* Transport service provider */}
+              <Route path="/transportservice/profile" component={TransportProviderProfile}></Route>
+              <Route path="/transportservice/trips" component={TransportProviderTrip}></Route>
+              <Route path="/transportservice/history" component={TransportProviderTripHistory}></Route>
+              <Route path="/transportservice/payments" component={TransportProviderPaymemts}></Route>
+              <Route path="/transportservice/issues" component={TransportProviderIssues}></Route>
+              <Route path="/transportservice/calendar" component={TransportProviderCalendar}></Route>
+
+              {/* Hotel */}
+              <Route path="/hotel/profile" component={HotelProfile}></Route>
+              <Route path="/hotel/rooms" component={HotelRoom}></Route>
 
 
-                </Switch>
-                </div>
-              
+              {/* Admin */}
+              <Route path="/admin/home" component={AdminHome}></Route>
+              <Route path="/admin/hotels" component={AdminHotels}></Route>
+              <Route path="/admin/transportation" component={AdminTranspotation}></Route>
+              <Route path="/admin/articles" component={AdminArticles}></Route>
+              <Route path="/admin/addarticle" component={AdminAddArticle}></Route>
+              <Route path="/admin/addhotel" component={AdminAddHotel}></Route>
+              <Route path="/admin/addtransporter" component={AdminAddTransporter}></Route>
+
+
+              <Route path="/trav_selectPackages" component={selectPackages}></Route>
+              <Route path="/camping/" component={CampingEquipment}></Route>
+              <Route path="/donations/" component={Donations}></Route>
+              <Route path="/daydistribution" component={DayDistribution}></Route>
+
+              {/*<Route path = "/home" exact component = {}></Route> */}
+            </Route>
+          </div>
+
         </Routes>
-        </BrowserRouter>
+      </BrowserRouter>
     </div>
-    
+
   );
 }
 
