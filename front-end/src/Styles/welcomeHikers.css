@@ -14,6 +14,16 @@
 
 } */
 .welcomeNote {
-    color: rgb(0, 139, 231);
-    font-family : 'Times New Roman', Times, serif;
+    color: #276678;
+    font-weight: bold;
+}
+
+.welcome-btn {
+    border: 1px solid #276678 !important;
+    color: #276678 !important;
+}
+
+.welcome-btn:hover {
+    background-color: #276678 !important;
+    color: #F6F5F5 !important;
 }

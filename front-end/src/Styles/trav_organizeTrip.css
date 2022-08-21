@@ -83,3 +83,17 @@
 .proviceDrop {
     width: 50%;
 }
+
+.organize-trip-back {
+    border: 1px solid #276678 !important;
+    color: #276678 !important;
+}
+
+.organize-trip-next {
+    background-color: #276678 !important;
+    color: #F6F5F5 !important;
+}
+
+.organize-trip-next:hover {
+    background-color: #1687A7 !important;
+}
