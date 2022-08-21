@@ -4,12 +4,23 @@ import TransportPayments from "../components/TransportService/Payments/Transport
 import TransportTotalProfit from "../components/TransportService/Payments/TransportTotalProfit";
 import TransportTotalTravels from "../components/TransportService/Payments/TransportTotalTravels";
 import TransportServiceNavBar from "../components/TransportService/TransportNavBar/TransportServiceNavBar";
+import { useSelector } from "react-redux";
+import authToken from "../utils/authToken";
+import TransporterHeader from "../components/TransportService/TransporterHeader/TransporterHeader";
 
 
-const TransportProviderPaymemts = () => {
+const TransportProviderPaymemts = (props) => {
+
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
+
+    const auth = useSelector((state) => state.auth);
+
+    if (auth.isLoggedIn === true && auth.role === "Traprovider") {
     return (
         <div className="d-flex flex-column tg-container">
-            <Navbar />
+            <TransporterHeader />
             <div className="d-flex flex-column tg-page">
                 <TransportServiceNavBar />
                 <div className="d-flex flex-column tp-profile">
@@ -24,6 +35,11 @@ const TransportProviderPaymemts = () => {
             </div>
         </div>
     );
+}
+else {
+    localStorage.clear();
+    return props.history.push("/");
+}
 }
 
 export default TransportProviderPaymemts;
