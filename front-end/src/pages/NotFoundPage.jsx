@@ -16,8 +16,11 @@ const NotFoundPage = (props) => {
 
 
 
+<<<<<<< Updated upstream
                 {/* <Navbar /> */}
 
+=======
+>>>>>>> Stashed changes
             <h1 style={{color : "black",textAlign: "center" ,marginTop:"20%"}}>Page Not Found</h1>
                 <h7>You Have to </h7>
                 <Link to={"/"}><span>Login</span></Link>
