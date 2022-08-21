@@ -1,17 +1,17 @@
 import React from "react"
-import "./navbar.css"
-import logo from "../images/logo.png";
-import { NavBarData } from './NavBarData';
+import "./adminheader.css"
+import logo from "../../images/logo.png";
 import { useSelector } from "react-redux";
-import authToken from "../../utils/authToken";
+// import authToken from "../../utils/authToken";
 import { Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
-
-const Navbar = () => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell } from '@fortawesome/free-solid-svg-icons'
+import authToken from "../../../utils/authToken";
+const AdminHeader = () => {
 
     if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
-
     }
     const auth = useSelector((state) => state.auth);
 
@@ -31,7 +31,7 @@ const Navbar = () => {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     {auth.isLoggedIn === true ?
                         <ul class="navbar-nav navbar-ul">
-                            {NavBarData.map((val, key) => {
+                            {/* {NavBarData.map((val, key) => {
                                 return (
                                     <Link to={val.link} className="nb-list">
                                         <li key={key}
@@ -41,7 +41,9 @@ const Navbar = () => {
                                     </Link>
                                 );
                             })
-                            }
+                            } */}
+
+                            <FontAwesomeIcon icon={faBell} className="admin-header-bell" />
 
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
@@ -59,8 +61,8 @@ const Navbar = () => {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu className="d-flex flex-column">
-                                                <Link to={"/traveler/profile"} className="w-100 dropdown-item">Profile</Link>
-                                                <Link to={"/logout"} className="w-100 dropdown-item">Log-out</Link>
+                                                <Link to={"admin/home"} className="w-100 dropdown-item">Home</Link>
+                                                <Link to={"/"} className="w-100 dropdown-item">Log-out</Link>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </li>
@@ -91,4 +93,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export default AdminHeader;
