@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Passwordhidden from "../components/Signup/Passwordhidden"
 import BasicInfo from "../components/Signup/BasicInfo";
 import Password from "../components/Signup/Password";
-
+import  {Link} from "react-router-dom";
 
 import { useTitle } from "../components/Title/Title"
 
@@ -19,9 +19,9 @@ const EquipmentSignup = () => {
                 <div className="row px-3">
                     <div class="col-lg-10 col-xl-9 mx-auto shadow p-3 mb-5 bg-white rounded ">
                             <div class="signupbtns">
-                                <button type="button" class="signuptoggle-tgbtn"><a className="traahref" href="/travsignup">Traveler</a></button>
+                                <button type="button" class="signuptoggle-tgbtn"><Link className="traahref" href="/travsignup">Traveler</Link></button>
                                 <button type="button" class="signuptoggle-trbtn">Equipment Provider</button>
-                                <button type="button" class="signuptoggle-epbtn"><a className="tgahref" href="/GuideSignup">Travel Guide</a></button>
+                                <button type="button" class="signuptoggle-epbtn"><Link className="tgahref" href="/GuideSignup">Travel Guide</Link></button>
 
                             </div>
                         <form id="travelersignup" class="signupform-box px-3 row g-3">

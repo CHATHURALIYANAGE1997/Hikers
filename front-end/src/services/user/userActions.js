@@ -3,7 +3,7 @@ import axios from "axios";
 
 //const REGISTER_URL = "http://localhost:8081/rest/user/register";
 const REGISTER_URL = "http://localhost:8080/user/signup";
-
+const VERIFY_URL="http://localhost:8080/user/accountconfirm/"
 // export const fetchUsers = () => {
 //   return (dispatch) => {
 //     dispatch(userRequest());
@@ -31,6 +31,23 @@ export const registerUser = (userObject) => async (dispatch) => {
         return Promise.reject(error);
     }
 };
+
+
+export const verifyuserr=(code)=>async (dispatch)=>{
+    dispatch(userRequest());
+    try {
+        const response = await axios.get(VERIFY_URL,{
+            params:{
+                code:code
+            }
+        });
+        dispatch(userSavedSuccess(response));
+        return Promise.resolve(response);
+    }catch (error) {
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+}
 
 const userRequest = () => {
     return {

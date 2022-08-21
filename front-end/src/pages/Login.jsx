@@ -35,11 +35,11 @@ const Login = (props) => {
         // console.log(user);
         dispatch(authenticateUser(user.email, user.password))
             .then((response) => {
-                console.log(response.data);
+               // console.log(response.data);
                 if(response.data.role==="Admin") {
                     return props.history.push("/admin/home"); }
                 if(response.data.role==="User") {
-                    return props.history.push("/guidehome");
+                    return props.history.push("/home");
                 }else {
                     return props.history.push("/home");
                 }

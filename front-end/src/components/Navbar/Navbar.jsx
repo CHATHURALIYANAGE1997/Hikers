@@ -29,7 +29,7 @@ const Navbar = () => {
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    {auth.isLoggedIn === "true" ?
+                    {auth.isLoggedIn === true ?
                         <ul class="navbar-nav navbar-ul">
                             {NavBarData.map((val, key) => {
                                 return (
@@ -46,6 +46,8 @@ const Navbar = () => {
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+
+
 
                             <div class="collapse navbar-collapse" id="navbar-list-4">
                                 <ul class="navbar-nav">
@@ -67,10 +69,17 @@ const Navbar = () => {
                         </ul>
                         :
                         <ul class="navbar-nav navbar-ul-signup">
-                            <Link to={"/signup"} className="nb-list">
+                            <Link to={"/travsignup"} className="nb-list">
                                 <li className="nb-list">
                                     <div className="nb-title">
                                         Signup
+                                    </div>
+                                </li>
+                            </Link>
+                            <Link to={"/login"} className="nb-list">
+                                <li className="nb-list">
+                                    <div className="nb-title">
+                                        Login
                                     </div>
                                 </li>
                             </Link>

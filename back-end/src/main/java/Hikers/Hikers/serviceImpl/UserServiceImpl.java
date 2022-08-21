@@ -119,7 +119,7 @@ public class UserServiceImpl implements UserService {
         try {
             User user = userRepo.findByEmail(requestMap.get("email"));
             User user1=userRepo.findByContactNumber(requestMap.get("contactNumber"));
-            if (Objects.isNull(user)) {
+            if (Objects.isNull(user)  && requestMap.get("email")==null && requestMap.get("password")==null) {
                 //user.setPassword(passwordEncoder.encode(user.getPassword()));
                 if(Objects.isNull(user1)) {
                     User user2 =userRepo.save(getUserFromMap(requestMap));
@@ -143,7 +143,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> signUpHotel(Map<String, String> requestMap) {
-       // log.info("Inside signuphotel{}",requestMap);
+        // log.info("Inside signuphotel{}",requestMap);
         try{
             Hotel hotel=hotelRepo.findByEmail(requestMap.get("email"));
             Hotel hotel1=hotelRepo.findByContactNumber(requestMap.get("contactNumber"));
@@ -164,7 +164,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private void sendVerificationEmail(User user, String siteURL) throws MessagingException, UnsupportedEncodingException {
-       // SimpleMailMessage message=new SimpleMailMessage();
+        // SimpleMailMessage message=new SimpleMailMessage();
         String toAddress = user.getEmail();
         String fromAddress = "oraclefreightsolutionspvt@gmail.com";
         String senderName = "Hikers";
@@ -196,7 +196,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<String> signUpTransportProvider(Map<String, String> requestMap) {
         try{
-           // log.info("Inside signuptransportprovider{}",requestMap);
+            // log.info("Inside signuptransportprovider{}",requestMap);
             Transportprovider transportprovider=transportproviderRepo.findByEmail(requestMap.get("email"));
             Transportprovider transportprovider1=transportproviderRepo.findByContactNumber(requestMap.get("contactNumber"));
             if(Objects.isNull(transportprovider)){
@@ -219,7 +219,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<String> signUpEquipmentProvider(Map<String, String> requestMap) {
         try {
-           // log.info("Inside signupequipmentprovider{}",requestMap);
+            // log.info("Inside signupequipmentprovider{}",requestMap);
             Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmail(requestMap.get("email"));
             Equipmentprovider equipmentprovider1=equipmentproviderRepo.findByContactNumber(requestMap.get("contactNumber"));
             if(Objects.isNull(equipmentprovider)){
@@ -241,7 +241,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<String> signUpTravelingguide(Map<String, String> requestMap) {
         try{
-           // log.info("Inside signuptravelingguide{}",requestMap);
+            // log.info("Inside signuptravelingguide{}",requestMap);
             Travelingguide travelingguide=travelingguideRepo.findByEmail(requestMap.get("email"));
             Travelingguide travelingguide1=travelingguideRepo.findByContactNumber(requestMap.get("contactNumber"));
             if(Objects.isNull(travelingguide)){
@@ -262,52 +262,52 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<?> userProfile() {
-                try{
-                    String currentUser=jwtFilter.getCurrentUser();
-                    String currentUserRole=jwtFilter.getCurrentUserRole();
-                    System.out.println(currentUser);
-                    System.out.println("currentUserRole");
-                    System.out.println(currentUserRole);
-                    User user=userRepo.findByEmail(currentUser);
-                    Transportprovider transportprovider=transportproviderRepo.findByEmail(currentUser);
-                    Hotel hotel=hotelRepo.findByEmail(currentUser);
-                    Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmail(currentUser);
-                    if(!Objects.isNull(user)){
-                        user.setPassword("null");
-                        return new ResponseEntity(user,HttpStatus.OK);
-                    }else if(!Objects.isNull(transportprovider)){
-                        transportprovider.setPassword("null");
-                        return new ResponseEntity(transportprovider,HttpStatus.OK);
-                    }else if(!Objects.isNull(hotel)){
-                        hotel.setPassword("null");
-                        return new ResponseEntity(hotel,HttpStatus.OK);
-                    }else if(!Objects.isNull(equipmentprovider)){
-                        equipmentprovider.setPassword("null");
-                        return new ResponseEntity(equipmentprovider,HttpStatus.OK);
-                    }
-                    else{
-                         Travelingguide travelingguide= travelingguideRepo.findByEmail(currentUser);
-                        travelingguide.setPassword("null");
-                        return new ResponseEntity(travelingguide,HttpStatus.OK);
-                    }
-                }catch (Exception ex){
-                    ex.printStackTrace();
-                }
-            return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+        try{
+            String currentUser=jwtFilter.getCurrentUser();
+            String currentUserRole=jwtFilter.getCurrentUserRole();
+            System.out.println(currentUser);
+            System.out.println("currentUserRole");
+            System.out.println(currentUserRole);
+            User user=userRepo.findByEmail(currentUser);
+            Transportprovider transportprovider=transportproviderRepo.findByEmail(currentUser);
+            Hotel hotel=hotelRepo.findByEmail(currentUser);
+            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmail(currentUser);
+            if(!Objects.isNull(user)){
+                user.setPassword("null");
+                return new ResponseEntity(user,HttpStatus.OK);
+            }else if(!Objects.isNull(transportprovider)){
+                transportprovider.setPassword("null");
+                return new ResponseEntity(transportprovider,HttpStatus.OK);
+            }else if(!Objects.isNull(hotel)){
+                hotel.setPassword("null");
+                return new ResponseEntity(hotel,HttpStatus.OK);
+            }else if(!Objects.isNull(equipmentprovider)){
+                equipmentprovider.setPassword("null");
+                return new ResponseEntity(equipmentprovider,HttpStatus.OK);
+            }
+            else{
+                Travelingguide travelingguide= travelingguideRepo.findByEmail(currentUser);
+                travelingguide.setPassword("null");
+                return new ResponseEntity(travelingguide,HttpStatus.OK);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @Override
     public ResponseEntity<List<User>> getAllUsers() {
-       try {
-           if(jwtFilter.isCoAdmin()||jwtFilter.isAdmin()){
+        try {
+            if(jwtFilter.isCoAdmin()||jwtFilter.isAdmin()){
                 String role="User";
                 return new ResponseEntity<>(userRepo.findByRole(role),HttpStatus.OK);
-           }else{
+            }else{
                 return new ResponseEntity<>(new ArrayList<>(), HttpStatus.UNAUTHORIZED);
-           }
-       }catch (Exception ex){
-           ex.printStackTrace();
-       }
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return new ResponseEntity<List<User>>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
@@ -348,8 +348,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<?> verifyUser(String code) {
         try {
+
             User user=userRepo.findByVerificationCode(code);
-            if(user==null ||user.isEnabled()){
+            if(Objects.isNull(user)|| user==null ||user.isEnabled() ||code==null){
                 return Hutils.getResponseEntity("Not Valid Requst", HttpStatus.BAD_REQUEST);
             }else{
                 user.setVerificationCode(null);
@@ -381,7 +382,7 @@ public class UserServiceImpl implements UserService {
         String randomCode = RandomString.make(64);
         user.setVerificationCode(randomCode);
         user.setEnabled(false);
-        user.setRole("ture");
+        user.setRole(requestMap.get("role"));
         return user;
 
     }
@@ -420,15 +421,15 @@ public class UserServiceImpl implements UserService {
     }
 
     private Equipmentprovider getEquipmentProviderFromMap(Map<String,String> requestMap) {
-    Equipmentprovider equipmentprovider=new Equipmentprovider();
-    equipmentprovider.setFullname(requestMap.get("fullname"));
-    equipmentprovider.setEmail(requestMap.get("email"));
-    equipmentprovider.setPassword(passwordEncoder.encode(requestMap.get("password")));
-    equipmentprovider.setContactNumber(requestMap.get("contactNumber"));
-    equipmentprovider.setAddress(requestMap.get("address"));
-    equipmentprovider.setAccountstatus(requestMap.get("accountstatus"));
-    equipmentprovider.setRole(requestMap.get("role"));
-    return equipmentprovider;
+        Equipmentprovider equipmentprovider=new Equipmentprovider();
+        equipmentprovider.setFullname(requestMap.get("fullname"));
+        equipmentprovider.setEmail(requestMap.get("email"));
+        equipmentprovider.setPassword(passwordEncoder.encode(requestMap.get("password")));
+        equipmentprovider.setContactNumber(requestMap.get("contactNumber"));
+        equipmentprovider.setAddress(requestMap.get("address"));
+        equipmentprovider.setAccountstatus(requestMap.get("accountstatus"));
+        equipmentprovider.setRole(requestMap.get("role"));
+        return equipmentprovider;
     }
 
     private Travelingguide getTravelingGuideFromMap(Map<String,String> requestMap){
