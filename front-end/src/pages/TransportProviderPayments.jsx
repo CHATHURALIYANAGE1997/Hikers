@@ -18,28 +18,28 @@ const TransportProviderPaymemts = (props) => {
     const auth = useSelector((state) => state.auth);
 
     if (auth.isLoggedIn === true && auth.role === "Traprovider") {
-    return (
-        <div className="d-flex flex-column tg-container">
-            <TransporterHeader />
-            <div className="d-flex flex-column tg-page">
-                <TransportServiceNavBar />
-                <div className="d-flex flex-column tp-profile">
-                    <div className="d-flex flex-row justify-content-between">
-                        <TransportTotalTravels />
-                        <TransportTotalProfit />
-                    </div>
-                    <div>
-                        <TransportPayments />
+        return (
+            <div className="d-flex flex-column tg-container">
+                <TransporterHeader />
+                <div className="d-flex flex-column tg-page">
+                    <TransportServiceNavBar />
+                    <div className="d-flex flex-column tp-profile">
+                        <div className="d-flex flex-row justify-content-between">
+                            <TransportTotalTravels />
+                            <TransportTotalProfit />
+                        </div>
+                        <div>
+                            <TransportPayments />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
-}
-else {
-    localStorage.clear();
-    return props.history.push("/");
-}
+        );
+    }
+    else {
+        localStorage.clear();
+        return props.history.push("/");
+    }
 }
 
 export default TransportProviderPaymemts;
