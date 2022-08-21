@@ -1,15 +1,15 @@
 import * as React from 'react';
-import Navbar from "../components/Navbar/Navbar";
 import HotelNav from '../components/Hotels/HotelActor/HotelNav/HotelNav';
 import Rooms from '../components/Hotels/HotelActor/HotelRooms/Rooms';
 import HotelName from '../components/Hotels/HotelName';
 import RoomPackages from '../components/Hotels/HotelActor/HotelRooms/RoomPackages';
+import HotelHeader from '../components/Hotels/HotelActor/HotelHeader/HotelHeader';
 
 
 const HotelRoom = () => {
     return (
         <div className="d-flex flex-column tg-container">
-            <Navbar />
+            <HotelHeader />
             <div className="d-flex flex-row tg-page">
                 <HotelNav />
                 <div className="d-flex flex-column tg-profile">

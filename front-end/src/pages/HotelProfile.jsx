@@ -1,18 +1,16 @@
 import * as React from 'react';
-import Navbar from "../components/Navbar/Navbar";
-
 import HotelNav from '../components/Hotels/HotelActor/HotelNav/HotelNav';
 import HotelName from '../components/Hotels/HotelName';
 import Images from '../components/Hotels/HotelActor/HotelProfile/Images';
 import Details from '../components/Hotels/HotelActor/HotelProfile/Details';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import HotelHeader from '../components/Hotels/HotelActor/HotelHeader/HotelHeader';
 
 const HotelProfile = () => {
     return (
         <div className="d-flex flex-column tg-container">
-            <Navbar />
+            <HotelHeader />
             <div className="d-flex flex-row tg-page">
                 <HotelNav />
                 <div className="d-flex flex-column tg-profile">

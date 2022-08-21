@@ -50,6 +50,9 @@ const Login = (props) => {
                 if(response.data.role === "Hotel"){
                     return props.history.push("/hotel/profile");
                 }
+                if(response.data.role === "Traprovider"){
+                    return props.history.push("/transportservice/profile");
+                }
                 else {
                     return props.history.push("/home");
                 }
@@ -94,7 +97,7 @@ const Login = (props) => {
                         </div>
                         <form class="loginform-box px-3 row g-3">
                             <div className="login-body">
-                                <h1 className="p-2 text-center">Hello, <br></br>Welcome Back</h1>
+                                <h1 className="p-2 text-center">Hello, <br></br>Welcome to HIKERS</h1>
                                 {/* <form class="loginform-box px-3 row g-3"> */}
                                 <div class="loginform-input col-12">
 
