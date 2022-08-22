@@ -9,13 +9,13 @@ import TransporterHeader from "../components/TransportService/TransporterHeader/
 
 
 const TransportProviderCalendar = (props) => {
-    if (localStorage.jwtToken) {
-        authToken(localStorage.jwtToken);
-    }
+    // if (localStorage.jwtToken) {
+    //     authToken(localStorage.jwtToken);
+    // }
 
-    const auth = useSelector((state) => state.auth);
+    // const auth = useSelector((state) => state.auth);
 
-    if (auth.isLoggedIn === true && auth.role === "Traprovider") {
+    // if (auth.isLoggedIn === true && auth.role === "Traprovider") {
 
         return (
             <div className="d-flex flex-column tg-container">
@@ -32,11 +32,11 @@ const TransportProviderCalendar = (props) => {
 
             </div>
         );
-    }
-    else {
-        localStorage.clear();
-        return props.history.push("/");
-    }
+    // }
+    // else {
+    //     localStorage.clear();
+    //     return props.history.push("/");
+    // }
 }
 
 export default TransportProviderCalendar;

@@ -4,17 +4,32 @@ import "../components/Hotels/hotels.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
+import { useEffect } from "react";
+import axios from "axios";
 
 
 const Hotels = (props) => {
 
-    if (localStorage.jwtToken) {
-        authToken(localStorage.jwtToken);
-    }
+    const accessToken = localStorage.jwtToken;
 
-    const auth = useSelector((state) => state.auth);
+    useEffect(() => {
+       const api='http://localhost:8080/gethotels';
+        const data = axios.get(api,{
+            headers: {
+                Authorization : 'Bearer ${accessToken}', 
+            },
+        });
+        console.log(data);
 
-    if (auth.isLoggedIn === true && auth.role === "User") {
+    });
+
+    // if (localStorage.jwtToken) {
+    //     authToken(localStorage.jwtToken);
+    // }
+
+    // const auth = useSelector((state) => state.auth);
+
+    // if (auth.isLoggedIn === true && auth.role === "User") {
         return (
             <div>
                 <Navbar />
@@ -109,11 +124,11 @@ const Hotels = (props) => {
                 </div>
             </div>
         );
-    }
-    else {
-        localStorage.clear();
-        return props.history.push("/");
-    }
+    // }
+    // else {
+    //     localStorage.clear();
+    //     return props.history.push("/");
+    // }
 }
 
 export default Hotels;
