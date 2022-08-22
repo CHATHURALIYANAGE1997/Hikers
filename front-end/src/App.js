@@ -51,14 +51,12 @@ import AdminAddArticle from './pages/AdminAddArticle';
 import AdminAddHotel from './pages/AdminAddHotel';
 import AdminAddTransporter from './pages/AdminAddTransporter';
 import DayDistribution from './pages/trav_dayDistribution';
-import CampingTents from "./pages/CampingTents";
 
 import verifyaccount from "./pages/verifyaccount";
 import TravelerProfile from './pages/TravelerProfile';
 import TravelerTrips from './pages/TravelerTrips';
 import TravelerIssues from './pages/TravelerIssues';
 import Page from './pages/page';
-import AddIssue from './components/Guide/GuideIssue/AddIssue';
 import GuideIssue from './pages/GuideIssue';
 
 function App() {
@@ -83,36 +81,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-
-<<<<<<< HEAD
-                          <Route path = "/guide/profile" component = {TravelingGuide}></Route>
-                          <Route path = "/guide/trips" component = {GuideTrips}></Route>
-                          <Route path = "/guide/schedules" component = {GuideSchedule}></Route>
-                          <Route path = "/guide/history" component = {GuideHistory}></Route>
-                          <Route path = "/guide/payments" component = {GuidePayements}></Route>
-                          {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}
-
-                          <Route path = "/transportservice/profile" component = {TransportProviderProfile}></Route>
-                          <Route path = "/transportservice/trips" component = {TransportProviderTrip}></Route>
-                          <Route path = "/transportservice/history" component = {TransportProviderTripHistory}></Route>
-                          <Route path = "/transportservice/payments" component = {TransportProviderPaymemts}></Route>
-                          <Route path = "/transportservice/issues" component = {TransportProviderIssues}></Route>
-                          <Route path = "/transportservice/calendar" component = {TransportProviderCalendar}></Route>
-
-                          <Route path = "/hotel/profile" component = {HotelProfile}></Route>
-                          <Route path = "/hotel/rooms" component = {HotelRoom}></Route>
-
-                          <Route path = "/trav_selectPackages" component={selectPackages}></Route>
-                          <Route path = "/camping/" component= {CampingEquipment}></Route>
-                          <Route path = "/tents" component= {CampingTents}></Route>
-                          <Route path = "/donations/" component= {Donations}></Route>
-=======
           <div className="text-center">
             <Switch>
->>>>>>> 94b80ab08f48adb94eb0bf66465b0eacdb19fb85
-
-
-
               <Route path="/" exact component={Login}></Route>
               <Route path="/login" component={Login}></Route>
               <Route path="/verify/:id?" component={verifyaccount} />

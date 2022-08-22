@@ -49,7 +49,7 @@ function AllHotels() {
             </div>
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
-                <span className="all-articles-title">Araliya Villa Spa - Sigiriya</span>
+                <span className="all-articles-title">The Epitome - Kurunegala</span>
                 <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                 <div>
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
@@ -58,7 +58,7 @@ function AllHotels() {
             </div>
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
-                <span className="all-articles-title">Araliya Villa Spa - Sigiriya</span>
+                <span className="all-articles-title">White House - Dambulla</span>
                 <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                 <HotelShowModal
                     show={modalShow}
@@ -70,7 +70,7 @@ function AllHotels() {
             </div>
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
-                <span className="all-articles-title">Araliya Villa Spa - Sigiriya</span>
+                <span className="all-articles-title">SriLan - Galle</span>
                 <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                 <HotelShowModal
                     show={modalShow}
@@ -82,7 +82,7 @@ function AllHotels() {
             </div>
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
-                <span className="all-articles-title">Araliya Villa Spa - Sigiriya</span>
+                <span className="all-articles-title">LightHouse - Galle</span>
                 <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                 <HotelShowModal
                     show={modalShow}
@@ -94,7 +94,7 @@ function AllHotels() {
             </div>
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
-                <span className="all-articles-title">Araliya Villa Spa - Sigiriya</span>
+                <span className="all-articles-title">Amari - Ginthota</span>
                 <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                 <HotelShowModal
                     show={modalShow}
