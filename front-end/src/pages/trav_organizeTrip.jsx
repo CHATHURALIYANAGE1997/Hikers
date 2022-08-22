@@ -15,6 +15,7 @@ import Stack from 'react-bootstrap/Stack';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
+import NotFoundPage from './NotFoundPage';
 
 function oraganizeTrip(props) {
   const [validated, setValidated] = useState(false);
@@ -64,13 +65,13 @@ function oraganizeTrip(props) {
     setValidated(true);
   }
 
-  // if (localStorage.jwtToken) {
-  //   authToken(localStorage.jwtToken);
-  // }
+  if (localStorage.jwtToken) {
+    authToken(localStorage.jwtToken);
+  }
 
-  // const auth = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.auth);
 
-  // if (auth.isLoggedIn === true && auth.role === "User") {
+  if (auth.isLoggedIn === true && auth.role === "User") {
   return (
     <div className='trot_mainDiv'>
       <Navbar />
@@ -291,11 +292,13 @@ function oraganizeTrip(props) {
     </div>
 
   );
-  // }
-  // else {
-  //   localStorage.clear();
-  //   return props.history.push("/");
-  // }
+  }
+  else {
+    localStorage.clear();
+    // return props.history.push("/");
+    {return <div><NotFoundPage/></div>}
+
+  }
 }
 
 // render(<oraganizeTrip />);

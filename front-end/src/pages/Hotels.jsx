@@ -8,6 +8,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { getDatasetAtEvent } from "react-chartjs-2";
+import NotFoundPage from "./NotFoundPage";
+import whitehouse from "../components/Hotels/Whitehouse.jfif";
+import epitome from "../components/Hotels/Theepitome.jfif";
+import araliya from "../components/Hotels/Arliyavilla.jfif";
 
 
 const Hotels = (props) => {
@@ -102,7 +106,8 @@ const Hotels = (props) => {
                         notes.map(notes => {
                             return ( */}
                                 <div className="mt-3 p-1 d-flex flex-row hotel-container">
-                                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" className="float-left hotel-img" alt="Epitome"></img>
+                                    {/* <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" className="float-left hotel-img" alt="Epitome"></img> */}
+                                    <img src={epitome} className="float-left hotel-img" alt="Epitome"></img>
 
                                     <div className="d-flew flex-column w-100 info-container">
                                         <h5 className="pt-4 pb-2 pl-4 font-weight-bold">The Epitome</h5>
@@ -125,11 +130,12 @@ const Hotels = (props) => {
 
                         })
                     } */}
+                    
                     <div className="mt-3 p-1 d-flex flex-row hotel-container">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" className="float-left hotel-img" alt="Epitome"></img>
+                        <img src={araliya} className="float-left hotel-img" alt="Epitome"></img>
                         <div className="d-flew flex-column w-100 info-container">
-                            <h5 className="pt-4 pb-2 pl-4 font-weight-bold">Lake Side Villa</h5>
-                            <h8 className="pl-4 font-weight-bold address">57 Dambulla - Dambulla Rd, Badagamuwa.</h8>
+                            <h5 className="pt-4 pb-2 pl-4 font-weight-bold">White House</h5>
+                            <h8 className="pl-4 font-weight-bold address">57 Galgamuwa - Dambulla Rd, Badagamuwa.</h8>
                             <div>
                                 <h7 className="pl-4 font-weight-bold stars">4.8</h7>
                             </div>
@@ -141,11 +147,12 @@ const Hotels = (props) => {
                             </div>
                         </div>
                     </div>
+
                     <div className="mt-3 p-1 d-flex flex-row hotel-container">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" className="float-left hotel-img" alt="Epitome"></img>
+                        <img src={whitehouse} className="float-left hotel-img" alt="Epitome"></img>
                         <div className="d-flew flex-column w-100 info-container">
-                            <h5 className="pt-4 pb-2 pl-4 font-weight-bold">White House</h5>
-                            <h8 className="pl-4 font-weight-bold address">57 Galgamuwa - Dambulla Rd, Badagamuwa.</h8>
+                            <h5 className="pt-4 pb-2 pl-4 font-weight-bold">Lake Side Villa</h5>
+                            <h8 className="pl-4 font-weight-bold address">57 Dambulla - Dambulla Rd, Badagamuwa.</h8>
                             <div>
                                 <h7 className="pl-4 font-weight-bold stars">4.8</h7>
                             </div>
@@ -163,7 +170,9 @@ const Hotels = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+        // return props.history.push("/");
+        {return <div><NotFoundPage /></div>}
+
     }
 }
 

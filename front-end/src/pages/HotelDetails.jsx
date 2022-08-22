@@ -17,6 +17,8 @@ import HotelRooms from '../components/Hotels/HotelRooms';
 import Navbar from '../components/Navbar/Navbar';
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
+import HotelRules from '../components/Hotels/HotelRules';
+import NotFoundPage from './NotFoundPage';
 
 
 function TabPanel(props) {
@@ -103,7 +105,7 @@ export default function BasicTabs(props) {
                   <Facilities />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                  Item Three
+                  <HotelRules />
                 </TabPanel>
                 <TabPanel value={value} index={3}>
                   <Reviews />
@@ -117,7 +119,9 @@ export default function BasicTabs(props) {
   }
   else {
     localStorage.clear();
-    return props.history.push("/");
+    // return props.history.push("/");
+    {return <div><NotFoundPage/></div>}
+
   }
 }
 
