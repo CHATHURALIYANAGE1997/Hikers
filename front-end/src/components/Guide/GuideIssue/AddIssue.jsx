@@ -4,7 +4,7 @@ import './guideissue.css';
 const AddIssue = () => {
     return (
         <div className="w-100">
-            <h4 className="transport-issues-title">On-going trips</h4>
+            <h4 className="transport-issues-title">On-going Trips</h4>
             <div className="d-flex flex-column transport-issues-container">
                 <div className="d-flex flex-row justify-content-between">
                     <h5 className="transport-issues-trip-title">Trip from Kurunegala town to Dolukanda</h5>
@@ -41,9 +41,9 @@ const AddIssue = () => {
                 </div>
                 <h6>Any issues regarding this trip?</h6>
                 <form>
-                    <input type="text" placeholder="Enter your issue" className="transport-issues-input"/>
+                    <textarea class="form-control w-75 mb-2" id="exampleFormControlTextarea1" rows="3"></textarea>                    
                     <div className="d-flex flex-row justify-content-end">
-                        <input type="submit" className="transport-issues-submit-btn"/>
+                        <input type="submit" className="transport-issues-submit-btn" />
                     </div>
                 </form>
             </div>

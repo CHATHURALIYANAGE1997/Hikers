@@ -3,10 +3,12 @@
 }
 
 .transport-issues-container {
-    border: 1px solid rgb(159, 159, 159);
-    padding: 5px;
+    border: none !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+    padding: 20px;
     margin-right: 10px;
     text-align: left;
+    border-radius: 5px;
 }
 
 .transport-issues-trip-title {
