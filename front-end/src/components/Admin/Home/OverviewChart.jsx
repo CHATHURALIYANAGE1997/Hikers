@@ -68,7 +68,7 @@ function OverViewChart() {
 
 		<div className="overview-chart">
 			<h3 className="text-heading overview-chart-title-description">
-				Overall Orders
+				Overall Trip Orders
 			</h3>
 			<ResponsiveContainer width="100%" aspect={3} className="overview-chart-container">
 				<LineChart data={pdata} margin={{ right: 300 }}>
@@ -78,7 +78,7 @@ function OverViewChart() {
 					<YAxis></YAxis>
 					<Legend />
 					<Tooltip />
-					<Line dataKey="orders"
+					<Line dataKey="Orders"
 						stroke="black" activeDot={{ r: 8 }} />
 				</LineChart>
 			</ResponsiveContainer>

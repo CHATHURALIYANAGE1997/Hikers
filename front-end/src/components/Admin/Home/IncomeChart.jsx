@@ -78,7 +78,7 @@ function IncomeChart() {
 					<YAxis></YAxis>
 					<Legend />
 					<Tooltip />
-					<Line dataKey="orders"
+					<Line dataKey="Income"
 						stroke="black" activeDot={{ r: 8 }} />
 				</LineChart>
 			</ResponsiveContainer>

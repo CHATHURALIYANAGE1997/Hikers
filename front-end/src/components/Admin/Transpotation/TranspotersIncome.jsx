@@ -67,7 +67,7 @@ function TranspotersIncome() {
 
 		<div className="hotel-income-chart">
 			<h4 className="hotel-income-title-description">
-				Overall Hotel Bookings
+				Overall Transport Income
 			</h4>
 			<ResponsiveContainer width="100%" aspect={3} className="">
 				<LineChart data={pdata} margin={{ right: 300 }}>
