@@ -7,9 +7,11 @@ import HotelHeader from '../components/Hotels/HotelActor/HotelHeader/HotelHeader
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
 import NotFoundPage from './NotFoundPage';
+import BookingChart from '../components/Hotels/HotelActor/HotelPayments/BookingsChart';
+import PaymentHistory from '../components/Hotels/HotelActor/HotelPayments/PaymentHistory';
 
 
-const HotelRoom = (props) => {
+const HotelPayments = (props) => {
 
     if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
@@ -26,8 +28,8 @@ const HotelRoom = (props) => {
                     <div className="d-flex flex-column tg-profile">
                         <div className="d-flex flex-column m-auto w-75">
                             <HotelName />
-                            <Rooms />
-                            <RoomPackages />
+                            <BookingChart />
+                            <PaymentHistory />
                         </div>
                     </div>
                 </div>
@@ -43,6 +45,6 @@ const HotelRoom = (props) => {
     }
 }
 
-export default HotelRoom;
+export default HotelPayments;
 
 

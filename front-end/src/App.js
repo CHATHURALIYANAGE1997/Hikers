@@ -58,6 +58,7 @@ import TravelerTrips from './pages/TravelerTrips';
 import TravelerIssues from './pages/TravelerIssues';
 import Page from './pages/page';
 import GuideIssue from './pages/GuideIssue';
+import HotelPayments from './pages/HotelPayments';
 
 function App() {
   window.onbeforeunload = (event) => {
@@ -142,7 +143,7 @@ function App() {
               {/* Hotel */}
               <Route path="/hotel/profile" component={HotelProfile}></Route>
               <Route path="/hotel/rooms" component={HotelRoom}></Route>
-
+              <Route path="/hotel/payments" component={HotelPayments}></Route>
 
               {/* Admin */}
               <Route path="/admin/home" component={AdminHome}></Route>

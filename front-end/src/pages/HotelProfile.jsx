@@ -8,6 +8,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import HotelHeader from '../components/Hotels/HotelActor/HotelHeader/HotelHeader';
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
+import NotFoundPage from './NotFoundPage';
 
 
 const HotelProfile = (props) => {
@@ -42,7 +43,9 @@ const HotelProfile = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+        // return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
+
     }
 }
 

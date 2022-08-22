@@ -9,16 +9,16 @@ const History = () => {
   return (
     <div className="d-flex flex-column history-container">
       <div className="d-flex flex-row">
-      <Travels />
-      <div className="input-group w-75 justify-content-center mb-3">
-        <div className="form-outline w-75 mr-auto ml-auto">
-          <input type="search" id="form1" className="form-control history-input" placeholder="Search" />
+        <Travels />
+        <div className="input-group w-75 justify-content-center mb-3">
+          <div className="form-outline w-75 mr-auto ml-auto">
+            <input type="search" id="form1" className="form-control history-input" placeholder="Search" />
+          </div>
+          <button type="button" className="btn btn-primary history-search-btn">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
         </div>
-        <button type="button" className="btn btn-primary history-search-btn">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </button>
-      </div>
-      <Total />
+        <Total />
       </div>
       <table className="table table-hover">
         <thead>
@@ -49,7 +49,7 @@ const History = () => {
             <th scope="row">
               <div>Hanthana Mountain Range</div>
               <div className="history-province">Notherth Western</div>
-            </th>            
+            </th>
             <td>22nd Jan 2022</td>
             <td>Araliya Vill & Spa</td>
             <td>Van</td>
@@ -62,7 +62,7 @@ const History = () => {
             <th scope="row">
               <div>Adara Kanda</div>
               <div className="history-province">Notherth Western</div>
-            </th>            
+            </th>
             <td>05th Jan 2022</td>
             <td>The LightHouse</td>
             <td>Car</td>

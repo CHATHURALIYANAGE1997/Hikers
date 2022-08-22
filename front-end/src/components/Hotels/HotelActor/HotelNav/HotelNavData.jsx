@@ -14,18 +14,18 @@ export const HotelNavData = [
         link: "/hotel/rooms"
     },
     {
-        title: "Bookings",
-        icon: <FontAwesomeIcon icon={faCalendarCheck}/>,
-        link: "/hotel/bookings"
-    },
-    {
         title: "Payments",
         icon: <FontAwesomeIcon icon={faMoneyCheckDollar}/>,
         link: "/hotel/payments"
     },
     {
-        title: "History",
-        icon: <FontAwesomeIcon icon={faClockRotateLeft}/>,
-        link: "/hotel/history"
-    }
+        title: "Bookings",
+        icon: <FontAwesomeIcon icon={faCalendarCheck}/>,
+        link: "/hotel/bookings"
+    },
+    // {
+    //     title: "Booking History",
+    //     icon: <FontAwesomeIcon icon={faClockRotateLeft}/>,
+    //     link: "/hotel/history"
+    // }
 ]
