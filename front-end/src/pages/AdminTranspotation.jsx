@@ -14,12 +14,12 @@ import NotFoundPage from "./NotFoundPage";
 const AdminTranspotation = (props) => {
 
 
-    // if (localStorage.jwtToken) {
-    //     authToken(localStorage.jwtToken);
-    // }
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
 
-    // const auth = useSelector((state) => state.auth);
-    // if (auth.isLoggedIn === true && auth.role === "Admin") {
+    const auth = useSelector((state) => state.auth);
+    if (auth.isLoggedIn === true && auth.role === "Admin") {
         return (
             <div className="d-flex flex-column w-100">
                 <AdminHeader />
@@ -38,13 +38,13 @@ const AdminTranspotation = (props) => {
                 </div>
             </div>
         );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     return props.history.push("/");
-    //     {return <div><NotFoundPage/></div>}
+    }
+    else {
+        localStorage.clear();
+        return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
 
-    // }
+    }
 }
 
 export default AdminTranspotation;
