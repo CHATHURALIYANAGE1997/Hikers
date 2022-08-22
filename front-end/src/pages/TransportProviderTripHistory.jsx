@@ -5,6 +5,7 @@ import TripHistory from "../components/TransportService/TripHistory/TripHistory"
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
 import TransporterHeader from "../components/TransportService/TransporterHeader/TransporterHeader";
+import NotFoundPage from "./NotFoundPage";
 
 const TransportProviderTripHistory = (props) => {
 
@@ -29,7 +30,9 @@ const TransportProviderTripHistory = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+        // return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
+
     }
 }
 

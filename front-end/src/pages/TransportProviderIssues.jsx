@@ -5,17 +5,18 @@ import TransportServiceNavBar from "../components/TransportService/TransportNavB
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
 import TransporterHeader from "../components/TransportService/TransporterHeader/TransporterHeader";
+import NotFoundPage from "./NotFoundPage";
 
 
 const TransportProviderIssues = (props) => {
 
-    // if (localStorage.jwtToken) {
-    //     authToken(localStorage.jwtToken);
-    // }
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
 
-    // const auth = useSelector((state) => state.auth);
+    const auth = useSelector((state) => state.auth);
 
-    // if (auth.isLoggedIn === true && auth.role === "Traprovider") {
+    if (auth.isLoggedIn === true && auth.role === "Traprovider") {
         return (
             <div className="d-flex flex-column tg-container">
                 <TransporterHeader />
@@ -27,11 +28,13 @@ const TransportProviderIssues = (props) => {
                 </div>
             </div>
         );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     return props.history.push("/");
-    // }
+    }
+    else {
+        localStorage.clear();
+        // return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
+
+    }
 }
 
 export default TransportProviderIssues;

@@ -22,7 +22,7 @@ const TripHistory = () => {
             <th scope="col">Passenger Count</th>
             <th scope="col">Distance</th>
             <th scope="col">Team</th>
-            <th scope="col">Profit</th>
+            <th scope="col">Income</th>
           </tr>
         </thead>
         <tbody>

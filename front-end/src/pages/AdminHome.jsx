@@ -9,6 +9,7 @@ import OverViewChart from "../components/Admin/Home/OverviewChart";
 import PopularPlaces from "../components/Admin/Home/PopularPlaces";
 import ValuableCustomer from "../components/Admin/Home/ValuableCustomer";
 import authToken from "../utils/authToken";
+import NotFoundPage from "./NotFoundPage";
 
 const AdminHome = (props) => {
 
@@ -51,12 +52,10 @@ const AdminHome = (props) => {
     }
     else {
         localStorage.clear();
-<<<<<<< refs/remotes/origin/main
       //  return props.history.push("/login");
         {return <div><NotFoundPage/></div>}
-=======
-        return props.history.push("/login");
->>>>>>> Modify Transporter Profile
+
+        // return props.history.push("/login");
     }
 }
 

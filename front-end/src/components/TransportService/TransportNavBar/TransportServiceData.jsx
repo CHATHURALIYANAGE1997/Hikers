@@ -18,11 +18,11 @@ export const TransportServiceData = [
         icon: <FontAwesomeIcon icon={faClockRotateLeft}/>,
         link: "/transportservice/history"
     },
-    {
-        title: "Payments",
-        icon: <FontAwesomeIcon icon={faMoneyCheckDollar}/>,
-        link: "/transportservice/payments"
-    },
+    // {
+    //     title: "Payments",
+    //     icon: <FontAwesomeIcon icon={faMoneyCheckDollar}/>,
+    //     link: "/transportservice/payments"
+    // },
     {
         title: "Issues",
         icon: <FontAwesomeIcon icon={faCircleExclamation}/>,

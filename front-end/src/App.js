@@ -135,7 +135,7 @@ function App() {
               <Route path="/transportservice/profile" component={TransportProviderProfile}></Route>
               <Route path="/transportservice/trips" component={TransportProviderTrip}></Route>
               <Route path="/transportservice/history" component={TransportProviderTripHistory}></Route>
-              <Route path="/transportservice/payments" component={TransportProviderPaymemts}></Route>
+              {/* <Route path="/transportservice/payments" component={TransportProviderPaymemts}></Route> */}
               <Route path="/transportservice/issues" component={TransportProviderIssues}></Route>
               <Route path="/transportservice/calendar" component={TransportProviderCalendar}></Route>
 

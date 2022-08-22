@@ -7,6 +7,7 @@ import TransportServiceNavBar from "../components/TransportService/TransportNavB
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
 import TransporterHeader from "../components/TransportService/TransporterHeader/TransporterHeader";
+import NotFoundPage from "./NotFoundPage";
 
 const TransportProviderProfile = (props) => {
 
@@ -34,7 +35,9 @@ const TransportProviderProfile = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+        // return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
+
     }
 }
 
