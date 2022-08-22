@@ -14,51 +14,51 @@ import {
 const pdata = [
 	{
 		name: 'Jan',
-		bookings: 120
+		income: 120000
 	},
 	{
 		name: 'Feb',
-		bookings: 12
+		income: 156000
 	},
 	{
 		name: 'Mar',
-		bookings: 10
+		income: 132000
 	},
 	{
 		name: 'Apr',
-		bookings: 5
+		income: 52000
 	},
 	{
 		name: 'May',
-		bookings: 4
+		income: 41000
 	},
 	{
 		name: 'Jun',
-		bookings: 8
+		income: 88000
 	},
 	{
 		name: 'Jul',
-		bookings: 8
+		income: 88000
 	},
 	{
 		name: 'Aug',
-		bookings: 8
+		income: 108000
 	},
 	{
 		name: 'Sep',
-		bookings: 8
+		income: 58000
 	},
 	{
 		name: 'Oct',
-		bookings: 8
+		income: 98000
 	},
 	{
 		name: 'Nov',
-		bookings: 8
+		income: 28000
 	},
 	{
 		name: 'Dec',
-		bookings: 8
+		income: 168000
 	},
 ];
 
@@ -77,7 +77,7 @@ function TranspotersIncome() {
 					<YAxis></YAxis>
 					<Legend />
 					<Tooltip />
-					<Line dataKey="bookings"
+					<Line dataKey="income"
 						stroke="black" activeDot={{ r: 8 }} />
 				</LineChart>
 			</ResponsiveContainer>

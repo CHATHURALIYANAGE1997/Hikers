@@ -5,14 +5,15 @@ import AdminHeader from "../components/Admin/AdminHeader/AdminHeader";
 import AdminNav from "../components/Admin/AdminNavBar/AdminNav";
 import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";
+import NotFoundPage from "./NotFoundPage";
 
 const AdminArticles = (props) => {
-    if (localStorage.jwtToken) {
-        authToken(localStorage.jwtToken);
-    }
+    // if (localStorage.jwtToken) {
+    //     authToken(localStorage.jwtToken);
+    // }
 
-    const auth = useSelector((state) => state.auth);
-    if (auth.isLoggedIn === true && auth.role === "Admin") {
+    // const auth = useSelector((state) => state.auth);
+    // if (auth.isLoggedIn === true && auth.role === "Admin") {
 
         return (
             <div className="d-flex flex-column w-100">
@@ -31,11 +32,13 @@ const AdminArticles = (props) => {
                 </div>
             </div>
         );
-    }
-    else {
-        localStorage.clear();
-        return props.history.push("/");
-    }
+    // }
+    // else {
+    //     localStorage.clear();
+    //     // return props.history.push("/");
+    //     {return <div><NotFoundPage/></div>}
+
+    // }
 }
 
 export default AdminArticles;
