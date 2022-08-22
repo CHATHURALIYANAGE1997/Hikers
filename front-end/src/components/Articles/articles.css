@@ -75,10 +75,10 @@
     background-color: #1687A7;
     border:none;
 }
-.col-sm-8{
+.articlemountain8{
     background-color: #cbd9f7; 
 }
-.col-sm-4{
+.articlemountain4{
     background-color: #cbd9f7; 
 }
 .articleinfodate {
@@ -95,7 +95,7 @@ a:link,a:visited{
 .articleinfoh5{
     text-align: left;
 }
-.articlesbrowse{
+/* .articlesbrowse{
     position:relative;
     top:80px;
-}
+} */

@@ -1,5 +1,5 @@
 import React from "react"
-import equipments from "../components/Equipments/equipments.css"
+import "../components/Equipments/equipments.css"
 import Navbar from "../components/Navbar/Navbar";
 
 import { useTitle } from "../components/Title/Title"

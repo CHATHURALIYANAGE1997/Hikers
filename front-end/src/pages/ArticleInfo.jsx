@@ -2,8 +2,11 @@ import React from "react";
 import articles from "../components/Articles/articles.css"
 import Navbar from "../components/Navbar/Navbar";
 import mountain1 from "../components/Articles/mountain1.JPG";
+import mountain2 from "../components/Articles/mountain2.jpg";
+import mountain4 from "../components/Articles/Dolukanda2.jpg";
 import mountain3 from "../components/Articles/dolukanda.jpg";
 import { useTitle } from "../components/Title/Title"
+import BestReply from "../components/Forum/Reply/BestReply";
 
 const ArticleInfo = () => {
     useTitle("Hikers")
@@ -13,7 +16,7 @@ const ArticleInfo = () => {
             <div className="container">
                 <h1>Dolukanda</h1>
                 <div className="row">
-                    <div className="mt-4 col-sm-8">
+                    <div className="mt-4 col-sm-8 articlemountain8">
                         <a href="/ArticleInfo"><h3 className=" articlesheadline">Know before you go : Dolukanda Mountain</h3></a>
                         <div className=" font-weight-bold articlesaddress"><p>Dolukanda Mountain is a well known mountain range due to the Dolukanda Raja Maha Viharaya (Dolukanda Buddhist Temple) and it is believed that the mountain is directly linked to the great Indian epic, Ramayana Trail in Sri Lanka . Nowadays this place is very famous for hiking and camping.
                             <br />
@@ -30,7 +33,27 @@ const ArticleInfo = () => {
                         </div>
                         <div className="mt-2 viewsarticle">25 views</div>
                         <div className="authorarticle">by Mahesh Vimalasena</div>
-                        <h5 className="articleinfoh5">Most asked questions in the forum about this mountain</h5>
+                        <BestReply />
+                    </div>
+                    <div className="mt-4 col-sm-4  articlemountain4 ">
+                        <h8 className="articleinfodate">Jul 5,2022  10.00 PM</h8>
+                        <img src={mountain1} className=" mountain-img" alt="Mountain1"></img>
+                        <img src={mountain2} className="mountain-img" alt="Mountain2"></img>
+                        <img src={mountain4} className="mountain-img" alt="Mountain4"></img>
+                        <img src={mountain3} className="mountain-img" alt="Mountain3"></img>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    );
+
+}
+export default ArticleInfo
+
+
+{/* {/* <h5 className="articleinfoh5">Most asked questions in the forum about this mountain</h5>
 
                         <div className="mt-1 forum-container">
                     <div className="d-flew flex-column w-100">
@@ -42,20 +65,4 @@ const ArticleInfo = () => {
                         <div className="articleauthor">by Mahesh Vimalasena  | <h8 className="articledate">Jul 5,2022  10.00 PM</h8></div>
                     </div>
                     <img src={mountain1} className="float-left mountain-img" alt="Mountain1"></img>
-                </div>
-                    </div>
-
-                    <div className="mt-4 col-sm-4">
-                        <h8 className="articleinfodate">Jul 5,2022  10.00 PM</h8>
-                        <img src={mountain1} className=" mountain-img" alt="Mountain1"></img>
-                        <img src={mountain3} className="mountain-img" alt="Mountain3"></img>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-    );
-
-}
-export default ArticleInfo
+                </div> */}

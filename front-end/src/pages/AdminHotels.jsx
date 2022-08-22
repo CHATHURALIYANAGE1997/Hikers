@@ -2,7 +2,7 @@ import React from "react";
 import AdminHeader from "../components/Admin/AdminHeader/AdminHeader";
 import AdminNav from "../components/Admin/AdminNavBar/AdminNav";
 import AllHotels from "../components/Admin/Hotels/AllHotels";
-import HotelIncome from "../components/Admin/Hotels/HotelIncome";
+// import HotelIncome from "../components/Admin/Hotels/HotelIncome";
 import PopularHotels from "../components/Admin/Hotels/PopularHotels";
 import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";

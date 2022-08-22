@@ -3,12 +3,18 @@ import AdminHeader from "../components/Admin/AdminHeader/AdminHeader";
 import AdminNav from "../components/Admin/AdminNavBar/AdminNav";
 import AllTransportProviders from "../components/Admin/Transpotation/AllTransportProviders";
 import PopularTransporters from "../components/Admin/Transpotation/PopularTransporter";
+<<<<<<< Updated upstream
 import TranspotersIncome from "../components/Admin/Transpotation/TranspotersIncome";
 import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";
+=======
+// import TranspotersIncome from "../components/Admin/Transpotation/TranspotersIncome";
+import Navbar from "../components/Navbar/Navbar";
+>>>>>>> Stashed changes
 
 const AdminTranspotation = (props) => {
 
+<<<<<<< Updated upstream
     if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
     }
@@ -28,6 +34,21 @@ const AdminTranspotation = (props) => {
                         <div className="d-flex flex-row">
                             <TranspotersIncome />
                         </div>
+=======
+const AdminTranspotation = () => {
+    return (
+        <div className="d-flex flex-column w-100">
+            <Navbar />
+            <div className="d-flex flex-row w-100 admin-page-content">
+                <AdminNav />
+                <div className="d-flex flex-column home-container">
+                    <div className="d-flex flex-row">
+                       <AllTransportProviders />
+                       <PopularTransporters />
+                    </div>
+                    <div className="d-flex flex-row">
+                        {/* <TranspotersIncome /> */}
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>

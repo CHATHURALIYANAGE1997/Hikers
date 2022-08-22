@@ -1,3 +1,4 @@
+
 import React, {useState} from "react"
 import signup from "../components/Signup/signup.css"
 import Phone from "../components/Signup/Phone.js"
@@ -6,6 +7,11 @@ import Passwordhidden from "../components/Signup/Passwordhidden"
 import BasicInfo from "../components/Signup/BasicInfo";
 import Password from "../components/Signup/Password";
 import  {Link} from "react-router-dom";
+
+
+// import React from "react"
+// import "../components/Signup/signup.css"
+// import Navbar from "../components/Navbar/Navbar";
 
 import { useTitle } from "../components/Title/Title"
 import {useDispatch} from "react-redux";

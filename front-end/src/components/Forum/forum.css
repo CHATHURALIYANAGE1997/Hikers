@@ -1,0 +1,13 @@
+.forumh2{
+    text-align: left;
+    color:#276678;
+}
+.forumbtn{
+    background-color:#1687A7;
+    border:none;
+    padding:10px;
+    font-weight:500;
+    position: relative;
+    left:110px;
+}
+

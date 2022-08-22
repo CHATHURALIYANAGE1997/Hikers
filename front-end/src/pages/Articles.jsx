@@ -1,11 +1,13 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import articleSearchbar from "../components/Articles/articleSearchbar";
-import articles from "../components/Articles/articles.css"
+import "../components/Articles/articles.css"
 import mountain1 from "../components/Articles/mountain1.JPG";
 import mountain2 from "../components/Articles/mountain2.jpg";
 import { FaSearchLocation } from 'react-icons/fa';
 import { useTitle } from "../components/Title/Title"
+import ArticleSearchBar from "../components/Articles/ArticleSearchBar";
+import ArticleBreadCrumb from "../components/Articles/articlebreadcrumb";
+import ArticleNavBar from "../components/Articles/ArticleNavBar";
 
 const Articles = () => {
     useTitle("Hikers")
@@ -13,40 +15,10 @@ const Articles = () => {
         <div>
             <Navbar />
             <div className="p-5 mt-5 text-left container">
-                {/* <articleSearchbar /> */}
-                <div className="mt-1 pl-5 p-1 search-container">
-                    <form class="form-inline articlesform">
-                        <span className="articlesSearchbutton"><i class="fa fa-search"></i></span>
-                        <input class="articlesSearchfield form-control-sm ml-3 mt-3 w-75" type="text" placeholder="Search by the province"
-                            aria-label="Search" />
-                        <button type="button" className="searchbtn" >search</button>
-                    </form>
-                </div>
+                <ArticleSearchBar />
                 <div>
-                    <div className="articlesbrowse">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <p>Browse Articles-  </p>
-                                <li class="breadcrumb-item"><a href="#">All</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">North-Western Province</li>
-                            </ol>
-                        </nav>
-                    </div>
-                    <div className="ArticlesPageNav">
-                        <nav aria-label="Page navigation example">
-                            <ul class=" mt-3 pagination justify-content-end">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    {/* <ArticleBreadCrumb /> */}
+                    <ArticleNavBar />
                 </div>
                 <div className="mt-1 p-1 d-flex flex-row articles-container">
                     <div className="d-flew flex-column w-100">

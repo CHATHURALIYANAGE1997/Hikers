@@ -1,0 +1,70 @@
+.boy1,.boy2{
+    width:20%;
+}
+.forum-replybox{
+    background-color: #b4b7b893;
+    padding: 10px;
+}
+.forum-replybox2{
+    background-color: white;
+    height:150px;
+}
+.forumguidelines{
+    color:blue;
+    text-align: right;
+}
+.forumboxhead2{
+    color:black;
+    text-align: left;
+    font-weight: bold;
+    text-align:left;
+}
+.bestreplycont{
+    background-color: white;
+}
+.replytopic{
+    text-align: left;
+    width:auto;
+    color:black;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.postedauthor{
+    font-size:small;
+    color:rgb(46, 44, 44);
+    font-weight: bold;
+    text-align: left;
+    justify-content: right;
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bestreplyforum{
+    color:#0c0a94;
+    text-align:left;
+    margin-left: 10px;
+}
+.replydetails{
+    color:rgb(46, 44, 44);
+    margin-left: 10px;
+}
+.repliedauthor{
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight:50px;
+}
+.forumpreviewbtn{
+    margin-right: 50px;
+    margin-left: auto;
+}
+.forumreplybtn{
+    margin-right: 150px;
+}
+.forumsguidelinescheckbox{
+    text-align: left;
+    margin-left: 60px;
+}
+.forumQuestioncontainer{
+    background-color:#b4b7b893; ;
+}

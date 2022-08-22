@@ -15,6 +15,9 @@ import DonationsHome from "./pages/DonationsHome";
 import LandingPage from './pages/landing';
 import Articles from './pages/Articles';
 import ArticleInfo from './pages/ArticleInfo';
+import Forums from './pages/Forums';
+import ForumDetails from './pages/ForumDetails';
+import forumQuestion from './pages/forumQuestion';
 import Equipments from './pages/Equipments';
 import HotelBooking from './pages/HotelBooking';
 import BasicTabs from './pages/HotelDetails';
@@ -27,7 +30,6 @@ import CampingEquipment from "./pages/CampingEquipment";
 import GuideTrips from './pages/GuideTrips';
 import Transport from './pages/trav_tranpotation_1';
 import editTrip from './pages/trav_editTrip';
-import Donations from './pages/Donations';
 import GuideSchedule from './pages/GuideSchedule';
 import GuidePayements from './pages/GuidePayements';
 import GuideHistory from './pages/GuideHistory';
@@ -78,6 +80,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
+
           <div className="text-center">
             <Switch>
 
@@ -101,6 +104,9 @@ function App() {
               <Route path="/landingPage/" component={LandingPage}></Route>
               <Route path="/articles/" component={Articles}></Route>
               <Route path="/articleinfo/" component={ArticleInfo}></Route>
+              <Route path = "/forums/" component= {Forums}></Route>
+              <Route path = "/forumDetails/" component= {ForumDetails}></Route>
+              <Route path = "/forumQuestion/" component= {forumQuestion}></Route>
               <Route path="/equipments/" component={Equipments}></Route>
               <Route path="/organizeTrip" component={oraganizeTrip}></Route>
               {/* <Route path = "/guide" component = {TravelingGuide}></Route> */}
@@ -150,13 +156,11 @@ function App() {
 
               <Route path="/trav_selectPackages" component={selectPackages}></Route>
               <Route path="/camping/" component={CampingEquipment}></Route>
-              <Route path="/donations/" component={Donations}></Route>
               <Route path="/daydistribution" component={DayDistribution}></Route>
 
             </Switch>
             
           </div>
-
         </Routes>
       </BrowserRouter>
     </div>
