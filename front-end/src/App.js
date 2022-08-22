@@ -57,6 +57,7 @@ import TravelerTrips from './pages/TravelerTrips';
 import TravelerIssues from './pages/TravelerIssues';
 import Page from './pages/page';
 import AddIssue from './components/Guide/GuideIssue/AddIssue';
+import GuideIssue from './pages/GuideIssue';
 
 function App() {
   window.onbeforeunload = (event) => {
@@ -128,7 +129,7 @@ function App() {
               <Route path="/guide/schedules" component={GuideSchedule}></Route>
               <Route path="/guide/history" component={GuideHistory}></Route>
               <Route path="/guide/payments" component={GuidePayements}></Route>
-              <Route path="/guide/issues" component={AddIssue}></Route>
+              <Route path="/guide/issues" component={GuideIssue}></Route>
 
 
               {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}

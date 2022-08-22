@@ -8,7 +8,7 @@ import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";
 import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
 
-const GuidePayements = (props) => {
+const GuideIssue = (props) => {
 
     if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
@@ -41,4 +41,4 @@ const GuidePayements = (props) => {
     }
 }
 
-export default GuidePayements;
+export default GuideIssue;
