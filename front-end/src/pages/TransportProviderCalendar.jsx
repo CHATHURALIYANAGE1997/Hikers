@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
 import TransporterHeader from "../components/TransportService/TransporterHeader/TransporterHeader";
 import NotFoundPage from "./NotFoundPage";
+import TransportCalendar from "../components/TransportService/Calendar/TransportCalendar";
 
 
 const TransportProviderCalendar = (props) => {
@@ -26,6 +27,7 @@ const TransportProviderCalendar = (props) => {
                     <div className="d-flex flex-column tg-profile">
                         <div className="d-flex flex-row w-100">
                             <TransportToday />
+                            <TransportCalendar />
                         </div>
                         <TransportUpcoming />
                     </div>

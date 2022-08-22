@@ -2,17 +2,23 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import './triphistory.css';
+import TotalTrips from "./TotalTrips";
+import TotalIncome from "./TotalIncome";
 
 const TripHistory = () => {
   return (
     <div className="d-flex flex-column history-container">
-      <div className="input-group w-100 justify-content-center mb-3">
+      <div className="d-flex flex-row w-100">
+        <TotalTrips />
+      <div className="input-group w-75 justify-content-center mb-3">
         <div className="form-outline w-75 mr-auto ml-auto">
           <input type="search" id="form1" className="form-control history-input" placeholder="Search" />
         </div>
         <button type="button" className="btn btn-primary history-search-btn">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
+      </div>
+      <TotalIncome />
       </div>
       <table className="table table-hover">
         <thead>

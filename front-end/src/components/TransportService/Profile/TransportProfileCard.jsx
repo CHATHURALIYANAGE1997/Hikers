@@ -1,6 +1,6 @@
 import React from "react";
 import './transportprofile.css';
-import profile from './Picture.png';
+import profile from './chathura.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencil} from '@fortawesome/free-solid-svg-icons';
 
@@ -9,12 +9,12 @@ const TransportProfileCard = () => {
         <div class="tp-container">
             <div className="tp-card">
                 <img src={profile} className="tp-pic" alt="Profile Picture"></img>
-                <h4 className="tp-name">Mr. Nimal Kumara</h4>
+                <h4 className="tp-name">Mr. Chathura Kumara</h4>
                 <h7 className="tp-name">Transport Service Provicer</h7>
                 <div className="transport-profile-details-container">
                     <div className="d-flex flex-row justify-content-between">
                         <h6 className="transport-profile-details-title">Personal Details</h6>
-                        <FontAwesomeIcon icon={faPencil} className="transport-profile-change-icon" />
+                        {/* <FontAwesomeIcon icon={faPencil} className="transport-profile-change-icon" /> */}
                     </div>
                     <div className="d-flex flex-row">
                         <h6 className="w-25">Full Name</h6>
@@ -52,6 +52,9 @@ const TransportProfileCard = () => {
                         <h6 className="w-25">Branch</h6>
                         <h6 className="transport-profile-details-right">: Kurunegala</h6>
                     </div>
+                </div>
+                <div className="d-flex flex-row justify-content-right w-100 pl-2">
+                    <button type="button" className="transport-edit-btn">Edit</button>
                 </div>
             </div>
         </div>

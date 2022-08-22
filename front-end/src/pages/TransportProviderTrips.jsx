@@ -22,6 +22,7 @@ const TransportProviderTrip = (props) => {
                 <div className="d-flex flex-row tg-page">
                     <TransportServiceNavBar />
                     <div className="d-flex flex-column tg-profile">
+                        <h4>Trip Requests</h4>
                         <TransportTrips />
                     </div>
                 </div>

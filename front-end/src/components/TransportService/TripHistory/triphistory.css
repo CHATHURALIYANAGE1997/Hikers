@@ -26,3 +26,14 @@
     margin: auto;
 }
 
+.total-travels-container {
+    background-color: #F6F5F5;
+    width: max-content;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.total-travels-numbers {
+    font-size: large;
+}
+

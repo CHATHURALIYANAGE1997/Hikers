@@ -4,7 +4,7 @@ import './transportissues.css';
 const TransportIssues = () => {
     return (
         <div className="w-100">
-            <h4 className="transport-issues-title">On-going trips</h4>
+            <h4 className="transport-issues-title">Upcome Trip Issues</h4>
             <div className="d-flex flex-column transport-issues-container">
                 <div className="d-flex flex-row justify-content-between">
                     <h5 className="transport-issues-trip-title">Trip from Kurunegala town to Dolukanda</h5>
@@ -30,11 +30,11 @@ const TransportIssues = () => {
                             </div>
                         </div>
                         <div className="transport-issues-team">
-                            <h7>Member #1</h7>
+                            <h7>Member #2</h7>
                             <div className="d-flex flex-column transport-issues-members">
-                                <span>Mr. Amila Perera</span>
-                                <span>077-1234567</span>
-                                <span>801234567 V</span>
+                                <span>Mr. Kasun Dissanayake</span>
+                                <span>077-4567890</span>
+                                <span>981234987 V</span>
                             </div>
                         </div>
                     </div>

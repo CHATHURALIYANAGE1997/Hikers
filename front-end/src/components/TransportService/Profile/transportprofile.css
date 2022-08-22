@@ -125,3 +125,16 @@
     align-items: center;
     margin: auto;
 }
+
+.transport-edit-btn {
+    margin-left: 10px;
+    background-color: #276678;
+    color: #F6F5F5;
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+}
+
+.transport-edit-btn:hover {
+    background-color: #1687A7;
+}
