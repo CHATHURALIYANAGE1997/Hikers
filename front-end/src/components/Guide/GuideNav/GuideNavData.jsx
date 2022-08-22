@@ -24,11 +24,6 @@ export const GuideNavData = [
         link: "/guide/history"
     },
     {
-        title: "Payments",
-        icon: <FontAwesomeIcon icon={faMoneyCheckDollar}/>,
-        link: "/guide/payments"
-    },
-    {
         title: "Issues",
         icon: <FontAwesomeIcon icon={faCircleExclamation}/>,
         link: "/guide/issues"

@@ -128,7 +128,7 @@ function App() {
               <Route path="/guide/trips" component={GuideTrips}></Route>
               <Route path="/guide/schedules" component={GuideSchedule}></Route>
               <Route path="/guide/history" component={GuideHistory}></Route>
-              <Route path="/guide/payments" component={GuidePayements}></Route>
+              {/* <Route path="/guide/payments" component={GuidePayements}></Route> */}
               <Route path="/guide/issues" component={GuideIssue}></Route>
 
 
