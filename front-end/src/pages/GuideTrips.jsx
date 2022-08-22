@@ -10,23 +10,23 @@ import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
 const GuideTrips = (props) => {
 
 
-    // if (localStorage.jwtToken) {
-    //     authToken(localStorage.jwtToken);
-    // }
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
 
-    // const auth = useSelector((state) => state.auth);
+    const auth = useSelector((state) => state.auth);
 
-    // // useEffect(() => {
-    // //     if (auth.isLoggedIn === true && auth.role === "Travelguide") {
-    // //         return propTypes.history.push("/guide/trips");
-    // //     }
-    // //     else {
-    // //         localStorage.clear();
-    // //         return props.history.push("/");
-    // //     }
-    // // }, []);
+    // useEffect(() => {
+    //     if (auth.isLoggedIn === true && auth.role === "Travelguide") {
+    //         return propTypes.history.push("/guide/trips");
+    //     }
+    //     else {
+    //         localStorage.clear();
+    //         return props.history.push("/");
+    //     }
+    // }, []);
 
-    // if (auth.isLoggedIn === true && auth.role === "Travelguide") {
+    if (auth.isLoggedIn === true && auth.role === "Travelguide") {
         return (
             <div className="d-flex flex-column tg-container">
                 <GuideHeader />
@@ -42,11 +42,11 @@ const GuideTrips = (props) => {
 
             </div>
         );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     return props.history.push("/");
-    // }
+    }
+    else {
+        localStorage.clear();
+        return props.history.push("/");
+    }
 }
 
 export default GuideTrips;
