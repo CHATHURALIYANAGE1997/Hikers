@@ -66,3 +66,15 @@
     margin-left: 10px;
     width: 50%;
 }
+
+.back-btn {
+    background-color: #1687A7;
+    width: max-content;
+    border: none;
+    border-radius: 5px;
+    color: #F6F5F5;
+}
+
+.back-btn-link {
+    text-align: left;
+}

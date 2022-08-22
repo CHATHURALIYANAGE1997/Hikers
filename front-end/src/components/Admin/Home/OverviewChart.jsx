@@ -14,7 +14,7 @@ import {
 const pdata = [
 	{
 		name: 'Jan',
-		orders: 120
+		orders: 58
 	},
 	{
 		name: 'Feb',
@@ -26,20 +26,20 @@ const pdata = [
 	},
 	{
 		name: 'Apr',
-		orders: 5
+		orders: 15
 	},
 	{
 		name: 'May',
-		orders: 4
+		orders: 23
 	},
 	{
 		name: 'Jun',
-		orders: 8
+		orders: 32
 	},
 	{
 		name: 'Jul',
 		travelers: 10,
-		orders: 8
+		orders: 5
 	},
 	{
 		name: 'Aug',
@@ -47,19 +47,19 @@ const pdata = [
 	},
 	{
 		name: 'Sep',
-		orders: 8
+		orders: 12
 	},
 	{
 		name: 'Oct',
-		orders: 8
+		orders: 10
 	},
 	{
 		name: 'Nov',
-		orders: 8
+		orders: 31
 	},
 	{
 		name: 'Dec',
-		orders: 8
+		orders: 25
 	},
 ];
 
@@ -78,7 +78,7 @@ function OverViewChart() {
 					<YAxis></YAxis>
 					<Legend />
 					<Tooltip />
-					<Line dataKey="Orders"
+					<Line dataKey="orders"
 						stroke="black" activeDot={{ r: 8 }} />
 				</LineChart>
 			</ResponsiveContainer>

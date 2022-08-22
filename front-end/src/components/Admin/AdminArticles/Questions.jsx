@@ -42,21 +42,21 @@ const Questions = () => {
             </div>
             <div className="d-flex flex-row justify-content-between questions-question">
                 <div className="d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda forums</span>
+                    <span className="all-articles-title">Hanthana forums</span>
                     <span className="all-articles-see-more-btn">see more..</span>
                 </div>
                 <button className="questions-view-btn">View</button>
             </div>
             <div className="d-flex flex-row justify-content-between questions-question">
                 <div className="d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda forums</span>
+                    <span className="all-articles-title">Adam's Peak forums</span>
                     <span className="all-articles-see-more-btn">see more..</span>
                 </div>
                 <button className="questions-view-btn">View</button>
             </div>
             <div className="d-flex flex-row justify-content-between questions-question">
                 <div className="d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda forums</span>
+                    <span className="all-articles-title">Devil's Stair-Case Mountain Range forums</span>
                     <span className="all-articles-see-more-btn">see more..</span>
                 </div>
                 <button className="questions-view-btn">View</button>

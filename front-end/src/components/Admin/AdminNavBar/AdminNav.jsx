@@ -15,7 +15,7 @@ const AdminNav = () => {
                                 className="an-row"
                                 id={window.location.pathname == val.link ? "active" : ""} >
                                 <div id="an-icon">{val.icon}</div>
-                                <div id="an-title">{val.title}</div>
+                                <div id="an-title">{val.title}</div>                                
                             </li>
                         </Link>
                     );

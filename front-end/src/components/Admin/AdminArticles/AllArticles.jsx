@@ -80,15 +80,15 @@ function AllArticles() {
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row all-articles-article">
                 <div className="w-50 d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda Article</span>
-                    <span>North Western Province</span>
+                    <span className="all-articles-title">Bathalegala Article</span>
+                    <span>Sabaragamuwa Province</span>
                     <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
                     />                
                 </div>
-                <span className="w-25 mt-auto mb-auto">08/04/2022</span>
+                <span className="w-25 mt-auto mb-auto">08/02/2022</span>
                 <div className="w-25 all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
                     <FontAwesomeIcon icon={faTrashCan} onClick={handleShow} className="all-hotels-edit-icon" />
@@ -97,15 +97,15 @@ function AllArticles() {
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row all-articles-article">
                 <div className="w-50 d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda Article</span>
-                    <span>North Western Province</span>
+                    <span className="all-articles-title">Hanthana Article</span>
+                    <span>Central Province</span>
                     <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
                     />                
                 </div>
-                <span className="w-25 mt-auto mb-auto">08/04/2022</span>
+                <span className="w-25 mt-auto mb-auto">18/01/2022</span>
                 <div className="w-25 all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
                     <FontAwesomeIcon icon={faTrashCan} onClick={handleShow} className="all-hotels-edit-icon" />
@@ -114,15 +114,15 @@ function AllArticles() {
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row all-articles-article">
                 <div className="w-50 d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda Article</span>
-                    <span>North Western Province</span>
+                    <span className="all-articles-title">Adara Kanda Article</span>
+                    <span>Central Province</span>
                     <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
                     />                
                 </div>
-                <span className="w-25 mt-auto mb-auto">08/04/2022</span>
+                <span className="w-25 mt-auto mb-auto">06/12/2021</span>
                 <div className="w-25 all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
                     <FontAwesomeIcon icon={faTrashCan} onClick={handleShow} className="all-hotels-edit-icon" />
@@ -131,15 +131,15 @@ function AllArticles() {
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row all-articles-article">
                 <div className="w-50 d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda Article</span>
-                    <span>North Western Province</span>
+                    <span className="all-articles-title">Adam's Peak Article</span>
+                    <span>Sabaragamuwa Province</span>
                     <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
                     />                
                 </div>
-                <span className="w-25 mt-auto mb-auto">08/04/2022</span>
+                <span className="w-25 mt-auto mb-auto">01/12/2021</span>
                 <div className="w-25 all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
                     <FontAwesomeIcon icon={faTrashCan} onClick={handleShow} className="all-hotels-edit-icon" />
@@ -148,7 +148,7 @@ function AllArticles() {
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row all-articles-article">
                 <div className="w-50 d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda Article</span>
+                    <span className="all-articles-title">Nickkles Article</span>
                     <span>North Western Province</span>
                     <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                     <MyVerticallyCenteredModal
@@ -156,7 +156,7 @@ function AllArticles() {
                         onHide={() => setModalShow(false)}
                     />                
                 </div>
-                <span className="w-25 mt-auto mb-auto">08/04/2022</span>
+                <span className="w-25 mt-auto mb-auto">08/10/2021</span>
                 <div className="w-25 all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
                     <FontAwesomeIcon icon={faTrashCan} onClick={handleShow} className="all-hotels-edit-icon" />
@@ -165,15 +165,15 @@ function AllArticles() {
             <hr className="all-hotels-hr" />
             <div className="d-flex flex-row all-articles-article">
                 <div className="w-50 d-flex flex-column">
-                    <span className="all-articles-title">Dolukanda Article</span>
-                    <span>North Western Province</span>
+                    <span className="all-articles-title">Devil's Stair-Case Article</span>
+                    <span>Uva Province</span>
                     <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
                     <MyVerticallyCenteredModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
                     />                
                 </div>
-                <span className="w-25 mt-auto mb-auto">08/04/2022</span>
+                <span className="w-25 mt-auto mb-auto">08/08/2022</span>
                 <div className="w-25 all-hotels-icons">
                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
                     <FontAwesomeIcon icon={faTrashCan} onClick={handleShow} className="all-hotels-edit-icon" />

@@ -3,10 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './adminhotels.css';
 
+
 function AddHotelForm() {
     return (
         <Form className='d-flex flex-column w-75 add-article-form'>
-            <h4>Hotel Form</h4>
+            
+           
             <div className="add-article-form-container">
                 <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicEmail">
                     <Form.Label>Hotel Name</Form.Label>
@@ -28,7 +30,7 @@ function AddHotelForm() {
 
                 <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicPassword">
                     <Form.Label>Upload Front Photo</Form.Label>
-                    <Form.Control type="file" className="form-control" />        
+                    <Form.Control type="file" className="form-control" />
                 </Form.Group>
 
                 <Form.Group className="mb-3 w-100 add-article-form-input" controlId="formBasicPassword">

@@ -14,52 +14,51 @@ import {
 const pdata = [
 	{
 		name: 'Jan',
-		orders: 120
+		income: 120000
 	},
 	{
 		name: 'Feb',
-		orders: 12
+		income: 12000
 	},
 	{
 		name: 'Mar',
-		orders: 10
+		income: 10000
 	},
 	{
 		name: 'Apr',
-		orders: 5
+		income: 5000
 	},
 	{
 		name: 'May',
-		orders: 4
+		income: 40000
 	},
 	{
 		name: 'Jun',
-		orders: 8
+		income: 10000
 	},
 	{
 		name: 'Jul',
-		travelers: 10,
-		orders: 8
+		income: 8500
 	},
 	{
 		name: 'Aug',
-		orders: 8
+		income: 20400
 	},
 	{
 		name: 'Sep',
-		orders: 8
+		income: 51800
 	},
 	{
 		name: 'Oct',
-		orders: 8
+		income: 8500
 	},
 	{
 		name: 'Nov',
-		orders: 8
+		income: 7400
 	},
 	{
 		name: 'Dec',
-		orders: 8
+		income: 12300
 	},
 ];
 
@@ -78,7 +77,7 @@ function IncomeChart() {
 					<YAxis></YAxis>
 					<Legend />
 					<Tooltip />
-					<Line dataKey="Income"
+					<Line dataKey="income"
 						stroke="black" activeDot={{ r: 8 }} />
 				</LineChart>
 			</ResponsiveContainer>
