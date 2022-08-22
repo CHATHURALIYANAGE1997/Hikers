@@ -21,6 +21,7 @@ import oraganizeTrip from './pages/trav_organizeTrip';
 import TravelingGuide from './pages/TravelingGuide';
 import selectPackages from './pages/trav_selectPackages';
 import CampingEquipment from "./pages/CampingEquipment";
+import CampingTents from "./pages/CampingTents";
 import GuideTrips from './pages/GuideTrips';
 import Transport from './pages/trav_tranpotation_1';
 import editTrip from './pages/trav_editTrip';
@@ -103,6 +104,7 @@ function App() {
 
                           <Route path = "/trav_selectPackages" component={selectPackages}></Route>
                           <Route path = "/camping/" component= {CampingEquipment}></Route>
+                          <Route path = "/tents" component= {CampingTents}></Route>
                           <Route path = "/donations/" component= {Donations}></Route>
 
 
