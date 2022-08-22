@@ -6,6 +6,9 @@ import { useSelector } from "react-redux";
 import authToken from "../../utils/authToken";
 import { Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell } from '@fortawesome/free-solid-svg-icons'
+
 
 const Navbar = () => {
 
@@ -29,7 +32,7 @@ const Navbar = () => {
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    {auth.isLoggedIn === true ?
+                    {auth.isLoggedIn === true && auth.role === "User" ?
                         <ul class="navbar-nav navbar-ul">
                             {NavBarData.map((val, key) => {
                                 return (
@@ -42,6 +45,8 @@ const Navbar = () => {
                                 );
                             })
                             }
+
+                            <FontAwesomeIcon icon={faBell} className="admin-header-bell" />
 
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>

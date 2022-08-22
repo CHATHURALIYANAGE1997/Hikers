@@ -61,7 +61,7 @@ const AdminHeader = () => {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu className="d-flex flex-column">
-                                                <Link to={"admin/home"} className="w-100 dropdown-item">Home</Link>
+                                                <Link to={"/admin/home"} className="w-100 dropdown-item">Home</Link>
                                                 <Link to={"/"} className="w-100 dropdown-item">Log-out</Link>
                                             </Dropdown.Menu>
                                         </Dropdown>

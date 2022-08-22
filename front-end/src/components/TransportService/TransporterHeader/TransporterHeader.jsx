@@ -61,7 +61,7 @@ const TransporterHeader = () => {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu className="d-flex flex-column">
-                                                <Link to={"transportservice/profile"} className="w-100 dropdown-item">Profile</Link>
+                                                <Link to={"/transportservice/profile"} className="w-100 dropdown-item">Profile</Link>
                                                 <Link to={"/"} className="w-100 dropdown-item">Log-out</Link>
                                             </Dropdown.Menu>
                                         </Dropdown>

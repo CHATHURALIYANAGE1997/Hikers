@@ -61,7 +61,7 @@ const GuideHeader = () => {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu className="d-flex flex-column">
-                                                <Link to={"guide/profile"} className="w-100 dropdown-item">Profile</Link>
+                                                <Link to={"/guide/profile"} className="w-100 dropdown-item">Profile</Link>
                                                 <Link to={"/"} className="w-100 dropdown-item">Log-out</Link>
                                             </Dropdown.Menu>
                                         </Dropdown>

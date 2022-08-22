@@ -61,7 +61,7 @@ const HotelHeader = () => {
                                             </Dropdown.Toggle>
 
                                             <Dropdown.Menu className="d-flex flex-column">
-                                                <Link to={"hotel/profile"} className="w-100 dropdown-item">Home</Link>
+                                                <Link to={"/hotel/profile"} className="w-100 dropdown-item">Home</Link>
                                                 <Link to={"/"} className="w-100 dropdown-item">Log-out</Link>
                                             </Dropdown.Menu>
                                         </Dropdown>
