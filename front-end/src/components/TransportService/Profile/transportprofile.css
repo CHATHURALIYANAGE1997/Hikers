@@ -14,10 +14,13 @@
 }
 
 .tp-card {
-    border: 1px solid rgb(9, 9, 9);
+    border: none !important;
     padding: 10px;
     margin-right: 5px;
     height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .tp-pic {
@@ -104,7 +107,9 @@
     margin-top: 5px;
     margin-right: 5px;
     margin-left: 260px;
-    border: 1px solid  rgb(9, 9, 9);
+    border: none !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px !important;
 }
 
 .transport-review-card {

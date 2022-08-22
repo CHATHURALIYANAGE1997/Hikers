@@ -51,8 +51,12 @@ const AdminHome = (props) => {
     }
     else {
         localStorage.clear();
+<<<<<<< refs/remotes/origin/main
       //  return props.history.push("/login");
         {return <div><NotFoundPage/></div>}
+=======
+        return props.history.push("/login");
+>>>>>>> Modify Transporter Profile
     }
 }
 
