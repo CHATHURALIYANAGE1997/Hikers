@@ -33,7 +33,10 @@ const GuideTrips = (props) => {
                 <div className="d-flex flex-row tg-page">
                     <GuideNav />
                     <div className="d-flex flex-column gt-request">
+                        <h4>Trip Requests</h4>
                         <TripRequest />
+                        <TripRequest />
+
                     </div>
                 </div>
 
