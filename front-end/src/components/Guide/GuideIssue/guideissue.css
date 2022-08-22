@@ -1,0 +1,43 @@
+.transport-issues-title {
+    text-align: left;
+}
+
+.transport-issues-container {
+    border: 1px solid rgb(159, 159, 159);
+    padding: 5px;
+    margin-right: 10px;
+    text-align: left;
+}
+
+.transport-issues-trip-title {
+    font-weight: bold;
+    text-align: left;
+}
+
+.transport-issues-team {
+    margin-right: 10px;
+}
+
+.transport-issues-members {
+    color: rgb(83, 83, 83);
+}
+
+.transport-issues-input {
+    height: 100px;
+    width: 50%;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 5px;
+}
+
+.transport-issues-submit-btn {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(247, 76, 76);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.transport-issues-submit-btn:hover {
+    background-color: rgb(250, 28, 28);
+}

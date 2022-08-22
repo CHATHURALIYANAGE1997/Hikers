@@ -5,9 +5,9 @@ import mountain1 from "../components/Articles/mountain1.JPG";
 import mountain2 from "../components/Articles/mountain2.jpg";
 import { FaSearchLocation } from 'react-icons/fa';
 import { useTitle } from "../components/Title/Title"
-import ArticleSearchBar from "../components/Articles/ArticleSearchBar";
 import ArticleBreadCrumb from "../components/Articles/articlebreadcrumb";
 import ArticleNavBar from "../components/Articles/ArticleNavBar";
+import ArticleSearchBar from "../components/Articles/ArticleSearchBar";
 
 const Articles = () => {
     useTitle("Hikers")

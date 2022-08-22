@@ -2,6 +2,10 @@ import React from "react";
 
 export const NavBarData = [
     {
+        title: "Trips",
+        link: "/welcome"
+    },
+    {
         title: "Hotels",
         link: "/hotels"
     },

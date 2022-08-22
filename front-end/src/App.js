@@ -50,13 +50,13 @@ import AdminAddArticle from './pages/AdminAddArticle';
 import AdminAddHotel from './pages/AdminAddHotel';
 import AdminAddTransporter from './pages/AdminAddTransporter';
 import DayDistribution from './pages/trav_dayDistribution';
-import NotFoundPage from "./pages/NotFoundPage";
 
 import verifyaccount from "./pages/verifyaccount";
 import TravelerProfile from './pages/TravelerProfile';
 import TravelerTrips from './pages/TravelerTrips';
 import TravelerIssues from './pages/TravelerIssues';
 import Page from './pages/page';
+import AddIssue from './components/Guide/GuideIssue/AddIssue';
 
 function App() {
   window.onbeforeunload = (event) => {
@@ -128,6 +128,8 @@ function App() {
               <Route path="/guide/schedules" component={GuideSchedule}></Route>
               <Route path="/guide/history" component={GuideHistory}></Route>
               <Route path="/guide/payments" component={GuidePayements}></Route>
+              <Route path="/guide/issues" component={AddIssue}></Route>
+
 
               {/* <Route path = "/guide/issues" component = {GuideIssues}></Route> */}
 

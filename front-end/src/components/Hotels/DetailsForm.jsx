@@ -2,6 +2,7 @@ import React from "react";
 import "./bookingdetails.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faLock} from '@fortawesome/free-solid-svg-icons'
+import {Link} from "react-router-dom";
 
 const DetailsForm = () => {
     return (
@@ -68,7 +69,9 @@ const DetailsForm = () => {
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary df-booking-btn"><FontAwesomeIcon icon={faLock} /><span className="df-icon">Complete booking</span></button>
+                    <Link to={"/welcome"}>
+                        <button type="button" class="btn btn-primary df-booking-btn"><FontAwesomeIcon icon={faLock} /><span className="df-icon">Complete booking</span></button>
+                    </Link>
                 </form>
             </div>
         </div>

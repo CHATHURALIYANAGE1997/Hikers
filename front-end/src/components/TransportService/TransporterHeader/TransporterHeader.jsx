@@ -62,7 +62,7 @@ const TransporterHeader = () => {
 
                                             <Dropdown.Menu className="d-flex flex-column">
                                                 <Link to={"transportservice/profile"} className="w-100 dropdown-item">Profile</Link>
-                                                <Link to={"/logout"} className="w-100 dropdown-item">Log-out</Link>
+                                                <Link to={"/"} className="w-100 dropdown-item">Log-out</Link>
                                             </Dropdown.Menu>
                                         </Dropdown>
                                     </li>
