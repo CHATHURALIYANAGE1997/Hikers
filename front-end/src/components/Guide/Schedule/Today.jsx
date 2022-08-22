@@ -11,8 +11,8 @@ const Today = () => {
                     <h5 className="today-title">Today</h5>
                     <h7 className="today-date">27th July 2022</h7>
                 </div>
-                <h7>Starting : </h7>
-                <h7>Ending : </h7>
+                <h7>Starting : 9.00 AM</h7>
+                <h7>Ending : 7.00 PM</h7>
                 <h3 className="today-trip">Trip to Hanthana</h3>
                 <div className="today-transport mb-3 d-flex flex-row">
                     <div className="d-flex flex-column w-50 text-left">

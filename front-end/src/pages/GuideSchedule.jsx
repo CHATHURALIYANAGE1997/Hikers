@@ -37,7 +37,6 @@ const GuideSchedule = (props) => {
                         <Today />
                         <div className="d-flex flex-row gs-upcoming">
                             <Upcoming />
-                            <Upcoming />
                         </div>
 
                     </div>
