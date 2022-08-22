@@ -51,7 +51,8 @@ const AdminHome = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+      //  return props.history.push("/login");
+        {return <div><NotFoundPage/></div>}
     }
 }
 
