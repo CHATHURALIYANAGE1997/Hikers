@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { useSelector } from "react-redux";
 import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
+import NotFoundPage from "./NotFoundPage";
+
 const GuideTrips = (props) => {
 
 
@@ -35,8 +37,6 @@ const GuideTrips = (props) => {
                     <div className="d-flex flex-column gt-request">
                         <h4 >Trip Requests</h4>
                         <TripRequest />
-                        <TripRequest />
-
                     </div>
                 </div>
 
@@ -45,7 +45,9 @@ const GuideTrips = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+        // return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
+
     }
 }
 

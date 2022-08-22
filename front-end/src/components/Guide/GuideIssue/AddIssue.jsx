@@ -4,11 +4,11 @@ import './guideissue.css';
 const AddIssue = () => {
     return (
         <div className="w-100">
-            <h4 className="transport-issues-title">On-going Trips</h4>
+            <h4 className="transport-issues-title">Upcoming Trips</h4>
             <div className="d-flex flex-column transport-issues-container">
                 <div className="d-flex flex-row justify-content-between">
                     <h5 className="transport-issues-trip-title">Trip from Kurunegala town to Dolukanda</h5>
-                    <h5>Date : 30th July 2022</h5>
+                    <h5>Date : 30th November 2022</h5>
                 </div>
                 <div className="d-flex flex-row">
                     <h6 className="w-25">Passenger count</h6>
@@ -30,11 +30,11 @@ const AddIssue = () => {
                             </div>
                         </div>
                         <div className="transport-issues-team">
-                            <h7>Member #1</h7>
+                            <h7>Member #2</h7>
                             <div className="d-flex flex-column transport-issues-members">
-                                <span>Mr. Amila Perera</span>
-                                <span>077-1234567</span>
-                                <span>801234567 V</span>
+                                <span>Mr. Sadun De Silva</span>
+                                <span>077-0987654</span>
+                                <span>901234567 V</span>
                             </div>
                         </div>
                     </div>

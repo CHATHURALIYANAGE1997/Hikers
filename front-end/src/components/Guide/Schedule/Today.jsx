@@ -5,7 +5,7 @@ import './schedule.css';
 
 const Today = () => {
     return (
-        <div class="today-container">
+        <div class="today-container w-100">
             <div className="d-flex flex-column today-card">
                 <div className="d-flex flex-row justify-content-between">
                     <h5 className="today-title">Today</h5>

@@ -8,6 +8,8 @@ import { useEffect } from "react";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { useSelector } from "react-redux";
 import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
+import NotFoundPage from "./NotFoundPage";
+import Calendar from "../components/Guide/Schedule/Calendar";
 
 const GuideSchedule = (props) => {
 
@@ -34,7 +36,10 @@ const GuideSchedule = (props) => {
                 <div className="d-flex flex-row tg-page">
                     <GuideNav />
                     <div className="d-flex flex-column gs-schedule">
+                    <div className="d-flex flex-row">
                         <Today />
+                        <Calendar/>
+                        </div>
                         <div className="d-flex flex-row gs-upcoming">
                             <Upcoming />
                         </div>
@@ -47,7 +52,9 @@ const GuideSchedule = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+        // return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
+
     }
 }
 

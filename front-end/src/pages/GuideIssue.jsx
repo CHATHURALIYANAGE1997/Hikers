@@ -5,6 +5,8 @@ import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";
 import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
 import AddIssue from "../components/Guide/GuideIssue/AddIssue";
+import NotFoundPage from "./NotFoundPage";
+
 
 const GuideIssue = (props) => {
 
@@ -31,7 +33,8 @@ const GuideIssue = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+        // return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
     }
 }
 

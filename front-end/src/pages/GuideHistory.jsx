@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { useSelector } from "react-redux";
 import GuideHeader from "../components/Guide/GuideHeader/GuideHeader";
+import NotFoundPage from "./NotFoundPage";
+
 
 const GuideHistory = (props) => {
 
@@ -42,7 +44,9 @@ const GuideHistory = (props) => {
     }
     else {
         localStorage.clear();
-        return props.history.push("/");
+        // return props.history.push("/");
+        {return <div><NotFoundPage/></div>}
+
     }
 }
 

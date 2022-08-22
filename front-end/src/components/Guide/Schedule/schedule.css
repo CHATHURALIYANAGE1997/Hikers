@@ -5,7 +5,7 @@
 }
 
 .today-card {
-    width: 50%;
+    width: 100% !important;
     background-color: #D3E0EA !important;
     text-align: left;
     padding: 10px;
@@ -60,4 +60,13 @@
 .upcoming-trip {
     background-color: white !important;
     margin-bottom: 10px;
+}
+
+.calendar-container {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
 }
