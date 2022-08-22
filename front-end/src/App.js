@@ -50,6 +50,7 @@ import AdminAddArticle from './pages/AdminAddArticle';
 import AdminAddHotel from './pages/AdminAddHotel';
 import AdminAddTransporter from './pages/AdminAddTransporter';
 import DayDistribution from './pages/trav_dayDistribution';
+import CampingTents from "./pages/CampingTents";
 
 import verifyaccount from "./pages/verifyaccount";
 import TravelerProfile from './pages/TravelerProfile';
@@ -105,6 +106,7 @@ function App() {
               <Route path="/landingPage/" component={LandingPage}></Route>
               <Route path="/articles/" component={Articles}></Route>
               <Route path="/articleinfo/" component={ArticleInfo}></Route>
+              <Route path = "/tents" component= {CampingTents}></Route>
               <Route path = "/forums/" component= {Forums}></Route>
               <Route path = "/forumDetails/" component= {ForumDetails}></Route>
               <Route path = "/forumQuestion/" component= {forumQuestion}></Route>
