@@ -3,10 +3,32 @@
     border: 1px solid rgb(124, 124, 124);
     border-radius: 7%;
     padding: 5%;
-
+    height: 220px;
 
 }
 .txtLocal, .txtForiegn, .divDecText {
     text-align: left !important;
 
+}
+.package_1:hover {
+    /* background-color: aqua; */
+    border: 2px solid aqua;
+    
+}
+/* .trp_checkBox {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+
+}
+.txtLocal, .txtForiegn {
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.localDes, .foriegnDes {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+} */
+.trp_checkBox {
+    color: black;
+    font-size: large;
 }

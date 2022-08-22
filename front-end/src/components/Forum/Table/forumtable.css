@@ -1,0 +1,20 @@
+.forumauthor{
+    font-size:small;
+    color:rgb(46, 44, 44);
+    font-weight: bold;
+    text-align: left;
+    justify-content: right;
+    width:50%;
+    margin-left: auto;
+}
+.forumtopic,.forumdistrict{
+    text-align: left;
+    justify-content: right;
+    width:auto;
+    margin-left: 30%;
+}
+.forumtableheader{
+    background-color: #D3E0EA;
+}.forumrows{
+    background-color:#d3e0ea81;
+}

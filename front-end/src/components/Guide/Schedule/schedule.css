@@ -6,12 +6,13 @@
 
 .today-card {
     width: 50%;
-    background-color: #c1e1bb;
+    background-color: #D3E0EA !important;
     text-align: left;
     padding: 10px;
     margin-bottom: 10px;
     margin-right: 5px;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 
 .today-title {
@@ -19,7 +20,7 @@
 }
 
 .today-trip {
-    background-color: #c1e1bb !important;
+    background-color: #D3E0EA !important;
     /* color: #276678; */
     margin-bottom: 10px;
 }
@@ -47,11 +48,12 @@
 }
 
 .upcoming-card {
-    border: 2px solid #1687A7;
+    border: none !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     text-align: left;
     padding: 10px;
     margin-bottom: 10px;
-    margin-right: 5px;
+    margin-right: 10px !important;
     border-radius: 5px;
 }
 

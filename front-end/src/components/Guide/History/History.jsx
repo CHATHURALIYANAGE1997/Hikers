@@ -22,12 +22,15 @@ const History = () => {
             <th scope="col">Hotel</th>
             <th scope="col">Transport</th>
             <th scope="col">Team</th>
-            <th scope="col">Profit</th>
+            <th scope="col">Total Income</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">Bathalegala</th>
+            <th scope="row">
+              <div>Bathalegala Mountain</div>
+              <div className="history-province">Notherth Western</div>
+            </th>
             <td>12th April 2022</td>
             <td>ABC Hotel</td>
             <td>Car</td>
@@ -37,24 +40,30 @@ const History = () => {
             <td>LKR 10, 500</td>
           </tr>
           <tr>
-            <th scope="row">Bathalegala</th>
+            <th scope="row">
+              <div>Hanthana Mountain Range</div>
+              <div className="history-province">Notherth Western</div>
+            </th>            
             <td>12th April 2022</td>
             <td>ABC Hotel</td>
             <td>Car</td>
             <td className="d-flex flex-column">Mr. AS Perera
               <button className="history-see-more-btn">See more ...</button>
             </td>
-            <td>LKR 10, 500</td>
+            <td>LKR 12, 500</td>
           </tr>
           <tr>
-            <th scope="row">Bathalegala</th>
+            <th scope="row">
+              <div>Adara Kanda</div>
+              <div className="history-province">Notherth Western</div>
+            </th>            
             <td>12th April 2022</td>
             <td>ABC Hotel</td>
             <td>Car</td>
             <td className="d-flex flex-column">Mr. AS Perera
               <button className="history-see-more-btn">See more ...</button>
             </td>
-            <td>LKR 10, 500</td>
+            <td>LKR 8, 000</td>
           </tr>
         </tbody>
       </table>

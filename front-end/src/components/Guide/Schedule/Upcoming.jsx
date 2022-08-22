@@ -8,11 +8,10 @@ const Upcoming = () => {
         <div class="today-container w-100">
             <div className="d-flex flex-column upcoming-card">
                 <div className="d-flex flex-row justify-content-between">
-                    <h5 className="today-title">Today</h5>
-                    <h7 className="today-date">27th July 2022</h7>
+                    <h5 className="today-date">27th July 2022</h5>
                 </div>
-                <h7>Starting : </h7>
-                <h7>Ending : </h7>
+                <h7>Starting : 9.00 AM</h7>
+                <h7>Ending : 6.30 PM</h7>
                 <h3 className="upcoming-trip">Trip to Hanthana</h3>
                 <div className="today-transport mb-3 d-flex flex-row">
                     <div className="d-flex flex-column w-50 text-left">

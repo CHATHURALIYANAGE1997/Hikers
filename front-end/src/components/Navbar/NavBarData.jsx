@@ -2,6 +2,10 @@ import React from "react";
 
 export const NavBarData = [
     {
+        title: "Trips",
+        link: "/welcome"
+    },
+    {
         title: "Hotels",
         link: "/hotels"
     },
@@ -9,10 +13,6 @@ export const NavBarData = [
         title: "Camping Equipements",
         link: "/camping"
     },
-    // {
-    //     title: "Profile",
-    //     link: "/"
-    // },
     {
         title: "Articles",
         link: "/articles"
@@ -23,6 +23,6 @@ export const NavBarData = [
     },
     {
         title: "Donations",
-        link: "/donations"
+        link: "/donationsHome"
     },
 ]

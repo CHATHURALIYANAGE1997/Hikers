@@ -29,3 +29,23 @@
     padding: 8%;
 
 }
+.tret_mainDiv {
+    padding-top: 7%;
+
+}
+.tred_mainText {
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    font-family:'Times New Roman', Times, serif;
+    /* font-style: italic; */
+    /* font-weight: 100; */
+    font-variant-ligatures: normal;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-align: center;
+
+}
+.nameLabel, .locationLabel, .crowdLabel, .dateLabel, .packageLabel, .activityLabel {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}

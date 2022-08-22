@@ -1,5 +1,6 @@
 import React from "react";
 import "./hotelinfo.css";
+import {Link} from "react-router-dom";
 
 const HotelRooms = () => {
     return (
@@ -118,7 +119,7 @@ const HotelRooms = () => {
                             </tbody>
                         </table>
                         <div className="d-flex hr-reserve">
-                            <a href="/reserve"><button className="btn btn-primary hr-reserve-btn">Reserve</button></a>
+                            <Link to={"/reserve"}><button className="btn btn-primary hr-reserve-btn">Reserve</button></Link>
                         </div>
                     </div>
 

@@ -13,6 +13,11 @@
     margin-left: auto !important;
 }
 
+.navbar-ul-signup {
+    margin-left: auto ;
+    margin-right: 20px;
+}
+
 .top {
     display: flex;
     justify-content: right;
@@ -60,3 +65,12 @@
     justify-content: space-between !important;
 }
 
+.dropdown-btn {
+    background-color: #276678 !important;
+    border: none !important;
+}
+
+.dropdown-item {
+    color: black;
+    text-align: center !important;
+}

@@ -1,15 +1,26 @@
-/* .welcomeDiv {
-    margin: 0 auto;
-    width: 60%;
-    height: 25%;
-    position: fixed;
-    top : 37.5%;
-    left : 20%
 
-} */
-/* button {
-    position: absolute;
-    top: 70%;
-    left: 44%;
+.welcomeDiv {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-direction: column;
+}
 
-} */
+.welcomeNote {
+    color: #276678;
+    font-weight: bold;
+}
+
+.welcome-btn {
+    border: 1px solid #276678 !important;
+    color: #276678 !important;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    
+}
+
+.welcome-btn:hover {
+    background-color: #276678 !important;
+    color: #F6F5F5 !important;
+}

@@ -6,9 +6,9 @@ import { authenticateUser } from "../services/index";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useTitle } from "../components/Title/Title"
 import Navbar from "../components/Navbar/Navbar";
-import signinpic from "../components/images/signinpic.jpg";
-
+import signinpic from "../components/Signin/signinpic.jpg";
 import { Alert, } from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const Login = (props) => {
 
@@ -26,6 +26,7 @@ const Login = (props) => {
     const credentialChange = (event) => {
         const { name, value } = event.target;
         setUser({ ...user, [name]: value });
+        
     };
 
     const dispatch = useDispatch();
@@ -34,8 +35,27 @@ const Login = (props) => {
         // console.log(user);
         dispatch(authenticateUser(user.email, user.password))
             .then((response) => {
-                console.log(response.data);
-                return props.history.push("/home");
+               // console.log(response.data);
+                if(response.data.role==="Admin") {
+                    return props.history.push("/admin/home"); }
+                if(response.data.role==="User") {
+                    return props.history.push("/welcome");
+                }
+                if(response.data.role === "Travelguide"){
+                    return props.history.push("/guide/profile");
+                }
+                if(response.data.role === "Eqprovider"){
+                    return props.history.push("/camping");
+                }
+                if(response.data.role === "Hotel"){
+                    return props.history.push("/hotel/profile");
+                }
+                if(response.data.role === "Traprovider"){
+                    return props.history.push("/transportservice/profile");
+                }
+                else {
+                    return props.history.push("/");
+                }
             })
             .catch((error) => {
                 console.log(error.message);
@@ -77,7 +97,7 @@ const Login = (props) => {
                         </div>
                         <form class="loginform-box px-3 row g-3">
                             <div className="login-body">
-                                <h1 className="p-2 text-center">Hello, <br></br>Welcome Back</h1>
+                                <h1 className="p-2 text-center">Hello, <br></br>Welcome to HIKERS</h1>
                                 {/* <form class="loginform-box px-3 row g-3"> */}
                                 <div class="loginform-input col-12">
 
@@ -95,7 +115,7 @@ const Login = (props) => {
                                 <div class="col-12">
                                     <br></br>
                                     <div class="loginform-input">
-                                        <span className="loginiconem"><i class="fa fa-envelope-o"></i></span>
+                                        {/* <span className="loginiconem"><i class="fa fa-envelope-o"></i></span> */}
                                         <input type="email" class="form-control" placeholder="Email-Address" value={user.email} onChange={credentialChange} name="email" />
                                     </div>
                                 </div>
@@ -108,7 +128,7 @@ const Login = (props) => {
 
                             </div>
                             <div class="loginform-input">
-                                <span className="loginiconpw"><i class="fa fa-key"></i></span>
+                                {/* <span className="loginiconpw"><i class="fa fa-key"></i></span> */}
                                 <input className="password-field" type="password" class="form-control" placeholder="Password" value={user.password} onChange={credentialChange} name="password" />
 
                             </div>
@@ -128,11 +148,11 @@ const Login = (props) => {
                                 </div>
                             </div>
                             <div class="col-6 mt-3 mx-auto text-center loginbtn">
-                                <button class="btn btn-primary" type="submit" variant="success" onClick={validateUser} >Login</button>
+                                <button class="btn btn-primary" type="submit" type="button" variant="success" onClick={validateUser} >Login</button>
                             </div>
                             <hr ></hr>
                             <div class="text-center mb-2">
-                                Don't have an account? <a href="/signup">Register Here</a>
+                                Don't have an account? <Link to={"/signup"}>Register Here</Link>
                             </div>
                         </form>
                     </div>

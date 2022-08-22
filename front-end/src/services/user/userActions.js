@@ -1,24 +1,12 @@
 import * as UT from "./userTypes";
 import axios from "axios";
 
-//const REGISTER_URL = "http://localhost:8081/rest/user/register";
-const REGISTER_URL = "http://localhost:8080/user/signup";
 
-// export const fetchUsers = () => {
-//   return (dispatch) => {
-//     dispatch(userRequest());
-//     axios
-//       .get(
-//         "https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole"
-//       )
-//       .then((response) => {
-//         dispatch(userSuccess(response.data));
-//       })
-//       .catch((error) => {
-//         dispatch(userFailure(error.message));
-//       });
-//   };
-// };
+const REGISTER_URL = "http://localhost:8080/user/signup";
+// const VERIFY_URL=`http://localhost:8080/user/accountconfirm/${code}`;
+const REGISTER_URLEQRPROVIDER="http://localhost:8080/user/signupequipmentprovider"
+const REGISTER_URLGUIDESIGNUP="http://localhost:8080/user/signuptraveling"
+//const api = `http://localhost:8080/user/accountconfirm/${code}`;
 
 export const registerUser = (userObject) => async (dispatch) => {
     dispatch(userRequest());
@@ -31,6 +19,46 @@ export const registerUser = (userObject) => async (dispatch) => {
         return Promise.reject(error);
     }
 };
+
+
+export const verifyuserr=(code)=>async (dispatch)=>{
+    const VERIFY_URL=`http://localhost:8080/user/accountconfirm/${code}`;
+    dispatch(userRequest());
+    try {
+        const response = axios.get(VERIFY_URL)
+        dispatch(userSavedSuccess(response));
+        return Promise.resolve(response);
+    }catch (error) {
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+}
+
+
+export const Eqprovider=(userObject)=>async (dispatch)=>{
+    dispatch(userRequest());
+    try {
+        const response = await axios.post(REGISTER_URLEQRPROVIDER, userObject);
+        dispatch(userSavedSuccess(response));
+        return Promise.resolve(response);
+
+    }catch (error) {
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+}
+
+export const GuideSignupnew=(userObject)=>async (dispatch)=>{
+    dispatch(userRequest());
+    try{
+        const response = await axios.post(REGISTER_URLGUIDESIGNUP, userObject);
+        dispatch(userSavedSuccess(response));
+        return Promise.resolve(response);
+    }catch (error){
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+}
 
 const userRequest = () => {
     return {

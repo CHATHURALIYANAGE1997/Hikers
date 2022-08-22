@@ -19,17 +19,23 @@
 .pc-card {
     /* width: 250px; */
     height: 250px;
-    border: 1px solid rgb(9, 9, 9);
+    border: none !important;
     padding: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+    border-radius: 5px;
 }
 
 .pc-pic {
-    height: 100px;
-    width: 100px;
-    margin: auto;
+    height: 150px;
+    width: 150px;
     vertical-align: middle;
     border-radius: 50%;
-    margin-top: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .pc-name {
@@ -39,9 +45,11 @@
 .pd-container {
     width: 100%;
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 10px !important;
     height: 250px;
-    border: 1px solid rgb(9, 9, 9);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+    border: none !important;
+    border-radius: 5px !important;
 }
 
 .pd-row {
@@ -59,6 +67,12 @@
     color: rgb(121, 121, 121) !important;
 }
 
+.pd-edit-btn-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 80%;
+}
 
 .pd-edit-btn {
     background-color: #1687A7;
@@ -67,6 +81,7 @@
     border-radius: 5px;
     width: 100px;
     height: 35px;
+    
 }
 
 .pd-edit-btn:hover {
@@ -75,13 +90,21 @@
 
 .gr-container {
     width: 100%;
-    margin-top: 5px;
-    margin-right: 5px;
-    border: 1px solid  rgb(9, 9, 9);
+    margin-top: 10px !important;
+    margin-right: 10px !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
+    border: none !important;
+    border-radius: 5px;
+}
+
+.gr-experience {
+    margin-left: 10px;
+    text-align: left;
+    width: 25% !important;
 }
 
 .gr-progress {
-    width: 60%;
+    width: 75% !important;
     align-items: center;
     margin: auto;
 }

@@ -1,0 +1,129 @@
+.tg-profile {
+    margin-top: 86px;
+    margin-left: 260px;
+    width: 100%;
+    height: 100%;
+}
+
+.tp-reviews {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.pc-container {
+    width: 40% !important;
+    /* height: 100vh; */
+    /* background-color: aqua; */
+}
+
+.pc-card {
+    /* width: 250px; */
+    height: 250px;
+    border: 1px solid rgb(9, 9, 9);
+    padding: 5px;
+}
+
+.pc-pic {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-top: auto;
+}
+
+.pc-name {
+    color: #276678 !important;
+}
+
+.pd-container {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 250px;
+    border: 1px solid rgb(9, 9, 9);
+}
+
+.pd-row {
+    width: 100%;
+    height: 56px;
+    padding: 10px;
+}
+
+.pd-h6 {
+    width: 30%;
+    text-align: left;
+}
+
+.pd-details {
+    color: rgb(121, 121, 121) !important;
+}
+
+
+.pd-edit-btn {
+    background-color: #1687A7;
+    color: #F6F5F5;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+}
+
+.pd-edit-btn:hover {
+    background-color: #276678;
+}
+
+.gr-container {
+    width: 100%;
+    margin-top: 5px;
+    margin-right: 5px;
+    border: 1px solid  rgb(9, 9, 9);
+}
+
+.gr-experience {
+    margin-left: 10px;
+    text-align: left;
+    width: 10%;
+}
+
+.gr-progress {
+    width: 60%;
+    align-items: center;
+    margin: auto;
+}
+
+
+.gh-page {
+    margin-right: 10px;
+}
+
+.history-container {
+    margin-right: 10px !important;
+    width: 100%;
+}
+
+.history-search-btn {
+    background-color: #0d6efd !important;
+}
+
+.history-input {
+    border: 1px solid #cccdcd !important;
+    background-color: white !important;
+    border-radius: 5px !important;
+}
+
+.history-table {
+    margin-right: 10px;
+}
+
+.history-see-more-btn {
+    width: 100px;
+    margin: auto;
+}
+
+.trip-history-title {
+    text-align: left !important;
+    margin-bottom: 10px;
+}
+

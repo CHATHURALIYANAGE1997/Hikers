@@ -6,9 +6,11 @@ import Hikers.Hikers.model.Transportprovider;
 import Hikers.Hikers.model.Travelingguide;
 import Hikers.Hikers.model.User;
 import com.sun.net.httpserver.Authenticator;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -50,6 +52,8 @@ public interface UserRest {
     @GetMapping(path="/gettrasprovider/{service_provider_id}")
     public ResponseEntity<Optional<Transportprovider>> getTraProvide(@PathVariable Long service_provider_id);
 
+    @GetMapping(path="/accountconfirm/{code}")
+    public ResponseEntity<?> verifyUser(@PathVariable String code);
 
 }
 

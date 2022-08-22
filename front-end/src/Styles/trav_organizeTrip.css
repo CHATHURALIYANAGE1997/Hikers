@@ -1,6 +1,6 @@
 .formContainer {
     /* position: fixed; */
-    width: 45%;
+    width: 65%;
     /* background-color: blueviolet; */
     padding: 4%;
     margin: 0 auto;
@@ -26,11 +26,11 @@
 
 }
 .txtOrganizeTrip {
-    width: 100%;
+    /* width: 100%; */
     /* margin: 0 auto; */
-    font-family: "Helvetica Neue", "Arial", sans-serif;
+    /* font-family:'Times New Roman', Times, serif; */
     /* font-style: italic; */
-    font-weight: 100;
+    /* font-weight: 100; */
     font-variant-ligatures: normal;
     font-size: 2rem;
     letter-spacing: 1px;
@@ -61,4 +61,53 @@
 .col {
     color: black;
     
+}
+.trot_mainDiv {
+    padding-top: 8%;
+
+}
+.trot_mainTextDiv {
+    color: rgb(31, 32, 61);
+    font-size: 40px;
+
+}
+.trot_lablePackagesDiv {
+    background-color: rgb(58, 141, 58);
+    padding-left: 0%;
+
+}
+.trot_dropDown {
+    width: 50%;
+    margin-bottom: 10px;
+    margin-right: 20px !important;
+}
+.proviceDrop {
+    width: 50%;
+    background-color: white !important;
+}
+
+.organize-trip-back {
+    border: 1px solid #276678 !important;
+    color: #276678 !important;
+}
+
+.organize-trip-next {
+    background-color: #276678 !important;
+    color: #F6F5F5 !important;
+}
+
+.organize-trip-next:hover {
+    background-color: #1687A7 !important;
+}
+
+.adults {
+    margin-right: 20px !important;
+}
+
+.organize-optional {
+    text-align: left !important;
+}
+
+.organize-share-guide {
+    text-align: left !important;
 }

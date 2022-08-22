@@ -6,12 +6,13 @@
 
 .transport-today-card {
     width: 50%;
-    background-color: #c1e1bb;
+    background-color: #D3E0EA !important;
     text-align: left;
     padding: 10px;
     margin-bottom: 10px;
     margin-right: 5px;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px !important;
 }
 
 .transport-today-title {
@@ -19,7 +20,7 @@
 }
 
 .transport-today-trip {
-    background-color: #c1e1bb !important;
+    /* background-color: #c1e1bb !important; */
     /* color: #276678; */
     margin-bottom: 10px;
 }

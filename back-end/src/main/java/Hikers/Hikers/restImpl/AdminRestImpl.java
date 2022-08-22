@@ -1,5 +1,4 @@
 package Hikers.Hikers.restImpl;
-
 import Hikers.Hikers.jwt.JwtFilter;
 import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Transportprovider;

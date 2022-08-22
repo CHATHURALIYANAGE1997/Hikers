@@ -1,0 +1,56 @@
+.forum-box{
+    background-color: #5997a8;
+    padding: 10px;
+
+}
+.forum-box2{
+    background-color: white;
+}
+.forumh2{
+color:#276678;
+}
+
+.forumh5{
+    color:#276678;
+    text-align: left;
+    }
+.userimage{
+    width:10%;
+}
+.forumbox4{
+    background-color: white;
+}
+.forumboxh5{
+    color:#276678;
+}
+.forumboxh6{
+    color:#3a3b3b;
+    font-size:12px;
+}
+.forumboxh7{
+    color:#276678;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+.forumreplybtn{
+    background-color:#1687A7;
+    border:none;
+    padding:2px;
+    font-weight:500;
+    width:30%;
+    text-align: center;
+}
+.forumboxdetailsIcons{
+    color:#3a3b3b;
+    font-size: 15px;
+    width:40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.forumboxpara{
+    font-weight: 500;
+    color:#3a3b3b;
+    font-size:12px;
+    margin-top: 15px;
+}

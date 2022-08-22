@@ -20,8 +20,11 @@ public class Equipmentprovider implements Serializable {
     @Column(name="provider_id")
     private Long provider_id;
 
-    @Column(name="fullname")
-    private String fullname;
+    @Column(name="firstname")
+    private String firstname;
+
+    @Column(name="lastname")
+    private String lastname;
 
     @Column(name="email")
     private String email;
@@ -40,4 +43,15 @@ public class Equipmentprovider implements Serializable {
 
     @Column(name="role")
     private String role;
+
+    @Column(name="profileimg")
+    private  String profileimg;
+
+    @Column(name="nicimg")
+    private  String nicimg;
+
+    @Column(name = "verification_code", length = 64)
+    private String verificationCode;
+
+    private boolean enabled;
 }

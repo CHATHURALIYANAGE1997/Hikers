@@ -19,18 +19,23 @@ import { IoBusOutline } from 'react-icons/io5';
 import { RiMotorbikeLine } from "react-icons/ri";
 import vehicleDetails from "../components/Trav_vehicleDetails/vehicleDetails";
 import TransportStart from "../components/Tav_transportStart/trav_transportStart";
+import Table from 'react-bootstrap/Table';
+import savedPlaces from "../components/Trav_savedPlaces/savedPlaces";
+import SavedPlaces from "../components/Trav_savedPlaces/trav_savedPlaces";
+import Navbar from "../components/Navbar/Navbar";
 
 const Transport = () => {
     const [currentMainStatus, updateCurrentMainStatus] = useState ("")
     const [currentStatus, updateStatus] = useState ("")
         return (
             <div className="tr_main">
-                
+                <Navbar/>
                 {/* <span className="tr_leftDiv"></span>
                 <span className="tr_rightDiv"></span> */}
                 <Row>
                     <Col className="tr_leftCol">
                         <Row className="tr_mainMenuRow">
+                            <br />
                             {/* <p>Main menu</p>                                      */}
                             <div className="tr_menuDiv">
                                 <Stack className="tr_mainMenu" direction="horizontal" gap={5}>
@@ -59,6 +64,7 @@ const Transport = () => {
                                         className="tr_thirdMenuIcon"
                                         onClick={() => updateCurrentMainStatus ("destination")}
                                         >
+                                        
                                         <TranspMenuIcon
                                             name="Destination"
                                             icon={<GoLocation size={60}/>}>
@@ -77,6 +83,7 @@ const Transport = () => {
                                     </div>
 
                                 </Stack>
+                                
                             </div>
                             <br></br>
                             <div className="tr_leftColLowerDiv">
@@ -143,9 +150,35 @@ const Transport = () => {
                                     </div>
                                 </Stack>
                                 }
-                                </div>
-                                {/* <VehicleTypes/> */}
+                                
+                                {currentMainStatus === "saved" &&                   
+                                        <Table striped>                             {/* Saved places table */}                 
+      
+                                        <tbody>
+                                          <tr 
+                                            onClick={() => updateStatus ("dolukanda")}
+                                            >
+                                            <td>Dolukanda</td>
+                                            
+                                          </tr>
+                                          <tr
+                                            onClick={() => updateStatus ("hulangala")}
+                                          >
+                                            <td>Hulangala</td>
+                                            
+                                          </tr>
+                                          <tr 
+                                            onClick={() => updateStatus ("sigiriya")}
+                                          >
+                                            <td>Sigiriya</td>
+                                            
+                                          </tr>
+                                        </tbody>
+                                      </Table>
 
+                                    }
+                                </div>
+                            
                             </div>
                         </Row>
 
@@ -170,12 +203,16 @@ const Transport = () => {
                             }        
                         </div>
                         <div className="tr_rightContainer">
-                            {currentMainStatus === "ride" && currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0}/>}
+                            
+                            {currentMainStatus === "ride" && currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0}/>}           {/* vehicle information */}
                             {currentMainStatus === "ride" && currentStatus === "tuk" && <VehicleDetails data={vehicleDetails} vehiInd={1}/>}
                             {currentMainStatus === "ride" && currentStatus === "car" && <VehicleDetails data={vehicleDetails} vehiInd={2}/>}
                             {currentMainStatus === "ride" && currentStatus === "van" && <VehicleDetails data={vehicleDetails} vehiInd={3}/>}
                             {currentMainStatus === "ride" && currentStatus === "bus" && <VehicleDetails data={vehicleDetails} vehiInd={4}/>}
                             
+                            {currentMainStatus === "saved" && currentStatus === "dolukanda" && <SavedPlaces data_1={savedPlaces} placeInd={0}/>}           {/* saved places pics */}
+                            {currentMainStatus === "saved" && currentStatus === "hulangala" && <SavedPlaces data_1={savedPlaces} placeInd={1}/>}
+                            {currentMainStatus === "saved" && currentStatus === "sigiriya" && <SavedPlaces data_1={savedPlaces} placeInd={2}/>}
                         </div>
                     </Col>
                 </Row>    

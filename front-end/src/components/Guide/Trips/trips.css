@@ -2,7 +2,8 @@
     margin-top: 86px;
     margin-left: 260px;
     margin-right: 5px;
-    width: 100%;
+    width: 70%;
+    text-align: left;
 }
 
 .tr-container {
@@ -12,9 +13,11 @@
 .tr-card {
     padding: 5px;
     text-align: left;
-    width: 70%;
-    background-color: #dfe7d7;
+    width: 100%;
+    background-color: #D3E0EA !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin: auto;
+    margin-bottom: 10px !important;
 }
 
 .tr-members {
@@ -29,7 +32,7 @@
 }
 
 .tr-accept-btn {
-    background-color: #4a5c38;
+    background-color: #276678 !important;
     border: none;
     border-radius: 5px;
     width: 100px;
@@ -38,14 +41,14 @@
 
 .tr-decline-btn {
     background-color: white;
-    color: #4a5c38;
-    border: 1px solid #4a5c38;
+    color: #276678 !important;
+    border: 1px solid #276678 !important;
     margin-right: 10px;
     border-radius: 5px;
     width: 100px;
 }
 
 .tr-accept-btn:hover {
-    background-color: #5c6751;
+    background-color: #1687A7 !important;
     cursor: pointer;
 }

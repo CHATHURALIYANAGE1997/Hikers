@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import donations from "../components/Donations/donations.css"
+import "../components/Donations/donations.css"
 import { useTitle } from "../components/Title/Title"
 
 const Donations = () => {

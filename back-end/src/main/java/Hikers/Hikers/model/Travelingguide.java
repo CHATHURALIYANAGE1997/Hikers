@@ -30,9 +30,6 @@ public class Travelingguide implements Serializable {
     @Column(name="dob")
     private String dob;
 
-    @Column(name="education_level")
-    private String education_level;
-
     @Column(name="accountstatus")
     private String accountstatus;
 
@@ -66,6 +63,10 @@ public class Travelingguide implements Serializable {
     @Column(name="contactNumber")
     private String contactNumber;
 
+    @Column(name = "verification_code", length = 64)
+    private String verificationCode;
+
+    private boolean enabled;
 
 }
 

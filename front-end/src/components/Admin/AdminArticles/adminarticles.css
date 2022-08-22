@@ -1,0 +1,114 @@
+.all-articles-container {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    margin-right: 10px;
+}
+
+.all-articles-headings {
+    text-align: left;
+    font-size: large;
+}
+
+.all-articles-article {
+    text-align: left;
+    margin-top: 5px;
+    padding: 3px;
+}
+
+.all-articles-article:hover {
+    background-color: #D3E0EA;
+}
+
+.all-articles-title {
+    font-weight: bold;
+}
+
+.all-articles-see-more-btn {
+    cursor: pointer;
+    font-size: small;
+    font-style: italic;
+    border: none;
+    width: max-content;
+    background-color: white;
+    border-radius: 3px;
+    color: rgb(97, 96, 96);
+}
+
+.questions-container {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    margin-right: 10px;
+}
+
+.questions-recent {
+    background-color: #C1F8CF;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.questions-topic {
+    font-weight: bold;
+}
+
+.questions-see-more-btn {
+    background-color: #C1F8CF;
+    border: none;
+}
+
+.questions-see-more-icon:hover {
+    transform: scale(1.2);
+}
+
+.questions-view-btn {
+    background-color: #1687A7;
+    border-radius: 5px;
+    border: none;
+    color: #F6F5F5;
+}
+
+.questions-question {
+    padding: 3px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.questions-question:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;}
+
+.questions-view-btn:hover {
+    background-color: #276678;
+}
+
+.add-article-form {
+    width: 75%;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-article-form-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.add-article-form-input {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+.add-articles-label {
+    margin-top: 0 !important;
+}
+
+.add-article-form-description {
+    height: 150px;
+}

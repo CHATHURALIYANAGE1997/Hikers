@@ -1,6 +1,7 @@
 .packageContainer {
     width: 60%;
     /* background-color: rgb(182, 139, 223); */
+    /* padding-left: 5  %; */
 
 }
 /* .package_1 {
@@ -8,5 +9,40 @@
 
 } */
 .pkgOneDay {
-    background-color: bisque;
+    /* background-color: bisque; */
+    height: 100px;
+    
+}
+.trsp_mainDiv {
+    padding-top: 8%;
+
+}
+.trsp_mainText {
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    font-family:'Times New Roman', Times, serif;
+    /* font-style: italic; */
+    /* font-weight: 100; */
+    font-variant-ligatures: normal;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-align: center;
+
+}
+.trsp_buttonSelectPackage {
+    /* width: 10% !important; */
+    position: relative;
+    right: 0% !important;
+
+}
+.trsp_buttonRow {
+    text-align: center;
+
+}
+.trsp_packageRow {
+    background-color:white !important;
+
+}
+.col-sm-4 {
+    background-color: white;
 }

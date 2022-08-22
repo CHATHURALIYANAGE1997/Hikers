@@ -29,7 +29,7 @@ p{
     margin-top:40%;
 }
 .phone{
-    width:90%;
+    width:100%;
 }
 .signuppic {
     margin: 5px;
@@ -110,6 +110,30 @@ margin-top:10px;
     position:absolute;
     right:520px;
     top:365px;
+}
+.forgotpasswordform{
+    margin-top: 50px;
+    color:#276678;
+    font-weight:bold;
+    text-align: center;
+}
+.resetpasswordform{
+    margin-top: 30px;
+    color:#276678;
+    font-weight:bold;
+}
+.forgotpasswordemail{
+    margin-top: 20px;
+    border-color:#1869f5 ;
+}
+.forgotpasswordh1{
+    margin-top: 50px;
+    color:#1687A7;
+}
+.forgotpasswordp{
+    margin-top: 20px;
+    font-size: 20px;
+    color:#276678;
 }
 #travelersignup{
 left:50px;

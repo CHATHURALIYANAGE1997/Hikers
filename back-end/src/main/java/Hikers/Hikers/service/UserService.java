@@ -3,6 +3,8 @@ package Hikers.Hikers.service;
 import Hikers.Hikers.model.Transportprovider;
 import Hikers.Hikers.model.User;
 import org.springframework.http.ResponseEntity;
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -28,4 +30,7 @@ public interface UserService {
     ResponseEntity<User> getUser(Long id);
 
     ResponseEntity<Optional<Transportprovider>> getTraProvide(Long service_provider_id);
+
+
+    ResponseEntity<?> verifyUser(String code);
 }

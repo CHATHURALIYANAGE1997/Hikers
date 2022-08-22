@@ -8,9 +8,11 @@ const Package = (props) => {
     console.log (props.name)
     return (
         <div className="package_1">
+            <div className="trp_checkBox">
             <Form.Check reverse
                 label={props.name}
             />
+            </div>  
             <Row>
                 <div className="divDecText">
                     <h5>{props.des}</h5>
