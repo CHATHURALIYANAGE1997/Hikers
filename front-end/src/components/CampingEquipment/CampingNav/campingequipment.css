@@ -18,12 +18,19 @@
     padding:0;
     width: 100%;
   }
-  .campingSidebarList .campingSidebarRow:hover{
+  .campingSidebarList{
     cursor: pointer;
-    background-color: #1687A7;
+    background-color: #F6F5F5;
   }
+
+  .campingSidebarRow:hover {
+    background-color: #1687A7;
+    color: #F6F5F5 !important;
+  }
+
   .campingSidebarList #active{
     background-color: #1687A7;
+    color: #F6F5F5;
   }
   
   .campingSidebarList .campingSidebarRow{

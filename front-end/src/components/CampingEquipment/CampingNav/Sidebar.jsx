@@ -1,6 +1,7 @@
 import React from 'react';
 import './campingequipment.css';
 import {SidebarData} from './SidebarData';
+import {Link} from "react-router-dom";
 
 function Sidebar(){
     return (
@@ -8,13 +9,12 @@ function Sidebar(){
         <ul className='campingSidebarList'>
           {SidebarData.map((val, key)=>{
             return (
+              <Link to={val.link}>
               <li 
                 key={key}
                 className="campingSidebarRow"
                 id= {window.location.pathname === val.link ? "active" : ""}
-                onClick={() => {
-                  window.location.pathname = val.link;
-                }}
+                
               >
                 <div id="campingsidebaricon">
                   {val.icon}
@@ -23,6 +23,7 @@ function Sidebar(){
                   {val.title}
                 </div>
               </li>
+              </Link>
             );
           })}
         </ul>
