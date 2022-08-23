@@ -25,10 +25,20 @@ import SavedPlaces from "../components/Trav_savedPlaces/trav_savedPlaces";
 import Navbar from "../components/Navbar/Navbar";
 import "../Styles/trav_transpotation.css"
 import Map from "../components/Trav_map/trav_map";
+import authToken from "../utils/authToken";
+import { useSelector } from "react-redux";
 
 const Transport = () => {
     const [currentMainStatus, updateCurrentMainStatus] = useState ("")
     const [currentStatus, updateStatus] = useState ("")
+
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
+
+    const auth = useSelector((state) => state.auth);
+
+    if (auth.isLoggedIn === true && auth.role === "User") {
         return (
             <div className="tr_main">
                 <Navbar/>
@@ -227,5 +237,12 @@ const Transport = () => {
                 </Row>    
             </div>
         )
+}
+else {
+    localStorage.clear();
+    // return props.history.push("/");
+    { return <div><NotFoundPage /></div> }
+
+}
 }
 export default Transport
