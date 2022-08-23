@@ -11,13 +11,13 @@ import NotFoundPage from "./NotFoundPage";
 
 const HotelBooking = (props) => {
 
-    // if (localStorage.jwtToken) {
-    //     authToken(localStorage.jwtToken);
-    // }
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
 
-    // const auth = useSelector((state) => state.auth);
+    const auth = useSelector((state) => state.auth);
 
-    // if (auth.isLoggedIn === true && auth.role === "User") {
+    if (auth.isLoggedIn === true && auth.role === "User") {
         return (
             <div>
                 <Navbar />
@@ -65,13 +65,13 @@ const HotelBooking = (props) => {
                 </div>
             </div>
         );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     // return props.history.push("/");
-    //     { return <div><NotFoundPage /></div> }
+    }
+    else {
+        localStorage.clear();
+        // return props.history.push("/");
+        { return <div><NotFoundPage /></div> }
 
-    // }
+    }
 }
 
 export default HotelBooking;
