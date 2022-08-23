@@ -45,7 +45,14 @@ public class Hotel implements Serializable {
     @Column(name="role")
     private String role;
 
+    @Column(name="province")
+    private String province;
 
+    @Column(name="img1")
+    private String img1;
+
+    @Column(name="img2")
+    private String img2;
 
 }
 

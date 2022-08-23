@@ -502,6 +502,9 @@ public class UserServiceImpl implements UserService {
         hotel.setRate(requestMap.get("rate"));
         hotel.setAddress(requestMap.get("address"));
         hotel.setRole(requestMap.get("role"));
+        hotel.setProvince((requestMap.get("province")));
+        hotel.setImg1(requestMap.get("img1"));
+        hotel.setImg2(requestMap.get("img2"));
         return hotel;
     }
 
