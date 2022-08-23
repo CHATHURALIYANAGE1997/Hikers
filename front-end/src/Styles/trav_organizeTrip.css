@@ -110,4 +110,38 @@
 
 .organize-share-guide {
     text-align: left !important;
+
+}
+.trot_provincesDropDown, .trot_placesDropDown {
+    /* width: 200px; */
+    text-align: center;
+
+}
+.btnSection {
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+.trot_backButton :hover {
+    background-color: red !important;
+
+}
+.trot_provinceDropDiv {
+    /* padding-left: 5%; */
+    background-color: fuchsia;
+    width: 50%;
+
+}
+.trot_placeDropDiv {
+    width: 50%;
+
+}
+.trot_lablePackage {
+    /* background-color: gold; */
+    padding: 3%;
+    padding-top: 0%;
+
+}
+.trot_adults {
+    width: 50%;
 }

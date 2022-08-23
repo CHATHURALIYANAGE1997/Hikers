@@ -23,6 +23,8 @@ import Table from 'react-bootstrap/Table';
 import savedPlaces from "../components/Trav_savedPlaces/savedPlaces";
 import SavedPlaces from "../components/Trav_savedPlaces/trav_savedPlaces";
 import Navbar from "../components/Navbar/Navbar";
+import "../Styles/trav_transpotation.css"
+import Map from "../components/Trav_map/trav_map";
 
 const Transport = () => {
     const [currentMainStatus, updateCurrentMainStatus] = useState ("")
@@ -40,16 +42,6 @@ const Transport = () => {
                             <div className="tr_menuDiv">
                                 <Stack className="tr_mainMenu" direction="horizontal" gap={5}>
                                     <div 
-                                        className="tr_firstMenuIcon"
-                                        onClick={() => updateCurrentMainStatus ("ride")}
-                                        >
-                                        <TranspMenuIcon 
-                                            name="Ride" 
-                                            icon={<AiOutlineCar size={60}/>}>
-
-                                        </TranspMenuIcon>
-                                    </div>
-                                    <div 
                                         className="tr_secondMenuIcon"
                                         onClick={() => updateCurrentMainStatus ("start")}
                                         >
@@ -60,6 +52,7 @@ const Transport = () => {
                                         </TranspMenuIcon>
 
                                     </div>
+                                    
                                     <div 
                                         className="tr_thirdMenuIcon"
                                         onClick={() => updateCurrentMainStatus ("destination")}
@@ -71,6 +64,18 @@ const Transport = () => {
                                                 
                                         </TranspMenuIcon>
                                     </div>
+
+                                    <div 
+                                        className="tr_firstMenuIcon"
+                                        onClick={() => updateCurrentMainStatus ("ride")}
+                                        >
+                                        <TranspMenuIcon 
+                                            name="Ride" 
+                                            icon={<AiOutlineCar size={60}/>}>
+
+                                        </TranspMenuIcon>
+                                    </div>
+
                                     <div 
                                         className="tr_fourthMenuIcon"
                                         onClick={() => updateCurrentMainStatus ("saved")}
@@ -203,6 +208,10 @@ const Transport = () => {
                             }        
                         </div>
                         <div className="tr_rightContainer">
+                            {/* <Map/> */}
+                            {currentMainStatus === "" && <Map/>}           {/* Initial right div */}
+                            {currentMainStatus === "start" && <Map/>}           {/* Start right div */}
+                            {currentMainStatus === "destination" && <Map/>}           {/* Destination right div */}
                             
                             {currentMainStatus === "ride" && currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0}/>}           {/* vehicle information */}
                             {currentMainStatus === "ride" && currentStatus === "tuk" && <VehicleDetails data={vehicleDetails} vehiInd={1}/>}

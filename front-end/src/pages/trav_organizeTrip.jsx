@@ -87,8 +87,9 @@ function oraganizeTrip(props) {
 
           <Row className="mb-3">                                                {/* Name */}
             <Form.Group as={Row} md="" controlId="validationCustom01">
-              <Form.Label>Full name</Form.Label>
+              <Form.Label>Name</Form.Label>
               <Form.Control
+                className=''
                 required
                 type="text"
                 placeholder="First name"
@@ -112,7 +113,7 @@ function oraganizeTrip(props) {
               <Form.Label>No of Crowd : </Form.Label>
               <div className='d-flex flex-row justify-content-between'>
                 <Form.Group as={Col} md="5" controlId="validationCustom02" className="w-100 adults">
-                  <Form.Label>Adults</Form.Label>
+                  <Form.Label className='trot_adults'>Adults</Form.Label>
                   <Form.Control
                     required
                     type="number"
@@ -129,6 +130,7 @@ function oraganizeTrip(props) {
                     Please a valid number
                   </Form.Control.Feedback>
                 </Form.Group>
+                
                 <Form.Group as={Col} md="5" controlId="validationCustomUsername" className="w-100">
                   <Form.Label>Children</Form.Label>
                   <InputGroup hasValidation>
@@ -178,9 +180,9 @@ function oraganizeTrip(props) {
               <div className="d-flex flex-row w-75">
                 <Form.Select aria-label="" className='trot_dropDown'>
                   <option>Select a Province</option>
-                  <option value="1">Dolukanda</option>
-                  <option value="2">Bathalegala</option>
-                  <option value="3">Hulangala</option>
+                  <option value="1">North Western</option>
+                  <option value="2">Central</option>
+                  <option value="3">Uva</option>
 
                 </Form.Select>
                 <Form.Select aria-label="" className='trot_dropDown'>
@@ -255,13 +257,13 @@ function oraganizeTrip(props) {
 
               </Col>
               <Col className='col_4'>
-                <Row className="col_4_row_1">
+                {/* <Row className="col_4_row_1">
                   <Form.Check
                     required
                     label="Abseilling"
 
                   />
-                </Row>
+                </Row> */}
                 <Row className="col_4_row_2">
 
                 </Row>
@@ -282,7 +284,7 @@ function oraganizeTrip(props) {
           <div className=' d-flex flex-row justify-content-end'>
             <Stack direction="horizontal" gap={3} className="d-flex flex-row justify-content-right">
               <Link to={"/welcome"}><Button variant=" ms-auto" className='organize-trip-back'>Back</Button></Link>{' '}
-              <Link to={"/hotels"}><Button variant=" ms-auto" className="organize-trip-next">Next</Button></Link>{' '}
+              <Link to={"/hotels"}><Button type='submit' variant=" ms-auto" className="organize-trip-next">Next</Button></Link>{' '}
 
             </Stack>
           </div>

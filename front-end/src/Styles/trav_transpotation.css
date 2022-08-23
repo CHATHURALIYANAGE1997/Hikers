@@ -1,20 +1,22 @@
 .tr_leftCol {
     /* background-color: aqua; */
     /* width: 5%; */
-    border-right: 1px solid rgb(175, 175, 175);
+    
     /* height: 100%; */
 
 }
 .tr_rightCol {
     /* background-color: blanchedalmond; */
     /* height: 100%; */
+    border-left: 1px solid rgb(175, 175, 175);
+    /* height: max-content; */
 
 }
 .tr_main {
     /* background-color: blueviolet; */
     height: 100%;
     width: 100%;
-    padding: 3%;
+    padding: 6%;
     padding-right: 4%;
     padding-left: 4%;
 
@@ -58,7 +60,7 @@
 
 }
 .tr_rightContainer {
-    background-color: rosybrown;
+    /* background-color: rosybrown; */
     position: relative;
     top: 20%;
     

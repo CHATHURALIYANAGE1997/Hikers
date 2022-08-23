@@ -5,10 +5,11 @@ const SavedPlaces = ({data_1, placeInd}) => {
         <div>
             {data_1 [placeInd].map (item => (
                 <div
-                    style={{backgroundImage: `url(${item.path})`}}
+                    // style={{backgroundImage: `url(${item.path})`}}
                     
                 >
-
+                    {/* <h2>Hello</h2> */}
+                    <img src={item.path} alt="" srcset="" />
                 </div>
             ))}
         </div>

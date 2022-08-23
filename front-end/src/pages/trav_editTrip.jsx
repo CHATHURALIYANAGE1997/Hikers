@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from "../components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const editTrip = () => {
     return (
@@ -36,6 +37,7 @@ const editTrip = () => {
                 <InputGroup className="crowdRow">                                               {/* Crowd */}
                     <InputGroup.Text className="crowdLabel">Crowd</InputGroup.Text>
                     <Form.Control className="inputAdult" aria-label="adults" />
+                    <div className="vr" />
                     <Form.Control className="inputChildren" aria-label="children" />
 
                 </InputGroup>
@@ -79,12 +81,16 @@ const editTrip = () => {
                 <Row className="et_btnRow">
                     
                         <Col className="editbtnCol">
-                            <Button className="btnEdit" variant="outline-primary">Edit</Button>{' '}            {/* Edit btn */}
+                            <Link to={"/organizeTrip"}>
+                                <Button className="btnEdit" variant="outline-primary">Edit</Button>{' '}            {/* Edit btn */}
 
+                                </Link>
                         </Col>
                         <Col className="conirmTripCol">
-                            <Button className="btnConfirm" variant="outline-success">Confirm</Button>{' '}                                 {/* Confirm btn */}
+                            <Link to={"/welcome"}>
+                                <Button className="btnConfirm" variant="outline-success">Confirm</Button>{' '}                                 {/* Confirm btn */}
 
+                            </Link>
                         </Col>
                    
                 </Row>
