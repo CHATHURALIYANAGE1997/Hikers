@@ -8,8 +8,20 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from "../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import NotFoundPage from "./NotFoundPage";
+import authToken from "../utils/authToken";
+import { useSelector } from "react-redux";
 
 const editTrip = () => {
+    const accessToken = localStorage.jwtToken;
+
+    if (localStorage.jwtToken) {                                 
+        authToken(localStorage.jwtToken);
+    }
+
+    const auth = useSelector((state) => state.auth);
+
+    if (auth.isLoggedIn === true && auth.role === "User") {
     return (
         <div className="tret_mainDiv">
             <Navbar/>
@@ -101,5 +113,12 @@ const editTrip = () => {
 
         </div>
     )
+    }
+    else {
+    localStorage.clear();
+    // return props.history.push("/");
+    {return <div><NotFoundPage/></div>}
+
+    }
 }
 export default editTrip
