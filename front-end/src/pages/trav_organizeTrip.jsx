@@ -76,14 +76,14 @@ function oraganizeTrip(props) {
       <div className='trot_mainDiv'>
         <Navbar />
 
-        <div class="md-stepper-horizontal orange">
+        <div class="md-stepper-horizontal editable orange">
           <div class="md-step active done">
             <div class="md-step-circle"><span>1</span></div>
             <div class="md-step-title">Trip Package</div>
             <div class="md-step-bar-left"></div>
             <div class="md-step-bar-right"></div>
           </div>
-          <div class="md-step editable green">
+          <div class="md-step">
             <div class="md-step-circle"><span>2</span></div>
             <div class="md-step-title">Hotel</div>
             <div class="md-step-optional">Optional</div>
