@@ -59,6 +59,7 @@ import TravelerIssues from './pages/TravelerIssues';
 import Page from './pages/page';
 import GuideIssue from './pages/GuideIssue';
 import HotelPayments from './pages/HotelPayments';
+import AdminTraveler from './pages/AdminTravelers';
 
 function App() {
   window.onbeforeunload = (event) => {
@@ -153,6 +154,8 @@ function App() {
               <Route path="/admin/addarticle" component={AdminAddArticle}></Route>
               <Route path="/admin/addhotel" component={AdminAddHotel}></Route>
               <Route path="/admin/addtransporter" component={AdminAddTransporter}></Route>
+              <Route path="/admin/guides" component={AdminTraveler}></Route>
+
 
 
               <Route path="/trav_selectPackages" component={selectPackages}></Route>

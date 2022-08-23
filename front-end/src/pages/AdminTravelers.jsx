@@ -1,17 +1,13 @@
 import React from "react";
 import AdminHeader from "../components/Admin/AdminHeader/AdminHeader";
 import AdminNav from "../components/Admin/AdminNavBar/AdminNav";
-import AllTransportProviders from "../components/Admin/Transpotation/AllTransportProviders";
-import PopularTransporters from "../components/Admin/Transpotation/PopularTransporter";
-
-import TranspotersIncome from "../components/Admin/Transpotation/TranspotersIncome";
 import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";
-import Navbar from "../components/Navbar/Navbar";
 import NotFoundPage from "./NotFoundPage";
+import GuideRequests from "../components/Admin/AdminTraveler/GuideRequests";
 
 
-const AdminTranspotation = (props) => {
+const AdminTraveler = (props) => {
 
 
     if (localStorage.jwtToken) {
@@ -26,14 +22,7 @@ const AdminTranspotation = (props) => {
                 <div className="d-flex flex-row w-100 admin-page-content">
                     <AdminNav />
                     <div className="d-flex flex-column home-container">
-                        <div className="d-flex flex-row">
-                            <AllTransportProviders />
-                            <PopularTransporters />
-                        </div>
-                        <div className="d-flex flex-row">
-                            <TranspotersIncome />
-                        </div>
-
+                        <GuideRequests />
                     </div>
                 </div>
             </div>
@@ -47,4 +36,4 @@ const AdminTranspotation = (props) => {
     }
 }
 
-export default AdminTranspotation;
+export default AdminTraveler;

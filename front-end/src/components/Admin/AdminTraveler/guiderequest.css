@@ -1,0 +1,63 @@
+.guide-request-container {
+    width: 100%;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+.guide-request-guide {
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.guide-requests-title {
+    text-align: left;
+}
+
+.request-from {
+    color: rgb(84, 84, 84);
+    font-size: medium;
+}
+
+.view-more-container {
+    display: flex !important;
+    flex-direction: coulmn !important;
+    justify-content: right !important;
+}
+
+.view-more {
+    width: max-content !important;
+    background-color: #276678;
+}
+
+.view-more-icon {
+    margin-right: 5px
+}
+
+.view-more:hover {
+    background-color: #1687A7;
+}
+
+.accept-btn {
+    background-color: #276678;
+    color: #F6F5F5;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 100px;
+}
+
+.reject-btn {
+    border: 1px solid #276678;
+    color: #276678;
+    border-radius: 5px;
+    height: 35px;
+    width: 100px;
+    background-color: white;
+}
+
+.accept-btn:hover {
+    background-color: #1687A7;
+}
