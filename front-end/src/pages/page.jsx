@@ -9,13 +9,13 @@ import authToken from "../utils/authToken";
 
 const Page = (props) => {
 
-    // if (localStorage.jwtToken) {
-    //     authToken(localStorage.jwtToken);
-    // }
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
 
-    // const auth = useSelector((state) => state.auth);
+    const auth = useSelector((state) => state.auth);
 
-    // if (auth.isLoggedIn === true && auth.role === "User") {
+    if (auth.isLoggedIn === true && auth.role === "User") {
         return (
             <div>
                 <Navbar />
@@ -26,10 +26,10 @@ const Page = (props) => {
                 </div>
             </div>
         );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     return props.history.push("/");
-    // }
+    }
+    else {
+        localStorage.clear();
+        return props.history.push("/");
+    }
 }
 export default Page

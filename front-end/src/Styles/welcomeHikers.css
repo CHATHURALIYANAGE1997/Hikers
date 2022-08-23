@@ -12,12 +12,10 @@
 }
 
 .welcome-btn {
-    border: 1px solid #276678 !important;
-    color: #276678 !important;
-    margin-top: auto;
-    margin-bottom: auto;
-
-    
+    border: 3px solid #276678 !important;
+    color: #276678 !important;   
+    font-weight: bold !important; 
+    font-size: large !important;
 }
 
 .welcome-btn:hover {
