@@ -27,6 +27,7 @@ import "../Styles/trav_transpotation.css"
 import Map from "../components/Trav_map/trav_map";
 import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";
+import NotFoundPage from "./NotFoundPage";
 
 const Transport = () => {
     const [currentMainStatus, updateCurrentMainStatus] = useState ("")
