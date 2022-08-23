@@ -69,7 +69,7 @@ const DetailsForm = () => {
                         </div>
                     </div>
 
-                    <Link to={"/welcome"}>
+                    <Link to={"/transport"}>
                         <button type="button" class="btn btn-primary df-booking-btn"><FontAwesomeIcon icon={faLock} /><span className="df-icon">Complete booking</span></button>
                     </Link>
                 </form>
