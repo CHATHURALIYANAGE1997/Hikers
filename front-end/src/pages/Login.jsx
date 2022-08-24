@@ -144,7 +144,7 @@ const Login = (props) => {
                             <div class="col-6">
                                 <div class="mt-3 form-check">
 
-                                    <a href="url">Forgot Password</a>
+                                   <Link to={'/forgotpassword'}>Forgot Password</Link>
                                 </div>
                             </div>
                             <div class="col-6 mt-3 mx-auto text-center loginbtn">
