@@ -5,7 +5,11 @@ import Navbar from "../components/Navbar/Navbar";
 import { useTitle } from "../components/Title/Title"
 
 
-const ForgotPassword = () => {
+const ForgotPassword = (props) => {
+
+    const nav=()=>{
+        return props.history("/resetpassword");
+    }
     useTitle("Hikers")
 
     return (
@@ -28,7 +32,7 @@ const ForgotPassword = () => {
                                 </div>
                                 <br/>
                                 <div class="col-6 mt-3 mx-auto text-center loginbtn">
-                                    <button type="submit" class="btn btn-primary">Reset Password</button>
+                                    <button onClick={nav} type="submit" class="btn btn-primary">Reset Password</button>
                                 </div>
                             </form>
                         </div>
