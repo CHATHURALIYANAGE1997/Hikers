@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'Hikers'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4112A91B94E44072AAA0961EB1AEBE46 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B123D00FE5FC4039B3B6BC91A1DDBC99 }}
           package: '*.jar'
