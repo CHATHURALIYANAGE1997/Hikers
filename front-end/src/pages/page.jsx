@@ -22,7 +22,6 @@ const Page = (props) => {
                 <div className="backImg">
                     <WelcomeHikers />
 
-
                 </div>
             </div>
         );

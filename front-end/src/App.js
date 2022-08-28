@@ -60,6 +60,7 @@ import Page from './pages/page';
 import GuideIssue from './pages/GuideIssue';
 import HotelPayments from './pages/HotelPayments';
 import AdminTraveler from './pages/AdminTravelers';
+import MyComponent from './components/Trav_map/trav_gMap';
 
 function App() {
   window.onbeforeunload = (event) => {
@@ -161,6 +162,7 @@ function App() {
               <Route path="/trav_selectPackages" component={selectPackages}></Route>
               <Route path="/camping/" component={CampingEquipment}></Route>
               <Route path="/daydistribution" component={DayDistribution}></Route>
+              <Route path="/map" component={MyComponent}></Route>
 
             </Switch>
             

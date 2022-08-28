@@ -16,15 +16,15 @@ import araliya from "../components/Hotels/Arliyavilla.jfif";
 
 const Hotels = (props) => {
 
-    // const accessToken = localStorage.jwtToken;
+    const accessToken = localStorage.jwtToken;
 
-    if (localStorage.jwtToken) {
+    if (localStorage.jwtToken) {                                 
         authToken(localStorage.jwtToken);
     }
 
     const auth = useSelector((state) => state.auth);
 
-    if (auth.isLoggedIn === true && auth.role === "User") {
+    if (auth.isLoggedIn === true && auth.role === "User") {          
 
         // useEffect(() => {
         //     const accessToken = localStorage.jwtToken;
@@ -175,5 +175,4 @@ const Hotels = (props) => {
 
     }
 }
-
 export default Hotels;

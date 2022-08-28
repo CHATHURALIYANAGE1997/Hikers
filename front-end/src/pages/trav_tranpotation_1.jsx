@@ -28,18 +28,19 @@ import Map from "../components/Trav_map/trav_map";
 import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";
 import NotFoundPage from "./NotFoundPage";
+import MyComponent from "../components/Trav_map/trav_gMap";
 
 const Transport = () => {
     const [currentMainStatus, updateCurrentMainStatus] = useState("")
     const [currentStatus, updateStatus] = useState("")
 
-    if (localStorage.jwtToken) {
-        authToken(localStorage.jwtToken);
-    }
+    // if (localStorage.jwtToken) {
+    //     authToken(localStorage.jwtToken);
+    // }
 
-    const auth = useSelector((state) => state.auth);
+    // const auth = useSelector((state) => state.auth);
 
-    if (auth.isLoggedIn === true && auth.role === "User") {
+    // if (auth.isLoggedIn === true && auth.role === "User") {
         return (
             <div className="tr_main">
                 <Navbar />
@@ -247,31 +248,41 @@ const Transport = () => {
                             }
                         </div>
                         <div className="tr_rightContainer">
-                            {/* <Map/> */}
-                            {currentMainStatus === "" && <Map />}           {/* Initial right div */}
-                            {currentMainStatus === "start" && <Map />}           {/* Start right div */}
-                            {currentMainStatus === "destination" && <Map />}           {/* Destination right div */}
+                            
 
-                            {currentMainStatus === "ride" && currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0} />}           {/* vehicle information */}
-                            {currentMainStatus === "ride" && currentStatus === "tuk" && <VehicleDetails data={vehicleDetails} vehiInd={1} />}
-                            {currentMainStatus === "ride" && currentStatus === "car" && <VehicleDetails data={vehicleDetails} vehiInd={2} />}
-                            {currentMainStatus === "ride" && currentStatus === "van" && <VehicleDetails data={vehicleDetails} vehiInd={3} />}
-                            {currentMainStatus === "ride" && currentStatus === "bus" && <VehicleDetails data={vehicleDetails} vehiInd={4} />}
+                            {currentMainStatus === "" && <MyComponent/>}           {/* Initial right div */}
+                            {currentMainStatus === "start" && <MyComponent/>}           {/* Start right div */}
+                            {currentMainStatus === "destination" && <MyComponent/>}           {/* Destination right div */}
+                            
+                            {currentMainStatus === "ride" && currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0}/>}           {/* vehicle information */}
+                            {currentMainStatus === "ride" && currentStatus === "tuk" && <VehicleDetails data={vehicleDetails} vehiInd={1}/>}
+                            {currentMainStatus === "ride" && currentStatus === "car" && <VehicleDetails data={vehicleDetails} vehiInd={2}/>}
+                            {currentMainStatus === "ride" && currentStatus === "van" && <VehicleDetails data={vehicleDetails} vehiInd={3}/>}
+                            {currentMainStatus === "ride" && currentStatus === "bus" && <VehicleDetails data={vehicleDetails} vehiInd={4}/>}
+                            
+                            {currentMainStatus === "saved" && currentStatus === "dolukanda" && <SavedPlaces data_1={savedPlaces} placeInd={0}/>}           {/* saved places pics */}
+                            {currentMainStatus === "saved" && currentStatus === "hulangala" && <SavedPlaces data_1={savedPlaces} placeInd={1}/>}
+                            {currentMainStatus === "saved" && currentStatus === "sigiriya" && <SavedPlaces data_1={savedPlaces} placeInd={2}/>}
 
-                            {currentMainStatus === "saved" && currentStatus === "dolukanda" && <SavedPlaces data_1={savedPlaces} placeInd={0} />}           {/* saved places pics */}
-                            {currentMainStatus === "saved" && currentStatus === "hulangala" && <SavedPlaces data_1={savedPlaces} placeInd={1} />}
-                            {currentMainStatus === "saved" && currentStatus === "sigiriya" && <SavedPlaces data_1={savedPlaces} placeInd={2} />}
                         </div>
                     </Col>
                 </Row>
             </div>
         )
+
     }
-    else {
+    {/* else {
         localStorage.clear();
         // return props.history.push("/");
         { return <div><NotFoundPage /></div> }
 
-    }
-}
+    } */}
+
+// else {
+//     localStorage.clear();
+//     // return props.history.push("/");
+//     { return <div><NotFoundPage /></div> }
+
+// }
+// }
 export default Transport

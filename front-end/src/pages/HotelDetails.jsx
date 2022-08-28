@@ -21,6 +21,7 @@ import HotelRules from '../components/Hotels/HotelRules';
 import NotFoundPage from './NotFoundPage';
 
 
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -124,6 +125,7 @@ export default function BasicTabs(props) {
 
   }
 }
+
 
 //Install material ui
 //npm install @material-ui/core
