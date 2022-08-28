@@ -53,6 +53,7 @@ const EquipmentSignup = (props) => {
         dispatch(Eqprovider(user))
             .then((response) => {
                 console.log(response);
+                resetLoginForm();
                 setShow(true);
                 setError("Check Your Email")
             })
