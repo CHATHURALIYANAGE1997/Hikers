@@ -9,7 +9,10 @@ import * as axios from 'axios';
 // import useSearchParams from "hooks";
 import {useLocation} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {neeee,verifyuserr} from "../services/user/userActions";
+import {verifyuserr} from "../services/user/userActions";
+import {verifyequ} from "../services/user/userActions";
+import {vertravelguide} from "../services/user/userActions";
+
 const verifyaccount = (props) => {
 
     const [error, setError] = useState();
@@ -24,15 +27,38 @@ const verifyaccount = (props) => {
     const dispatch = useDispatch();
 
      const verifyaccountUser=()=>{
-         //axios.get(api);
-         dispatch(verifyuserr(code)).then((response) => {
-             setShow(true);
-             setError("Acoount Create SuccessFul")
-         }).catch((error) => {
-             console.log(error.message);
-             setShow(true);
-             setError("Invalid token");
-         });
+   if(code.length===64){
+       dispatch(verifyuserr(code)).then((response) => {
+           setShow(true);
+           setError("Acoount Create SuccessFul")
+       }).catch((error) => {
+           console.log(error.message);
+           setShow(true);
+           setError("Invalid token");
+       });
+   }else if(code.length===68){
+       dispatch(verifyequ(code)).then((response) => {
+           setShow(true);
+           setError("Acoount Create SuccessFul waite for admin approve")
+       }).catch((error) => {
+           console.log(error.message);
+           setShow(true);
+           setError("Invalid token");
+       });
+   }else if(code.length===72){
+       dispatch(vertravelguide(code)).then((response) => {
+           setShow(true);
+           setError("Acoount Create SuccessFul waite for admin approve")
+       }).catch((error) => {
+           console.log(error.message);
+           setShow(true);
+           setError("Invalid token");
+       });
+   }else {
+       setShow(true);
+       setError("Invalid token");
+   }
+
     };
 
     return (
