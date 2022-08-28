@@ -50,6 +50,7 @@ const TravelerSignup = (props) => {
         // }
         console.log(user);
         dispatch(registerUser(user)).then((response) => {
+            resetLoginForm();
             setShow(true);
             setError("Check Your Email")
         }).catch((error) => {
