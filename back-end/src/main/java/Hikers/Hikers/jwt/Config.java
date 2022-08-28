@@ -57,10 +57,10 @@ public class Config extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/user/login", "/user/signup", "/user/accountconfirm/**"
+                .antMatchers("/user/login", "/user/signup", "/user/accountconfirm/**","/user/accountconfirmtravelguide/**"
                         //,"/user/signuphotel"
                         //,"/user/signuptransportprovider"
-                        ,"/user/signupequipmentprovider","/user/signuptraveling","/reset_password/**")
+                        ,"/user/signupequipmentprovider","/user/signuptraveling","/reset_password/**","/user/accountconfirmequprovider/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
