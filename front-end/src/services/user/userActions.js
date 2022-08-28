@@ -47,6 +47,20 @@ export const verifyequ=(code)=>async (dispatch)=>{
     }
 }
 
+export const vertravelguide=(code)=>async (dispatch)=>{
+    const VERIFY_URL=`http://localhost:8080/user/accountconfirmtravelguide/${code}`;
+    dispatch(userRequest());
+    try {
+        const response = axios.get(VERIFY_URL)
+        dispatch(userSavedSuccess(response));
+        return Promise.resolve(response);
+    }catch (error) {
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+}
+
+
 
 export const Eqprovider=(userObject)=>async (dispatch)=>{
     dispatch(userRequest());
