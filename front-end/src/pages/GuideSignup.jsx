@@ -48,6 +48,7 @@ const GuideSignup = (props) => {
 
     const guideSignups = () => {
         dispatch(GuideSignupnew(user)).then((response) => {
+            resetLoginForm();
             setShow(true);
             setError("Check Your Email")
         }).catch((error) => {
