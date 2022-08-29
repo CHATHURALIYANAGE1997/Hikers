@@ -16,8 +16,10 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
 import NotFoundPage from './NotFoundPage';
+import { useEffect } from 'react';
 
 function oraganizeTrip(props) {
+
   const [validated, setValidated] = useState(false);
 
   const url = "localhost:8080/user/senddata"
@@ -29,6 +31,31 @@ function oraganizeTrip(props) {
     date: "",
 
   };
+  const provinces = [                             // Provinces array       
+    {id : "1", name : "North Western"},
+    {id : "2", name : "Central"}
+
+  ]
+  const mountains = [                                               // Mountains array
+    {id : "1", provinceId : "1", name : "Dolukanda"},
+    {id : "2", provinceId : "1", name : "Hulangala"},
+    {id : "3", provinceId : "2", name : "Hulangala"},
+    {id : "4", provinceId : "2", name : "Narangala"}
+  ]
+  const [province, setProvince] = useState ([])       // Provinces dropdown use state
+  const [mountain, setMountain] = useState ([])       // Mountains dropdown use state
+
+  useEffect (() =>{                                   // setProvince useEffect
+    setProvince (provinces)
+
+  }, [])
+
+  const handleProvince = (id) => {                            // Provinces and mountain handle function
+    const dt = mountains.filter (x => x.provinceId === id)
+    setMountain (dt)
+
+  }
+
   const [data, setData] = useState(initialState);
 
   const handle = (e) => {
@@ -65,13 +92,13 @@ function oraganizeTrip(props) {
     setValidated(true);
   }
 
-  if (localStorage.jwtToken) {
-    authToken(localStorage.jwtToken);
-  }
+  // if (localStorage.jwtToken) {
+  //   authToken(localStorage.jwtToken);
+  // }
 
-  const auth = useSelector((state) => state.auth);
+  // const auth = useSelector((state) => state.auth);
 
-  if (auth.isLoggedIn === true && auth.role === "User") {
+  // if (auth.isLoggedIn === true && auth.role === "User") {
     return (
       <div className='trot_mainDiv'>
         <Navbar />
@@ -203,21 +230,46 @@ function oraganizeTrip(props) {
               <Form.Group as={Row} md="3" controlId="validationCustom04" className="d-flex flex-column">
 
                 <Form.Label>Location</Form.Label>
+                
+                <div className="d-flex flex-row w-75">                              {/* provinces drop down */}                    
+                  <Form.Select 
+                    id='ddlProvince'
+                    aria-label="" 
+                    className='trot_dropDown' 
+                    onChange={(e) => handleProvince (e.target.value)}
+                    >
+                    <option value={0}>Select a Province</option>
+                    {
+                      province &&
+                      province !== undefined ?
+                      province.map ((prv, index) => {
+                        return (
+                          <option key={index} value={prv.id}>{prv.name}</option>
+                        )
+                      })
+                      :"No province"
 
-                <div className="d-flex flex-row w-75">
-                  <Form.Select aria-label="" className='trot_dropDown'>
-                    <option>Select a Province</option>
-                    <option value="1">North Western</option>
-                    <option value="2">Central</option>
-                    <option value="3">Uva</option>
-
+                    }
                   </Form.Select>
-                  <Form.Select aria-label="" className='trot_dropDown'>
-                    <option>Select a Mountain</option>
-                    <option value="1">Dolukanda</option>
-                    <option value="2">Bathalegala</option>
-                    <option value="3">Hulangala</option>
 
+                  <Form.Select 
+                    id='ddlMountain'
+                    aria-label="" 
+                    className='trot_dropDown' 
+                    // onChange={(e) => handleMountain (e.target.value)}
+                    >
+                    <option value={0}>Select a mountain</option>
+                    {
+                      mountain &&
+                      mountain !== undefined ?
+                      mountain.map ((prv, index) => {
+                        return (
+                          <option key={index} value={prv.id}>{prv.name}</option>
+                        )
+                      })
+                      :"No province"
+
+                    }
                   </Form.Select>
                 </div>
 
@@ -322,13 +374,13 @@ function oraganizeTrip(props) {
 
     );
   }
-  else {
-    localStorage.clear();
-    // return props.history.push("/");
-    { return <div><NotFoundPage /></div> }
+//   else {
+//     localStorage.clear();
+//     // return props.history.push("/");
+//     { return <div><NotFoundPage /></div> }
 
-  }
-}
+//   }
+// }
 
 // render(<oraganizeTrip />);
 export default oraganizeTrip

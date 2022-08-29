@@ -249,7 +249,6 @@ const Transport = () => {
                         </div>
                         <div className="tr_rightContainer">
                             
-
                             {currentMainStatus === "" && <MyComponent/>}           {/* Initial right div */}
                             {currentMainStatus === "start" && <MyComponent/>}           {/* Start right div */}
                             {currentMainStatus === "destination" && <MyComponent/>}           {/* Destination right div */}
