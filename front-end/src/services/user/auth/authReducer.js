@@ -2,6 +2,7 @@ import { LOGIN_REQUEST, LOGOUT_REQUEST, SUCCESS, FAILURE } from "./authTypes";
 
 const initialState = {
 
+    jwt:"",
     username: "",
     isLoggedIn: "",
     role:""
@@ -18,6 +19,7 @@ const reducer = (state = initialState, action) => {
         case FAILURE:
             return {
 
+                jwt:action.payload.jwt,
                 username: action.payload.username,
                 isLoggedIn: action.payload.isLoggedIn,
                 role:action.payload.role
