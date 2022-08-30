@@ -63,10 +63,9 @@ public class Travelingguide implements Serializable {
     @Column(name="contactNumber")
     private String contactNumber;
 
-    @Column(name = "verification_code", length = 64)
+    @Column(name = "verification_code", length = 72)
     private String verificationCode;
 
     private boolean enabled;
 
 }
-
