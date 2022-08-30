@@ -162,5 +162,25 @@ public class UserRestImpl implements UserRest {
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
+    @Override
+    public ResponseEntity<?> verifyGuide(String code) {
+       try {
+           return userService.verifyGuide(code);
+       }catch (Exception ex){
+           ex.printStackTrace();
+       }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> verifyEquprovider(String code) {
+       try {
+           return userService.verifyEquprovider(code);
+       }catch (Exception ex){
+           ex.printStackTrace();
+       }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
 
 }
