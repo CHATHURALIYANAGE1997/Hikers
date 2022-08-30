@@ -50,8 +50,9 @@ public class Equipmentprovider implements Serializable {
     @Column(name="nicimg")
     private  String nicimg;
 
-    @Column(name = "verification_code", length = 64)
+    @Column(name = "verification_code", length = 68)
     private String verificationCode;
 
     private boolean enabled;
 }
+
