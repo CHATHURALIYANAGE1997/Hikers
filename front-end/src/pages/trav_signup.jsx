@@ -135,7 +135,7 @@ const TravelerSignup = (props) => {
                             {/*</div>*/}
                             <br></br>
                             <div className="col-6 mt-3 mx-auto text-center loginbtn">
-                                <button className="btn btn-primary" type="submit" type="button" variant="success" onClick={travsignup}
+                                <button className="btn btn-primary" type="submit"  variant="success" onClick={travsignup}
                                 >Signup
                                 </button>
                             </div>

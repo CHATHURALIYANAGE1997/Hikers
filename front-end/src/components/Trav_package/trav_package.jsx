@@ -5,7 +5,7 @@ import "./trav_package.css";
 // import TranspMenuIcon from "../Trav_transportMenuIcon/trav_transportMenuIcon";
 
 const Package = (props) => {
-    console.log (props.name)
+    // console.log (props.name)
     return (
         <div className="package_1">
             <div className="trp_checkBox">
