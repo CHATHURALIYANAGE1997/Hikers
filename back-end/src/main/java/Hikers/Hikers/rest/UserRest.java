@@ -55,5 +55,11 @@ public interface UserRest {
     @GetMapping(path="/accountconfirm/{code}")
     public ResponseEntity<?> verifyUser(@PathVariable String code);
 
+    @GetMapping(path="/accountconfirmtravelguide/{code}")
+    public ResponseEntity<?> verifyGuide(@PathVariable String code);
+
+    @GetMapping(path = "/accountconfirmequprovider/{code}")
+    public ResponseEntity<?> verifyEquprovider(@PathVariable String code);
 }
+
 
