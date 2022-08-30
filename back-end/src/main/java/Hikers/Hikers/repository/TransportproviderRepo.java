@@ -11,5 +11,4 @@ public interface TransportproviderRepo extends JpaRepository<Transportprovider,L
     Transportprovider findByEmail(@Param("email") String email);
 
     Transportprovider findByContactNumber(@Param("contactNumber") String contactNumber);
-   // Transportprovider findByVerificationCode(String code);
 }
