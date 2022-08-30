@@ -33,4 +33,8 @@ public interface UserService {
 
 
     ResponseEntity<?> verifyUser(String code);
+
+    ResponseEntity<?> verifyGuide(String code);
+
+    ResponseEntity<?> verifyEquprovider(String code);
 }
