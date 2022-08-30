@@ -416,59 +416,47 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<?> verifyGuide(String code) {
+       try {
+           Travelingguide travelingguide=travelingguideRepo.findByVerificationCode(code);
+           if( travelingguide==null || travelingguide.isEnabled()){
+               log.info("gui");
+               return Hutils.getResponseEntity("Not Valid Requst", HttpStatus.BAD_REQUEST);
+           }else {
+               travelingguide.setVerificationCode(null);
+               travelingguide.setEnabled(true);
+               travelingguide.setAccountstatus("false");
+               travelingguideRepo.save(travelingguide);
+               log.info("guide");
+               return Hutils.getResponseEntity("Account Verifed waite for admin approve", HttpStatus.OK);
+           }
+       }catch (Exception ex){
+           ex.printStackTrace();
+       }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
-
-//    @Override
-//    public ResponseEntity<?> verifyUser(String code) {
-//        try {
-////            String Role;
-////            int stringSize= code.trim().length();
-////            if(stringSize==64){
-////                Role="User";
-////            }else if(stringSize==68){
-////                Role="Travelguide";
-////            }else {
-////                Role="Eqprovider";
-////            }
-//            User user=userRepo.findByVerificationCode(code);
-////            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByVerificationCode(code);
-////            Travelingguide travelingguide=travelingguideRepo.findByVerificationCode(code);
-////            if( ObjectUtils.isEmpty(user)  &&stringSize==64){
-////                user.setVerificationCode(null);
-////                user.setEnabled(true);
-////                user.setAccountstatus("ture");
-////                userRepo.save(user);
-////                return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
-////            }else if( ObjectUtils.isEmpty(equipmentprovider) && stringSize==72){
-////                equipmentprovider.setVerificationCode(null);
-////                equipmentprovider.setEnabled(true);
-////                equipmentprovider.setAccountstatus("ture");
-////                equipmentproviderRepo.save(equipmentprovider);
-////                return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
-////            }else if(ObjectUtils.isEmpty(travelingguide)   && stringSize==68){
-////                equipmentprovider.setVerificationCode(null);
-////                equipmentprovider.setEnabled(true);
-////                equipmentprovider.setAccountstatus("false");
-////                equipmentproviderRepo.save(equipmentprovider);
-////                log.info("fefsdfdfds");
-////                return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
-////            }else {
-////                return Hutils.getResponseEntity("Not Valid Requst", HttpStatus.BAD_REQUEST);
-////            }
-//            if(Objects.isNull(user)|| user==null ||user.isEnabled() || code==null){
-//                return Hutils.getResponseEntity("Not Valid Requst", HttpStatus.BAD_REQUEST);
-//            }else{
-//                user.setVerificationCode(null);
-//                user.setEnabled(true);
-//                user.setAccountstatus("ture");
-//                userRepo.save(user);
-//                return Hutils.getResponseEntity("Account Verifed", HttpStatus.OK);
-//            }
-//        }catch (Exception ex){
-//            ex.printStackTrace();
-//        }
-//        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
-//    }
+    @Override
+    public ResponseEntity<?> verifyEquprovider(String code) {
+       try {
+           Equipmentprovider equipmentprovider=equipmentproviderRepo.findByVerificationCode(code);
+           if(equipmentprovider==null||equipmentprovider.isEnabled()){
+               return Hutils.getResponseEntity("Not Valid Requst", HttpStatus.BAD_REQUEST);
+           }
+           else {
+               equipmentprovider.setVerificationCode(null);
+               equipmentprovider.setEnabled(true);
+               equipmentprovider.setAccountstatus("false");
+               equipmentproviderRepo.save(equipmentprovider);
+               log.info("equ");
+               return Hutils.getResponseEntity("Account Verifed waite for admin approve", HttpStatus.OK);
+           }
+       }catch (Exception ex){
+           ex.printStackTrace();
+       }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
 
     private User getUserFromMap(Map<String,String> requestMap){
@@ -540,7 +528,7 @@ public class UserServiceImpl implements UserService {
         equipmentprovider.setEnabled(false);
         equipmentprovider.setNicimg(requestMap.get("nicimg"));
         equipmentprovider.setProfileimg(requestMap.get("profileimg"));
-        String randomCode = RandomString.make(64);
+        String randomCode = RandomString.make(68);
         equipmentprovider.setVerificationCode(randomCode);
         return equipmentprovider;
     }
@@ -563,7 +551,7 @@ public class UserServiceImpl implements UserService {
         travelingguide.setRole(requestMap.get("role"));
         travelingguide.setContactNumber(requestMap.get("contactNumber"));
         travelingguide.setAccountstatus(requestMap.get("accountstatus"));
-        String randomCode = RandomString.make(64);
+        String randomCode = RandomString.make(72);
         travelingguide.setVerificationCode(randomCode);
         return travelingguide;
     }
