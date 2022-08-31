@@ -53,6 +53,9 @@ public class Hotel implements Serializable {
 
     @Column(name="img2")
     private String img2;
+    
+     @Column(name = "verification_code", length = 76)
+    private String verificationCode;
 
 }
 
