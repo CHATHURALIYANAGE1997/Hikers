@@ -182,5 +182,14 @@ public class UserRestImpl implements UserRest {
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
+    @Override
+    public ResponseEntity<?> forgotpassword(Map<String, String> requestMap) {
+        try {
+            return userService.forgotpassword(requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
 
 }
