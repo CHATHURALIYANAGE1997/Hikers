@@ -37,4 +37,6 @@ public interface UserService {
     ResponseEntity<?> verifyGuide(String code);
 
     ResponseEntity<?> verifyEquprovider(String code);
+    
+    ResponseEntity<?> forgotpassword(Map<String, String> requestMap);
 }
