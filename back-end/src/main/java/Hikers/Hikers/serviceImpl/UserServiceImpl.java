@@ -74,16 +74,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
-        //System.out.println(requestMap);
+        
         try {
 
             JSONObject jsonObject = new JSONObject();
-            System.out.println(requestMap);
+            
             Authentication auth= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestMap.get("email"),requestMap.get("password")));
             if(auth.isAuthenticated()){
                 if(!Objects.isNull(customerUserDetailsService.getUserDetails()) && customerUserDetailsService.getUserDetails().getAccountstatus().equalsIgnoreCase("ture")&&(customerUserDetailsService.getUserDetails().getRole().equalsIgnoreCase("User")||customerUserDetailsService.getUserDetails().getRole().equalsIgnoreCase("Admin")||customerUserDetailsService.getUserDetails().getRole().equalsIgnoreCase("Co-Admin"))){
-//                   return new ResponseEntity<String>("{\"token\":\""+jwtUtil.generateToken(customerUserDetailsService.getUserDetails().getEmail(),customerUserDetailsService.getUserDetails().getRole())
-//                   +"\"},{\"username\":\""+customerUserDetailsService.getUserDetails().getEmail()+"\"}",HttpStatus.OK);
                     jsonObject.put("token", jwtUtil.generateToken(customerUserDetailsService.getUserDetails().getEmail(), customerUserDetailsService.getUserDetails().getRole()));
                     jsonObject.put("name", customerUserDetailsService.getUserDetails().getEmail());
                     jsonObject.put("role", customerUserDetailsService.getUserDetails().getRole());
