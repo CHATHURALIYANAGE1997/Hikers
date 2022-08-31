@@ -10,5 +10,7 @@ public interface HotelRepo extends JpaRepository<Hotel,Long> {
     Hotel findByEmail(@Param("email") String email);
 
     Hotel findByContactNumber(@Param("contactNumber") String contactNumber);
+    
+    Hotel findByEmailAndAccountstatus(String email,String accountstatus);
 }
 
