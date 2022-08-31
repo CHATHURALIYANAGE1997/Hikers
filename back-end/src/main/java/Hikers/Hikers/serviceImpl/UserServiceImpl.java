@@ -74,9 +74,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
+        //System.out.println(requestMap);
         try {
 
             JSONObject jsonObject = new JSONObject();
+            System.out.println(requestMap);
             Authentication auth= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(requestMap.get("email"),requestMap.get("password")));
             if(auth.isAuthenticated()){
                 if(!Objects.isNull(customerUserDetailsService.getUserDetails()) && customerUserDetailsService.getUserDetails().getAccountstatus().equalsIgnoreCase("ture")&&(customerUserDetailsService.getUserDetails().getRole().equalsIgnoreCase("User")||customerUserDetailsService.getUserDetails().getRole().equalsIgnoreCase("Admin")||customerUserDetailsService.getUserDetails().getRole().equalsIgnoreCase("Co-Admin"))){
@@ -112,7 +114,7 @@ public class UserServiceImpl implements UserService {
                 }
             }
         }catch (Exception ex){
-            log.error("{}",ex);
+            log.error("llll{}",ex);
         }
         return new ResponseEntity<String>("{\"message\":\""+"Bad Credentials."+"\"}",HttpStatus.BAD_REQUEST);
     }
@@ -168,66 +170,7 @@ public class UserServiceImpl implements UserService {
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG,HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    private void sendVerificationEmail(User user, String siteURL) throws MessagingException, UnsupportedEncodingException {
-        // SimpleMailMessage message=new SimpleMailMessage();
-        String toAddress = user.getEmail();
-        String fromAddress = "oraclefreightsolutionspvt@gmail.com";
-        String senderName = "Hikers";
-        String subject = "Please verify your registration";
-        String content = "Dear [[name]],<br>"
-                + "Please click the link below to verify your registration:<br>"
-                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
-                + "Thank you,<br>"
-                + "Your company name.";
 
-        MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message);
-
-        helper.setFrom(fromAddress, senderName);
-        helper.setTo(toAddress);
-        helper.setSubject(subject);
-
-        content = content.replace("[[name]]", user.getFirstname());
-        String verifyURL = siteURL + "/verify?id=" + user.getVerificationCode();
-
-        content = content.replace("[[URL]]", verifyURL);
-
-        helper.setText(content, true);
-
-        mailSender.send(message);
-
-    }
-
-
-    private void sendVerificationEmailToEquProvider(Equipmentprovider equipmentprovider, String siteURL) throws MessagingException, UnsupportedEncodingException {
-        // SimpleMailMessage message=new SimpleMailMessage();
-        String toAddress =equipmentprovider.getEmail();
-        String fromAddress = "Hikers023@gmail.com";
-        String senderName = "Hikers";
-        String subject = "Please verify your registration";
-        String content = "Dear [[name]],<br>"
-                + "Please click the link below to verify your registration:<br>"
-                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
-                + "Thank you,<br>"
-                + "Your company name.";
-
-        MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message);
-
-        helper.setFrom(fromAddress, senderName);
-        helper.setTo(toAddress);
-        helper.setSubject(subject);
-
-        content = content.replace("[[name]]", equipmentprovider.getFirstname());
-        String verifyURL = siteURL + "/verify?id=" + equipmentprovider.getVerificationCode();
-
-        content = content.replace("[[URL]]", verifyURL);
-
-        helper.setText(content, true);
-
-        mailSender.send(message);
-
-    }
 
     @Override
     public ResponseEntity<String> signUpTransportProvider(Map<String, String> requestMap) {
@@ -458,6 +401,208 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<?> forgotpassword(Map<String, String> requestMap) {
+        try {
+            String siteURL="http://localhost:3000";
+            User user=userRepo.findByEmailAndAccountstatusAndEnabled(requestMap.get("email"),"ture",true);
+            Hotel hotel=hotelRepo.findByEmailAndAccountstatus(requestMap.get("email"),"ture");
+            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmailAndAccountstatusAndEnabled(requestMap.get("email"),"ture",true);
+            Transportprovider transportprovider=transportproviderRepo.findByEmailAndAccountstatus(requestMap.get("email"),"ture");
+            Travelingguide travelingguide=travelingguideRepo.findByEmailAndAccountstatusAndEnabled(requestMap.get("email"),"ture",true);
+            if(!Objects.isNull(user) ) {
+                String randomCode = RandomString.make(64);
+                user.setVerificationCode(randomCode);
+                User user1= userRepo.save(user);
+                sendVerificationEmail(user1, siteURL);
+                return Hutils.getResponseEntity("Cheack your email",HttpStatus.OK);
+            }
+            else if(!Objects.isNull(hotel)){
+                String randomCode = RandomString.make(76);
+                hotel.setVerificationCode(randomCode);
+                Hotel hotel1=hotelRepo.save(hotel);
+                sendVerificationEmailtoHotel(hotel1,siteURL);
+                return Hutils.getResponseEntity("Cheack your email",HttpStatus.OK);
+            }
+            else if(!Objects.isNull(equipmentprovider)){
+                String randomCode = RandomString.make(68);
+                equipmentprovider.setVerificationCode(randomCode);
+                Equipmentprovider equipmentprovider1=equipmentproviderRepo.save(equipmentprovider);
+                sendVerificationEmailToEquProvider(equipmentprovider1,siteURL);
+                return Hutils.getResponseEntity("Cheack your email",HttpStatus.OK);
+            }
+            else if(!Objects.isNull(transportprovider)){
+                String randomCode = RandomString.make(80);
+                transportprovider.setVerificationCode(randomCode);
+                Transportprovider transportprovider1=transportproviderRepo.save(transportprovider);
+                //send verifivation to tra provider
+                sendVerificationEmailToTraProvider(transportprovider1,siteURL);
+                return Hutils.getResponseEntity("Cheack your email",HttpStatus.OK);
+            }
+            else if(!Objects.isNull(travelingguide)){
+                String randomCode = RandomString.make(72);
+                travelingguide.setVerificationCode(randomCode);
+                Travelingguide travelingguide1=travelingguideRepo.save(travelingguide);
+                sendVerificationEmailToTravelguide(travelingguide1,siteURL);
+                return Hutils.getResponseEntity("Cheack your email",HttpStatus.OK);
+            }else {
+                return Hutils.getResponseEntity("Not a valid email",HttpStatus.OK);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+
+    private void sendVerificationEmail(User user, String siteURL) throws MessagingException, UnsupportedEncodingException {
+        // SimpleMailMessage message=new SimpleMailMessage();
+        String toAddress = user.getEmail();
+        String fromAddress = "Hikers023@gmail.com";
+        String senderName = "Hikers";
+        String subject = "Please verify your request";
+        String content = "Dear [[name]],<br>"
+                + "Please click the link below to verify your request:<br>"
+                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
+                + "Thank you,<br>"
+                + "Your company name.";
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(fromAddress, senderName);
+        helper.setTo(toAddress);
+        helper.setSubject(subject);
+
+        content = content.replace("[[name]]", user.getFirstname());
+        String verifyURL = siteURL + "/verify?id=" + user.getVerificationCode();
+
+        content = content.replace("[[URL]]", verifyURL);
+
+        helper.setText(content, true);
+
+        mailSender.send(message);
+
+    }
+
+
+    private void sendVerificationEmailToEquProvider(Equipmentprovider equipmentprovider, String siteURL) throws MessagingException, UnsupportedEncodingException {
+        // SimpleMailMessage message=new SimpleMailMessage();
+        String toAddress =equipmentprovider.getEmail();
+        String fromAddress = "Hikers023@gmail.com";
+        String senderName = "Hikers";
+        String subject = "Please verify your requst";
+        String content = "Dear [[name]],<br>"
+                + "Please click the link below to verify your requst:<br>"
+                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
+                + "Thank you,<br>"
+                + "Your company name.";
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(fromAddress, senderName);
+        helper.setTo(toAddress);
+        helper.setSubject(subject);
+
+        content = content.replace("[[name]]", equipmentprovider.getFirstname());
+        String verifyURL = siteURL + "/verify?id=" + equipmentprovider.getVerificationCode();
+
+        content = content.replace("[[URL]]", verifyURL);
+
+        helper.setText(content, true);
+
+        mailSender.send(message);
+
+    }
+
+    private void sendVerificationEmailtoHotel(Hotel hotel1, String siteURL) throws MessagingException, UnsupportedEncodingException{
+        String toAddress =hotel1.getEmail();
+        String fromAddress = "Hikers023@gmail.com";
+        String senderName = "Hikers";
+        String subject = "Please verify your requst";
+        String content = "Dear [[name]],<br>"
+                + "Please click the link below to verify your requst:<br>"
+                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
+                + "Thank you,<br>"
+                + "Your company name.";
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(fromAddress, senderName);
+        helper.setTo(toAddress);
+        helper.setSubject(subject);
+
+        content = content.replace("[[name]]", hotel1.getName());
+        String verifyURL = siteURL + "/verify?id=" + hotel1.getVerificationCode();
+
+        content = content.replace("[[URL]]", verifyURL);
+
+        helper.setText(content, true);
+
+        mailSender.send(message);
+    }
+
+
+    private void sendVerificationEmailToTravelguide(Travelingguide travelingguide, String siteURL) throws MessagingException, UnsupportedEncodingException {
+        // SimpleMailMessage message=new SimpleMailMessage();
+        String toAddress =travelingguide.getEmail();
+        String fromAddress = "Hikers023@gmail.com";
+        String senderName = "Hikers";
+        String subject = "Please verify your requst";
+        String content = "Dear [[name]],<br>"
+                + "Please click the link below to verify your requst:<br>"
+                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
+                + "Thank you,<br>"
+                + "Your company name.";
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(fromAddress, senderName);
+        helper.setTo(toAddress);
+        helper.setSubject(subject);
+
+        content = content.replace("[[name]]", travelingguide.getFirstname());
+        String verifyURL = siteURL + "/verify?id=" + travelingguide.getVerificationCode();
+
+        content = content.replace("[[URL]]", verifyURL);
+
+        helper.setText(content, true);
+
+        mailSender.send(message);
+
+    }
+
+    private void sendVerificationEmailToTraProvider(Transportprovider transportprovider, String siteURL) throws MessagingException, UnsupportedEncodingException{
+        String toAddress = transportprovider.getEmail();
+        String fromAddress = "Hikers023@gmail.com";
+        String senderName = "Hikers";
+        String subject = "Please verify your request";
+        String content = "Dear [[name]],<br>"
+                + "Please click the link below to verify your request:<br>"
+                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
+                + "Thank you,<br>"
+                + "Your company name.";
+
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message);
+
+        helper.setFrom(fromAddress, senderName);
+        helper.setTo(toAddress);
+        helper.setSubject(subject);
+
+        content = content.replace("[[name]]", transportprovider.getFirstname());
+        String verifyURL = siteURL + "/verify?id=" + transportprovider.getVerificationCode();
+
+        content = content.replace("[[URL]]", verifyURL);
+
+        helper.setText(content, true);
+
+        mailSender.send(message);
+
+    }
 
     private User getUserFromMap(Map<String,String> requestMap){
         User user=new User();
@@ -555,37 +700,5 @@ public class UserServiceImpl implements UserService {
         travelingguide.setVerificationCode(randomCode);
         return travelingguide;
     }
-
-    private void sendVerificationEmailToTravelguide(Travelingguide travelingguide, String siteURL) throws MessagingException, UnsupportedEncodingException {
-        // SimpleMailMessage message=new SimpleMailMessage();
-        String toAddress =travelingguide.getEmail();
-        String fromAddress = "Hikers023@gmail.com";
-        String senderName = "Hikers";
-        String subject = "Please verify your registration";
-        String content = "Dear [[name]],<br>"
-                + "Please click the link below to verify your registration:<br>"
-                + "<h3><a href=\"[[URL]]\" target=\"_self\">VERIFY</a></h3>"
-                + "Thank you,<br>"
-                + "Your company name.";
-
-        MimeMessage message = mailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message);
-
-        helper.setFrom(fromAddress, senderName);
-        helper.setTo(toAddress);
-        helper.setSubject(subject);
-
-        content = content.replace("[[name]]", travelingguide.getFirstname());
-        String verifyURL = siteURL + "/verify?id=" + travelingguide.getVerificationCode();
-
-        content = content.replace("[[URL]]", verifyURL);
-
-        helper.setText(content, true);
-
-        mailSender.send(message);
-
-    }
-
-
 
 }
