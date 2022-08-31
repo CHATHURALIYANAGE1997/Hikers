@@ -13,6 +13,6 @@ public interface HotelRepo extends JpaRepository<Hotel,Long> {
     
     Hotel findByEmailAndAccountstatus(String email,String accountstatus);
     
-    Hotel findByVerificationCode(@Param("verificationcode") String verificationcode);
+    Hotel findByVerificationCodeAndAccountstatus(String verificationcode,String accountstatus);
 }
 
