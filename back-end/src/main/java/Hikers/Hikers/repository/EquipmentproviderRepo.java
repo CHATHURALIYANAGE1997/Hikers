@@ -9,6 +9,10 @@ import org.springframework.stereotype.Repository;
 public interface EquipmentproviderRepo extends JpaRepository<Equipmentprovider,Long> {
 
     Equipmentprovider findByEmail(@Param("email") String email);
+    
     Equipmentprovider findByContactNumber(@Param("contactNumber") String contactNumber);
+    
     Equipmentprovider findByVerificationCode(@Param("verificationCode") String verificationCode);
+    
+    Equipmentprovider findByEmailAndAccountstatusAndEnabled(String email,String accountstatus,Boolean enabled);
 }
