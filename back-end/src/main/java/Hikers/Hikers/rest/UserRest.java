@@ -60,6 +60,9 @@ public interface UserRest {
 
     @GetMapping(path = "/accountconfirmequprovider/{code}")
     public ResponseEntity<?> verifyEquprovider(@PathVariable String code);
+    
+    @PostMapping(path = "/forgotpassword")
+    public ResponseEntity<?> forgotpassword(@RequestBody(required=true) Map<String, String> requestMap);
 }
 
 
