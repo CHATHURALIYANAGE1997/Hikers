@@ -15,4 +15,6 @@ public interface EquipmentproviderRepo extends JpaRepository<Equipmentprovider,L
     Equipmentprovider findByVerificationCode(@Param("verificationCode") String verificationCode);
     
     Equipmentprovider findByEmailAndAccountstatusAndEnabled(String email,String accountstatus,Boolean enabled);
+    
+     Equipmentprovider findByVerificationCodeAndAccountstatusEAndEnabled(String verificationCode,String accountstatus,Boolean enabled);
 }
