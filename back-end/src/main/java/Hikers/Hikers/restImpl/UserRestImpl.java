@@ -200,7 +200,6 @@ public class UserRestImpl implements UserRest {
     public ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap) {
         try {
             if(id.length()==64){
-                //to do
                 return userService.changePassoword(id,requestMap);
             }else if(id.length()==68){
                 return equipmentproviderService.changePassoword(id,requestMap);
