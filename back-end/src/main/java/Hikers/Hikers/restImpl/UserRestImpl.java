@@ -5,9 +5,7 @@ import Hikers.Hikers.jwt.JwtFilter;
 import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Transportprovider;
 import Hikers.Hikers.rest.UserRest;
-import Hikers.Hikers.service.HotelService;
-import Hikers.Hikers.service.TraProviderService;
-import Hikers.Hikers.service.UserService;
+import Hikers.Hikers.service.*;
 import Hikers.Hikers.utils.Hutils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,13 +25,19 @@ public class UserRestImpl implements UserRest {
     private UserService userService;
 
     @Autowired
-    HotelService hotelService;
+    private HotelService hotelService;
+
+    @Autowired
+    private EquipmentproviderService equipmentproviderService;
 
     @Autowired
     private JwtFilter jwtFilter;
 
     @Autowired
     private TraProviderService traProviderService;
+
+    @Autowired
+   private TravelGuideService travelGuideService;
 
     @Override
     public ResponseEntity<String> signUp(Map<String, String> requestMap ) {
@@ -191,5 +195,31 @@ public class UserRestImpl implements UserRest {
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    @Override
+    public ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap) {
+        try {
+            if(id.length()==64){
+                //to do
+                return userService.changePassoword(id,requestMap);
+            }else if(id.length()==68){
+                return equipmentproviderService.changePassoword(id,requestMap);
+            }else if(id.length()==72){
+                //to do
+              //return travelGuideService.changePassoword(id,requestMap);
+            }else if(id.length()==76){
+                return hotelService.changePassoword(id,requestMap);
+            }else if(id.length()==80){
+                //to do
+                //return traProviderService.changePassoword(id,requestMap);
+            }else {
+                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
 
 }
