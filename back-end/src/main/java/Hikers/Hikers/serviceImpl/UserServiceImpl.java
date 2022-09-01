@@ -452,6 +452,24 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap) {
+        try {
+            User user=userRepo.findByVerificationCodeAndAccountstatusAndEnabled(id,"ture",true);
+            if(id!=null && !Objects.isNull(user) && id.length()==64){
+                user.setPassword(passwordEncoder.encode(requestMap.get("password")));
+                user.setVerificationCode(null);
+                userRepo.save(user);
+                return Hutils.getResponseEntity("Password changed", HttpStatus.OK);
+            }
+            else{
+                return Hutils.getResponseEntity("Unvalid Reqeust", HttpStatus.BAD_REQUEST);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
     private void sendVerificationEmail(User user, String siteURL) throws MessagingException, UnsupportedEncodingException {
         // SimpleMailMessage message=new SimpleMailMessage();
