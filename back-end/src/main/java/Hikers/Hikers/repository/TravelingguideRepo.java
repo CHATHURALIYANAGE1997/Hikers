@@ -19,4 +19,6 @@ public interface TravelingguideRepo extends JpaRepository<Travelingguide,Long> {
    Travelingguide findByVerificationCode( String code);
    
    Travelingguide findByEmailAndAccountstatusAndEnabled(String email,String accountstatus,Boolean enabled);
+   
+   Travelingguide findByVerificationCodeAndAccountstatusAndEnabled(String id, String ture, boolean enabled);
 }
