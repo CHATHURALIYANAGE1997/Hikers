@@ -204,8 +204,7 @@ public class UserRestImpl implements UserRest {
             }else if(id.length()==68){
                 return equipmentproviderService.changePassoword(id,requestMap);
             }else if(id.length()==72){
-                //to do
-              //return travelGuideService.changePassoword(id,requestMap);
+                return travelGuideService.changePassoword(id,requestMap);
             }else if(id.length()==76){
                 return hotelService.changePassoword(id,requestMap);
             }else if(id.length()==80){
