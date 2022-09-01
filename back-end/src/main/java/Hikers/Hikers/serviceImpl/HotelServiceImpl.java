@@ -61,6 +61,9 @@ public class HotelServiceImpl implements HotelService {
                 hotelRepo.save(hotel);
                 return Hutils.getResponseEntity("Password changed", HttpStatus.OK);
             }
+            else{
+                return Hutils.getResponseEntity("Unvalid Reqeust", HttpStatus.BAD_REQUEST);
+            }
         }catch (Exception ex){
             ex.printStackTrace();
         }
