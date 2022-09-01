@@ -5,15 +5,15 @@ import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Transportprovider;
 import Hikers.Hikers.repository.TransportproviderRepo;
 import Hikers.Hikers.service.TraProviderService;
+import Hikers.Hikers.utils.Hutils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -24,6 +24,9 @@ public class TraProviderServiceImpl implements TraProviderService {
 
     @Autowired
     private JwtFilter jwtFilter;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
     @Override
@@ -45,6 +48,26 @@ public class TraProviderServiceImpl implements TraProviderService {
             }else{
                 return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
             }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap) {
+        try {
+            Transportprovider transportprovider=transportproviderRepo.findByVerificationCodeAndAccountstatus(id,"ture");
+            if(id!=null && !Objects.isNull(transportprovider) && id.length()==80){
+                transportprovider.setPassword(passwordEncoder.encode(requestMap.get("password")));
+                transportprovider.setVerificationCode(null);
+                transportproviderRepo.save(transportprovider);
+                return Hutils.getResponseEntity("Password changed", HttpStatus.OK);
+            }
+            else{
+                return Hutils.getResponseEntity("Unvalid Reqeust", HttpStatus.BAD_REQUEST);
+            }
+
         }catch (Exception ex){
             ex.printStackTrace();
         }
