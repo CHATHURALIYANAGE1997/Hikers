@@ -208,8 +208,7 @@ public class UserRestImpl implements UserRest {
             }else if(id.length()==76){
                 return hotelService.changePassoword(id,requestMap);
             }else if(id.length()==80){
-                //to do
-                //return traProviderService.changePassoword(id,requestMap);
+                return traProviderService.changePassoword(id,requestMap);
             }else {
                 return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
             }
