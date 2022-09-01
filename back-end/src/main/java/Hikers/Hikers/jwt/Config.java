@@ -59,7 +59,7 @@ public class Config extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/user/login", "/user/signup", "/user/accountconfirm/**","/user/accountconfirmtravelguide/**",
                         "/user/signupequipmentprovider","/user/signuptraveling","/reset_password/**","/user/accountconfirmequprovider/**",
-                        "/hotel/changepassword/**","/user/forgotpassword")
+                        "/hotel/changepassword/**","/*/forgotpassword")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
