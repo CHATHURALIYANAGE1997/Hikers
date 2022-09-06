@@ -8,14 +8,12 @@ import Hikers.Hikers.model.*;
 import Hikers.Hikers.repository.*;
 import Hikers.Hikers.service.UserService;
 import Hikers.Hikers.utils.Hutils;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.extern.slf4j.Slf4j;
 import net.bytebuddy.utility.RandomString;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,12 +21,10 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ObjectUtils;
+
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
-import javax.servlet.http.HttpServletRequest;
-import java.awt.*;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 import java.util.List;
@@ -470,6 +466,7 @@ public class UserServiceImpl implements UserService {
         }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
 
     private void sendVerificationEmail(User user, String siteURL) throws MessagingException, UnsupportedEncodingException {
         // SimpleMailMessage message=new SimpleMailMessage();
