@@ -60,7 +60,9 @@ import Page from './pages/page';
 import GuideIssue from './pages/GuideIssue';
 import HotelPayments from './pages/HotelPayments';
 import AdminTraveler from './pages/AdminTravelers';
+import CampingAssesories  from './pages/CampingAssesories';
 import MyComponent from './components/Trav_map/trav_gMap';
+
 
 function App() {
   window.onbeforeunload = (event) => {
@@ -105,6 +107,7 @@ function App() {
               <Route path="/articles/" component={Articles}></Route>
               <Route path="/articleinfo/" component={ArticleInfo}></Route>
               <Route path = "/tents" component= {CampingTents}></Route>
+              <Route path = "/accesories" component= {CampingAssesories}></Route>
               <Route path = "/forums/" component= {Forums}></Route>
               <Route path = "/forumDetails/" component= {ForumDetails}></Route>
               <Route path = "/forumQuestion/" component= {forumQuestion}></Route>
@@ -146,6 +149,7 @@ function App() {
               <Route path="/hotel/profile" component={HotelProfile}></Route>
               <Route path="/hotel/rooms" component={HotelRoom}></Route>
               <Route path="/hotel/payments" component={HotelPayments}></Route>
+               
 
               {/* Admin */}
               <Route path="/admin/home" component={AdminHome}></Route>

@@ -6,7 +6,7 @@ export const  SidebarData= [
     {
         title:"Home",
         icon: <FaHome/>,
-        link: "/home"
+        link: "/camping"
     
     },
     {
@@ -18,17 +18,17 @@ export const  SidebarData= [
     {
         title:"Camping Accessories",
         icon: <FaCamera/>,
-        link: "/accessories"
+        link: "/accesories"
     
     },
     {
-        title:"Camping Equipment",
+        title:"Repair Service",
         icon: <GiFlashlight/>,
         link: "/equipment"
     
     },
     {
-        title:"Repair Service",
+        title:"Post Ad",
         icon: <FaTools/>,
         link: "/repairSerice"
     
