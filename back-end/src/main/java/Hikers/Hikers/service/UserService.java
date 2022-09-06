@@ -39,4 +39,6 @@ public interface UserService {
     ResponseEntity<?> verifyEquprovider(String code);
     
     ResponseEntity<?> forgotpassword(Map<String, String> requestMap);
+    
+    ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap);
 }
