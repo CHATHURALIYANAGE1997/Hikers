@@ -115,13 +115,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> signUp(Map<String, String> requestMap ) {
-        //log.info("Inside signup");
         try {
             User user = userRepo.findByEmail(requestMap.get("email"));
             User user1=userRepo.findByContactNumber(requestMap.get("contactNumber"));
             int stringSize= requestMap.get("password").trim().length();
             if (Objects.isNull(user)  && requestMap.get("email")!=null && stringSize>4) {
-                //user.setPassword(passwordEncoder.encode(user.getPassword()));
                 if(Objects.isNull(user1)) {
                     User user2 =userRepo.save(getUserFromMap(requestMap));
                     String siteURL="http://localhost:3000";
@@ -144,7 +142,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<String> signUpHotel(Map<String, String> requestMap) {
-        // log.info("Inside signuphotel{}",requestMap);
         try{
             Hotel hotel=hotelRepo.findByEmail(requestMap.get("email"));
             Hotel hotel1=hotelRepo.findByContactNumber(requestMap.get("contactNumber"));
@@ -169,7 +166,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<String> signUpTransportProvider(Map<String, String> requestMap) {
         try{
-            // log.info("Inside signuptransportprovider{}",requestMap);
             Transportprovider transportprovider=transportproviderRepo.findByEmail(requestMap.get("email"));
             Transportprovider transportprovider1=transportproviderRepo.findByContactNumber(requestMap.get("contactNumber"));
             if(Objects.isNull(transportprovider)){
@@ -222,7 +218,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<String> signUpTravelingguide(Map<String, String> requestMap) {
         try{
-            // log.info("Inside signuptravelingguide{}",requestMap);
             Travelingguide travelingguide=travelingguideRepo.findByEmail(requestMap.get("email"));
             Travelingguide travelingguide1=travelingguideRepo.findByContactNumber(requestMap.get("contactNumber"));
             int stringSize= requestMap.get("password").trim().length();
@@ -429,7 +424,6 @@ public class UserServiceImpl implements UserService {
                 String randomCode = RandomString.make(80);
                 transportprovider.setVerificationCode(randomCode);
                 Transportprovider transportprovider1=transportproviderRepo.save(transportprovider);
-                //send verifivation to tra provider
                 sendVerificationEmailToTraProvider(transportprovider1,siteURL);
                 return Hutils.getResponseEntity("Cheack your email",HttpStatus.OK);
             }
@@ -469,7 +463,6 @@ public class UserServiceImpl implements UserService {
 
 
     private void sendVerificationEmail(User user, String siteURL) throws MessagingException, UnsupportedEncodingException {
-        // SimpleMailMessage message=new SimpleMailMessage();
         String toAddress = user.getEmail();
         String fromAddress = "Hikers023@gmail.com";
         String senderName = "Hikers";
@@ -500,7 +493,6 @@ public class UserServiceImpl implements UserService {
 
 
     private void sendVerificationEmailToEquProvider(Equipmentprovider equipmentprovider, String siteURL) throws MessagingException, UnsupportedEncodingException {
-        // SimpleMailMessage message=new SimpleMailMessage();
         String toAddress =equipmentprovider.getEmail();
         String fromAddress = "Hikers023@gmail.com";
         String senderName = "Hikers";
@@ -559,7 +551,6 @@ public class UserServiceImpl implements UserService {
 
 
     private void sendVerificationEmailToTravelguide(Travelingguide travelingguide, String siteURL) throws MessagingException, UnsupportedEncodingException {
-        // SimpleMailMessage message=new SimpleMailMessage();
         String toAddress =travelingguide.getEmail();
         String fromAddress = "Hikers023@gmail.com";
         String senderName = "Hikers";
@@ -697,7 +688,6 @@ public class UserServiceImpl implements UserService {
         travelingguide.setLastname(requestMap.get("lastname"));
         travelingguide.setAddress(requestMap.get("address"));
         travelingguide.setDob(requestMap.get("dob"));
-//      travelingguide.setEducation_level(requestMap.get("education_level"));
         travelingguide.setProlice_report(requestMap.get("prolice_report"));
         travelingguide.setGender(requestMap.get("gender"));
         travelingguide.setExperience(requestMap.get("experience"));
