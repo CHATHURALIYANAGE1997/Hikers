@@ -61,6 +61,8 @@ public class Transportprovider implements Serializable {
     @Column(name="role")
     private String role;
 
+    @Column(name = "verification_code", length = 80)
+    private String verificationCode;
 
 }
 
