@@ -16,5 +16,5 @@ public interface EquipmentproviderRepo extends JpaRepository<Equipmentprovider,L
     
     Equipmentprovider findByEmailAndAccountstatusAndEnabled(String email,String accountstatus,Boolean enabled);
     
-     Equipmentprovider findByVerificationCodeAndAccountstatusEAndEnabled(String verificationCode,String accountstatus,Boolean enabled);
+     Equipmentprovider findByVerificationCodeAndAccountstatusAndEnabled(String verificationCode,String accountstatus,Boolean enabled);
 }
