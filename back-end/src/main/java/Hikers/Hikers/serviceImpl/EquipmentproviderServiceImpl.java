@@ -28,7 +28,7 @@ public class EquipmentproviderServiceImpl implements EquipmentproviderService {
     @Override
     public ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap) {
         try {
-            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByVerificationCodeAndAccountstatusEAndEnabled(id,"ture",true);
+            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByVerificationCodeAndAccountstatusAndEnabled(id,"ture",true);
             if(id!=null && !Objects.isNull(equipmentprovider) && id.length()==68){
                 equipmentprovider.setPassword(passwordEncoder.encode(requestMap.get("password")));
                 equipmentprovider.setVerificationCode(null);
