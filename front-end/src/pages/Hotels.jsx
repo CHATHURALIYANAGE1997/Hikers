@@ -20,13 +20,13 @@ export default function Parent (props) {
 
     // const accessToken = localStorage.jwtToken;
 
-    // if (localStorage.jwtToken) {
-    //     authToken(localStorage.jwtToken);
-    // }
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
 
-    // const auth = useSelector((state) => state.auth);
+    const auth = useSelector((state) => state.auth);
 
-    // if (auth.isLoggedIn === true && auth.role === "User") {
+    if (auth.isLoggedIn === true && auth.role === "User") {
 
     const accessToken = localStorage.jwtToken;
 
@@ -52,10 +52,7 @@ export default function Parent (props) {
         })
     }
 
-
     return (
-
-
 
         <div>
             <Navbar />
@@ -105,13 +102,13 @@ export default function Parent (props) {
             </div>
         </div>
     );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     // return props.history.push("/");
-    //     {return <div><NotFoundPage /></div>}
+    }
+    else {
+        localStorage.clear();
+        // return props.history.push("/");
+        {return <div><NotFoundPage /></div>}
 
-    // }
+    }
 }
 
 // export default Hotels;
