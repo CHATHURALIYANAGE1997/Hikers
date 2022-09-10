@@ -1,12 +1,15 @@
 
 import React from "react";
 
-const HotelName = () => {
+export default function HotelName(props) {
+
+    const {name} = props;
+
     return(
         <div>
-                <h2 className="mb-3 title font-weight-bold hotel-name">The Epitome</h2>
+                <h2 className="mb-3 title font-weight-bold hotel-name">{name}</h2>
         </div>
     );
 }
 
-export default HotelName;
+// export default HotelName;
