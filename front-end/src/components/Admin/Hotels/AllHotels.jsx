@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './adminhotels.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import HotelShowModal from './HotelShowModal';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
