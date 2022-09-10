@@ -104,7 +104,7 @@ public class UserServiceImpl implements UserService {
                     return new ResponseEntity<String>(jsonObject.toString(), HttpStatus.OK);
                 }
                 else {
-                    return new ResponseEntity<String>("{\"message\":\""+"Your account is temporarly suspennded,So wait for admin aprove."+"\"}",HttpStatus.BAD_REQUEST);
+                    return new ResponseEntity<String>("{\"message\":\""+"Your account is temporary suspended, Waiting for admin's approval."+"\"}",HttpStatus.BAD_REQUEST);
                 }
             }
         }catch (Exception ex){
@@ -124,7 +124,7 @@ public class UserServiceImpl implements UserService {
                     User user2 =userRepo.save(getUserFromMap(requestMap));
                     String siteURL="http://localhost:3000";
                     sendVerificationEmail(user2, siteURL);
-                    return Hutils.getResponseEntity("Cheack Your Email", HttpStatus.OK);
+                    return Hutils.getResponseEntity("Check Your Email", HttpStatus.OK);
                 }
                 else{
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
@@ -148,7 +148,7 @@ public class UserServiceImpl implements UserService {
             if(Objects.isNull(hotel)){
                 if(Objects.isNull(hotel1)){
                     hotelRepo.save(getHotelFromMap(requestMap));
-                    return Hutils.getResponseEntity("SuccessFully Registrered", HttpStatus.OK);
+                    return Hutils.getResponseEntity("SuccessFully Registered", HttpStatus.OK);
                 }else {
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
                 }
@@ -171,7 +171,7 @@ public class UserServiceImpl implements UserService {
             if(Objects.isNull(transportprovider)){
                 if(Objects.isNull(transportprovider1)){
                     transportproviderRepo.save(getTransportProviderFromMap(requestMap));
-                    return Hutils.getResponseEntity("SuccessFully Registrered", HttpStatus.OK);
+                    return Hutils.getResponseEntity("Successfully Registered", HttpStatus.OK);
                 }else {
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
                 }
@@ -200,7 +200,7 @@ public class UserServiceImpl implements UserService {
                     String siteURL="http://localhost:3000";
                     sendVerificationEmailToEquProvider(equipmentprovider2, siteURL);
                     log.info("Inside 2");
-                    return Hutils.getResponseEntity("SuccessFully Registrered", HttpStatus.OK);
+                    return Hutils.getResponseEntity("SuccessFully Registered", HttpStatus.OK);
                 }else {
                     log.info("Inside 3");
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
@@ -226,7 +226,7 @@ public class UserServiceImpl implements UserService {
                    Travelingguide travelingguide2= travelingguideRepo.save(getTravelingGuideFromMap(requestMap));
                     String siteURL="http://localhost:3000";
                     sendVerificationEmailToTravelguide(travelingguide2,siteURL);
-                    return Hutils.getResponseEntity("SuccessFully Registrered", HttpStatus.OK);
+                    return Hutils.getResponseEntity("SuccessFully Registered", HttpStatus.OK);
                 }else {
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
                 }
