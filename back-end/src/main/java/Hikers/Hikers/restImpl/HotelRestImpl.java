@@ -1,6 +1,7 @@
 package Hikers.Hikers.restImpl;
 
 import Hikers.Hikers.cons.Hcons;
+import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.rest.HotelRest;
 import Hikers.Hikers.service.HotelService;
 import Hikers.Hikers.utils.Hutils;
@@ -9,7 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController("/hotel")
 public class HotelRestImpl implements HotelRest {
@@ -26,4 +29,13 @@ public class HotelRestImpl implements HotelRest {
         }
         return Hutils.getResponseEntity(Hcons.SOMETHIMG_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
     }
-}
+
+    @Override
+    public ResponseEntity<Optional<Hotel>> getHotelProfile(String email) {
+        try{
+            return hotelService.getHotelProfile(email);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }}

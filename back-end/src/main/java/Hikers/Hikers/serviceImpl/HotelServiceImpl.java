@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -68,5 +69,20 @@ public class HotelServiceImpl implements HotelService {
             ex.printStackTrace();
         }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<Optional<Hotel>> getHotelProfile(String email){
+        try{
+            Optional<Hotel> hotel = Optional.ofNullable(hotelRepo.findByEmail(email));
+            if(hotel.isPresent()){
+                return new ResponseEntity(hotel, HttpStatus.OK);
+            }else{
+                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

@@ -12,4 +12,6 @@ public interface HotelService {
     ResponseEntity<Optional<Hotel>> getHotel(Long hotel_id);
 
     ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap);
+
+    ResponseEntity<Optional<Hotel>> getHotelProfile(String email);
 }
