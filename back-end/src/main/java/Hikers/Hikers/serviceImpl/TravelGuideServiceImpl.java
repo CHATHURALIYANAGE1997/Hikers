@@ -1,6 +1,7 @@
 package Hikers.Hikers.serviceImpl;
 
 
+import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Travelingguide;
 import Hikers.Hikers.repository.TravelingguideRepo;
 import Hikers.Hikers.service.TravelGuideService;
@@ -66,5 +67,20 @@ public class TravelGuideServiceImpl implements TravelGuideService {
             ex.printStackTrace();
         }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<Optional<Travelingguide>> getTravelingguideProfile(String email){
+        try{
+            Optional<Travelingguide> travelingguide = Optional.ofNullable(travelingguideRepo.findByEmail(email));
+            if(travelingguide.isPresent()){
+                return new ResponseEntity(travelingguide, HttpStatus.OK);
+            }else{
+                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
