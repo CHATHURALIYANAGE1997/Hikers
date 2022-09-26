@@ -14,4 +14,6 @@ public interface TravelGuideService {
     ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap);
 
     ResponseEntity<Optional<Travelingguide>> getTravelingguideProfile(String email);
+
+    ResponseEntity<List<Travelingguide>> getAllGuide();
 }

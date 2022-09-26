@@ -83,4 +83,15 @@ public class TravelGuideServiceImpl implements TravelGuideService {
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @Override
+    public ResponseEntity<List<Travelingguide>> getAllGuide(){
+        try{
+            return new ResponseEntity<>(travelingguideRepo.findAll(), HttpStatus.OK);
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
