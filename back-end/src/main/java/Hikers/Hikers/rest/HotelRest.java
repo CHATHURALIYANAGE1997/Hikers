@@ -2,10 +2,11 @@ package Hikers.Hikers.rest;
 
 
 import Hikers.Hikers.model.Hotel;
-import org.springframework.data.repository.query.Param;
+import Hikers.Hikers.model.Hotelfacilities;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -18,4 +19,9 @@ public interface HotelRest {
 
     @GetMapping(path="/getHotelProfile/{email}")
     public ResponseEntity<Optional<Hotel>> getHotelProfile(@PathVariable String email);
+
+    @GetMapping(path="/getHotelFacility")
+//    public ResponseEntity<List<Hotelfacilities>> getHotelFacilities(@PathVariable Long hotel_id);
+    public ResponseEntity<List<Hotelfacilities>> getHotelFacilities();
+
 }

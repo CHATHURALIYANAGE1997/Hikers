@@ -2,6 +2,7 @@ package Hikers.Hikers.restImpl;
 
 import Hikers.Hikers.cons.Hcons;
 import Hikers.Hikers.model.Hotel;
+import Hikers.Hikers.model.Hotelfacilities;
 import Hikers.Hikers.rest.HotelRest;
 import Hikers.Hikers.service.HotelService;
 import Hikers.Hikers.utils.Hutils;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -38,4 +40,27 @@ public class HotelRestImpl implements HotelRest {
             ex.printStackTrace();
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
-    }}
+    }
+
+//    @Override
+//    public ResponseEntity<List<Hotelfacilities>> getHotelFacilities(Long hotel_id){
+//        try{
+//            return hotelService.getHotelFacilities(hotel_id);
+//        } catch (Exception ex){
+//            ex.printStackTrace();
+//        }
+//        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+//    }
+    @Override
+    public ResponseEntity<List<Hotelfacilities>> getHotelFacilities(){
+        try{
+            return hotelService.getHotelFacilities();
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);}
+
+}
+
+
+

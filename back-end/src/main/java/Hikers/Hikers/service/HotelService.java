@@ -1,6 +1,7 @@
 package Hikers.Hikers.service;
 
 import Hikers.Hikers.model.Hotel;
+import Hikers.Hikers.model.Hotelfacilities;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.Map;
@@ -14,4 +15,8 @@ public interface HotelService {
     ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap);
 
     ResponseEntity<Optional<Hotel>> getHotelProfile(String email);
+
+//    ResponseEntity<List<Hotelfacilities>> getHotelFacilities(Long hotel_id);
+    ResponseEntity<List<Hotelfacilities>> getHotelFacilities();
+
 }

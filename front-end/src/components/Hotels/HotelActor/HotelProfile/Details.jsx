@@ -8,7 +8,7 @@ export default function Details(props) {
 
     const displayDetails = (props) => {
 
-        const {details} = props;
+        const { details } = props;
 
         return (
             <div className="d-flex flex-column details-address pt-3">
@@ -54,35 +54,7 @@ export default function Details(props) {
                     <span className='details-col2'>Kurunegala</span>
                 </div>
                 <hr></hr>
-                
-    
-                <div className='d-flex flex-column mt-4 w-100'>
-                    <div className='d-flex flex-row justify-content-between'>
-                        <h4 className='details-facilities'>Facilities</h4>
-                        <div className='details-facilities-plus'>
-                            <button type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Facility</button>
-                        </div>
-                    </div>
-                    <div className='details-facility-container'>
-                        <div className='d-flex flex-row justify-content-between'>
-                            <h5 className='details-facility-name'>Swimming Pool</h5>
-                            <div>
-                                <FontAwesomeIcon icon={faTrashCan} className="rating-trash-icon" />
-                                <FontAwesomeIcon icon={faPencil} className="rating-pencil-icon" />
-                            </div>
-                        </div>
-                        This is a paid facility for hotel guests with an admission fee. Swimsuits and swim caps are required to use in the swimming pool.Shower rooms and personal lockers are available for use.Guests under 14 years old may enter only when accompanied by an adult .Outside food is not permitted in the swimming pool
-                    </div>
-                    <div className='details-facility-container'>
-                        <div className='d-flex flex-row justify-content-between'>
-                            <h5 className='details-facility-name'>Billiard Boards</h5>
-                            <div>
-                                <FontAwesomeIcon icon={faTrashCan} className="rating-trash-icon" />
-                                <FontAwesomeIcon icon={faPencil} className="rating-pencil-icon" />
-                            </div>
-                        </div>
-                        Our hotel has a full-size billiard table available for all, providing an ideal activity to enjoy with family. Also on hand are a billiards captain and an assistant to teach and help you keep score and rack up the balls.                </div>
-                </div>
+
                 <div className='d-flex flex-column mt-4 w-100'>
                     <div className='d-flex flex-row justify-content-between'>
                         <h4 className='details-facilities'>Hotel Rules</h4>
@@ -105,7 +77,7 @@ export default function Details(props) {
         );
     }
 
-    return(
+    return (
         <>
             {displayDetails(props)}
         </>
