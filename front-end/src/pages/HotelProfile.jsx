@@ -15,10 +15,19 @@ import axios from "axios";
 import FacilitiesData from '../components/Hotels/HotelActor/HotelProfile/FacilitiesData';
 import { faPlus, faTrashCan, faPencil } from "@fortawesome/free-solid-svg-icons";
 import RulesData from '../components/Hotels/HotelActor/HotelProfile/RulesData';
+import AddRuleForm from '../components/Hotels/HotelActor/HotelProfile/AddRuleForm';
+import AddFacilityForm from '../components/Hotels/HotelActor/HotelProfile/AddFacilityForm';
 
 
 export default function HotelProfile(props) {
-    // const HotelProfile = (props) => {
+   
+    const [modalShow, setModalShow] = React.useState(false);
+    const [show, setShow] = useState(false);
+
+    const [ruleShow, setRuleShow] = React.useState(false);
+    const [showRule, setShowRule] = useState(false);
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
 
     if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
@@ -127,7 +136,11 @@ export default function HotelProfile(props) {
                             <div className='d-flex flex-row justify-content-between'>
                                 <h4 className='details-facilities'>Facilities</h4>
                                 <div className='details-facilities-plus'>
-                                    <button type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Facility</button>
+                                    <button onClick={() => setModalShow(true)} type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Facility</button>
+                                    <AddFacilityForm
+                                        show={modalShow}
+                                        onHide={() => setModalShow(false)}
+                                    />
                                 </div>
                             </div>
                             <FacilitiesData facility={facility} />
@@ -136,7 +149,11 @@ export default function HotelProfile(props) {
                             <div className='d-flex flex-row justify-content-between'>
                                 <h4 className='details-facilities'>Hotel Rules</h4>
                                 <div className='details-facilities-plus'>
-                                    <button type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Rule</button>
+                                    <button onClick={() => setRuleShow(true)} type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Rule</button>
+                                    <AddRuleForm
+                                        show={ruleShow}
+                                        onHide={() => setRuleShow(false)}
+                                    />
                                 </div>
                             </div>
                             <div className='d-flex flex-row justify-content-end'>
