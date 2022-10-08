@@ -19,8 +19,8 @@ public class Hotelfacilities implements Serializable{
     @Column(name="facility_id")
     private Long facility_id;
 
-    @Column(name="hotel_id")
-    private Long hotel_id;
+    @Column(name="id")
+    private Long id;
 
     @Column(name="facility_name")
     private String facility_name;

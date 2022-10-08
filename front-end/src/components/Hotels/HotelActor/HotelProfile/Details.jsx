@@ -55,7 +55,7 @@ export default function Details(props) {
                 </div>
                 <hr></hr>
 
-                <div className='d-flex flex-column mt-4 w-100'>
+                {/* <div className='d-flex flex-column mt-4 w-100'>
                     <div className='d-flex flex-row justify-content-between'>
                         <h4 className='details-facilities'>Hotel Rules</h4>
                         <div className='details-facilities-plus'>
@@ -72,7 +72,7 @@ export default function Details(props) {
                             <li>Outside food is not permitted in the swimming pool</li>
                         </ul>
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }

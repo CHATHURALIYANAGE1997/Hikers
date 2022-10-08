@@ -2,6 +2,7 @@ package Hikers.Hikers.service;
 
 import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Hotelfacilities;
+import Hikers.Hikers.model.Hotelrule;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +17,10 @@ public interface HotelService {
 
     ResponseEntity<Optional<Hotel>> getHotelProfile(String email);
 
-//    ResponseEntity<List<Hotelfacilities>> getHotelFacilities(Long hotel_id);
+//    ResponseEntity<Optional<Hotelfacilities>> getHotelFacilities(Long id);
+
     ResponseEntity<List<Hotelfacilities>> getHotelFacilities();
+
+    ResponseEntity<List<Hotelrule>> getHotelRules();
 
 }

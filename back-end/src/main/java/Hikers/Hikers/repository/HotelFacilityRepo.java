@@ -6,11 +6,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface HotelFacilityRepo extends JpaRepository<Hotelfacilities, Long> {
 
-//    Hotelfacilities findByHotel_id(@Param("hotel_id") Long hotel_id);
+    Optional<Hotelfacilities> findById(@Param("id") Long id);
     List<Hotelfacilities> findAll();
 
 }

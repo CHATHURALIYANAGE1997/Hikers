@@ -3,8 +3,10 @@ package Hikers.Hikers.serviceImpl;
 import Hikers.Hikers.jwt.JwtFilter;
 import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Hotelfacilities;
+import Hikers.Hikers.model.Hotelrule;
 import Hikers.Hikers.repository.HotelFacilityRepo;
 import Hikers.Hikers.repository.HotelRepo;
+import Hikers.Hikers.repository.HotelruleRepo;
 import Hikers.Hikers.service.HotelService;
 import Hikers.Hikers.utils.Hutils;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +28,9 @@ public class HotelServiceImpl implements HotelService {
 
     @Autowired
     private HotelFacilityRepo hotelFacilityRepo;
+
+    @Autowired
+    private HotelruleRepo hotelruleRepo;
 
     @Autowired
     private JwtFilter jwtFilter;
@@ -92,16 +97,14 @@ public class HotelServiceImpl implements HotelService {
     }
 
 //    @Override
-//    public ResponseEntity<List<Hotelfacilities>> getHotelFacilities(Long hotel_id){
+//    public ResponseEntity<Optional<Hotelfacilities>> getHotelFacilities(Long id){
 //        try{
-//            System.out.println(hotelFacilityRepo.findAll());
-//            return new ResponseEntity<>(hotelFacilityRepo.findAll(), HttpStatus.OK);
-////            List <Hotelfacilities> hotelfacility = hotelFacilityRepo.findAll();
-////            if(hotelfacility.isPresent()){
-////                return new ResponseEntity(hotelfacility, HttpStatus.OK);
-////            } else {
-////                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
-////            }
+//            Optional <Hotelfacilities> hotelfacility = hotelFacilityRepo.findById(id);
+//            if(hotelfacility.isPresent()){
+//                return new ResponseEntity(hotelfacility, HttpStatus.OK);
+//            } else {
+//                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+//            }
 //        }catch (Exception ex){
 //            ex.printStackTrace();
 //        }
@@ -112,6 +115,16 @@ public class HotelServiceImpl implements HotelService {
     public ResponseEntity<List<Hotelfacilities>> getHotelFacilities(){
         try{
             return new ResponseEntity<>(hotelFacilityRepo.findAll(), HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<List<Hotelrule>> getHotelRules(){
+        try{
+            return new ResponseEntity<>(hotelruleRepo.findAll(), HttpStatus.OK);
         }catch (Exception ex){
             ex.printStackTrace();
         }

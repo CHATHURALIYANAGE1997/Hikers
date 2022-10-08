@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import AllHotels from "./AllHotels";
 
+
 export default function HotelList(props) {
 
     const [modalShow, setModalShow] = React.useState(false);

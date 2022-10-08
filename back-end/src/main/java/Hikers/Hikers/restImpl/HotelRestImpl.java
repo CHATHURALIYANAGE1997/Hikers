@@ -3,6 +3,7 @@ package Hikers.Hikers.restImpl;
 import Hikers.Hikers.cons.Hcons;
 import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Hotelfacilities;
+import Hikers.Hikers.model.Hotelrule;
 import Hikers.Hikers.rest.HotelRest;
 import Hikers.Hikers.service.HotelService;
 import Hikers.Hikers.utils.Hutils;
@@ -43,14 +44,15 @@ public class HotelRestImpl implements HotelRest {
     }
 
 //    @Override
-//    public ResponseEntity<List<Hotelfacilities>> getHotelFacilities(Long hotel_id){
+//    public ResponseEntity<Optional<Hotelfacilities>> getHotelFacilities(Long id){
 //        try{
-//            return hotelService.getHotelFacilities(hotel_id);
+//            return hotelService.getHotelFacilities(id);
 //        } catch (Exception ex){
 //            ex.printStackTrace();
 //        }
-//        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+//        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
 //    }
+
     @Override
     public ResponseEntity<List<Hotelfacilities>> getHotelFacilities(){
         try{
@@ -58,7 +60,18 @@ public class HotelRestImpl implements HotelRest {
         } catch (Exception ex){
             ex.printStackTrace();
         }
-        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);}
+        return new ResponseEntity<>(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<List<Hotelrule>> getHotelRules(){
+        try{
+            return hotelService.getHotelRules();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
 }
 
