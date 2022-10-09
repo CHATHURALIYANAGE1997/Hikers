@@ -15,7 +15,6 @@ function RulesData(props) {
             return (
                 rules.map((rule, index) => {
                     if (id == rule.hotel_id) {
-                        console.log(rule.description);
                         return (
                             <>
                                 <li>{rule.description}</li>

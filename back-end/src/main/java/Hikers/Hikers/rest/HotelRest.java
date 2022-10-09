@@ -1,9 +1,7 @@
 package Hikers.Hikers.rest;
 
 
-import Hikers.Hikers.model.Hotel;
-import Hikers.Hikers.model.Hotelfacilities;
-import Hikers.Hikers.model.Hotelrule;
+import Hikers.Hikers.model.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,5 +27,11 @@ public interface HotelRest {
 
     @GetMapping(path = "/getHotelRules")
     public ResponseEntity<List<Hotelrule>> getHotelRules();
+
+    @GetMapping(path = "/getRoom")
+    public ResponseEntity<List<Hotelroom>> getRoom();
+
+    @GetMapping(path = "/getPackage")
+    public ResponseEntity<List<Hotelpackage>> getPackage();
 
 }

@@ -1,8 +1,6 @@
 package Hikers.Hikers.service;
 
-import Hikers.Hikers.model.Hotel;
-import Hikers.Hikers.model.Hotelfacilities;
-import Hikers.Hikers.model.Hotelrule;
+import Hikers.Hikers.model.*;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.Map;
@@ -23,4 +21,7 @@ public interface HotelService {
 
     ResponseEntity<List<Hotelrule>> getHotelRules();
 
+    ResponseEntity<List<Hotelroom>> getRoom();
+
+    ResponseEntity<List<Hotelpackage>> getPackage();
 }

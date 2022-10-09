@@ -1,9 +1,7 @@
 package Hikers.Hikers.restImpl;
 
 import Hikers.Hikers.cons.Hcons;
-import Hikers.Hikers.model.Hotel;
-import Hikers.Hikers.model.Hotelfacilities;
-import Hikers.Hikers.model.Hotelrule;
+import Hikers.Hikers.model.*;
 import Hikers.Hikers.rest.HotelRest;
 import Hikers.Hikers.service.HotelService;
 import Hikers.Hikers.utils.Hutils;
@@ -68,6 +66,26 @@ public class HotelRestImpl implements HotelRest {
         try{
             return hotelService.getHotelRules();
         }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<List<Hotelroom>> getRoom(){
+        try{
+            return hotelService.getRoom();
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<List<Hotelpackage>> getPackage(){
+        try{
+            return hotelService.getPackage();
+        }catch(Exception ex){
             ex.printStackTrace();
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);

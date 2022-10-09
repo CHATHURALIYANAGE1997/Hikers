@@ -1,12 +1,8 @@
 package Hikers.Hikers.serviceImpl;
 
 import Hikers.Hikers.jwt.JwtFilter;
-import Hikers.Hikers.model.Hotel;
-import Hikers.Hikers.model.Hotelfacilities;
-import Hikers.Hikers.model.Hotelrule;
-import Hikers.Hikers.repository.HotelFacilityRepo;
-import Hikers.Hikers.repository.HotelRepo;
-import Hikers.Hikers.repository.HotelruleRepo;
+import Hikers.Hikers.model.*;
+import Hikers.Hikers.repository.*;
 import Hikers.Hikers.service.HotelService;
 import Hikers.Hikers.utils.Hutils;
 import lombok.extern.slf4j.Slf4j;
@@ -31,6 +27,12 @@ public class HotelServiceImpl implements HotelService {
 
     @Autowired
     private HotelruleRepo hotelruleRepo;
+
+    @Autowired
+    HotelroomRepo hotelroomRepo;
+
+    @Autowired
+    HotelpackageRepo hotelpackageRepo;
 
     @Autowired
     private JwtFilter jwtFilter;
@@ -120,7 +122,6 @@ public class HotelServiceImpl implements HotelService {
         }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
-
     @Override
     public ResponseEntity<List<Hotelrule>> getHotelRules(){
         try{
@@ -131,4 +132,23 @@ public class HotelServiceImpl implements HotelService {
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<List<Hotelroom>> getRoom(){
+        try{
+            return new ResponseEntity<>(hotelroomRepo.findAll(), HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<List<Hotelpackage>> getPackage(){
+        try{
+            return new ResponseEntity<>(hotelpackageRepo.findAll(), HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
