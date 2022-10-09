@@ -20,7 +20,7 @@ import AddFacilityForm from '../components/Hotels/HotelActor/HotelProfile/AddFac
 
 
 export default function HotelProfile(props) {
-   
+
     const [modalShow, setModalShow] = React.useState(false);
     const [show, setShow] = useState(false);
 
@@ -35,147 +35,147 @@ export default function HotelProfile(props) {
 
     const auth = useSelector((state) => state.auth);
 
-    // if (auth.isLoggedIn === true && auth.role === "Hotel") {
+    if (auth.isLoggedIn === true && auth.role === "Hotel") {
 
-    const accessToken = localStorage.jwtToken;
+        const accessToken = localStorage.jwtToken;
 
 
-    //Get hotel profile details
-    const [details, setDetails] = useState('');
+        //Get hotel profile details
+        const [details, setDetails] = useState('');
 
-    const [id, setId] = useState('');
+        const [id, setId] = useState('');
 
-    let email = auth.username;
+        let email = auth.username;
 
-    let path = 'http://localhost:8080/hotel/getHotelProfile/';
+        let path = 'http://localhost:8080/hotel/getHotelProfile/';
 
-    const url = path.concat(email);
+        const url = path.concat(email);
 
-    useEffect(() => {
-        getAllDetails();
-    }, []);
+        useEffect(() => {
+            getAllDetails();
+        }, []);
 
-    const getAllDetails = () => {
-        axios.get(url, {
-            headers: { Authorization: `Bearer ${accessToken}` }
-        }).then((response) => {
-            const allDetails = response.data;
-            const hotel_id = response.data['hotel_id'];
-            setId(hotel_id);
-            setDetails(allDetails);
-            // console.log(response.data);
-            // console.log("hello");
-            //console.log(response.data);
-            //console.log(response.data["address"]);
-            //console.log("world");
-            //console.log(allNotes);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }
+        const getAllDetails = () => {
+            axios.get(url, {
+                headers: { Authorization: `Bearer ${accessToken}` }
+            }).then((response) => {
+                const allDetails = response.data;
+                const hotel_id = response.data['hotel_id'];
+                setId(hotel_id);
+                setDetails(allDetails);
+                // console.log(response.data);
+                // console.log("hello");
+                //console.log(response.data);
+                //console.log(response.data["address"]);
+                //console.log("world");
+                //console.log(allNotes);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
 
-    localStorage.setItem("id", id);
+        localStorage.setItem("id", id);
 
-    //Get hotel facilities
-    const [facility, setFacility] = useState('');
+        //Get hotel facilities
+        const [facility, setFacility] = useState('');
 
-    const path2 = 'http://localhost:8080/hotel/getHotelFacility';
+        const path2 = 'http://localhost:8080/hotel/getHotelFacility';
 
-    // const url2 = path2.concat(id);
+        // const url2 = path2.concat(id);
 
-    useEffect(() => {
-        getHotelFacility();
-    }, []);
+        useEffect(() => {
+            getHotelFacility();
+        }, []);
 
-    const getHotelFacility = () => {
-        axios.get(path2, {
-            headers: { Authorization: `Bearer ${accessToken}` }
-        }).then((response) => {
-            const allFacilities = response.data;
-            setFacility(allFacilities);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }
+        const getHotelFacility = () => {
+            axios.get(path2, {
+                headers: { Authorization: `Bearer ${accessToken}` }
+            }).then((response) => {
+                const allFacilities = response.data;
+                setFacility(allFacilities);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
 
-    //Get Hotel Rules
-    const [rules, setRules] = useState('');
-    const path3 = 'http://localhost:8080/hotel/getHotelRules';
-    // const url3 = path3.concat(id);
+        //Get Hotel Rules
+        const [rules, setRules] = useState('');
+        const path3 = 'http://localhost:8080/hotel/getHotelRules';
+        // const url3 = path3.concat(id);
 
-    useEffect(() => {
-        getHotelRules();
-    }, []);
+        useEffect(() => {
+            getHotelRules();
+        }, []);
 
-    const getHotelRules = () => {
-        axios.get(path3, {
-            headers: { Authorization: `Bearer ${accessToken}` }
-        }).then((response) => {
-            const allRules = response.data;
-            //console.log(allRules);
-            setRules(allRules);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }
+        const getHotelRules = () => {
+            axios.get(path3, {
+                headers: { Authorization: `Bearer ${accessToken}` }
+            }).then((response) => {
+                const allRules = response.data;
+                //console.log(allRules);
+                setRules(allRules);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
 
-    return (
-        <div className="d-flex flex-column tg-container">
-            <HotelHeader />
-            <div className="d-flex flex-row tg-page">
-                <HotelNav />
-                <div className="d-flex flex-column tg-profile">
-                    <div className="d-flex flex-column m-auto w-75">
-                        <HotelName name={details.name} />
-                        <div className='d-flex flex-row justify-content-between w-100 pl-3'>
-                            <Images />
-                            <FontAwesomeIcon icon={faPenToSquare} className="rating-change-icon" />
-                        </div>
-                        <Details details={details} />
-                        <div className='d-flex flex-column mt-4 w-100'>
-                            <div className='d-flex flex-row justify-content-between'>
-                                <h4 className='details-facilities'>Facilities</h4>
-                                <div className='details-facilities-plus'>
-                                    <button onClick={() => setModalShow(true)} type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Facility</button>
-                                    <AddFacilityForm
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)}
-                                    />
+        return (
+            <div className="d-flex flex-column tg-container">
+                <HotelHeader />
+                <div className="d-flex flex-row tg-page">
+                    <HotelNav />
+                    <div className="d-flex flex-column tg-profile">
+                        <div className="d-flex flex-column m-auto w-75">
+                            <HotelName name={details.name} />
+                            <div className='d-flex flex-row justify-content-between w-100 pl-3'>
+                                <Images />
+                                <FontAwesomeIcon icon={faPenToSquare} className="rating-change-icon" />
+                            </div>
+                            <Details details={details} />
+                            <div className='d-flex flex-column mt-4 w-100'>
+                                <div className='d-flex flex-row justify-content-between'>
+                                    <h4 className='details-facilities'>Facilities</h4>
+                                    <div className='details-facilities-plus'>
+                                        <button onClick={() => setModalShow(true)} type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Facility</button>
+                                        <AddFacilityForm
+                                            show={modalShow}
+                                            onHide={() => setModalShow(false)}
+                                        />
+                                    </div>
                                 </div>
+                                <FacilitiesData facility={facility} />
                             </div>
-                            <FacilitiesData facility={facility} />
-                        </div>
-                        <div className='details-facility-container'>
-                            <div className='d-flex flex-row justify-content-between'>
-                                <h4 className='details-facilities'>Hotel Rules</h4>
-                                <div className='details-facilities-plus'>
-                                    <button onClick={() => setRuleShow(true)} type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Rule</button>
-                                    <AddRuleForm
-                                        show={ruleShow}
-                                        onHide={() => setRuleShow(false)}
-                                    />
+                            <div className='details-facility-container'>
+                                <div className='d-flex flex-row justify-content-between'>
+                                    <h4 className='details-facilities'>Hotel Rules</h4>
+                                    <div className='details-facilities-plus'>
+                                        <button onClick={() => setRuleShow(true)} type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Rule</button>
+                                        <AddRuleForm
+                                            show={ruleShow}
+                                            onHide={() => setRuleShow(false)}
+                                        />
+                                    </div>
                                 </div>
+                                <div className='d-flex flex-row justify-content-end'>
+                                    <FontAwesomeIcon icon={faPencil} className="rating-pencil-icon" />
+                                </div>
+                                <ul>
+                                    <RulesData rules={rules} />
+                                </ul>
                             </div>
-                            <div className='d-flex flex-row justify-content-end'>
-                                <FontAwesomeIcon icon={faPencil} className="rating-pencil-icon" />
-                            </div>
-                            <ul>
-                                <RulesData rules={rules} />
-                            </ul>
                         </div>
                     </div>
                 </div>
+
             </div>
+        );
+    }
+    else {
+        localStorage.clear();
+        // return props.history.push("/");
+        { return <div><NotFoundPage /></div> }
 
-        </div>
-    );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     // return props.history.push("/");
-    //     { return <div><NotFoundPage /></div> }
-
-    // }
+    }
 }
 
 // export default HotelProfile;

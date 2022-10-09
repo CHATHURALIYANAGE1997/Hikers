@@ -30,6 +30,15 @@ public class Hotelroom implements Serializable {
     @Column(name="amount")
     private Long amount;
 
-    @Column(name="size")
-    private Long size;
+    @Column(name="size_length")
+    private Long size_length;
+
+    @Column(name="size_width")
+    private Long size_width;
+
+    @Column(name="facility")
+    private String facility;
+
+    @Column(name="food")
+    private String food;
 }

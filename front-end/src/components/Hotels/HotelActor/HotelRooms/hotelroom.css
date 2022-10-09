@@ -8,29 +8,43 @@
 }
 
 .rooms-card {
-    border: 1px solid #1687A7;
-    width: 180px;
+    /* border: 1px solid #1687A7; */
+    width: 50%;
     height: 260px;
-    padding: 5px;
+    padding: 20px;
     color: #276678;
     border-radius: 5px;
-    background-color: #D3E0EA;
+    /* background-color: #D3E0EA; */
     margin-right: 10px;
-
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .rooms-price {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.rooms-price-span {
     /* background-color: #276678; */
-    border: 1px solid #276678;
-    color: #276678;
+    background-color:#276678;
+    color: #F6F5F5;
     font-weight: bold;
     border-radius: 5px;
     margin-top: auto;
+    width: 100%;
+    padding: 7px;
 }
+
+/* .rooms-price-span:hover {
+    background-color: #1687A7;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+} */
 
 .rooms-card:hover {
     cursor: pointer;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: #F6F5F5;
 }
 
 .rooms-icon {
@@ -44,18 +58,20 @@
 
 .room-package-card {
     width: 50%;
-    height: 200px;
+    height: 300px;
     margin-right: 10px;
     /* background-color: #D3E0EA; */
-    border: 1px solid #276678;
+    /* border: 1px solid #276678; */
     border-radius: 5px;
-    padding: 5px;
+    padding: 20px;
     color: #276678;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
 }
 
 .room-package-card:hover {
     cursor: pointer;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: #F6F5F5;
 }
 
 .room-package-icon {
@@ -69,9 +85,11 @@
 }
 
 .room-package-price {
-    color: #276678;
+    color: #F6F5F5;
     font-weight: bold;
     font-size: larger;
     border-radius: 5px;
     margin-top: auto;
+    background-color: #276678;
+    width: 60%;
 }
