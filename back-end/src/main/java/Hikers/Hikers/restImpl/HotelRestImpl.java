@@ -91,6 +91,16 @@ public class HotelRestImpl implements HotelRest {
         return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<List<Hotelbooking>> getBookings(Long hotel_id){
+        try{
+            return hotelService.getBookings(hotel_id);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
 }
 
 

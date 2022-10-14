@@ -24,4 +24,6 @@ public interface HotelService {
     ResponseEntity<List<Hotelroom>> getRoom();
 
     ResponseEntity<List<Hotelpackage>> getPackage();
+
+    ResponseEntity<List<Hotelbooking>> getBookings(Long hotel_id);
 }

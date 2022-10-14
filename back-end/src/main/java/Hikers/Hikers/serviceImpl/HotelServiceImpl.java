@@ -35,6 +35,9 @@ public class HotelServiceImpl implements HotelService {
     HotelpackageRepo hotelpackageRepo;
 
     @Autowired
+    HotelbookingRepo hotelbookingRepo;
+
+    @Autowired
     private JwtFilter jwtFilter;
 
     @Autowired
@@ -151,4 +154,30 @@ public class HotelServiceImpl implements HotelService {
         }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @Override
+    public ResponseEntity<List<Hotelbooking>> getBookings(Long hotel_id){
+//        try{
+//            Optional<Hotelbooking> hotelbooking = hotelbookingRepo.findByHotel_id(hotel_id);
+//            if(hotelbooking.isPresent()){
+//                return new ResponseEntity(hotelbooking, HttpStatus.OK);
+//            } else {
+//                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+//            }
+//        } catch (Exception ex){
+//            ex.printStackTrace();
+//        }
+        try{
+            List<Hotelbooking> hotelbooking = hotelbookingRepo.findAll();
+            if(! hotelbooking.isEmpty()){
+                return new ResponseEntity(hotelbooking, HttpStatus.OK);
+            } else {
+                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 }

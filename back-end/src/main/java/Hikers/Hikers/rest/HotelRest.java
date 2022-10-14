@@ -34,4 +34,8 @@ public interface HotelRest {
     @GetMapping(path = "/getPackage")
     public ResponseEntity<List<Hotelpackage>> getPackage();
 
+    @GetMapping(path = "/getBookings/{hotel_id}")
+    public ResponseEntity<List<Hotelbooking>> getBookings(@PathVariable Long hotel_id);
+
+
 }
