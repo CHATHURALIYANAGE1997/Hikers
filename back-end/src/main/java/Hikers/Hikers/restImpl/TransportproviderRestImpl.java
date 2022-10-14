@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Optional;
 
 
 @RestController("/transport")
@@ -28,5 +29,15 @@ public class TransportproviderRestImpl implements TransportproviderRest {
             ex.printStackTrace();
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<Optional<Transportprovider>> getTrasnporter(String email){
+        try{
+            return traProviderService.getTransporterProfile(email);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

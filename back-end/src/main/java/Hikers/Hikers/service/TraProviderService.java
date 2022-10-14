@@ -6,6 +6,7 @@ import Hikers.Hikers.model.Transportprovider;
 import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public interface TraProviderService {
     ResponseEntity<List<Transportprovider>> getTraproviders();
@@ -16,5 +17,6 @@ public interface TraProviderService {
 
     ResponseEntity<List<Transportprovider>> gettransport();
 
+    ResponseEntity<Optional<Transportprovider>> getTransporterProfile(String email);
 
 }

@@ -85,4 +85,20 @@ public class TraProviderServiceImpl implements TraProviderService {
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<Optional<Transportprovider>> getTransporterProfile(String email){
+        try{
+            Optional<Transportprovider> transporter = Optional.ofNullable(transportproviderRepo.findByEmail(email));
+            if (transporter.isPresent()){
+                return new ResponseEntity(transporter, HttpStatus.OK);
+            } else {
+                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+            }
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 }
