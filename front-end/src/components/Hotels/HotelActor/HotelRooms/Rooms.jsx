@@ -19,6 +19,12 @@ const Rooms = (props) => {
                     else if(room.sleeps == 3){
                         beds = "01 Double bed + 01 Single bed";
                     }
+                    else if(room.sleeps == 4){
+                        beds = "02 Double beds";
+                    }
+                    else if(room.sleeps == 5){
+                        beds = "02 Double beds + 01 Single bed";
+                    }
                     if (id == room.hotel_id) {
                         return (
                             <>

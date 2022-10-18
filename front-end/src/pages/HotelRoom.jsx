@@ -13,6 +13,8 @@ import { getDropdownMenuPlacement } from 'react-bootstrap/esm/DropdownMenu';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faWifi, faPlus } from "@fortawesome/free-solid-svg-icons";
+import AddRoomForm from '../components/Hotels/HotelActor/HotelRooms/AddRoomForm';
+import AddPackageForm from '../components/Hotels/HotelActor/HotelRooms/AddPackageForm';
 
 
 const HotelRoom = (props) => {
@@ -22,6 +24,20 @@ const HotelRoom = (props) => {
     }
 
     const auth = useSelector((state) => state.auth);
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [packageShow, setPackageShow] = React.useState(false);
+
+    const [showPackage, setShowPackage] = useState(false);
+
+    const handlePackageClose = () => setShow(false);
+    const handlePackageShow = () => setShow(true);
 
     if (auth.isLoggedIn === true && auth.role === "Hotel") {
 
@@ -79,7 +95,11 @@ const HotelRoom = (props) => {
                             <div className='d-flex flex-row w-100 justify-content-between pb-2'>
                                 <h4 className='rooms-rooms'>Rooms</h4>
                                 <div className='rooms-plus'>
-                                    <button type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add Room Type</button>
+                                    <button onClick={() => setModalShow(true)} type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add Room Type</button>
+                                    <AddRoomForm
+                                        show={modalShow}
+                                        onHide={() => setModalShow(false)}
+                                    />
                                 </div>
                             </div>
                             <div className='d-flex flex-row justify-content-between rooms-card-container'>
@@ -90,7 +110,11 @@ const HotelRoom = (props) => {
                             <div className='d-flex flex-row w-100 justify-content-between pb-2'>
                                 <h4 className='rooms-rooms'>Room Packages</h4>
                                 <div className='room-packages-plus'>
-                                    <button type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Package</button>
+                                    <button onClick={() => setPackageShow(true)} type="button" class="btn btn-primary"><FontAwesomeIcon icon={faPlus} className="rating-plus-icon" /> Add New Package</button>
+                                    <AddPackageForm
+                                        show={packageShow}
+                                        onHide={() => setPackageShow(false)}
+                                    />
                                 </div>
                             </div>
                             <div className='d-flex flex-row w-100'>

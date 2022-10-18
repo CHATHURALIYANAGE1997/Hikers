@@ -93,3 +93,18 @@
     background-color: #276678;
     width: 60%;
 }
+
+.addform-footer {
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.addform-submit-btn {
+    background-color: #276678 !important;
+}
+
+.addform-close-btn {
+    background-color: #F6F5F5 !important;
+    color: #276678 !important;
+}
