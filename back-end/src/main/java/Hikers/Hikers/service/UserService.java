@@ -41,4 +41,6 @@ public interface UserService {
     ResponseEntity<?> forgotpassword(Map<String, String> requestMap);
     
     ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap);
+
+    ResponseEntity<?> getUser();
 }
