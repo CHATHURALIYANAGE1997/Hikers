@@ -218,5 +218,13 @@ public class UserRestImpl implements UserRest {
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
-
+    @Override
+    public ResponseEntity<?> getprofiledetails() {
+        try {
+            return  userService.getUser();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
 }
