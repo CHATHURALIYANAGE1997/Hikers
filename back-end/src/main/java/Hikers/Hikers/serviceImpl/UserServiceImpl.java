@@ -68,6 +68,7 @@ public class UserServiceImpl implements UserService {
     private JavaMailSender mailSender;
 
 
+
     @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
         
@@ -455,6 +456,42 @@ public class UserServiceImpl implements UserService {
             else{
                 return Hutils.getResponseEntity("Unvalid Reqeust", HttpStatus.BAD_REQUEST);
             }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> getUser() {
+        try {
+            String email=jwtFilter.getCurrentUser();
+            User user=userRepo.findByEmail(email);
+            if(!Objects.isNull(user)){
+                user.setPassword(null);
+                return new ResponseEntity(user, HttpStatus.OK);
+            }
+            Transportprovider transportprovider=transportproviderRepo.findByEmail(email);
+            if(!Objects.isNull(transportprovider)){
+                user.setPassword(null);
+                return new ResponseEntity(transportprovider, HttpStatus.OK);
+            }
+            Hotel hotel=hotelRepo.findByEmail(email);
+            if(!Objects.isNull(hotel)){
+                user.setPassword(null);
+                return new ResponseEntity(hotel, HttpStatus.OK);
+            }
+            Travelingguide travelingguide=travelingguideRepo.findByEmail(email);
+            if(!Objects.isNull(travelingguide)){
+                user.setPassword(null);
+                return new ResponseEntity(travelingguide, HttpStatus.OK);
+            }
+            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmail(email);
+            if(!Objects.isNull(equipmentprovider)){
+                user.setPassword(null);
+                return new ResponseEntity(equipmentprovider, HttpStatus.OK);
+            }
+            return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
         }catch (Exception ex){
             ex.printStackTrace();
         }
