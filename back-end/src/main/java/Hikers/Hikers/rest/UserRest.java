@@ -66,6 +66,9 @@ public interface UserRest {
     
     @PostMapping(path="/changepassword/{id}")
     public ResponseEntity<String> changePassoword(@PathVariable("id") String id, @RequestBody(required=true) Map<String, String> requestMap);
+
+    @GetMapping(path="getprofiledetails")
+    public ResponseEntity<?> getprofiledetails();
 }
 
 
