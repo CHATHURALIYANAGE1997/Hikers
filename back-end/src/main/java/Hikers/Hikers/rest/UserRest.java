@@ -69,6 +69,9 @@ public interface UserRest {
 
     @GetMapping(path="/getprofiledetails")
     public ResponseEntity<?> getprofiledetails();
+    
+    @PostMapping(path="/uploadFile")
+    public  ResponseEntity<?> uploadprofile(@RequestParam("file") MultipartFile file);
 }
 
 
