@@ -35,12 +35,12 @@ export default function AllHotels(props) {
                             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
                                 <div className="d-flex flex-column">
                                     <span className="all-articles-title">{note.name} - {note.province}</span>
-                                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                                    <button onClick={() => {setModalShow(true); handleHotelClick(note);}} className="all-articles-see-more-btn">see more..</button>
                                 </div>
                                 <HotelShowModal
                                     show={modalShow}
                                     onHide={() => setModalShow(false)}
-                                    hotelId={note}
+                                    hotelId={hotelId}
                                 />
                                 <div>
                                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />

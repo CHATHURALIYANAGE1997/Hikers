@@ -16,13 +16,35 @@ function HotelShowModal(props) {
                 centered
             >
                 <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        Arliya Villa & Spa - Sigiriya
+                    <Modal.Title id="contained-modal-title-vcenter text-capitalize">
+                        {hotelId.name}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <p>
-                        The place is just off from Galle road and the access is straightforward. The place is charming as its next to Maadu ganga, location is relaxing and peaceful.
+                        <div className='d-flex flex-column w-100'>
+                            <div className='d-flex flex-row mb-2'>
+                                <span className='w-25'>Hotel name </span>
+                                <span className='w-50'>: {hotelId.name} </span>
+                            </div>
+                            <div className='d-flex flex-row mb-2'>
+                                <span className='w-25'>Province </span>
+                                <span className='w-50'>: {hotelId.province}</span>
+                            </div>
+                            <div className='d-flex flex-row mb-2'>
+                                <span className='w-25'>Address </span>
+                                <span className='w-50'>: {hotelId.address}</span>
+                            </div>
+                            <div className='d-flex flex-row mb-2'>
+                                <span className='w-25'>Email address </span>
+                                <span className='w-50'>: {hotelId.email}</span>
+                            </div>
+                            <div className='d-flex flex-row mb-2'>
+                                <span className='w-25'>Phone number </span>
+                                <span className='w-50'>: {hotelId.contactNumber}</span>
+                            </div>
+
+                        </div>
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
@@ -32,6 +54,12 @@ function HotelShowModal(props) {
         );
     }
 
+    return (
+        <>
+            {displayDetails(props)}
+        </>
+
+    )
 
 }
 
