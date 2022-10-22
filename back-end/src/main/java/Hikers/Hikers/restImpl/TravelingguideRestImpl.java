@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController("/travelingguide")
@@ -37,6 +38,16 @@ public class TravelingguideRestImpl implements TravelingguideRest {
             ex.printStackTrace();
         }
 
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> addratetoguide(String code, Map<String, String> requestMap) {
+        try{
+            return travelGuideService.addratetoguide(code, requestMap);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
