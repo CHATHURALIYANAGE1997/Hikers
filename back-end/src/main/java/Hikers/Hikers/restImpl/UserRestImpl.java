@@ -238,4 +238,45 @@ public class UserRestImpl implements UserRest {
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    @Override
+    public ResponseEntity<?> verifyGuideByAdmin(String code) {
+        try {
+            return userService.verifyGuideByAdmin(code);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> RejectGuideByAdmin(String code) {
+        try {
+            return userService.RejectGuideByAdmin(code);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> verifyEquproviderByAdmin(String code) {
+        try {
+            System.out.println("dfdf");
+            return userService.verifyEquproviderByAdmin(code);
+        }catch (Exception ex){
+        ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> RejectEquproviderByAdmin(String code) {
+        try {
+            return userService.RejectEquproviderByAdmin(code);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
 }
