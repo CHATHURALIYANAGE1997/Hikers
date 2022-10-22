@@ -2,6 +2,7 @@ package Hikers.Hikers.serviceImpl;
 
 
 import Hikers.Hikers.model.Hotel;
+import Hikers.Hikers.model.Transportprovider;
 import Hikers.Hikers.model.Travelingguide;
 import Hikers.Hikers.repository.TravelingguideRepo;
 import Hikers.Hikers.service.TravelGuideService;
@@ -88,6 +89,38 @@ public class TravelGuideServiceImpl implements TravelGuideService {
     public ResponseEntity<List<Travelingguide>> getAllGuide(){
         try{
             return new ResponseEntity<>(travelingguideRepo.findAll(), HttpStatus.OK);
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+        return new ResponseEntity<>(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> addratetoguide(String code, Map<String, String> requestMap) {
+        try{
+            Travelingguide travelingguide=travelingguideRepo.findByEmail(code);
+            int count=travelingguide.getCount();
+            int newcount=count+1;
+            if(count==0){
+                travelingguide.setCommunication(Integer.parseInt(requestMap.get("communication")));
+                travelingguide.setDomainknowledge(Integer.parseInt(requestMap.get("domainknowledge")));
+                travelingguide.setPunctuality(Integer.parseInt(requestMap.get("punctuality")));
+                travelingguide.setSecurity(Integer.parseInt(requestMap.get("security")));
+                travelingguide.setOverrall((Integer.parseInt(requestMap.get("communication"))+Integer.parseInt(requestMap.get("domainknowledge"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security")))/4);
+                travelingguide.setCount(newcount);
+                travelingguideRepo.save(travelingguide);
+                return Hutils.getResponseEntity("Add perfamance successfuly", HttpStatus.OK);
+            }else {
+                travelingguide.setCommunication(Integer.parseInt(requestMap.get("communication")));
+                travelingguide.setDomainknowledge(Integer.parseInt(requestMap.get("domainknowledge")));
+                travelingguide.setPunctuality(Integer.parseInt(requestMap.get("punctuality")));
+                travelingguide.setSecurity(Integer.parseInt(requestMap.get("security")));
+                travelingguide.setOverrall((count*(Integer.parseInt(requestMap.get("communication"))+Integer.parseInt(requestMap.get("domainknowledge"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security"))))/4);
+                travelingguide.setCount(newcount);
+                travelingguideRepo.save(travelingguide);
+                return Hutils.getResponseEntity("Add perfamance successfuly", HttpStatus.OK);
+            }
         } catch (Exception ex){
             ex.printStackTrace();
         }
