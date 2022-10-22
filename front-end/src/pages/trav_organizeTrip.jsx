@@ -30,7 +30,7 @@ function oraganizeTrip(props) {
     children: "",
     date: "",
     mountain: "",
-    package: "",
+    package: ""
 
   };
   const provinces = [                             // Provinces array       
@@ -82,7 +82,8 @@ function oraganizeTrip(props) {
         adults: parseInt(data.adults),
         children: parseInt(data.children),
         date: data.date,
-        mountain: data.mountain
+        mountain: data.mountain,
+        package: data.package
 
       })
         .then(res => {
@@ -296,7 +297,6 @@ function oraganizeTrip(props) {
               </Form.Group>
               <br />
               <Row className="trsp_packageRow"
-                  value={data.package}
                   onChange={handle}    
               
               >
@@ -342,7 +342,7 @@ function oraganizeTrip(props) {
               </Row>
 
             </Row>
-            <Container>
+            {/* <Container>
               <Row>
                 <Col className="col_1 organize-optional">
                   <Form.Label>Optional</Form.Label>
@@ -382,7 +382,7 @@ function oraganizeTrip(props) {
                   </Row>
 
                 </Col>
-                <Col className='col_4'>
+                <Col className='col_4'> */}
                   {/* <Row className="col_4_row_1">
                   <Form.Check
                     required
@@ -390,23 +390,26 @@ function oraganizeTrip(props) {
 
                   />
                 </Row> */}
-                  <Row className="col_4_row_2">
+                  {/* <Row className="col_4_row_2">
 
                   </Row>
                 </Col>
 
               </Row>
-            </Container>
+            </Container> */}
 
-            <Form.Group className="mb-3">
-              <Form.Check
-                required
-                label="I like to share your traveling guide"
-                // feedback="You must agree before submitting."
-                // feedbackType="invalid"
+            <Form.Group 
+              className="mb-3"
+              label="I like to share your traveling guide"
+              >
+              {/* <Form.Check
                 className='organize-share-guide'
-              />
+                name='shareGuide'
+                value={data.shareGuide}
+                onChange={handle}
+              /> */}
             </Form.Group>
+
             <div className=' d-flex flex-row justify-content-end'>
               <Stack direction="horizontal" gap={3} className="d-flex flex-row justify-content-right">
                 <Link to={"/welcome"}><Button variant=" ms-auto" className='organize-trip-back'>Back</Button></Link>{' '}

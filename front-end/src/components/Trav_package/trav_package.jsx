@@ -14,6 +14,7 @@ const Package = (props) => {
                 label={props.name}
                 id={props.id}
                 type='radio'
+                name="package"
                 value={props.value}
             />
             </div>  
