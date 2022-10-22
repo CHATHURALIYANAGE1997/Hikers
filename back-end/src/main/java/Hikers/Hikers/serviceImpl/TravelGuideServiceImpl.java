@@ -100,24 +100,42 @@ public class TravelGuideServiceImpl implements TravelGuideService {
     public ResponseEntity<?> addratetoguide(String code, Map<String, String> requestMap) {
         try{
             Travelingguide travelingguide=travelingguideRepo.findByEmail(code);
-            int count=travelingguide.getCount();
+            int count=Integer.parseInt(travelingguide.getCount());
             int newcount=count+1;
             if(count==0){
-                travelingguide.setCommunication(Integer.parseInt(requestMap.get("communication")));
-                travelingguide.setDomainknowledge(Integer.parseInt(requestMap.get("domainknowledge")));
-                travelingguide.setPunctuality(Integer.parseInt(requestMap.get("punctuality")));
-                travelingguide.setSecurity(Integer.parseInt(requestMap.get("security")));
-                travelingguide.setOverrall((Integer.parseInt(requestMap.get("communication"))+Integer.parseInt(requestMap.get("domainknowledge"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security")))/4);
-                travelingguide.setCount(newcount);
+                travelingguide.setCommunication(requestMap.get("communication"));
+                travelingguide.setDomainknowledge(requestMap.get("domainknowledge"));
+                travelingguide.setPunctuality(requestMap.get("punctuality"));
+                travelingguide.setSecurity(requestMap.get("security"));
+                travelingguide.setCommunicationoverrall(requestMap.get("communication"));
+                travelingguide.setDomainknowledgeoverrall(requestMap.get("domainknowledge"));
+                travelingguide.setPunctualityoverrall(requestMap.get("punctuality"));
+                travelingguide.setSecurityoverrall(requestMap.get("security"));
+
+                int overrall=(Integer.parseInt(requestMap.get("communication"))+Integer.parseInt(requestMap.get("domainknowledge"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security")))/4;
+
+                travelingguide.setOverrall(String.valueOf(overrall));
+                travelingguide.setCount(String.valueOf(newcount));
                 travelingguideRepo.save(travelingguide);
                 return Hutils.getResponseEntity("Add perfamance successfuly", HttpStatus.OK);
             }else {
-                travelingguide.setCommunication(Integer.parseInt(requestMap.get("communication")));
-                travelingguide.setDomainknowledge(Integer.parseInt(requestMap.get("domainknowledge")));
-                travelingguide.setPunctuality(Integer.parseInt(requestMap.get("punctuality")));
-                travelingguide.setSecurity(Integer.parseInt(requestMap.get("security")));
-                travelingguide.setOverrall((count*(Integer.parseInt(requestMap.get("communication"))+Integer.parseInt(requestMap.get("domainknowledge"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security"))))/4);
-                travelingguide.setCount(newcount);
+                int Communication=((Integer.parseInt(travelingguide.getCommunicationoverrall()))*count+Integer.parseInt(requestMap.get("communication")))/newcount;
+                int Domainknowledge=((Integer.parseInt(travelingguide.getDomainknowledgeoverrall()))*count+Integer.parseInt(requestMap.get("domainknowledge")))/newcount;
+                int Punctuality=((Integer.parseInt(travelingguide.getPunctualityoverrall()))*count+Integer.parseInt(requestMap.get("punctuality")))/newcount;
+                int Security=((Integer.parseInt(travelingguide.getSecurityoverrall()))*count+Integer.parseInt(requestMap.get("security")))/newcount;
+
+                travelingguide.setCommunication(requestMap.get("communication"));
+                travelingguide.setDomainknowledge(requestMap.get("domainknowledge"));
+                travelingguide.setPunctuality(requestMap.get("punctuality"));
+                travelingguide.setSecurity(requestMap.get("security"));
+
+                travelingguide.setCommunicationoverrall(String.valueOf(Communication));
+                travelingguide.setDomainknowledgeoverrall(String.valueOf(Domainknowledge));
+                travelingguide.setPunctualityoverrall(String.valueOf(Punctuality));
+                travelingguide.setSecurityoverrall(String.valueOf(Security));
+                int overrall=(Communication+Domainknowledge+Punctuality+Security);
+                travelingguide.setOverrall(String.valueOf(overrall));
+                travelingguide.setCount(String.valueOf(newcount));
                 travelingguideRepo.save(travelingguide);
                 return Hutils.getResponseEntity("Add perfamance successfuly", HttpStatus.OK);
             }
