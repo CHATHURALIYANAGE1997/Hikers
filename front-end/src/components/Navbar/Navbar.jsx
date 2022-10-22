@@ -22,18 +22,18 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top nb-container">
+            <nav className="navbar navbar-expand-lg navbar-light fixed-top nb-container">
 
-                <a class="navbar-brand" href="#">
+                <a className="navbar-brand" href="#">
                     <img src={logo} className="logo" alt="" width="70" height="40" />
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     {auth.isLoggedIn === true && auth.role === "User" ?
-                        <ul class="navbar-nav navbar-ul">
+                        <ul className="navbar-nav navbar-ul">
                             {NavBarData.map((val, key) => {
                                 return (
                                     <Link to={val.link} className="nb-list">
@@ -48,15 +48,15 @@ const Navbar = () => {
 
                             <FontAwesomeIcon icon={faBell} className="admin-header-bell" />
 
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span className="navbar-toggler-icon"></span>
                             </button>
 
 
 
-                            <div class="collapse navbar-collapse" id="navbar-list-4">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item dropdown">
+                            <div className="collapse navbar-collapse" id="navbar-list-4">
+                                <ul className="navbar-nav">
+                                    <li className="nav-item dropdown">
 
                                         <Dropdown className="dropdown-btn">
                                             <Dropdown.Toggle className="dropdown-btn" id="dropdown-basic">
@@ -73,7 +73,7 @@ const Navbar = () => {
                             </div>
                         </ul>
                         :
-                        <ul class="navbar-nav navbar-ul-signup">
+                        <ul className="navbar-nav navbar-ul-signup">
                             <Link to={"/travsignup"} className="nb-list">
                                 <li className="nb-list">
                                     <div className="nb-title">

@@ -22,13 +22,15 @@ function oraganizeTrip(props) {
 
   const [validated, setValidated] = useState(false);
 
-  const url = "localhost:8080/user/senddata"
+  const url = "http://localhost:8080/user/login"
 
   const initialState = {
     name: "",
     adults: "",
     children: "",
     date: "",
+    mountain: "",
+    package: "",
 
   };
   const provinces = [                             // Provinces array       
@@ -60,7 +62,7 @@ function oraganizeTrip(props) {
 
   const handle = (e) => {
     const newData = { ...data }
-    newData[e.target.id] = e.target.value
+    newData[e.target.name] = e.target.value
     setData(newData)
     console.log(newData)
 
@@ -72,14 +74,15 @@ function oraganizeTrip(props) {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+    if (form.checkValidity()) {
+      // event.preventDefault();
+      // event.stopPropagation();
       Axios.post(url, {
         name: data.name,
         adults: parseInt(data.adults),
         children: parseInt(data.children),
-        date: data.date
+        date: data.date,
+        mountain: data.mountain
 
       })
         .then(res => {
@@ -103,32 +106,32 @@ function oraganizeTrip(props) {
       <div className='trot_mainDiv'>
         <Navbar />
 
-        <div class="md-stepper-horizontal editable orange">
-          <div class="md-step active done">
-            <div class="md-step-circle"><span>1</span></div>
-            <div class="md-step-title">Trip Package</div>
-            <div class="md-step-bar-left"></div>
-            <div class="md-step-bar-right"></div>
+        <div className="md-stepper-horizontal editable orange">
+          <div className="md-step active done">
+            <div className="md-step-circle"><span>1</span></div>
+            <div className="md-step-title">Trip Package</div>
+            <div className="md-step-bar-left"></div>
+            <div className="md-step-bar-right"></div>
           </div>
-          <div class="md-step">
-            <div class="md-step-circle"><span>2</span></div>
-            <div class="md-step-title">Hotel</div>
-            <div class="md-step-optional">Optional</div>
-            <div class="md-step-bar-left"></div>
-            <div class="md-step-bar-right"></div>
+          <div className="md-step">
+            <div className="md-step-circle"><span>2</span></div>
+            <div className="md-step-title">Hotel</div>
+            <div className="md-step-optional">Optional</div>
+            <div className="md-step-bar-left"></div>
+            <div className="md-step-bar-right"></div>
           </div>
-          <div class="md-step">
-            <div class="md-step-circle"><span>3</span></div>
-            <div class="md-step-title">Transport Service</div>
-            <div class="md-step-optional">Optional</div>
-            <div class="md-step-bar-left"></div>
-            <div class="md-step-bar-right"></div>
+          <div className="md-step">
+            <div className="md-step-circle"><span>3</span></div>
+            <div className="md-step-title">Transport Service</div>
+            <div className="md-step-optional">Optional</div>
+            <div className="md-step-bar-left"></div>
+            <div className="md-step-bar-right"></div>
           </div>
-          <div class="md-step">
-            <div class="md-step-circle"><span>4</span></div>
-            <div class="md-step-title">Payment</div>
-            <div class="md-step-bar-left"></div>
-            <div class="md-step-bar-right"></div>
+          <div className="md-step">
+            <div className="md-step-circle"><span>4</span></div>
+            <div className="md-step-title">Payment</div>
+            <div className="md-step-bar-left"></div>
+            <div className="md-step-bar-right"></div>
           </div>
         </div>
         <div className="formContainer">
@@ -137,7 +140,7 @@ function oraganizeTrip(props) {
             <p className="txtOrganizeTrip">Organize Your Trip...</p>
           </div>
 
-          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Form noValidate validated={validated}>
 
             <Row className="mb-3">                                                {/* Name */}
               <Form.Group as={Row} md="" controlId="validationCustom01">
@@ -148,7 +151,7 @@ function oraganizeTrip(props) {
                   type="text"
                   placeholder="First name"
                   name='name'
-                  id='name'
+                  // id='name'
                   value={data.name}
                   onChange={handle}
 
@@ -173,7 +176,7 @@ function oraganizeTrip(props) {
                       type="number"
                       placeholder="Less than 20"
                       name='adults'
-                      id='adults'
+                      // id='adults'
                       value={data.adults}
                       onChange={handle}
                       className='w-100'
@@ -194,7 +197,7 @@ function oraganizeTrip(props) {
                         aria-describedby="inputGroupPrepend"
                         name='children'
                         required
-                        id='children'
+                        // id='children'
                         value={data.children}
                         onChange={handle}
                       />
@@ -216,7 +219,7 @@ function oraganizeTrip(props) {
                   type="date"
                   // placeholder="DD/MM/YYYY" 
                   name='date'
-                  id='date'
+                  // id='date'
                   value={data.date}
                   onChange={(e) => handle(e)}
                   required
@@ -233,7 +236,7 @@ function oraganizeTrip(props) {
                 
                 <div className="d-flex flex-row w-75">                              {/* provinces drop down */}                    
                   <Form.Select 
-                    id='ddlProvince'
+                    // id='ddlProvince'
                     aria-label="" 
                     className='trot_dropDown' 
                     onChange={(e) => handleProvince (e.target.value)}
@@ -253,10 +256,15 @@ function oraganizeTrip(props) {
                   </Form.Select>
 
                   <Form.Select 
-                    id='ddlMountain'
+                    // id='ddlMountain'
                     aria-label="" 
                     className='trot_dropDown' 
                     // onChange={(e) => handleMountain (e.target.value)}
+                    name='mountain'
+                    // id={'mountain'}
+                    value={data.mountain}
+                    onChange={handle}
+
                     >
                     <option value={0}>Select a mountain</option>
                     {
@@ -264,7 +272,7 @@ function oraganizeTrip(props) {
                       mountain !== undefined ?
                       mountain.map ((prv, index) => {
                         return (
-                          <option key={index} value={prv.id}>{prv.name}</option>
+                          <option key={index} value={prv.name}>{prv.name}</option>
                         )
                       })
                       :"No province"
@@ -287,10 +295,49 @@ function oraganizeTrip(props) {
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
               <br />
-              <Row className="trsp_packageRow">
-                <Col sm={4}><Package className="pkgOneDay" name="One Day Hike" des=" " topic_1="Local" topic_2="Foriegn" lPrice="1000" fPrice="2000" /></Col>
-                <Col sm={4}><Package className="pkgCamping" name="Camping" des=" " topic_1="Local" topic_2="Foriegn" lPrice="1000" fPrice="2000" /></Col>
-                <Col sm={4}><Package className="pkgAbseiling" name="Abseiling" des="" topic_1="Local" topic_2="Foriegn" lPrice="10000" fPrice="20000" /></Col>
+              <Row className="trsp_packageRow"
+                  value={data.package}
+                  onChange={handle}    
+              
+              >
+                <Col sm={4}>
+                  <Package 
+                    className="pkgOneDay" 
+                    name="One Day Hike" 
+                    des=" " 
+                    topic_1="Local" 
+                    topic_2="Foriegn" 
+                    lPrice="1000" 
+                    fPrice="2000"
+                    value="1_day_hike"
+                    />
+                </Col>
+                <Col sm={4}>
+                  <Package 
+                    className="pkgCamping" 
+                    name="Camping" 
+                    des=" " 
+                    topic_1="Local" 
+                    topic_2="Foriegn" 
+                    lPrice="1000" 
+                    fPrice="2000" 
+                    value="camping"
+
+                  />
+                </Col>
+                <Col sm={4}>
+                  <Package 
+                    className="pkgAbseiling" 
+                    name="Abseiling" 
+                    des="" 
+                    topic_1="Local" 
+                    topic_2="Foriegn" 
+                    lPrice="10000" 
+                    fPrice="20000" 
+                    value="abseiling"
+
+                />
+                </Col>
 
               </Row>
 
@@ -302,7 +349,7 @@ function oraganizeTrip(props) {
 
                 </Col>
                 <Col className="col_2">
-                  <Row classname="col_2_row_1">
+                  <Row className="col_2_row_1">
                     <Form.Check
                       required
                       label="Hotel"
@@ -355,15 +402,15 @@ function oraganizeTrip(props) {
               <Form.Check
                 required
                 label="I like to share your traveling guide"
-                feedback="You must agree before submitting."
-                feedbackType="invalid"
+                // feedback="You must agree before submitting."
+                // feedbackType="invalid"
                 className='organize-share-guide'
               />
             </Form.Group>
             <div className=' d-flex flex-row justify-content-end'>
               <Stack direction="horizontal" gap={3} className="d-flex flex-row justify-content-right">
                 <Link to={"/welcome"}><Button variant=" ms-auto" className='organize-trip-back'>Back</Button></Link>{' '}
-                <Link to={"/hotels"}><Button type='submit' variant=" ms-auto" className="organize-trip-next">Next</Button></Link>{' '}
+                <Button type='submit' type='button' variant=" ms-auto" className="organize-trip-next" onClick={handleSubmit}>Next</Button>
 
               </Stack>
             </div>
