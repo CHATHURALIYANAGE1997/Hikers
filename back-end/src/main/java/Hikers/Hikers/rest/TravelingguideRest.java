@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin(origins =  "http://localhost:3000")
@@ -16,5 +17,8 @@ public interface TravelingguideRest {
 
     @GetMapping(path = "/getAllGuide")
     public ResponseEntity<List<Travelingguide>> getAllGuide();
+
+    @PostMapping(path="/addratetoguide/{code}")
+    public ResponseEntity<?> addratetoguide(@PathVariable String code,@RequestBody(required=true) Map<String, String> requestMap);
 
 }
