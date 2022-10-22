@@ -71,16 +71,24 @@ public class Transportprovider implements Serializable {
     @Lob
     private byte[] data;
 
-    private int navigationcapacity;
+    private String navigationcapacity;
 
-    private int security;
+    private String navigationcapacityoverrall;
 
-    private int punctuality;
+    private String security;
 
-    private int neatandtidy;
+    private String securityoverrall;
 
-    private int overrall;
+    private String punctuality;
 
-    private int count;
+    private String punctualityoverrall;
+
+    private String neatandtidy;
+
+    private String neatandtidyoverrall;
+
+    private String overrall;
+
+    private String count;
 }
 
