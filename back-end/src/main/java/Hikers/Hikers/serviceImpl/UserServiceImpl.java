@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.bytebuddy.utility.RandomString;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -203,7 +204,7 @@ public class UserServiceImpl implements UserService {
                     String siteURL="http://localhost:3000";
                     sendVerificationEmailToEquProvider(equipmentprovider2, siteURL);
                     log.info("Inside 2");
-                    return Hutils.getResponseEntity("SuccessFully Registered", HttpStatus.OK);
+                    return Hutils.getResponseEntity("SuccessFully Registered,You will recive a email", HttpStatus.OK);
                 }else {
                     log.info("Inside 3");
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
@@ -229,7 +230,7 @@ public class UserServiceImpl implements UserService {
                    Travelingguide travelingguide2= travelingguideRepo.save(getTravelingGuideFromMap(requestMap));
                     String siteURL="http://localhost:3000";
                     sendVerificationEmailToTravelguide(travelingguide2,siteURL);
-                    return Hutils.getResponseEntity("SuccessFully Registered", HttpStatus.OK);
+                    return Hutils.getResponseEntity("SuccessFully Registered cheak your email", HttpStatus.OK);
                 }else {
                     return Hutils.getResponseEntity("Phone number is already used", HttpStatus.BAD_REQUEST);
                 }
@@ -372,6 +373,43 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+   @Override
+   public ResponseEntity<?> verifyGuideByAdmin(String code) {
+        try {
+            Travelingguide travelingguide=travelingguideRepo.findByEmail(code);
+            travelingguide.setAccountstatus("ture");
+            travelingguideRepo.save(travelingguide);
+            return Hutils.getResponseEntity("Account status update successfully", HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @Override
+    public ResponseEntity<?> RejectGuideByAdmin(String code) {
+        try {
+            Travelingguide travelingguide=travelingguideRepo.findByEmail(code);
+            travelingguideRepo.delete(travelingguide);
+            String messge="Your request to join Hikers as a guide was rejected unfortunately";
+            sendVerificationEmailToTravelguide2(travelingguide,messge);
+            return Hutils.getResponseEntity("Account reject successfully", HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    private void sendVerificationEmailToTravelguide2(Travelingguide travelingguide ,String messge) throws MessagingException, UnsupportedEncodingException {
+        String toAddress = travelingguide.getEmail();
+        MimeMessage msg = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+        helper.setTo(toAddress);
+        helper.setSubject("Hikers");
+        helper.setText(messge, true);
+        mailSender.send(msg);
+    }
+
+
     @Override
     public ResponseEntity<?> verifyEquprovider(String code) {
        try {
@@ -392,6 +430,45 @@ public class UserServiceImpl implements UserService {
        }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
+    @Override
+    public ResponseEntity<?> verifyEquproviderByAdmin(String code) {
+        try {
+            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmail(code);
+            System.out.println(equipmentprovider);
+            equipmentprovider.setAccountstatus("ture");
+            equipmentproviderRepo.save(equipmentprovider);
+            String messge="Your account create successfully";
+            sendVerificationEmailToEquProvider2(equipmentprovider,messge);
+            return Hutils.getResponseEntity("Account sttatus update successfully", HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    public ResponseEntity<?> RejectEquproviderByAdmin(String code) {
+        try {
+            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmail(code);
+            equipmentproviderRepo.delete(equipmentprovider);
+            String messge="Your request to join Hikers as a equipmentprovider was rejected unfortunately";
+            sendVerificationEmailToEquProvider2(equipmentprovider ,messge);
+            return Hutils.getResponseEntity("Account sttatus update successfully", HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    private void sendVerificationEmailToEquProvider2(Equipmentprovider equipmentprovider,String messge)  throws MessagingException, UnsupportedEncodingException {
+        String toAddress = equipmentprovider.getEmail();
+        MimeMessage msg = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+        helper.setTo(toAddress);
+        helper.setSubject("Hikers");
+        helper.setText(messge, true);
+        mailSender.send(msg);
+    }
+
 
     @Override
     public ResponseEntity<?> forgotpassword(Map<String, String> requestMap) {
