@@ -64,6 +64,7 @@ import CampingAssesories  from './pages/CampingAssesories';
 import MyComponent from './components/Trav_map/trav_gMap';
 import AdminTrip from './pages/AdminTrip';
 import HotelUpcomingBooking from './pages/HotelUpcomingBooking';
+import AdminGuide from './pages/AdminGuide';
 
 
 function App() {
@@ -164,7 +165,7 @@ function App() {
               <Route path="/admin/addtransporter" component={AdminAddTransporter}></Route>
               <Route path="/admin/registrations" component={AdminTraveler}></Route>
               <Route path="/admin/trips" component={AdminTrip}></Route>
-
+              <Route path="/admin/guide" component={AdminGuide}></Route>
 
               <Route path="/trav_selectPackages" component={selectPackages}></Route>
               <Route path="/camping/" component={CampingEquipment}></Route>
