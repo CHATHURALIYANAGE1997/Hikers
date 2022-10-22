@@ -16,4 +16,6 @@ public interface TravelGuideService {
     ResponseEntity<Optional<Travelingguide>> getTravelingguideProfile(String email);
 
     ResponseEntity<List<Travelingguide>> getAllGuide();
+
+    ResponseEntity<?> addratetoguide(String code, Map<String, String> requestMap);
 }
