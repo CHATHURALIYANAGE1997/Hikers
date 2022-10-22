@@ -12,11 +12,12 @@ public interface TraProviderService {
     ResponseEntity<List<Transportprovider>> getTraproviders();
 
     ResponseEntity<List<Transportprovider>> getTraprovider(Long service_provider_id);
-    
+
     ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap);
 
     ResponseEntity<List<Transportprovider>> gettransport();
 
     ResponseEntity<Optional<Transportprovider>> getTransporterProfile(String email);
 
+    ResponseEntity<?> addratetotranspoter(String code, Map<String, String> requestMap);
 }
