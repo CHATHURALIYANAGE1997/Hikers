@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -222,6 +223,16 @@ public class UserRestImpl implements UserRest {
     public ResponseEntity<?> getprofiledetails() {
         try {
             return  userService.getUser();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> uploadprofile(MultipartFile file) {
+        try {
+            return  userService.uploadprofile(file);
         }catch (Exception ex){
             ex.printStackTrace();
         }
