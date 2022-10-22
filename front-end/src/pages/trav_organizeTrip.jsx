@@ -96,13 +96,13 @@ function oraganizeTrip(props) {
     setValidated(true);
   }
 
-  // if (localStorage.jwtToken) {
-  //   authToken(localStorage.jwtToken);
-  // }
+  if (localStorage.jwtToken) {
+    authToken(localStorage.jwtToken);
+  }
 
-  // const auth = useSelector((state) => state.auth);
+  const auth = useSelector((state) => state.auth);
 
-  // if (auth.isLoggedIn === true && auth.role === "User") {
+  if (auth.isLoggedIn === true && auth.role === "User") {
     return (
       <div className='trot_mainDiv'>
         <Navbar />
@@ -424,13 +424,13 @@ function oraganizeTrip(props) {
 
     );
   }
-//   else {
-//     localStorage.clear();
-//     // return props.history.push("/");
-//     { return <div><NotFoundPage /></div> }
+  else {
+    localStorage.clear();
+    // return props.history.push("/");
+    { return <div><NotFoundPage /></div> }
 
-//   }
-// }
+  }
+}
 
 // render(<oraganizeTrip />);
 export default oraganizeTrip
