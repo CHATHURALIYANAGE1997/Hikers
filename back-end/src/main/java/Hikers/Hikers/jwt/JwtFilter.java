@@ -95,6 +95,12 @@ public class JwtFilter  extends OncePerRequestFilter {
         return role;
     }
 
+    public Long getCurrentId(){
+        String username= getCurrentUser();
+        User user=userRepo.findByEmail(username);
+        Long id=user.getId();
+        return id;
+    }
 
 }
 
