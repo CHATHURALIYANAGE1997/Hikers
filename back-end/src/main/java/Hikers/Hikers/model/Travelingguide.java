@@ -68,4 +68,11 @@ public class Travelingguide implements Serializable {
 
     private boolean enabled;
 
+    private String fileName;
+
+    private String fileType;
+
+    @Lob
+    private byte[] data;
+
 }
