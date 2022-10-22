@@ -105,24 +105,42 @@ public class TraProviderServiceImpl implements TraProviderService {
     public ResponseEntity<?> addratetotranspoter(String code,Map<String, String> requestMap) {
         try{
             Transportprovider transportprovider=transportproviderRepo.findByEmail(code);
-            int count=transportprovider.getCount();
+            int count=Integer.parseInt(transportprovider.getCount());
             int newcount=count+1;
             if(count==0){
-                transportprovider.setNavigationcapacity(Integer.parseInt(requestMap.get("navigationcapacity")));
-                transportprovider.setNeatandtidy(Integer.parseInt(requestMap.get("neatandtidy")));
-                transportprovider.setPunctuality(Integer.parseInt(requestMap.get("punctuality")));
-                transportprovider.setSecurity(Integer.parseInt(requestMap.get("security")));
-                transportprovider.setOverrall((Integer.parseInt(requestMap.get("navigationcapacity"))+Integer.parseInt(requestMap.get("neatandtidy"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security")))/4);
-                transportprovider.setCount(newcount);
+                transportprovider.setNavigationcapacity(requestMap.get("navigationcapacity"));
+                transportprovider.setNeatandtidy(requestMap.get("neatandtidy"));
+                transportprovider.setPunctuality(requestMap.get("punctuality"));
+                transportprovider.setSecurity(requestMap.get("security"));
+                transportprovider.setNavigationcapacityoverrall(requestMap.get("navigationcapacity"));
+                transportprovider.setNeatandtidyoverrall(requestMap.get("neatandtidy"));
+                transportprovider.setPunctualityoverrall(requestMap.get("punctuality"));
+                transportprovider.setSecurityoverrall(requestMap.get("security"));
+                int overrall=(Integer.parseInt(requestMap.get("navigationcapacity"))+Integer.parseInt(requestMap.get("neatandtidy"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security")))/4;
+                transportprovider.setOverrall(String.valueOf(overrall));
+                transportprovider.setCount(String.valueOf(newcount));
                 transportproviderRepo.save(transportprovider);
                 return Hutils.getResponseEntity("Add perfamance successfuly", HttpStatus.OK);
             }else {
-                transportprovider.setNavigationcapacity(Integer.parseInt(requestMap.get("navigationcapacity")));
-                transportprovider.setNeatandtidy(Integer.parseInt(requestMap.get("neatandtidy")));
-                transportprovider.setPunctuality(Integer.parseInt(requestMap.get("punctuality")));
-                transportprovider.setSecurity(Integer.parseInt(requestMap.get("security")));
-                transportprovider.setOverrall((count*(Integer.parseInt(requestMap.get("navigationcapacity"))+Integer.parseInt(requestMap.get("neatandtidy"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security"))))/newcount);
-                transportprovider.setCount(newcount);
+                int Navigationcapacityoverrall=((Integer.parseInt(transportprovider.getNavigationcapacityoverrall()))*count+Integer.parseInt(requestMap.get("navigationcapacity")))/newcount;
+                int Neatandtidyoverrall=((Integer.parseInt(transportprovider.getNeatandtidyoverrall()))*count+Integer.parseInt(requestMap.get("neatandtidy")))/newcount;
+                int Punctualityoverrall=((Integer.parseInt(transportprovider.getPunctualityoverrall()))*count+Integer.parseInt(requestMap.get("punctuality")))/newcount;
+                int Securityoverrall=((Integer.parseInt(transportprovider.getSecurityoverrall()))*count+Integer.parseInt(requestMap.get("security")))/newcount;
+
+                transportprovider.setNavigationcapacity(requestMap.get("navigationcapacity"));
+                transportprovider.setNeatandtidy(requestMap.get("neatandtidy"));
+                transportprovider.setPunctuality(requestMap.get("punctuality"));
+                transportprovider.setSecurity(requestMap.get("security"));
+
+                transportprovider.setNavigationcapacityoverrall(String.valueOf(Navigationcapacityoverrall));
+                transportprovider.setNeatandtidyoverrall(String.valueOf(Neatandtidyoverrall));
+                transportprovider.setPunctualityoverrall(String.valueOf(Punctualityoverrall));
+                transportprovider.setSecurityoverrall(String.valueOf(Securityoverrall));
+
+                int overrall=(Navigationcapacityoverrall+Neatandtidyoverrall+Punctualityoverrall+Securityoverrall)/4;
+
+                transportprovider.setOverrall(String.valueOf(overrall));
+                transportprovider.setCount(String.valueOf(newcount));
                 transportproviderRepo.save(transportprovider);
                 return Hutils.getResponseEntity("Add perfamance successfuly", HttpStatus.OK);
             }
