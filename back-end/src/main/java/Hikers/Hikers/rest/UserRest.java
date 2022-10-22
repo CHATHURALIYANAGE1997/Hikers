@@ -86,6 +86,11 @@ public interface UserRest {
     @GetMapping(path="/RejectEquproviderByAdmin/{code}")
     public  ResponseEntity<?> RejectEquproviderByAdmin(@PathVariable String code);
 
+    @GetMapping(path="/suggetionguide")
+    public  ResponseEntity<?> suggetionguide();
+
+    @GetMapping(path="/suggetiontransport")
+    public  ResponseEntity<?> suggetiontransport();
 }
 
 
