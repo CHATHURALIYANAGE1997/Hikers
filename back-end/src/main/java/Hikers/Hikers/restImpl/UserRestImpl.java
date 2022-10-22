@@ -38,7 +38,7 @@ public class UserRestImpl implements UserRest {
     private TraProviderService traProviderService;
 
     @Autowired
-   private TravelGuideService travelGuideService;
+    private TravelGuideService travelGuideService;
 
     @Override
     public ResponseEntity<String> signUp(Map<String, String> requestMap ) {
@@ -169,21 +169,21 @@ public class UserRestImpl implements UserRest {
 
     @Override
     public ResponseEntity<?> verifyGuide(String code) {
-       try {
-           return userService.verifyGuide(code);
-       }catch (Exception ex){
-           ex.printStackTrace();
-       }
+        try {
+            return userService.verifyGuide(code);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
     @Override
     public ResponseEntity<?> verifyEquprovider(String code) {
-       try {
-           return userService.verifyEquprovider(code);
-       }catch (Exception ex){
-           ex.printStackTrace();
-       }
+        try {
+            return userService.verifyEquprovider(code);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
@@ -265,7 +265,7 @@ public class UserRestImpl implements UserRest {
             System.out.println("dfdf");
             return userService.verifyEquproviderByAdmin(code);
         }catch (Exception ex){
-        ex.printStackTrace();
+            ex.printStackTrace();
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
@@ -274,6 +274,26 @@ public class UserRestImpl implements UserRest {
     public ResponseEntity<?> RejectEquproviderByAdmin(String code) {
         try {
             return userService.RejectEquproviderByAdmin(code);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> suggetionguide() {
+        try{
+            return userService.suggetionguide();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> suggetiontransport() {
+        try{
+            return userService.suggetiontransport();
         }catch (Exception ex){
             ex.printStackTrace();
         }
