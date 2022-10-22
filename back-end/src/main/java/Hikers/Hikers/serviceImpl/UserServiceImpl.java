@@ -21,6 +21,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 
 import javax.mail.MessagingException;
@@ -492,6 +494,55 @@ public class UserServiceImpl implements UserService {
                 return new ResponseEntity(equipmentprovider, HttpStatus.OK);
             }
             return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> uploadprofile(MultipartFile file) {
+        try {
+            String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+            if (fileName.contains("..")) {
+                return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+            }
+
+            String email=(jwtFilter.getCurrentUser());
+            User user=userRepo.findByEmail(email);
+            if(!Objects.isNull(user)){
+                user.setFileName(fileName);
+                user.setFileType(file.getContentType());
+                user.setData(file.getBytes());
+                userRepo.save(user);
+                return Hutils.getResponseEntity("Profile image update sucessfully", HttpStatus.OK);
+            }
+            Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmail(email);
+            if(!Objects.isNull(equipmentprovider)){
+                equipmentprovider.setFileName(fileName);
+                equipmentprovider.setFileType(file.getContentType());
+                equipmentprovider.setData(file.getBytes());
+                equipmentproviderRepo.save(equipmentprovider);
+                return Hutils.getResponseEntity("Profile image update sucessfully", HttpStatus.OK);
+            }
+            Transportprovider transportprovider=transportproviderRepo.findByEmail(email);
+            if(!Objects.isNull(transportprovider)){
+                transportprovider.setFileName(fileName);
+                transportprovider.setFileType(file.getContentType());
+                transportprovider.setData(file.getBytes());
+                transportproviderRepo.save(transportprovider);
+                return Hutils.getResponseEntity("Profile image update sucessfully", HttpStatus.OK);
+            }
+            Travelingguide travelingguide=travelingguideRepo.findByEmail(email);
+            if(!Objects.isNull(travelingguide)){
+                travelingguide.setFileName(fileName);
+                travelingguide.setFileType(file.getContentType());
+                travelingguide.setData(file.getBytes());
+                travelingguideRepo.save(travelingguide);
+                return Hutils.getResponseEntity("Profile image update sucessfully", HttpStatus.OK);
+            }
+
+            return Hutils.getResponseEntity("Something went wrong, please try again", HttpStatus.BAD_REQUEST);
         }catch (Exception ex){
             ex.printStackTrace();
         }
