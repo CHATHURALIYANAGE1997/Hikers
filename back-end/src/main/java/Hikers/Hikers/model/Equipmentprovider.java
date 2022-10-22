@@ -54,5 +54,12 @@ public class Equipmentprovider implements Serializable {
     private String verificationCode;
 
     private boolean enabled;
+
+    private String fileName;
+
+    private String fileType;
+
+    @Lob
+    private byte[] data;
 }
 
