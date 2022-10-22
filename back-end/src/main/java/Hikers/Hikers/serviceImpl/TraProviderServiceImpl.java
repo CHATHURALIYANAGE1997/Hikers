@@ -101,4 +101,37 @@ public class TraProviderServiceImpl implements TraProviderService {
         return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<?> addratetotranspoter(String code,Map<String, String> requestMap) {
+        try{
+            Transportprovider transportprovider=transportproviderRepo.findByEmail(code);
+            int count=transportprovider.getCount();
+            int newcount=count+1;
+            if(count==0){
+                transportprovider.setNavigationcapacity(Integer.parseInt(requestMap.get("navigationcapacity")));
+                transportprovider.setNeatandtidy(Integer.parseInt(requestMap.get("neatandtidy")));
+                transportprovider.setPunctuality(Integer.parseInt(requestMap.get("punctuality")));
+                transportprovider.setSecurity(Integer.parseInt(requestMap.get("security")));
+                transportprovider.setOverrall((Integer.parseInt(requestMap.get("navigationcapacity"))+Integer.parseInt(requestMap.get("neatandtidy"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security")))/4);
+                transportprovider.setCount(newcount);
+                transportproviderRepo.save(transportprovider);
+                return Hutils.getResponseEntity("Add perfamance successfuly", HttpStatus.OK);
+            }else {
+                transportprovider.setNavigationcapacity(Integer.parseInt(requestMap.get("navigationcapacity")));
+                transportprovider.setNeatandtidy(Integer.parseInt(requestMap.get("neatandtidy")));
+                transportprovider.setPunctuality(Integer.parseInt(requestMap.get("punctuality")));
+                transportprovider.setSecurity(Integer.parseInt(requestMap.get("security")));
+                transportprovider.setOverrall((count*(Integer.parseInt(requestMap.get("navigationcapacity"))+Integer.parseInt(requestMap.get("neatandtidy"))+Integer.parseInt(requestMap.get("punctuality"))+Integer.parseInt(requestMap.get("security"))))/newcount);
+                transportprovider.setCount(newcount);
+                transportproviderRepo.save(transportprovider);
+                return Hutils.getResponseEntity("Add perfamance successfuly", HttpStatus.OK);
+            }
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 }
