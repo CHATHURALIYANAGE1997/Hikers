@@ -1,5 +1,9 @@
 package Hikers.Hikers.serviceImpl;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import Hikers.Hikers.cons.Hcons;
 import Hikers.Hikers.jwt.CustomerUserDetailsService;
 import Hikers.Hikers.jwt.JwtFilter;
@@ -385,6 +389,61 @@ public class UserServiceImpl implements UserService {
         }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @Override
+    public ResponseEntity<?> suggetionguide() {
+        try{
+            List<Travelingguide> travelingguides=travelingguideRepo.findAll();
+            if(travelingguides.size()==0){
+
+               return Hutils.getResponseEntity("No guide records", HttpStatus.BAD_REQUEST);
+            }
+            if(travelingguides.size()==1){
+                return new ResponseEntity(travelingguides.get(0),HttpStatus.OK);
+            }
+            else {
+                Collections.sort(travelingguides, new Comparator<Travelingguide>() {
+                    @Override
+                    public int compare(Travelingguide o1, Travelingguide o2) {
+                        return o1.getOverrall().compareTo(o2.getOverrall());
+                    }
+                });
+                System.out.println(travelingguides);
+                return new ResponseEntity(travelingguides, HttpStatus.OK);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> suggetiontransport() {
+        try {
+            List<Transportprovider> transportproviders=transportproviderRepo.findAll();
+            if(transportproviders.size()==0){
+
+                return Hutils.getResponseEntity("No guide records", HttpStatus.BAD_REQUEST);
+            }
+            if(transportproviders.size()==1){
+                return new ResponseEntity(transportproviders.get(0),HttpStatus.OK);
+            }
+            else {
+                Collections.sort(transportproviders, new Comparator<Transportprovider>() {
+                    @Override
+                    public int compare(Transportprovider o1, Transportprovider o2) {
+                        return o1.getOverrall().compareTo(o2.getOverrall());
+                    }
+                });
+                System.out.println(transportproviders);
+                return new ResponseEntity(transportproviders, HttpStatus.OK);
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
     @Override
     public ResponseEntity<?> RejectGuideByAdmin(String code) {
         try {
