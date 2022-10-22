@@ -18,6 +18,8 @@ import ArticleInfo from './pages/ArticleInfo';
 import Forums from './pages/Forums';
 import ForumDetails from './pages/ForumDetails';
 import forumQuestion from './pages/forumQuestion';
+import RateTransport from './pages/RateTransport';
+import RateGuide from './pages/RateGuide';
 import Equipments from './pages/Equipments';
 import HotelBooking from './pages/HotelBooking';
 import BasicTabs from './pages/HotelDetails';
@@ -114,6 +116,8 @@ function App() {
               <Route path = "/forums/" component= {Forums}></Route>
               <Route path = "/forumDetails/" component= {ForumDetails}></Route>
               <Route path = "/forumQuestion/" component= {forumQuestion}></Route>
+              <Route path = "/rateTransport/" component= {RateTransport}></Route>
+              <Route path = "/rateGuide/" component= {RateGuide}></Route>
               <Route path="/equipments/" component={Equipments}></Route>
               <Route path="/organizeTrip" component={oraganizeTrip}></Route>
               {/* <Route path = "/guide" component = {TravelingGuide}></Route> */}
