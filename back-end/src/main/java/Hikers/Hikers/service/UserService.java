@@ -43,4 +43,6 @@ public interface UserService {
     ResponseEntity<String> changePassoword(String id, Map<String, String> requestMap);
 
     ResponseEntity<?> getUser();
+    
+    ResponseEntity<?> uploadprofile(MultipartFile file);
 }
