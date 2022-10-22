@@ -36,7 +36,7 @@ export default function Details(props) {
                     <span className='details-col2'>{details.rate} / 5</span>
                 </div>
                 <hr></hr>
-                <div className='d-flex flex-row w-100'>
+                {/* <div className='d-flex flex-row w-100'>
                     <span className='w-25 details-col1'>Bank</span>
                     <span>:</span>
                     <span className='details-col2'>BOC</span>
@@ -53,7 +53,7 @@ export default function Details(props) {
                     <span>:</span>
                     <span className='details-col2'>Kurunegala</span>
                 </div>
-                <hr></hr>
+                <hr></hr> */}
 
                 {/* <div className='d-flex flex-column mt-4 w-100'>
                     <div className='d-flex flex-row justify-content-between'>

@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { ModeCommentOutlined } from "@material-ui/icons";
 
 function AddFacilityForm(props) {
+
     return (
         <Modal
             {...props}
@@ -38,6 +39,8 @@ function AddFacilityForm(props) {
             </Modal.Body>
         </Modal>
     );
+
+
 }
 
 export default AddFacilityForm;

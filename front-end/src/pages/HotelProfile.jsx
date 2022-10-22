@@ -17,6 +17,7 @@ import { faPlus, faTrashCan, faPencil } from "@fortawesome/free-solid-svg-icons"
 import RulesData from '../components/Hotels/HotelActor/HotelProfile/RulesData';
 import AddRuleForm from '../components/Hotels/HotelActor/HotelProfile/AddRuleForm';
 import AddFacilityForm from '../components/Hotels/HotelActor/HotelProfile/AddFacilityForm';
+import ChangeProfile from '../components/Hotels/HotelActor/HotelProfile/ChangeProfile';
 
 
 export default function HotelProfile(props) {
@@ -26,8 +27,6 @@ export default function HotelProfile(props) {
 
     const [ruleShow, setRuleShow] = React.useState(false);
     const [showRule, setShowRule] = useState(false);
-    // const handleClose = () => setShow(false);
-    // const handleShow = () => setShow(true);
 
     if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
@@ -63,12 +62,6 @@ export default function HotelProfile(props) {
                 const hotel_id = response.data['hotel_id'];
                 setId(hotel_id);
                 setDetails(allDetails);
-                // console.log(response.data);
-                // console.log("hello");
-                //console.log(response.data);
-                //console.log(response.data["address"]);
-                //console.log("world");
-                //console.log(allNotes);
             }).catch((error) => {
                 console.log(error);
             })
@@ -119,6 +112,15 @@ export default function HotelProfile(props) {
             })
         }
 
+        //Popup
+        const [profileId, setProfileId] = useState('');
+        const [changeProfile, setChangeProfile] = useState('');
+
+        const handleClick = (e) => {
+            console.log(e);
+            setProfileId(e);
+        }
+
         return (
             <div className="d-flex flex-column tg-container">
                 <HotelHeader />
@@ -129,7 +131,14 @@ export default function HotelProfile(props) {
                             <HotelName name={details.name} />
                             <div className='d-flex flex-row justify-content-between w-100 pl-3'>
                                 <Images />
-                                <FontAwesomeIcon icon={faPenToSquare} className="rating-change-icon" />
+                                <FontAwesomeIcon icon={faPenToSquare} className="rating-change-icon"
+                                    onClick={()=>{setChangeProfile(true); handleClick(details);}}
+                                />
+                                <ChangeProfile 
+                                    show={changeProfile}
+                                    onHide={() => setChangeProfile(false)}
+                                    profileId={profileId}
+                                />
                             </div>
                             <Details details={details} />
                             <div className='d-flex flex-column mt-4 w-100'>

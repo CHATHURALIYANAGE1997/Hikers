@@ -63,6 +63,7 @@ import AdminTraveler from './pages/AdminTravelers';
 import CampingAssesories  from './pages/CampingAssesories';
 import MyComponent from './components/Trav_map/trav_gMap';
 import AdminTrip from './pages/AdminTrip';
+import HotelUpcomingBooking from './pages/HotelUpcomingBooking';
 
 
 function App() {
@@ -150,6 +151,7 @@ function App() {
               <Route path="/hotel/profile" component={HotelProfile}></Route>
               <Route path="/hotel/rooms" component={HotelRoom}></Route>
               <Route path="/hotel/payments" component={HotelPayments}></Route>
+              <Route path="/hotel/bookings" component={HotelUpcomingBooking}></Route>
                
 
               {/* Admin */}

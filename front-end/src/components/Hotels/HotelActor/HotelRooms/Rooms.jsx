@@ -2,10 +2,20 @@ import * as React from 'react';
 import './hotelroom.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faWifi, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
+import ChangeRoom from './ChangeRoom';
 
 const Rooms = (props) => {
 
     const { room } = props;
+
+    const [changeRoom, setChangeRoom] = useState('');
+
+    const [roomId, setRoomId] = useState('');
+
+    const handleClick = (e) => {
+        setRoomId(e);
+    }
 
     const displayDetails = (props) => {
         if (room.length > 0) {
@@ -28,15 +38,23 @@ const Rooms = (props) => {
                     if (id == room.hotel_id) {
                         return (
                             <>
-                                <div className='d-flex flex-column rooms-card'>
+                                <div className='d-flex flex-column rooms-card'
+                                    onClick={() => {setChangeRoom(true); handleClick(room); }}
+                                >
                                     <h3 className='text-capitalize'>{room.room_type}</h3>
                                     <span className='m-auto h6'><FontAwesomeIcon icon={faBed} className='rooms-icon' />{beds}</span>
                                     <span className='m-auto'>No. of Sleeps : 0{room.sleeps}</span>
+                                    <span className='m-auto'>{room.size_length}m x {room.size_width}m</span>
                                     <span className='m-auto'><FontAwesomeIcon icon={faWifi} className='rooms-icon' />{room.facility}</span>
                                     <span className='m-auto'>{room.food} included</span>
                                     <div className='rooms-price'>
                                         <span className='rooms-price-span h4'>LKR {room.amount} /= </span>
                                     </div>
+                                    <ChangeRoom
+    	                                show={changeRoom}
+                                        onHide={() => setChangeRoom(false)}
+                                        roomId={roomId}
+                                    />
                                 </div>
                             </>
                         )

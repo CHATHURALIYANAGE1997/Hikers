@@ -14,11 +14,11 @@ import {
 const pdata = [
 	{
 		name: 'Jan',
-		orders: 58
+		orders: 8
 	},
 	{
 		name: 'Feb',
-		orders: 12
+		orders: 7
 	},
 	{
 		name: 'Mar',
@@ -30,15 +30,14 @@ const pdata = [
 	},
 	{
 		name: 'May',
-		orders: 23
+		orders: 12
 	},
 	{
 		name: 'Jun',
-		orders: 32
+		orders: 10
 	},
 	{
 		name: 'Jul',
-		travelers: 10,
 		orders: 5
 	},
 	{
@@ -55,11 +54,11 @@ const pdata = [
 	},
 	{
 		name: 'Nov',
-		orders: 31
+		orders: ''
 	},
 	{
 		name: 'Dec',
-		orders: 25
+		orders: ''
 	},
 ];
 

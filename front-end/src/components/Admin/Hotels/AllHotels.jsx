@@ -20,6 +20,12 @@ export default function AllHotels(props) {
 
         const { notes } = props;
 
+        const [hotelId, setHotelId] = useState('');
+
+        const handleHotelClick = (e) => {
+            setHotelId(e);
+        }
+
         if (notes.length > 0) {
             return (
                 notes.map((note, index) => {
@@ -34,7 +40,7 @@ export default function AllHotels(props) {
                                 <HotelShowModal
                                     show={modalShow}
                                     onHide={() => setModalShow(false)}
-
+                                    hotelId={note}
                                 />
                                 <div>
                                     <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
