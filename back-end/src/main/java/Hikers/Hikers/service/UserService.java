@@ -54,5 +54,8 @@ public interface UserService {
     ResponseEntity<?> RejectGuideByAdmin(String code);
 
     ResponseEntity<?> verifyGuideByAdmin(String code);
-}
 
+    ResponseEntity<?> suggetionguide();
+
+    ResponseEntity<?> suggetiontransport();
+}
