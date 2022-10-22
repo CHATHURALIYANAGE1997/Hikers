@@ -4,18 +4,17 @@ import Hikers.Hikers.cons.Hcons;
 import Hikers.Hikers.model.Transportprovider;
 import Hikers.Hikers.rest.TransportproviderRest;
 import Hikers.Hikers.service.TraProviderService;
-import Hikers.Hikers.utils.Hutils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
-
-@RestController("/transport")
+@RestController
 public class TransportproviderRestImpl implements TransportproviderRest {
 
     @Autowired
@@ -40,4 +39,16 @@ public class TransportproviderRestImpl implements TransportproviderRest {
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @Override
+    public ResponseEntity<?> addratetotranspoter(String code, Map<String, String> requestMap) {
+            try{
+                return traProviderService.addratetotranspoter(code,requestMap);
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+            return new ResponseEntity(new ArrayList<>(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+
 }
