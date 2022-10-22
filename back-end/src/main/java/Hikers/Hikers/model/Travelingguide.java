@@ -75,4 +75,15 @@ public class Travelingguide implements Serializable {
     @Lob
     private byte[] data;
 
+    private int security;
+
+    private int punctuality;
+
+    private int communication;
+
+    private int domainknowledge;
+
+    private int overrall;
+
+    private int count;
 }
