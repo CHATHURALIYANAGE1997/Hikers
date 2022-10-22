@@ -9,6 +9,7 @@ import com.sun.net.httpserver.Authenticator;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -72,6 +73,19 @@ public interface UserRest {
     
     @PostMapping(path="/uploadFile")
     public  ResponseEntity<?> uploadprofile(@RequestParam("file") MultipartFile file);
+
+    @GetMapping(path="/verifyGuideByAdmin/{code}")
+    public  ResponseEntity<?> verifyGuideByAdmin(@PathVariable String code);
+
+    @GetMapping(path="/RejectGuideByAdmin/{code}")
+    public  ResponseEntity<?> RejectGuideByAdmin(@PathVariable String code);
+
+    @GetMapping(path="/verifyEquproviderByAdmin/{code}")
+    public  ResponseEntity<?> verifyEquproviderByAdmin(@PathVariable String code);
+
+    @GetMapping(path="/RejectEquproviderByAdmin/{code}")
+    public  ResponseEntity<?> RejectEquproviderByAdmin(@PathVariable String code);
+
 }
 
 
