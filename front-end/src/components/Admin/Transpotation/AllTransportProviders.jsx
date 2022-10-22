@@ -18,6 +18,12 @@ export default function AllTransportProviders(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [transporterId, setTransporterId] = useState('');
+
+    const handleTransporterClick = (e) => {
+        setTransporterId(e);
+    }
+
     const displayTransport = (props) => {
 
         const { transports } = props;
@@ -32,10 +38,11 @@ export default function AllTransportProviders(props) {
                                 <div>
                                     <img src={kasun} className="all-transporter-profile-img" alt="Profile Picture"></img>
                                     <span className="all-transpotation-provider-name">{transports.firstname} {" "} {transports.lastname} - {transports.province}</span>
-                                    <button onClick={() => setModalShow(true)} className="all-articles-see-more-btn">see more..</button>
+                                    <button onClick={() => {setModalShow(true); handleTransporterClick(transports);}} className="all-articles-see-more-btn">see more..</button>
                                     <TransporterShowModal
                                         show={modalShow}
                                         onHide={() => setModalShow(false)}
+                                        transporterId={transporterId}
                                     />
                                 </div>
                                 <div className="all-hotels-icons">

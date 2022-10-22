@@ -164,7 +164,7 @@ const AdminAddTransporter = (props) => {
                                         <Form.Control type="file" className="form-control" value={user.vehicleimg} onChange={credentialChange} name="vehicleimg"/>
                                     </Form.Group>
 
-                                    <Button variant="primary" type="submit" type="submit" type="button" variant="success" onClick={addTransport} className='w-50'>
+                                    <Button variant="primary" type="submit" onClick={addTransport} className='w-50'>
                                         Submit
                                     </Button>
                                 </div>
