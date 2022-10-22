@@ -64,5 +64,12 @@ public class Transportprovider implements Serializable {
     @Column(name = "verification_code", length = 80)
     private String verificationCode;
 
+    private String fileName;
+
+    private String fileType;
+
+    @Lob
+    private byte[] data;
+
 }
 
