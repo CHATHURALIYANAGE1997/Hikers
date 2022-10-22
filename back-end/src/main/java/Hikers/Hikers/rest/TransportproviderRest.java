@@ -5,12 +5,10 @@ import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Hotelbooking;
 import Hikers.Hikers.model.Transportprovider;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -23,4 +21,6 @@ public interface TransportproviderRest {
     @GetMapping(path = "/getTransporter/{email}")
     public ResponseEntity<Optional<Transportprovider>> getTrasnporter(@PathVariable String email);
 
+    @PostMapping(path="/addratetotranspoter/{code}")
+    public ResponseEntity<?> addratetotranspoter(@PathVariable String code,@RequestBody(required=true) Map<String, String> requestMap);
 }
