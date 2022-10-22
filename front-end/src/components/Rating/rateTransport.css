@@ -1,0 +1,12 @@
+.transporthead{
+color:black;
+}
+.transportsubhead{
+    color:rgb(66, 66, 66);
+    text-align: right;
+    font-size:medium;
+}
+.selectionsrating{
+    padding-right: 5%;
+    padding-top: 3%;
+}
