@@ -44,10 +44,10 @@ function GuideRequests(props) {
         const url1 = path1.concat(email);
 
         useEffect(() => {
-            acceptRegistration();
+            rejectRegistration();
         },[]);
 
-        const acceptRegistration = () => {
+        const rejectRegistration = () => {
             axios.get(url1, {
                 Headers: { Authorization: `Bearer ${accessToken}` }
             }).then((response) => {
@@ -135,8 +135,8 @@ function GuideRequests(props) {
                                             </div>
                                         </div>
                                         <div className="d-flex flex-row justify-content-between w-50">
-                                            <button onClick={() => handleAccept()} className="reject-btn">Reject</button>
-                                            <button onClick={() => handleReject()} className="accept-btn">Accept</button>
+                                            <button onClick={() => handleReject()} className="reject-btn">Reject</button>
+                                            <button onClick={() => handleAccept()} className="accept-btn">Accept</button>
                                         </div>
                                     </div>
                                 </Collapse>
