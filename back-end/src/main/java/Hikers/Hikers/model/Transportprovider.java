@@ -71,5 +71,16 @@ public class Transportprovider implements Serializable {
     @Lob
     private byte[] data;
 
+    private int navigationcapacity;
+
+    private int security;
+
+    private int punctuality;
+
+    private int neatandtidy;
+
+    private int overrall;
+
+    private int count;
 }
 
