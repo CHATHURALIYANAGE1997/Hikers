@@ -97,6 +97,15 @@ public interface UserRest {
 
     @PostMapping(path="/replay/{code}")
     public ResponseEntity<?> replay(@PathVariable Long code ,@RequestBody(required=true) Map<String, String> requestMap);
+
+    @PostMapping(path="/volientier")
+    public ResponseEntity<?> volientier(@RequestBody(required=true) Map<String, String> requestMap);
+
+    @GetMapping(path="/getvolientiers")
+    public ResponseEntity<?> getvolientiers();
+
+    @PostMapping(path="/volientierprograms")
+    public ResponseEntity<?> volientierprograms(@RequestBody(required=true) Map<String, String> requestMap);
 }
 
 
