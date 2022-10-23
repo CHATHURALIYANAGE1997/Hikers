@@ -20,12 +20,12 @@ const forumQuestion = () => {
                             <div class="col-4">
                                 <input type="text" class="form-control" />
                             </div>
-                            <div class="col-2">
+                            {/* <div class="col-2">
                                 <label for="email">Email</label>
                             </div>
                             <div class="col-4">
                                 <input type="email" class="form-control" />
-                            </div>
+                            </div> */}
                             <div class="col-2">
                                 <label for="address">Address</label>
                             </div>
