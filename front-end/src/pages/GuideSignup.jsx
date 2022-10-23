@@ -48,6 +48,101 @@ const GuideSignup = (props) => {
     const dispatch = useDispatch();
 
     const guideSignups = () => {
+        var NICNo =user.nic;
+        var dayText = 0;
+        var year = "";
+        var month = "";
+        var day = "";
+        var gender = "";
+
+        if (NICNo.length != 10 && NICNo.length != 12) {
+            setShow(true);
+            resetLoginForm();
+            setError("Invalid nic");
+        }else {
+            // Year
+            if (NICNo.length == 10) {
+                year = "19" + NICNo.substr(0, 2);
+                dayText = parseInt(NICNo.substr(2, 3));
+            } else {
+                year = NICNo.substr(0, 4);
+                dayText = parseInt(NICNo.substr(4, 3));
+            }
+
+            // Gender
+            if (dayText > 500) {
+                gender = "female";
+                dayText = dayText - 500;
+            } else {
+                gender = "male";
+            }
+
+            // Day Digit Validation
+            if (dayText < 1 && dayText > 366) {
+                setShow(true);
+                resetLoginForm();
+                setError("Invalid nic");
+            } else {
+
+                //Month
+                if (dayText > 335) {
+                    day = dayText - 335;
+                    month = 12;
+                }
+                else if (dayText > 305) {
+                    day = dayText - 305;
+                    month = 11;
+                }
+                else if (dayText > 274) {
+                    day = dayText - 274;
+                    month = 10;
+                }
+                else if (dayText > 244) {
+                    day = dayText - 244;
+                    month = 9;
+                }
+                else if (dayText > 213) {
+                    day = dayText - 213;
+                    month = 8;
+                }
+                else if (dayText > 182) {
+                    day = dayText - 182;
+                    month = 7;
+                }
+                else if (dayText > 152) {
+                    day = dayText - 152;
+                    month = 6;
+                }
+                else if (dayText > 121) {
+                    day = dayText - 121;
+                    month = 5;
+                }
+                else if (dayText > 91) {
+                    day = dayText - 91;
+                    month = 4;
+                }
+                else if (dayText > 60) {
+                    day = dayText - 60;
+                    month = 3;
+                }
+                else if (dayText < 32) {
+                    month = 1;
+                    day = dayText;
+                }
+                else if (dayText > 31) {
+                    day = dayText - 31;
+                    month = 2;
+                }
+
+                console.log(year);
+                console.log(month);
+                console.log(day);
+                user.dob=year.concat("-",month,"-",day)
+                user.gender=gender;
+                console.log(user.gender);
+                console.log(user.dob);
+            }
+        }
         dispatch(GuideSignupnew(user)).then((response) => {
             resetLoginForm();
             setShow(true);
