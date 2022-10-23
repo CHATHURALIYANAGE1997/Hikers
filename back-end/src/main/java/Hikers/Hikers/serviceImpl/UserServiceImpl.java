@@ -442,7 +442,10 @@ public class UserServiceImpl implements UserService {
                 Collections.sort(transportproviders, new Comparator<Transportprovider>() {
                     @Override
                     public int compare(Transportprovider o1, Transportprovider o2) {
-                        return o1.getOverrall().compareTo(o2.getOverrall());
+                        if((o1.getOverrall() != null) && (o2.getOverrall() != null)) {
+                            return o1.getOverrall().compareTo(o2.getOverrall());
+                        }
+                        return 0;
                     }
                 });
                 System.out.println(transportproviders);
