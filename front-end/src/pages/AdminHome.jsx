@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import AdminHeader from "../components/Admin/AdminHeader/AdminHeader";
 import AdminNav from "../components/Admin/AdminNavBar/AdminNav";
 import IncomeChart from "../components/Admin/Home/IncomeChart";
+import MostTrippedCustomer from "../components/Admin/Home/MostTrippedCustomers";
 import OverViewChart from "../components/Admin/Home/OverviewChart";
 import PopularPlaces from "../components/Admin/Home/PopularPlaces";
 import ValuableCustomer from "../components/Admin/Home/ValuableCustomer";
@@ -36,15 +37,16 @@ const AdminHome = (props) => {
                 <AdminHeader />
                 <div className="d-flex flex-row w-100 admin-page-content">
                     <AdminNav />
-                    <div className="d-flex flex-column home-container">
-                        <div className="d-flex flex-row">
-                            <OverViewChart />
-                            <PopularPlaces />
-                        </div>
-                        <div className="d-flex flex-row">
+                    <div className="d-flex flex-column home-container w-100">
+                        <div className="d-flex flex-column w-100">
                             <IncomeChart />
-                            <ValuableCustomer />
                         </div>
+                        <h4 className="admin-hotel-top">Most Valuable Customers</h4>
+                        <div className="d-flex flex-row">
+                            <ValuableCustomer />
+                            <MostTrippedCustomer />
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -52,8 +54,8 @@ const AdminHome = (props) => {
     }
     else {
         localStorage.clear();
-      //  return props.history.push("/login");
-        {return <div><NotFoundPage/></div>}
+        //  return props.history.push("/login");
+        { return <div><NotFoundPage /></div> }
 
         // return props.history.push("/login");
     }

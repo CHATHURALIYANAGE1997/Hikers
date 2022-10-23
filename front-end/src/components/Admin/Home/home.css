@@ -42,3 +42,21 @@
 .valuable-customers {
     margin-bottom: 5px;
 }
+
+.valubale-customer-container {
+    margin-right: 10px !important;
+    padding-right: 10px;
+}
+
+.vc-bold {
+    font-weight: bold;
+}
+
+.admin-hotel-top {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.transport-income-title {
+    text-align: left !important;
+}

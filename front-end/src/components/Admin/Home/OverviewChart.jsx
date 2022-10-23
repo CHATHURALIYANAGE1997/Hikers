@@ -66,9 +66,9 @@ function OverViewChart() {
 	return (
 
 		<div className="overview-chart">
-			<h3 className="text-heading overview-chart-title-description">
+			<h4 className="text-heading overview-chart-title-description">
 				Overall Trip Orders
-			</h3>
+			</h4>
 			<ResponsiveContainer width="100%" aspect={3} className="overview-chart-container">
 				<LineChart data={pdata} margin={{ right: 300 }}>
 					<CartesianGrid />

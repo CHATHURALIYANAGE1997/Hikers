@@ -10,12 +10,12 @@ import pramith from './pramith.jfif';
 
 const ValuableCustomer = () => {
     return (
-        <div className="d-flex flex-column popular-places-container">
-            <h5>Most Valuable Customer</h5>
+        <div className="d-flex flex-column popular-places-container w-50 valubale-customer-container">
+
             <div className="d-flex flex-row justify-content-between valuable-customers">
-                <span className="popular-places-province ">Image</span>
-                <span className="popular-places-province">Name</span>
-                <span className="popular-places-province">Spent Amount</span>
+                <span className="popular-places-province vc-bold">Image</span>
+                <span className="popular-places-province vc-bold">Name</span>
+                <span className="popular-places-province vc-bold">Spent Amount</span>
             </div>
             <div className="d-flex flex-row justify-content-between valuable-customers">
                 <img src={avishi} className="valuable-customer-profile-img" alt="Profile Picture"></img>

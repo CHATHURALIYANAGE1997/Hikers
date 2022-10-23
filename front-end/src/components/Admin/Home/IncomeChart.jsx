@@ -65,8 +65,8 @@ const pdata = [
 function IncomeChart() {
 	return (
 
-		<div className="overview-chart">
-			<h3 className="text-heading overview-chart-title-description">
+		<div className="hotel-income-chart">
+			<h3 className="text-heading overview-chart-title-description transport-income-title">
 				Overall Income
 			</h3>
 			<ResponsiveContainer width="100%" aspect={3}>
