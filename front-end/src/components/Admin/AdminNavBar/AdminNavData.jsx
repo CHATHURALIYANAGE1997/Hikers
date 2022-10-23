@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faHotel, faTaxi, faNewspaper, faTent, faClock, faUser, faPerson} from '@fortawesome/free-solid-svg-icons'
+import { faHome, faHotel, faTaxi, faNewspaper, faTent, faClock, faUser, faPerson, faHandshakeAngle} from '@fortawesome/free-solid-svg-icons'
 
 export const AdminNavData = [
     {
@@ -39,9 +39,9 @@ export const AdminNavData = [
         link: "/admin/registrations"
     },
     {
-        title: "Camping Equipemnts",
-        icon: <FontAwesomeIcon icon={faTent}/>,
-        link: "/admin/campingequipemnts"
+        title: "Volunteers",
+        icon: <FontAwesomeIcon icon={faHandshakeAngle}/>,
+        link: "/admin/volunteers"
     }    
     
 ]
