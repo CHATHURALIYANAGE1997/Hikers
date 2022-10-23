@@ -62,4 +62,10 @@ public interface UserService {
     ResponseEntity<?> askque(Map<String, String> requestMap);
 
     ResponseEntity<?> replay(Long code,Map<String, String> requestMap);
+
+    ResponseEntity<?> volientier(Map<String, String> requestMap);
+
+    ResponseEntity<?> getvolientiers();
+
+    ResponseEntity<?> volientierprograms(Map<String, String> requestMap);
 }
