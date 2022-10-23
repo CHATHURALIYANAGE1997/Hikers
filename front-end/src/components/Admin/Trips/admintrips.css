@@ -4,3 +4,11 @@
     width: 200px;
     border-radius: 4px !important;
 }
+
+.trip-request-suggest{
+    font-weight: bold !important;
+}
+
+.guide-option-overall {
+    font-style: italic;
+}

@@ -6,21 +6,16 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import Collapse from 'react-bootstrap/Collapse';
-import axios from "axios";
 import { useEffect } from "react";
+import axios from "axios";
 
-
-function TrnasportOption(props) {
+function GuideOption(props) {
 
     const accessToken = localStorage.jwtToken;
 
-    const [open, setOpen] = useState(false);
+    const url2 = 'http://localhost:8080/travelingguide/getAllGuide';
 
-    const { details } = props;
-
-    const url2 = 'http://localhost:8080/transport/gettransport';
-
-    const [transporter, setTransporter] = useState('');
+    const [guide, setGuide] = useState('');
 
     useEffect(() => {
         getAllTransporters();
@@ -30,23 +25,22 @@ function TrnasportOption(props) {
         axios.get(url2, {
             headers: { Authorization: `Bearer ${accessToken}` }
         }).then((response) => {
-            const allTransporters = response.data;
-            setTransporter(allTransporters);
+            const allGuide = response.data;
+            setGuide(allGuide);
         }).catch((error) => {
             console.log(error);
         })
     }
 
-
     const displayDetails = (props) => {
 
-        if (transporter.length > 0) {
+        if (guide.length > 0) {
             return (
-                transporter.map((transporter, index) => {
-                    //console.log(transporter);
+                guide.map((guide, index) => {
+                    //console.log(guide);
                     //console.log(index);
                     return (
-                        <option value={index}>{transporter.firstname} {" "} {transporter.lastname}</option>
+                        <option value={index}>{guide.firstname} {" "} {guide.lastname}</option>
                     );
                 })
             )
@@ -63,4 +57,4 @@ function TrnasportOption(props) {
 
 }
 
-export default TrnasportOption;
+export default GuideOption;

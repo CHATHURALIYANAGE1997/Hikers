@@ -31,7 +31,7 @@ export default function AllGuider(props) {
         if (guiders.length > 0) {
             return (
                 guiders.map((guiders, index) => {
-                    if (guiders.accountstatus == "true") {
+                    if (guiders.accountstatus == "ture") {
                         return (
                             <>
                                 <div className="d-flex flex-row justify-content-between all-hotels-hotel">

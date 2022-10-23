@@ -6,38 +6,17 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import Collapse from 'react-bootstrap/Collapse';
-import Option from "./Option";
+import GuideOption from "./GuideOption";
 import TransportOption from "./TransportOption";
 import axios from "axios";
 import authToken from "../../../utils/authToken";
 import { useSelector } from "react-redux";
+import SuggestGuide from "./SuggestGuide";
+import SuggestTransporter from "./SuggestTransporter";
 
 function TripRequest(props) {
 
-    const accessToken = localStorage.jwtToken;
-
     const [open, setOpen] = useState(false);
-
-    const { details } = props;
-
-    const url2 = 'http://localhost:8080/transport/gettransport';
-
-    const [transporter, setTransporter] = useState('');
-
-    useEffect(() => {
-        getAllTransporters();
-    }, []);
-
-    const getAllTransporters = () => {
-        axios.get(url2, {
-            headers: { Authorization: `Bearer ${accessToken}` }
-        }).then((response) => {
-            const allTransporters = response.data;
-            setTransporter(allTransporters);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }
 
     return (
         <div className="d-flex flex-column guide-request-container">
@@ -100,22 +79,30 @@ function TripRequest(props) {
                         <div className="d-flex flex-column mt-3">
                             <h5>Assign Travel Guide</h5>
                             <div className="">
-                                <label>Suggestion : </label>
+                                <label>Assign : </label>
                                 <select className="option-input" name="guide">
-                                    <Option details={details} />
+                                    <GuideOption />
                                 </select>
+                                <div className="w-50 mb-2 d-flex flex-column">
+                                    <label className="mb-2 font-weight-bold text-info trip-request-suggest">Suggestions : </label>
+                                    <SuggestGuide />
+                                </div>
                             </div>
                         </div>
                         <div className="d-flex flex-column mt-3">
                             <h5>Assign Transport Service Provider</h5>
                             <div className="">
-                                <label>Suggestion : </label>
+                                <label>Assign : </label>
                                 <select className="option-input" name="transporter">
-                                    <TransportOption transporter={transporter} />
+                                    <TransportOption />
                                 </select>
+                                <div className="w-50 mb-2 d-flex flex-column">
+                                    <label className="mb-2 font-weight-bold text-info trip-request-suggest">Suggestions : </label>
+                                    <SuggestTransporter />
+                                </div>
                             </div>
                         </div>
-                        <div className="d-flex flex-row justify-content-between w-100 mt-3">
+                        <div className="d-flex flex-row justify-content-between w-75 mt-3">
                             <button className="reject-btn">Reject</button>
                             <button className="accept-btn">Accept</button>
                         </div>
