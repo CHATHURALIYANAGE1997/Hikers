@@ -78,7 +78,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private JavaMailSender mailSender;
 
+    @Autowired
+    private VolientierRepo volientierRepo;
 
+    @Autowired VolientierprogramsRepo volientierprogramsRepo;
 
     @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
@@ -481,6 +484,75 @@ public class UserServiceImpl implements UserService {
         }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @Override
+    public ResponseEntity<?> volientier(Map<String, String> requestMap) {
+        try {
+           Volientier volientier=new Volientier();
+           volientier.setName(requestMap.get("name"));
+           volientier.setEmail(requestMap.get("email"));
+           volientier.setContactnumber(requestMap.get("contactnumber"));
+           volientierRepo.save(volientier);
+            return Hutils.getResponseEntity("Successfully add volientier", HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> getvolientiers() {
+        try {
+            List<Volientier> volientiers=volientierRepo.findAll();
+            return new ResponseEntity(volientiers,HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> volientierprograms(Map<String, String> requestMap) {
+        try {
+            VolientierPrograms volientierPrograms=new VolientierPrograms();
+            volientierPrograms.setTime(requestMap.get("time"));
+            volientierPrograms.setDate(requestMap.get("date"));
+            volientierPrograms.setPlace(requestMap.get("place"));
+            volientierprogramsRepo.save(volientierPrograms);
+
+            String str1 = "We have organice a volientier program. We are wellcome you.place :";
+            str1 = str1.concat(requestMap.get("place"));
+            str1 = str1.concat(".");
+            str1 = str1.concat("time :");
+            str1 = str1.concat(requestMap.get("time"));
+            str1 = str1.concat(".");
+            str1 = str1.concat("date :");
+            str1 = str1.concat(requestMap.get("date"));
+            str1 = str1.concat(".");
+
+            List<Volientier> volientiers=volientierRepo.findAll();
+            int size=volientiers.size();
+            for(int i=0;i<size;i++){
+               String email=volientiers.get(i).getEmail();
+                sendEmailToVolientiers(email,str1);
+            }
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    private void sendEmailToVolientiers(String email,String messge) throws MessagingException, UnsupportedEncodingException {
+        String toAddress = email;
+        MimeMessage msg = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+        helper.setTo(toAddress);
+        helper.setSubject("Hikers volientier program");
+        helper.setText(messge, true);
+        mailSender.send(msg);
+    }
+
 
 //    private void sendReplay(Optional<Question> question, String messge)  throws MessagingException, UnsupportedEncodingException {
 //        if(question.isEmpty()){
