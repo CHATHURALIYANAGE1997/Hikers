@@ -13,6 +13,12 @@ function GuideOption(props) {
 
     const accessToken = localStorage.jwtToken;
 
+    //Trip province
+    let province = "Southern";
+
+    //Trip date
+    let tripdate = '10-10-2022';
+
     const url2 = 'http://localhost:8080/travelingguide/getAllGuide';
 
     const [guide, setGuide] = useState('');
@@ -39,9 +45,11 @@ function GuideOption(props) {
                 guide.map((guide, index) => {
                     //console.log(guide);
                     //console.log(index);
-                    return (
-                        <option value={index}>{guide.firstname} {" "} {guide.lastname}</option>
-                    );
+                    if (guide.province == province) {
+                        return (
+                            <option value={index}>{guide.firstname} {" "} {guide.lastname}</option>
+                        );
+                    }
                 })
             )
         }

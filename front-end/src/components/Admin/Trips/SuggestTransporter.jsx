@@ -13,6 +13,12 @@ function SuggestTransporter(props) {
 
     const accessToken = localStorage.jwtToken;
 
+    //Trip province
+    let province = "Southern";
+
+    //Trip date
+    let tripdate = '10-10-2022';
+
     const url2 = 'http://localhost:8080/user/suggetiontransport';
 
     const [transport, setTransport] = useState('');
@@ -38,22 +44,24 @@ function SuggestTransporter(props) {
         if (transport.length > 0) {
             return (
                 transport.slice(0)
-                .reverse().map((transport, index) => {
-                    //console.log(transport);
-                    //console.log(index);
-                    return (
-                        <div className="d-flex flex-column w-100 mb-2">
-                            <label className="mr-2 trip-request-suggest" value={index}>{transport.firstname} {" "} {transport.lastname}</label>
-                            <label className="guide-option-overall">Overall Ratings : {transport.overrall}</label>
-                            <div className="ml-3 d-flex flex-row w-100">
-                                <label className="mr-2 w-25">Punctuality - {transport.securityoverrall}</label>
-                                <lable className="mr-2 w-25">Security - {transport.neatandtidyoverrall}</lable>
-                                <label className="mr-2 w-25">Communication - {transport.navigationcapacityoverrall}</label>
-                                <label className="mr-2 w-25">Domain knowledge - {transport.punctualityoverrall}</label>
-                            </div>
-                        </div>
-                    );
-                })
+                    .reverse().map((transport, index) => {
+                        //console.log(transport);
+                        //console.log(index);
+                        if (transport.province == province) {
+                            return (
+                                <div className="d-flex flex-column w-100 mb-2">
+                                    <label className="mr-2 trip-request-suggest" value={index}>{transport.firstname} {" "} {transport.lastname}</label>
+                                    <label className="guide-option-overall">Overall Ratings : {transport.overrall}</label>
+                                    <div className="ml-3 d-flex flex-row w-100">
+                                        <label className="mr-2 w-25">Punctuality - {transport.securityoverrall}</label>
+                                        <lable className="mr-2 w-25">Security - {transport.neatandtidyoverrall}</lable>
+                                        <label className="mr-2 w-25">Communication - {transport.navigationcapacityoverrall}</label>
+                                        <label className="mr-2 w-25">Domain knowledge - {transport.punctualityoverrall}</label>
+                                    </div>
+                                </div>
+                            );
+                        }
+                    })
             )
         }
     }

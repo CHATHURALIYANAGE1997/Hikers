@@ -18,6 +18,12 @@ function TrnasportOption(props) {
 
     const { details } = props;
 
+    //Trip province
+    let province = "Southern";
+
+    //Trip date
+    let tripdate = '10-10-2022';
+
     const url2 = 'http://localhost:8080/transport/gettransport';
 
     const [transporter, setTransporter] = useState('');
@@ -45,9 +51,11 @@ function TrnasportOption(props) {
                 transporter.map((transporter, index) => {
                     //console.log(transporter);
                     //console.log(index);
-                    return (
-                        <option value={index}>{transporter.firstname} {" "} {transporter.lastname}</option>
-                    );
+                    if (transporter.province == province) {
+                        return (
+                            <option value={index}>{transporter.firstname} {" "} {transporter.lastname}</option>
+                        );
+                    }
                 })
             )
         }
