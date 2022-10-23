@@ -412,7 +412,10 @@ public class UserServiceImpl implements UserService {
                 Collections.sort(travelingguides, new Comparator<Travelingguide>() {
                     @Override
                     public int compare(Travelingguide o1, Travelingguide o2) {
-                        return o1.getOverrall().compareTo(o2.getOverrall());
+                        if((o1.getOverrall() != null) && (o2.getOverrall() != null)) {
+                            return o1.getOverrall().compareTo(o2.getOverrall());
+                        }
+                        return 0;
                     }
                 });
                 System.out.println(travelingguides);
@@ -1044,6 +1047,7 @@ public class UserServiceImpl implements UserService {
         travelingguide.setRole(requestMap.get("role"));
         travelingguide.setContactNumber(requestMap.get("contactNumber"));
         travelingguide.setAccountstatus(requestMap.get("accountstatus"));
+        travelingguide.setProvince(requestMap.get("province"));
         String randomCode = RandomString.make(72);
         travelingguide.setVerificationCode(randomCode);
         return travelingguide;
