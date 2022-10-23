@@ -388,7 +388,7 @@ public class UserServiceImpl implements UserService {
    public ResponseEntity<?> verifyGuideByAdmin(String code) {
         try {
             Travelingguide travelingguide=travelingguideRepo.findByEmail(code);
-            travelingguide.setAccountstatus("true");
+            travelingguide.setAccountstatus("ture");
             travelingguideRepo.save(travelingguide);
             return Hutils.getResponseEntity("Account status update successfully", HttpStatus.OK);
         }catch (Exception ex){
