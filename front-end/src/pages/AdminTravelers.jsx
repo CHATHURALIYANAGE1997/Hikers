@@ -18,6 +18,8 @@ const AdminTraveler = (props) => {
 
     const auth = useSelector((state) => state.auth);
 
+    const accessToken = localStorage.jwtToken;
+
     if (auth.isLoggedIn === true && auth.role === "Admin") {
 
         const accessToken = localStorage.jwtToken;

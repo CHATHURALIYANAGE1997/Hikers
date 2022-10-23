@@ -4,67 +4,74 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Collapse from 'react-bootstrap/Collapse';
 import { useEffect } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import authToken from "../../../utils/authToken";
+import { Alert } from "react-bootstrap";
 
 function GuideRequests(props) {
+
+    if (localStorage.jwtToken) {
+        authToken(localStorage.jwtToken);
+    }
+
+    const auth = useSelector((state) => state.auth);
 
     const { guiders } = props;
 
     const [open, setOpen] = useState(false);
 
+    //const accessToken = localStorage.jwtToken;
+
+    //console.log(accessToken);
+
+    const [error, setError] = useState();
+    const [show, setShow] = useState(true);
+
     const accessToken = localStorage.jwtToken;
 
-    const handleAccept = () => {
-        let email = localStorage.username;
-        let path1 = 'http://localhost:8080/verifyGuideByAdmin/';
-        const url1 = path1.concat(email);
+    const dispatch = useDispatch();
 
-        useEffect(() => {
-            acceptRegistration();
-        },[]);
-
-        const acceptRegistration = () => {
-            axios.get(url1, {
-                Headers: { Authorization: `Bearer ${accessToken}` }
-            }).then((response) => {
-                const status = response.data;
-                console.log(status);
-            }).catch((error) => {
-                console.log(error);
-            })
-        }
+    const acceptRegistration = (e) => {
+        const url1 = `http://localhost:8080/user/verifyGuideByAdmin/${e}`;
+        axios.get(url1, {
+            headers: { Authorization: `Bearer ${accessToken}` },
+        }).then((response) => {
+            setShow(true);
+            setError("Successfully registered");
+            //console.log(response);
+            console.log("success");
+        }).catch((error) => {
+            setShow(true);
+            setError("Registration declined");
+            console.log(error);   
+        })
     }
 
-    const handleReject = () => {
-        let email = localStorage.username;
-        let path1 = 'http://localhost:8080/RejectGuideByAdmin/';
-        const url1 = path1.concat(email);
 
-        useEffect(() => {
-            rejectRegistration();
-        },[]);
-
-        const rejectRegistration = () => {
-            axios.get(url1, {
-                Headers: { Authorization: `Bearer ${accessToken}` }
-            }).then((response) => {
-                const status = response.data;
-                console.log(status);
-            }).catch((error) => {
-                console.log(error);
-            })
-        }
+    const rejectRegistration = (e) => {
+        const url2 = `http://localhost:8080/user/RejectGuideByAdmin/${e}`;
+        axios.get(url2, {
+            headers: { Authorization: `Bearer ${accessToken}` },
+        }).then((response) => {
+            setShow(true);
+            setError("Successfully registered");
+        }).catch((error) => {
+            console.log(error);
+            console.log("decline");
+        })
     }
+
 
     const displayDetails = (props) => {
         if (guiders.length > 0) {
             return (
-                guiders.map((guiders, index) => {  
-                    if (guiders.accountstatus !== "true") {
-                        console.log(guiders);
+                guiders.map((guiders, index) => {
+                    if (guiders.accountstatus == "false") {
+                        //console.log(guiders);
                         return (
                             <div className="d-flex flex-column guide-request-guide">
                                 <div className="d-flex flex-row">
@@ -135,8 +142,8 @@ function GuideRequests(props) {
                                             </div>
                                         </div>
                                         <div className="d-flex flex-row justify-content-between w-50">
-                                            <button onClick={() => handleReject()} className="reject-btn">Reject</button>
-                                            <button onClick={() => handleAccept()} className="accept-btn">Accept</button>
+                                            <button onClick={() => {rejectRegistration(guiders.email)}} type="submit" type="button" className="reject-btn">Reject</button>
+                                            <button onClick={() => { acceptRegistration(guiders.email) }} type="submit" type="button" className="accept-btn">Accept</button>
                                         </div>
                                     </div>
                                 </Collapse>
