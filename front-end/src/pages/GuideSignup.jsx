@@ -34,6 +34,7 @@ const GuideSignup = (props) => {
         accountstatus:"false",
         prolice_report:"",
         rate:"",
+        province:"",
     };
 
     const [user, setUser] = useState(initialState);
@@ -150,17 +151,17 @@ const GuideSignup = (props) => {
                                 <input type="text" class="form-control" value={user.address} onChange={credentialChange} name="address"/>
                             </div>
                             <div class="col-2">
-                                <label for="experience">Experience</label>
+                                <label for="experience">Province</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" value={user.experience} onChange={credentialChange} name="experience"/>
+                                <input type="text" class="form-control" value={user.province} onChange={credentialChange} name="experience"/>
                             </div>
-                            <div class="col-2">
+                            {/* <div class="col-2">
                                 <label for="rate">Rate</label>
                             </div>
-                            <div class="col-4">
+                            {/* <div class="col-4">
                                 <input type="text" class="form-control" value={user.rate} onChange={credentialChange} name="rate"/>
-                            </div>
+                            </div> */}
                             <div class="col-2">
                                 <label for="rate">Police Report</label>
                             </div>

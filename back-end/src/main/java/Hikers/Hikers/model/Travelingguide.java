@@ -66,6 +66,9 @@ public class Travelingguide implements Serializable {
     @Column(name = "verification_code", length = 72)
     private String verificationCode;
 
+    @Column(name = "province")
+    private String province;
+
     private boolean enabled;
 
     private String fileName;

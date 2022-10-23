@@ -64,6 +64,9 @@ public class Transportprovider implements Serializable {
     @Column(name = "verification_code", length = 80)
     private String verificationCode;
 
+    @Column(name = "province")
+    private String province;
+
     private String fileName;
 
     private String fileType;
