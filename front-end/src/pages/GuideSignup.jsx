@@ -101,31 +101,31 @@ const GuideSignup = (props) => {
                                 <label for="fname">First Name</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" value={user.firstname} onChange={credentialChange} name="firstname"/>
+                                <input type="text" class="form-control" value={user.firstname} onChange={credentialChange} name="firstname" required/>
                             </div>
                             <div class="col-2">
                                 <label for="lname">Last Name</label>    
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" value={user.lastname} onChange={credentialChange} name="lastname"/>
+                                <input type="text" class="form-control" value={user.lastname} onChange={credentialChange} name="lastname" required/>
                             </div>
                             <div class="col-2">
                                 <label for="email">Email</label>
                             </div>
                             <div class="col-4">
-                                <input type="email" class="form-control" value={user.email} onChange={credentialChange} name="email"/>
+                                <input type="email" class="form-control" value={user.email} onChange={credentialChange} name="email" required/>
                             </div>
                             <div class="col-2">
                                 <label for="nic">NIC/Passport</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" value={user.nic} onChange={credentialChange} name="nic"/>
+                                <input type="text" class="form-control" value={user.nic} onChange={credentialChange} name="nic" required/>
                             </div>
                             <div class="col-2">
                                 <label for="gender">Gender</label>
                             </div>
                             <div class="col-4">
-                            <select class="form-control" >
+                            <select class="form-control" required>
                                 <option selected value={user.gender} onChange={credentialChange} name="gender">Select a Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -135,26 +135,26 @@ const GuideSignup = (props) => {
                                 <label for="dob">DOB</label>
                             </div>
                             <div class="col-4">
-                                <input type="date" class="form-control" placeholder="Date of Birth" value={user.dob} onChange={credentialChange} name="dob"/>
+                                <input type="date" class="form-control" placeholder="Date of Birth" value={user.dob} onChange={credentialChange} name="dob" required/>
                             </div>
                             
                             <div class="col-2">
                                 <label for="telephone">Telephone</label>
                             </div>    
                             <div class="col-4">
-                                <input type="text" class="form-control" value={user.contactNumber} onChange={credentialChange} name="contactNumber"/>
+                                <input type="text" class="form-control" value={user.contactNumber} onChange={credentialChange} name="contactNumber" required/>
                             </div>
                             <div class="col-2">
                                 <label for="address">Address</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" value={user.address} onChange={credentialChange} name="address"/>
+                                <input type="text" class="form-control" value={user.address} onChange={credentialChange} name="address" required/>
                             </div>
                             <div class="col-2">
                                 <label for="experience">Province</label>
                             </div>
                             <div class="col-4">
-                                <input type="text" class="form-control" value={user.province} onChange={credentialChange} name="experience"/>
+                                <input type="text" class="form-control" value={user.province} onChange={credentialChange} name="province" required/>
                             </div>
                             {/* <div class="col-2">
                                 <label for="rate">Rate</label>
@@ -166,25 +166,25 @@ const GuideSignup = (props) => {
                                 <label for="rate">Police Report</label>
                             </div>
                             <div class="col-4">
-                                <input type="file" class="form-control" value={user.prolice_report} onChange={credentialChange} name="prolice_report"/>
+                                <input type="file" class="form-control" value={user.prolice_report} onChange={credentialChange} name="prolice_report" required/>
                             </div>
                             <div class="col-2">
                                 <label for="rate">NIC Image</label>
                             </div>
                             <div class="col-4">
-                                <input type="file" class="form-control" value={user.nic_image} onChange={credentialChange} name="nic_image"/>
+                                <input type="file" class="form-control" value={user.nic_image} onChange={credentialChange} name="nic_image" required/>
                             </div>
                             <div class="col-2">
                                 <label for="password">Password</label>
                             </div>
                             <div class="col-4">
-                                <input type="password" class="form-control" value={user.password} onChange={credentialChange} name="password"/>
+                                <input type="password" class="form-control" value={user.password} onChange={credentialChange} name="password" required/>
                             </div>
                             <div class="col-2">
                                 <label for="confirmpassword">Confirm Password</label>
                             </div>
                             <div class="col-4">
-                                <input type="password" class="form-control" value={user.repassword} onChange={credentialChange} name="repassword"/>
+                                <input type="password" class="form-control" value={user.repassword} onChange={credentialChange} name="repassword" required/>
                             </div>
                             <br></br>
                             <div className="col-6 mt-3 mx-auto text-center loginbtn">
