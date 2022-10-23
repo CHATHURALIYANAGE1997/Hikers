@@ -319,4 +319,34 @@ public class UserRestImpl implements UserRest {
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    @Override
+    public ResponseEntity<?> volientier(Map<String, String> requestMap) {
+        try{
+            return userService.volientier(requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> getvolientiers() {
+        try{
+            return userService.getvolientiers();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> volientierprograms(Map<String, String> requestMap) {
+        try{
+            return userService.volientierprograms(requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
 }
