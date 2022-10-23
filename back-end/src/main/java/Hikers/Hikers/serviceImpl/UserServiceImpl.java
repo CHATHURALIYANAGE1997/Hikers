@@ -16,7 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 import net.bytebuddy.utility.RandomString;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -34,7 +33,6 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
-import java.util.List;
 
 
 @Slf4j
@@ -42,6 +40,12 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private ReplayRepo replayRepo;
+
+    @Autowired
+    private QuestionRepo questionRepo;
 
     @Autowired
     private HotelRepo hotelRepo;
@@ -443,6 +447,51 @@ public class UserServiceImpl implements UserService {
         }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+    @Override
+    public ResponseEntity<?> askque(Map<String, String> requestMap) {
+        try {
+            Question question=new Question();
+            question.setEmail(jwtFilter.getCurrentUser());
+            question.setName(requestMap.get("name"));
+            question.setAddress(requestMap.get("address"));
+            questionRepo.save(question);
+            return Hutils.getResponseEntity("Question Add suceesfully", HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> replay(Long code,Map<String, String> requestMap) {
+        try{
+           Replay replay=new Replay();
+           replay.setEmail(jwtFilter.getCurrentUser());
+           replay.setQid(code);
+           replay.setReplay(requestMap.get("replay"));
+           replayRepo.save(replay);
+           Optional<Question> question=questionRepo.findById(code);
+            String messge="You have a new replay to your question";
+          // sendReplay(question,messge);
+            return Hutils.getResponseEntity("Suceesfully add replay", HttpStatus.OK);
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+//    private void sendReplay(Optional<Question> question, String messge)  throws MessagingException, UnsupportedEncodingException {
+//        if(question.isEmpty()){
+//        String toAddress = question.getEmail();}
+//        MimeMessage msg = mailSender.createMimeMessage();
+//        MimeMessageHelper helper = new MimeMessageHelper(msg, true);
+//        helper.setTo(toAddress);
+//        helper.setSubject("Hikers");
+//        helper.setText(messge, true);
+//        mailSender.send(msg);
+//    }
 
     @Override
     public ResponseEntity<?> RejectGuideByAdmin(String code) {
