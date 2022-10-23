@@ -78,7 +78,7 @@ const TravelerSignup = (props) => {
                                 <div>
                                     <div class="signupbtns">
                                         <button type="button" class="signuptoggle-trbtn">Traveler</button>
-                                        <button type="button" class="signuptoggle-epbtn"><Link className="eqahref" to="/EquipmentSignup">Equipment Provider</Link></button>
+                                        {/* <button type="button" class="signuptoggle-epbtn"><Link className="eqahref" to="/EquipmentSignup">Equipment Provider</Link></button> */}
                                         <button type="button" class="signuptoggle-tgbtn"><Link className="tgahref" to="/guidesignup">Travel Guide</Link></button>
                                     </div>
                                     <br/>
