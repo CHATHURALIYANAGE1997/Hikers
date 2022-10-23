@@ -12,8 +12,8 @@ import axios from "axios";
 import HotelList from "../components/Admin/Hotels/HotelList";
 
 
-export default function AdminHotel(props){
-// const AdminHotels = (props) => {
+export default function AdminHotel(props) {
+    // const AdminHotels = (props) => {
 
     if (localStorage.jwtToken) {
         authToken(localStorage.jwtToken);
@@ -23,28 +23,28 @@ export default function AdminHotel(props){
 
     if (auth.isLoggedIn === true && auth.role === "Admin") {
 
-    const accessToken = localStorage.jwtToken;
+        const accessToken = localStorage.jwtToken;
 
-    const [notes, getNotes] = useState('');
+        const [notes, getNotes] = useState('');
 
-    const url = 'http://localhost:8080/user/gethotels';
+        const url = 'http://localhost:8080/user/gethotels';
 
-    useEffect(() => {
-        getAllNote();
-    }, []);
+        useEffect(() => {
+            getAllNote();
+        }, []);
 
-    const getAllNote = () => {
-        axios.get(url, {
-            headers: { Authorization: `Bearer ${accessToken}`}
-        }).then((response) => {
-            const allNotes = response.data;
-            getNotes(allNotes);
-            console.log(response.data[0]['name']);
-            //console.log(allNotes);
-        }).catch((error) => {
-            console.log(error);
-        })
-    }
+        const getAllNote = () => {
+            axios.get(url, {
+                headers: { Authorization: `Bearer ${accessToken}` }
+            }).then((response) => {
+                const allNotes = response.data;
+                getNotes(allNotes);
+                console.log(response.data[0]['name']);
+                //console.log(allNotes);
+            }).catch((error) => {
+                console.log(error);
+            })
+        }
 
         return (
             <div className="d-flex flex-column w-100">
@@ -52,9 +52,9 @@ export default function AdminHotel(props){
                 <div className="d-flex flex-row w-100 admin-page-content">
                     <AdminNav />
                     <div className="d-flex flex-column home-container">
-                        <div className="d-flex flex-row">
+                        <div className="d-flex flex-row w-100">
                             <HotelList notes={notes} />
-                            <PopularHotels />
+                            {/* <PopularHotels /> */}
                         </div>
                         <div className="d-flex flex-row">
                             <HotelIncome />

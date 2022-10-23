@@ -43,7 +43,7 @@ export default function AllHotels(props) {
                                     hotelId={hotelId}
                                 />
                                 <div>
-                                    <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
+                                    {/* <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" /> */}
                                     <FontAwesomeIcon icon={faTrashCan} onClick={handleShow} className="all-hotels-edit-icon" />
                                 </div>
                                 <Modal show={show} onHide={handleClose}>

@@ -21,7 +21,7 @@ export default function HotelList(props) {
     const {notes} = props;
 
     return (
-        <div className="d-flex flex-column all-hotels-container">
+        <div className="d-flex flex-column all-hotels-container w-100">
             <div className="d-flex flex-row justify-content-between">
                 <h4>Current Hotels</h4>
                 <Link to={"/admin/addhotel"}><button className="all-hotels-add-btn"><FontAwesomeIcon icon={faPlus} className="all-hotels-icon" />New Hotel</button></Link>
