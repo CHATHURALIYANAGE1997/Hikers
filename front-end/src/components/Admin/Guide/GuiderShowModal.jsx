@@ -37,8 +37,8 @@ function GuiderShowModal(props) {
                             <div className='d-flex flex-row mb-2'>
                                 <span className='w-25'>NIC </span>
                                 <span className='w-50'>: {guideId.nic}</span>
-                                <span className='w-25'>NIC image</span>
-                                <span className='w-50'>: {guideId.nic_image}</span>
+                                {/* <span className='w-25'>NIC image</span>
+                                <span className='w-50'>: {guideId.nic_image}</span> */}
                             </div>
                             <div className='d-flex flex-row mb-2'>
                                 <span className='w-25'>Email address </span>
@@ -52,17 +52,17 @@ function GuiderShowModal(props) {
                                 <span className='w-25'>Phone number </span>
                                 <span className='w-50'>: {guideId.contactNumber}</span>
                             </div>
-                            <div className='d-flex flex-row mb-2'>
+                            {/* <div className='d-flex flex-row mb-2'>
                                 <span className='w-25'>Experience</span>
                                 <span className='w-50'>: {guideId.maximum_passengers}</span>
-                            </div>
-                            <div className='d-flex flex-row mb-2'>
+                            </div> */}
+                            {/* <div className='d-flex flex-row mb-2'>
                                 <span className='w-25'>Police report</span>
                                 <span className='w-50'>: {guideId.police_report}</span>
-                            </div>
+                            </div> */}
                             <div className='d-flex flex-row mb-2'>
-                                <span className='w-25'>Ratings </span>
-                                <span className='w-50'>: {guideId.rate}/10</span>
+                                <span className='w-25'>Overall Performance </span>
+                                <span className='w-50'>: {guideId.overrall} %</span>
                             </div>
                         </div>
                     </p>

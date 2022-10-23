@@ -46,7 +46,7 @@ export default function AllGuider(props) {
                                         />
                                     </div>
                                     <div className="all-hotels-icons">
-                                        <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" />
+                                        {/* <FontAwesomeIcon icon={faPenToSquare} className="all-hotels-edit-icon" /> */}
                                         <FontAwesomeIcon icon={faTrashCan} onClick={handleShow} className="all-hotels-edit-icon" />
                                     </div>
                                     <Modal show={show} onHide={handleClose}>
