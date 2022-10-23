@@ -214,7 +214,7 @@ const GuideSignup = (props) => {
                                     <input type="email" class="form-control" value={user.email} onChange={credentialChange} name="email" required />
                                 </div>
                                 <div class="col-2">
-                                    <label for="nic">NIC/Passport</label>
+                                    <label for="nic">NIC</label>
                                 </div>
                                 <div class="col-4">
                                     <input type="text" class="form-control" value={user.nic} onChange={credentialChange} name="nic" required />

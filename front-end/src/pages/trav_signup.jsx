@@ -123,10 +123,10 @@ const TravelerSignup = (props) => {
                                 <input type="password" className="form-control" placeholder="ReEnter Password" value={user.repassword} onChange={credentialChange} name="repassword"
                                 />
                             </div>
-                            <div className="col-md-6">
+                            {/* <div className="col-md-6">
                                 <input type="text" className="form-control" placeholder="NIC or Passport" value={user.nic} onChange={credentialChange} name="nic"
                                 />
-                            </div>
+                            </div> */}
                             {/*<div className="col-md-6">*/}
                             {/*    <input type="radio" id="male" name="male" value="male"  onChange={credentialChange} name="gender"></input>*/}
                             {/*        <label >Male</label><br/>*/}
