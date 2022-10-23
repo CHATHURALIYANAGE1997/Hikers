@@ -91,6 +91,12 @@ public interface UserRest {
 
     @GetMapping(path="/suggetiontransport")
     public  ResponseEntity<?> suggetiontransport();
+
+    @PostMapping(path="/askque")
+    public ResponseEntity<?> askque(@RequestBody(required=true) Map<String, String> requestMap);
+
+    @PostMapping(path="/replay/{code}")
+    public ResponseEntity<?> replay(@PathVariable Long code ,@RequestBody(required=true) Map<String, String> requestMap);
 }
 
 
