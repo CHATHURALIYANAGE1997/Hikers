@@ -299,4 +299,24 @@ public class UserRestImpl implements UserRest {
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    @Override
+    public ResponseEntity<?> askque(Map<String, String> requestMap) {
+        try{
+            return userService.askque(requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> replay(Long code,Map<String, String> requestMap) {
+        try{
+            return userService.replay(code,requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
 }
