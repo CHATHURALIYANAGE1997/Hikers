@@ -58,4 +58,8 @@ public interface UserService {
     ResponseEntity<?> suggetionguide();
 
     ResponseEntity<?> suggetiontransport();
+
+    ResponseEntity<?> askque(Map<String, String> requestMap);
+
+    ResponseEntity<?> replay(Long code,Map<String, String> requestMap);
 }
