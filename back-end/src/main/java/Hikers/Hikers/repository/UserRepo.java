@@ -24,7 +24,7 @@ public interface UserRepo  extends JpaRepository<User,Long> {
     User findByVerificationCode( String code);
       
     User findByEmailAndAccountstatusAndEnabled(String email,String accountstatus,Boolean enabled);
-    
+
     User findByVerificationCodeAndAccountstatusAndEnabled(String id, String ture,Boolean enabled);
 }
 
