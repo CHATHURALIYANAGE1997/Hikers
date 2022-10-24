@@ -30,4 +30,6 @@ public class Article {
 
     private Date date;
 
+    private String isabseiling;
+
 }
