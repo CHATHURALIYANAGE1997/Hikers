@@ -464,6 +464,7 @@ public class UserServiceImpl implements UserService {
             question.setEmail(jwtFilter.getCurrentUser());
             question.setName(requestMap.get("name"));
             question.setAddress(requestMap.get("address"));
+            question.setStatus("false");
             questionRepo.save(question);
             return Hutils.getResponseEntity("Question Add suceesfully", HttpStatus.OK);
         }catch (Exception ex){
