@@ -101,6 +101,16 @@ public class HotelRestImpl implements HotelRest {
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
+    @Override
+    public ResponseEntity<?> hotelbooking(Map<String, String> requestMap) {
+        try{
+            return hotelService.hotelbooking(requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
 }
 
 
