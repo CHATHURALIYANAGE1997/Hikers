@@ -33,7 +33,8 @@ function oraganizeTrip(props) {
     children: "",
     date: "",
     mountain: "",
-    package: ""
+    province: "",
+    package: "",
 
   };
   const provinces = [                             // Provinces array       
@@ -74,29 +75,45 @@ function oraganizeTrip(props) {
     e.preventDefault()
 
   }
+  const [error, setError] = useState();
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    const token = localStorage.jwtToken
+
     if (form.checkValidity()) {
       // event.preventDefault();
       // event.stopPropagation();
-      Axios.post(url, {
-        name: data.name,
-        adults: parseInt(data.adults),
-        children: parseInt(data.children),
-        date: data.date,
-        mountain: data.mountain,
-        package: data.package
+      Axios.post(url, data, {
+        // name: data.name,
+        // adults: parseInt(data.adults),
+        // children: parseInt(data.children),
+        // date: data.date,
+        // mountain: data.mountain,
+        // package: data.package
+        headers: {
+          Authorization: `Bearer ${token}`,
 
-      })
-        .then(res => {
-          console.log(res.data)
+        },
+      }) .then(res => {
+          console.log(res)
+          // setShow (true)
+          resetTripForm ()
+          setError ("Successfully sent.")
+
+        }).catch ((error) => {
+          console.log (error.message)
+          resetTripForm ()
+          setError ("Error is occured")
 
         })
-
     }
 
     setValidated(true);
+  }
+  const resetTripForm = () => {
+    setData (initialState)
+
   }
 
   if (localStorage.jwtToken) {
@@ -237,9 +254,58 @@ function oraganizeTrip(props) {
               <Form.Group as={Row} md="3" controlId="validationCustom04" className="d-flex flex-column">
 
                 <Form.Label>Location</Form.Label>
+<<<<<<< refs/remotes/origin/main
 
                 <div className="d-flex flex-row w-75">                              {/* provinces drop down */}
                   <label>Province</label>
+=======
+                
+                <div className="d-flex flex-row w-75">                              {/* provinces drop down */}                    
+                  {/* <Form.Select 
+                    // id='ddlProvince'
+                    aria-label="" 
+                    className='trot_dropDown' 
+                    onChange={(e) => handleProvince (e.target.value)}
+                    >
+                    <option value={0}>Select a Province</option>
+                    {
+                      province &&
+                      province !== undefined ?
+                      province.map ((prv, index) => {
+                        return (
+                          <option key={index} value={prv.id}>{prv.name}</option>
+                        )
+                      })
+                      :"No province"
+
+                    }
+                  </Form.Select> */}
+
+                  {/* <Form.Select 
+                    // id='ddlMountain'
+                    aria-label="" 
+                    className='trot_dropDown' 
+                    // onChange={(e) => handleMountain (e.target.value)}
+                    name='mountain'
+                    // id={'mountain'}
+                    value={data.mountain}
+                    onChange={handle}
+
+                    >
+                    <option value={0}>Select a mountain</option>
+                    {
+                      mountain &&
+                      mountain !== undefined ?
+                      mountain.map ((prv, index) => {
+                        return (
+                          <option key={index} value={prv.name}>{prv.name}</option>
+                        )
+                      })
+                      :"No province"
+
+                    }
+                  </Form.Select> */}
+>>>>>>> Hide 2 Dropdowns.
                   <Form.Control
                     className=''
                     // required
@@ -248,6 +314,7 @@ function oraganizeTrip(props) {
                     // placeholder="First name"
                     name='province'
                     // id='name'
+<<<<<<< refs/remotes/origin/main
                     value={travel_province}
                     //onChange={handle}
                     readOnly
@@ -265,6 +332,24 @@ function oraganizeTrip(props) {
                   //onChange={handle}
                   readOnly
                 />
+=======
+                    value={data.name}
+                    onChange={handle}
+
+                  />
+                  <Form.Control
+                    className=''
+                    disabled
+                    // required
+                    type="text"
+                    // placeholder="First name"
+                    name='mountain'
+                    // id='name'
+                    value={data.name}
+                    onChange={handle}
+
+                  />
+>>>>>>> Hide 2 Dropdowns.
                 </div>
 
                 <Form.Control.Feedback type="invalid">
