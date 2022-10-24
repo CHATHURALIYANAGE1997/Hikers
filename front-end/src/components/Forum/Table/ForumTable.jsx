@@ -33,6 +33,7 @@ const ForumTable = (props) => {
                 question.map((question, index) => {
                     console.log(question);
                     if (question.status == 'ture') {
+                        
                         return (
                             <tr class="forumrows">
                                 <td>

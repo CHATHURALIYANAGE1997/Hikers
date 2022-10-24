@@ -41,8 +41,8 @@ const Forums = () => {
                     <div>
                         <table class="mt-3 table">
                             <thead class="thead-dark">
-
                                 <tr className="forumtableheader">
+        
                                     <th scope="col">Topic</th>
                                     <th scope="col">Replies</th>
                                     <th scope="col">Last Post</th>
