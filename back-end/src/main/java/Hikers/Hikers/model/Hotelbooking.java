@@ -26,11 +26,11 @@ public class Hotelbooking implements Serializable {
     @Column(name="user_id")
     private Long user_id;
 
-    @Column(name="package_name")
-    private String package_name;
-
-    @Column(name="package_id")
-    private Long package_id;
+//    @Column(name="package_name")
+//    private String package_name;
+//
+//    @Column(name="package_id")
+//    private Long package_id;
 
     @Column(name="firstname")
     private String firstname;
@@ -39,15 +39,23 @@ public class Hotelbooking implements Serializable {
     private String lastname;
 
     @Column(name="date")
-    private Date date;
-
-    @Column(name="time")
-    private Time time;
+    private String date;
 
     @Column(name="crowd")
-    private Integer crowd;
+    private String crowd;
 
     @Column(name="payment")
-    private Float payment;
+    private String payment;
 
+    private  String checkindate;
+
+    private String checkoutdate;
+
+    private String status;
+
+    private String singalbed;
+
+    private String doublebed;
+
+    private  String triblebed;
 }
