@@ -109,6 +109,10 @@ public interface UserRest {
     
     @GetMapping(path="/getquestionsnew")
     public ResponseEntity<?> getquestionsnew();
+
+    @GetMapping(path="/updatequestionstatus/{code}")
+    public ResponseEntity<?> updatequestionstatus(@PathVariable(required = true) Long code);
+
 }
 
 
