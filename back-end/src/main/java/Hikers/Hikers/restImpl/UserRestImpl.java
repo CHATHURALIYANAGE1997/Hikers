@@ -400,4 +400,14 @@ public class UserRestImpl implements UserRest {
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    @Override
+    public ResponseEntity<?> getarticles() {
+        try {
+            return userService.getarticles();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
 }
