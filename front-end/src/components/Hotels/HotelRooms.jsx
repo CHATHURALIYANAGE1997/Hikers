@@ -20,7 +20,7 @@ const HotelRooms = () => {
 
     const auth = useSelector((state) => state.auth);
 
-    // if (auth.isLoggedIn === true && auth.role === "User") {
+    if (auth.isLoggedIn === true && auth.role === "User") {
 
     
     return (
@@ -54,13 +54,13 @@ const HotelRooms = () => {
             </div>
         </>
     );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     // return props.history.push("/");
-    //     { return <div><NotFoundPage /></div> }
+    }
+    else {
+        localStorage.clear();
+        // return props.history.push("/");
+        { return <div><NotFoundPage /></div> }
 
-    // }
+    }
 }
 
 export default HotelRooms;

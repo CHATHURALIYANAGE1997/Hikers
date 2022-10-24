@@ -26,7 +26,7 @@ export default function Parent(props) {
 
     const auth = useSelector((state) => state.auth);
 
-    // if (auth.isLoggedIn === true && auth.role === "User") {
+    if (auth.isLoggedIn === true && auth.role === "User") {
 
     const accessToken = localStorage.jwtToken;
 
@@ -91,13 +91,13 @@ export default function Parent(props) {
             </div>
         </div>
     );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     // return props.history.push("/");
-    //     { return <div><NotFoundPage /></div> }
+    }
+    else {
+        localStorage.clear();
+        // return props.history.push("/");
+        { return <div><NotFoundPage /></div> }
 
-    // }
+    }
 }
 
 // export default Hotels;
