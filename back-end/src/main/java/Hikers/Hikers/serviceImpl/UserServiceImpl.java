@@ -599,6 +599,9 @@ public class UserServiceImpl implements UserService {
                article.setMountname(requestMap.get("mountname"));
                article.setProvince(requestMap.get("province"));
                article.setDescription(requestMap.get("description"));
+               if(requestMap.get("isabseiling")!=null){
+                   article.setIsabseiling("ture");
+               }
                articleRepo.save(article);
                return Hutils.getResponseEntity("Question now visible to everyone", HttpStatus.OK);
            }
@@ -621,6 +624,16 @@ public class UserServiceImpl implements UserService {
             }else {
                 return Hutils.getResponseEntity("Artice not found", HttpStatus.BAD_REQUEST);
             }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> allquestions() {
+        try {
+            return new ResponseEntity(questionRepo.findAll(),HttpStatus.OK);
         }catch (Exception ex){
             ex.printStackTrace();
         }
