@@ -1,6 +1,8 @@
 package Hikers.Hikers.serviceImpl;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -49,6 +51,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private QuestionRepo questionRepo;
+
+    @Autowired
+    private TripRepo tripRepo;
 
     @Autowired
     private HotelRepo hotelRepo;
@@ -468,19 +473,16 @@ public class UserServiceImpl implements UserService {
     public ResponseEntity<?> askque(Map<String, String> requestMap) {
         try {
             Question question=new Question();
-            if(! (requestMap.get("name").isEmpty() || requestMap.get("äddress").isEmpty() || requestMap.get("question").isEmpty())){
-                question.setEmail(jwtFilter.getCurrentUser());
-                question.setName(requestMap.get("name"));
-                question.setAddress(requestMap.get("address"));
-                question.setQuestion(requestMap.get("question"));
-                question.setStatus("false");
-                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-                Date date = new Date();
-                question.setDate(date);
-                questionRepo.save(question);
-                return Hutils.getResponseEntity("Question Add suceesfully", HttpStatus.OK);
-            }
-            return Hutils.getResponseEntity("Invalid", HttpStatus.BAD_REQUEST);
+            question.setEmail(jwtFilter.getCurrentUser());
+            question.setName(requestMap.get("name"));
+            question.setAddress(requestMap.get("address"));
+            question.setQuestion(requestMap.get("question"));
+            question.setStatus("false");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = new Date();
+            question.setDate(date);
+            questionRepo.save(question);
+            return Hutils.getResponseEntity("Question Add suceesfully", HttpStatus.OK);
         }catch (Exception ex){
             ex.printStackTrace();
         }
@@ -647,6 +649,67 @@ public class UserServiceImpl implements UserService {
     public ResponseEntity<?> getarticles() {
         try {
             return new ResponseEntity(articleRepo.findAll(),HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+
+
+    @Override
+    public ResponseEntity<?> plantrip(Map<String, String> requestMap) {
+        try {
+            if(!Objects.isNull(requestMap)){
+                Trip trip=new Trip();
+                User user=userRepo.findByEmail(jwtFilter.getCurrentUser());
+                trip.setName(user.getFirstname()+""+user.getLastname());
+                trip.setEmail(user.getEmail());
+                trip.setAdults(requestMap.get("adults"));
+                trip.setChildren(requestMap.get("children"));
+                Date date = Calendar.getInstance().getTime();
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+                String strDate = dateFormat.format(date);
+                trip.setDate(strDate);
+                trip.setMountain(requestMap.get("mountain"));
+                trip.setProvince(requestMap.get("province"));
+                trip.setOnedayhike(requestMap.get("onedayhike"));
+                trip.setCamping(requestMap.get("camping"));
+                trip.setAbseiling(requestMap.get("abseiling"));
+                int adult=Integer.parseInt(requestMap.get("adults"));
+                int child=Integer.parseInt("children");
+                boolean onedayhike=Objects.isNull(requestMap.get("onedayhike"));
+                int onedayhike1;
+                int camping1;
+                boolean camping=Objects.isNull(requestMap.get("camping"));
+                if(onedayhike==true){
+                    onedayhike1 =1;
+                }else {
+                    onedayhike1=0;
+                }
+                if(camping==true){
+                    camping1 =1;
+                }else {
+                    camping1=0;
+                }
+                boolean abseling=Objects.isNull(requestMap.get("abseiling"));
+                int abseling1;
+                if(abseling==true){
+                    abseling1 =1;
+                }else {
+                    abseling1=0;
+                }
+                int firstprice= 35000*abseling1+onedayhike1*(2000*adult+1200*child)+camping1*(3500*adult+2000*child);
+
+                trip.setFirstprice(String.valueOf(firstprice));
+                trip.setGuideprice(String.valueOf((firstprice*80)/100));
+                trip.setTotalprice(String.valueOf(firstprice));
+                tripRepo.save(trip);
+                return Hutils.getResponseEntity("First part successfully", HttpStatus.OK);
+
+            }else {
+                return new ResponseEntity(new ArrayList<>(),HttpStatus.BAD_REQUEST);
+            }
         }catch (Exception ex){
             ex.printStackTrace();
         }
