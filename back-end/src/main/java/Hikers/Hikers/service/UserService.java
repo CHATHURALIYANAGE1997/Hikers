@@ -76,4 +76,6 @@ public interface UserService {
     ResponseEntity<?> addarticles(Map<String, String> requestMap);
 
     ResponseEntity<?> deletearticles(Long code);
+
+    ResponseEntity<?> allquestions();
 }
