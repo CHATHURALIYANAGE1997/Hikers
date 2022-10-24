@@ -12,7 +12,7 @@ import java.util.Optional;
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path = "/hotel")
 public interface HotelRest {
-  
+
     @PostMapping(path="/changepassword/{id}")
     public ResponseEntity<String> changePassoword(@PathVariable("id") String id, @RequestBody(required=true) Map<String, String> requestMap);
 
@@ -37,5 +37,7 @@ public interface HotelRest {
     @GetMapping(path = "/getBookings/{hotel_id}")
     public ResponseEntity<List<Hotelbooking>> getBookings(@PathVariable Long hotel_id);
 
+    @PostMapping(path="/hotelbooking")
+    public ResponseEntity<?> hotelbooking(@RequestBody(required=true) Map<String, String> requestMap);
 
 }
