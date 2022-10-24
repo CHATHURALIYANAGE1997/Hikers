@@ -106,6 +106,9 @@ public interface UserRest {
 
     @PostMapping(path="/volientierprograms")
     public ResponseEntity<?> volientierprograms(@RequestBody(required=true) Map<String, String> requestMap);
+    
+    @GetMapping(path="/getquestionsnew")
+    public ResponseEntity<?> getquestionsnew();
 }
 
 
