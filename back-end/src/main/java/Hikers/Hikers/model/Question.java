@@ -26,4 +26,6 @@ public class Question implements Serializable {
     private String address;
 
     private String description;
+    
+    private String status;
 }
