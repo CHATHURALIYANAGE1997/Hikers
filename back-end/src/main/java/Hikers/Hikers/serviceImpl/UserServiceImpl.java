@@ -1,5 +1,8 @@
 package Hikers.Hikers.serviceImpl;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -470,6 +473,9 @@ public class UserServiceImpl implements UserService {
             question.setAddress(requestMap.get("address"));
             question.setQuestion(requestMap.get("question"));
             question.setStatus("false");
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = new Date();
+            question.setDate(date);
             questionRepo.save(question);
             return Hutils.getResponseEntity("Question Add suceesfully", HttpStatus.OK);
         }catch (Exception ex){
