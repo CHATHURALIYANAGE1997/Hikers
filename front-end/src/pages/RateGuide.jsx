@@ -1,8 +1,13 @@
 import React from "react";
 import "../components/Rating/rateTransport.css"
-import Rateoptions from "../components/Rating/Rateoptions";
 import Form from 'react-bootstrap/Form';
 import RateTripinfor from "../components/Rating/RateTripinfor";
+import Securityoption from "../components/Rating/Securityoption";
+import Punctualityoption from "../components/Rating/Punctualityoption";
+import Overallservicequalityoption from "../components/Rating/Overallservicequality";
+import Communicationoption from "../components/Rating/Communication";
+import Domainknowledege from "../components/Rating/Domainknowledge";
+import Rateoptions from "../components/Rating/Rateoptions";
 
 const rateGuide = () => {
     return (
@@ -18,22 +23,27 @@ const rateGuide = () => {
                             <hr />
                             <div className="mb-3">
                                 <h5>Security</h5>
+                                {/* <Securityoption /> */}
                                 <Rateoptions />
                             </div>
                             <div className="mb-3">
                                 <h5>Punctuality</h5>
+                                {/* <Punctualityoption /> */}
                                 <Rateoptions />
                             </div>
                             <div className="mb-3">
                                 <h5>Communication</h5>
+                                {/* <Communicationoption /> */}
                                 <Rateoptions />
                             </div>
                             <div className="mb-3">
                                 <h5>Domain Knowledge</h5>
+                                {/* <Domainknowledege /> */}
                                 <Rateoptions />
                             </div>
                             <div className="mb-3">
                                 <h5>Overall Service Quality</h5>
+                                {/* <Overallservicequalityoption /> */}
                                 <Rateoptions />
                             </div>
                             <div className="mb-3">
