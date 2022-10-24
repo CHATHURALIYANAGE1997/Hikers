@@ -78,4 +78,6 @@ public interface UserService {
     ResponseEntity<?> deletearticles(Long code);
 
     ResponseEntity<?> allquestions();
+
+    ResponseEntity<?> getarticles();
 }
