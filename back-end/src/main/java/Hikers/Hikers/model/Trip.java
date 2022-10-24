@@ -4,6 +4,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
 @Entity
@@ -54,5 +55,7 @@ public class Trip {
     private String transpoterid;
 
     private String transpotername;
+
+    private String transpoterprice;
 
 }
