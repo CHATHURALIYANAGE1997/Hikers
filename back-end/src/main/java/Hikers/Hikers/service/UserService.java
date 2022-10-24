@@ -70,4 +70,6 @@ public interface UserService {
     ResponseEntity<?> volientierprograms(Map<String, String> requestMap);
     
     ResponseEntity<?> getquestionsnew();
+
+    ResponseEntity<?> updatequestionstatus(Long code);
 }
