@@ -18,6 +18,8 @@ public class Trip {
     @Column(name = "name")
     private String name;
 
+    private String email;
+
     @Column(name = "adults")
     private String adults;
 
@@ -30,10 +32,27 @@ public class Trip {
     @Column(name = "mountain")
     private String mountain;
 
-    @Column(name = "packages")
-    private String packages;
-
     @Column(name = "province")
     private String province;
+
+    private String onedayhike;
+
+    private String camping;
+
+    private String abseiling;
+
+    private String firstprice;
+
+    private String totalprice;
+
+    private String guideid;
+
+    private String guidename;
+
+    private String guideprice;
+
+    private String transpoterid;
+
+    private String transpotername;
 
 }
