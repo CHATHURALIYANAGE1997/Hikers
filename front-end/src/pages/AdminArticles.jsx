@@ -23,7 +23,10 @@ const AdminArticles = (props) => {
                     <div className="d-flex flex-column home-container">
                         <div className="d-flex flex-row">
                             <AllArticles />
-                            <Questions />
+                            <div className="d-flex flex-column w-50 questions-container">
+                                <h5>Recent questions</h5>
+                                <Questions />
+                            </div>
                         </div>
                         <div className="d-flex flex-row">
 
@@ -36,7 +39,7 @@ const AdminArticles = (props) => {
     else {
         localStorage.clear();
         // return props.history.push("/");
-        {return <div><NotFoundPage/></div>}
+        { return <div><NotFoundPage /></div> }
 
     }
 }
