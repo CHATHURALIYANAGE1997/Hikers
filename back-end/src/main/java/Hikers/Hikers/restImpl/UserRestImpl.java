@@ -311,6 +311,16 @@ public class UserRestImpl implements UserRest {
     }
 
     @Override
+    public ResponseEntity<?> allquestions() {
+        try{
+            return userService.allquestions();
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
     public ResponseEntity<?> replay(Long code,Map<String, String> requestMap) {
         try{
             return userService.replay(code,requestMap);
