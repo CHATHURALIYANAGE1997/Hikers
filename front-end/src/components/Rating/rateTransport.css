@@ -16,4 +16,10 @@ color:black;
     padding-top: 3%;
     color: blue;
 }
+.Ratingoptionstransport{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width:100%;
+}
 
