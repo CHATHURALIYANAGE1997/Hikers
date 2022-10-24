@@ -18,7 +18,7 @@ public class Hotelroom implements Serializable {
     @Column(name="id")
     private Long room_id;
 
-    @Column(name="hotel_id")
+
     private Long hotel_id;
 
     @Column(name="room_type")
@@ -28,7 +28,7 @@ public class Hotelroom implements Serializable {
     private String sleeps;
 
     @Column(name="amount")
-    private Long amount;
+    private String amount;
 
     @Column(name="size_length")
     private Long size_length;
