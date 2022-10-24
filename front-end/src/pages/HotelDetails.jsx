@@ -23,6 +23,9 @@ import NotFoundPage from './NotFoundPage';
 
 
 function TabPanel(props) {
+
+  const hotel_name = localStorage.getItem("hotelname");
+
   const { children, value, index, ...other } = props;
 
   return (
@@ -69,12 +72,14 @@ export default function BasicTabs(props) {
 
   const auth = useSelector((state) => state.auth);
 
-  if (auth.isLoggedIn === true && auth.role === "User") {
+  const hotel_name = localStorage.getItem("hotelname");
+
+  // if (auth.isLoggedIn === true && auth.role === "User") {
     return (
       <div>
-        <Navbar />
+        <Navbar name={hotel_name}/>
         <div class="p-5 mt-3 text-left container">
-          <HotelName />
+          <HotelName name={hotel_name} />
           <div className="d-flex flex-row hf-page-container">
             <div className="d-flex flex-column hf-left-side">
               <div className="d-flex flex-row">
@@ -117,13 +122,13 @@ export default function BasicTabs(props) {
         </div>
       </div >
     );
-  }
-  else {
-    localStorage.clear();
-    // return props.history.push("/");
-    {return <div><NotFoundPage/></div>}
+  // }
+  // else {
+  //   localStorage.clear();
+  //   // return props.history.push("/");
+  //   {return <div><NotFoundPage/></div>}
 
-  }
+  // }
 }
 
 
