@@ -360,4 +360,14 @@ public class UserRestImpl implements UserRest {
         }
         return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+
+    @Override
+    public ResponseEntity<?> updatequestionstatus(Long code) {
+        try{
+            return userService.updatequestionstatus(code);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
 }
