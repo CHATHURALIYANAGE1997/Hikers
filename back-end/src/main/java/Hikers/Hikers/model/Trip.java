@@ -26,4 +26,14 @@ public class Trip {
 
     @Column(name = "date")
     private String date;
+
+    @Column(name = "mountain")
+    private String mountain;
+
+    @Column(name = "packages")
+    private String packages;
+
+    @Column(name = "province")
+    private String province;
+
 }
