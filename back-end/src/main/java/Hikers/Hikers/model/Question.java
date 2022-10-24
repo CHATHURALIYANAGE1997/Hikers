@@ -28,4 +28,6 @@ public class Question implements Serializable {
     private String question;
     
     private String status;
+    
+    private Date date;
 }
