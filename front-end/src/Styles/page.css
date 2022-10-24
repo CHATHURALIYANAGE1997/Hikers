@@ -9,5 +9,16 @@
     /* padding-top: 20%; */
     margin-top: 76px;
     padding: 10px;
+}
+.welcomepagehead{
+    margin-top: 10%;
+}
+.carouselbtn{
+    background-color:#1687A7;
+    border:none;
+    font-weight:2px;
+    width:50%;
+    height:10%;
+    font-weight: bold;
 
 }
