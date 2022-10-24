@@ -464,6 +464,7 @@ public class UserServiceImpl implements UserService {
             question.setEmail(jwtFilter.getCurrentUser());
             question.setName(requestMap.get("name"));
             question.setAddress(requestMap.get("address"));
+            question.setQuestion(requestMap.get("question"));
             question.setStatus("false");
             questionRepo.save(question);
             return Hutils.getResponseEntity("Question Add suceesfully", HttpStatus.OK);
@@ -543,7 +544,7 @@ public class UserServiceImpl implements UserService {
                String email=volientiers.get(i).getEmail();
                 sendEmailToVolientiers(email,str1);
             }
-
+            return Hutils.getResponseEntity("Successfully", HttpStatus.OK);
         }catch (Exception ex){
             ex.printStackTrace();
         }
@@ -561,8 +562,26 @@ public class UserServiceImpl implements UserService {
     }
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
-    
-    
+
+    @Override
+    public ResponseEntity<?> updatequestionstatus(Long code) {
+        try {
+            Optional<Question> question=questionRepo.findById(code);
+            if(question.isPresent()){
+                question.get().setStatus("ture");
+                questionRepo.save(question.get());
+                return Hutils.getResponseEntity("Question now visible to everyone", HttpStatus.OK);
+            }else {
+                return Hutils.getResponseEntity("Question is not found", HttpStatus.BAD_GATEWAY);
+            }
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+
     private void sendEmailToVolientiers(String email,String messge) throws MessagingException, UnsupportedEncodingException {
         String toAddress = email;
         MimeMessage msg = mailSender.createMimeMessage();
