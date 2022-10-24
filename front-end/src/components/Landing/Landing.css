@@ -1,0 +1,22 @@
+.landingContainer{
+    margin-top: 80px;
+    width:100%;
+}
+.landing-row{
+   
+    background-color: rgb(255, 255, 255);
+   
+}
+.LandPic{
+    height: 45px;
+}
+.landingImage{
+    margin-right: 5%;
+}
+.landing-col{
+    margin-left: 5%;
+    text-align: center;
+}
+.landing-col1{
+    margin-right: 5%;
+}

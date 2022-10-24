@@ -22,15 +22,9 @@ export const  SidebarData= [
     
     },
     {
-        title:"Repair Service",
-        icon: <GiFlashlight/>,
-        link: "/equipment"
-    
-    },
-    {
         title:"Post Ad",
         icon: <FaTools/>,
-        link: "/repairSerice"
+        link: "/campingad"
     
     }
    

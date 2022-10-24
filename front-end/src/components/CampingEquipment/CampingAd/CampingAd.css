@@ -1,0 +1,14 @@
+.campingAdWall{
+    margin-top: 76px;
+    width: 100%;
+    height:100%;
+}
+.CampingAdTitle{
+    margin-top: 10px;
+}
+.campingAdCol1{
+    background-color: blueviolet;
+}
+.campingAdCol2{
+    background-color: aqua;
+}

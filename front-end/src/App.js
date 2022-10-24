@@ -67,6 +67,8 @@ import MyComponent from './components/Trav_map/trav_gMap';
 import AdminTrip from './pages/AdminTrip';
 import HotelUpcomingBooking from './pages/HotelUpcomingBooking';
 import AdminGuide from './pages/AdminGuide';
+import CampingAd from './pages/CampingAd';
+import LandingPageNew from './pages/LandingPage';
 
 
 function App() {
@@ -175,6 +177,8 @@ function App() {
               <Route path="/camping/" component={CampingEquipment}></Route>
               <Route path="/daydistribution" component={DayDistribution}></Route>
               <Route path="/map" component={MyComponent}></Route>
+              <Route path="/campingad" component={CampingAd}></Route>
+              <Route path="/landing" component={LandingPageNew}></Route>
 
             </Switch>
             
