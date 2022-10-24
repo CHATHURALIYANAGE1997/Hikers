@@ -81,7 +81,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private VolientierRepo volientierRepo;
 
-    @Autowired VolientierprogramsRepo volientierprogramsRepo;
+    @Autowired
+    private VolientierprogramsRepo volientierprogramsRepo;
+
+    @Autowired
+    private ArticleRepo articleRepo;
 
     @Override
     public ResponseEntity<String> login(Map<String, String> requestMap) {
@@ -575,6 +579,42 @@ public class UserServiceImpl implements UserService {
                 return Hutils.getResponseEntity("Question is not found", HttpStatus.BAD_GATEWAY);
             }
 
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @Override
+    public ResponseEntity<?> addarticles(Map<String, String> requestMap) {
+        try {
+           if( !Objects.isNull(requestMap)){
+               Article article=new Article();
+               article.setMountname(requestMap.get("mountname"));
+               article.setProvince(requestMap.get("province"));
+               article.setDescription(requestMap.get("description"));
+               articleRepo.save(article);
+               return Hutils.getResponseEntity("Question now visible to everyone", HttpStatus.OK);
+           }
+            else {
+               return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+           }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+
+    @Override
+    public ResponseEntity<?> deletearticles(Long code) {
+        try {
+            if(code!=null){
+                articleRepo.deleteById(code);
+                return Hutils.getResponseEntity("delete successfully", HttpStatus.OK);
+            }else {
+                return Hutils.getResponseEntity("Artice not found", HttpStatus.BAD_REQUEST);
+            }
         }catch (Exception ex){
             ex.printStackTrace();
         }
