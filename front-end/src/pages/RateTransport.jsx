@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../components/Rating/rateTransport.css"
-import Rateoptions from "../components/Rating/Rateoptions";
 import Form from 'react-bootstrap/Form';
 import RateTripinfor from "../components/Rating/RateTripinfor";
+import Punctualityoption from "../components/Rating/Punctualityoption";
+import Securityoption from "../components/Rating/Securityoption";
+import Overallservicequalityoption from "../components/Rating/Overallservicequality";
+import Navigationcapacityoption from "../components/Rating/Navigationcapacity";
+import Cleanlinessoption from "../components/Rating/Cleanliness";
 
 const rateTransport = () => {
     return (
@@ -18,23 +22,23 @@ const rateTransport = () => {
                             <hr />
                             <div className="mb-3">
                                 <h5>Security</h5>
-                                <Rateoptions />
+                                <Securityoption />
                             </div>
                             <div className="mb-3">
                                 <h5>Punctuality</h5>
-                                <Rateoptions />
+                                <Punctualityoption />
                             </div>
                             <div className="mb-3">
                                 <h5>Navigation Capacity</h5>
-                                <Rateoptions />
+                                <Navigationcapacityoption />                   
                             </div>
                             <div className="mb-3">
                                 <h5>Cleanliness</h5>
-                                <Rateoptions />
+                               <Cleanlinessoption />
                             </div>
                             <div className="mb-3">
                                 <h5>Overall Service Quality</h5>
-                                <Rateoptions />
+                               <Overallservicequalityoption />
                             </div>
                             <div className="mb-3">
 
