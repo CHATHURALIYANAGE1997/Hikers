@@ -113,6 +113,12 @@ public interface UserRest {
     @GetMapping(path="/updatequestionstatus/{code}")
     public ResponseEntity<?> updatequestionstatus(@PathVariable(required = true) Long code);
 
+    @PostMapping(path="/addarticles")
+    public ResponseEntity<?> addarticles(@RequestBody(required=true) Map<String, String> requestMap);
+
+    @GetMapping(path="/deletearticles/{code}")
+    public ResponseEntity<?> deletearticles(@PathVariable(required = true) Long code);
+
 }
 
 
