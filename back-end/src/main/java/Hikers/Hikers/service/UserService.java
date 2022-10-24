@@ -72,4 +72,8 @@ public interface UserService {
     ResponseEntity<?> getquestionsnew();
 
     ResponseEntity<?> updatequestionstatus(Long code);
+
+    ResponseEntity<?> addarticles(Map<String, String> requestMap);
+
+    ResponseEntity<?> deletearticles(Long code);
 }
