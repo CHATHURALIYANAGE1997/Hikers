@@ -4,6 +4,7 @@ import WelcomeHikers from "../components/WelcomeHikers/welcomeHikers";
 import Navbar from "../components/Navbar/Navbar";
 import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
+import Articlecarousel from "../components/Carousel/carousel";
 
 // const img = new URL ("./istockphoto-1189969126-612x612 - Copy.jpg", import.meta.url)
 
@@ -15,20 +16,20 @@ const Page = (props) => {
 
     const auth = useSelector((state) => state.auth);
 
-    if (auth.isLoggedIn === true && auth.role === "User") {
+    // if (auth.isLoggedIn === true && auth.role === "User") {
         return (
             <div>
                 <Navbar />
-                <div className="backImg">
+                <div className="welcomepagehead">
                     <WelcomeHikers />
-
+                    <Articlecarousel />
                 </div>
             </div>
         );
     }
-    else {
-        localStorage.clear();
-        return props.history.push("/");
-    }
-}
+    // else {
+    //     localStorage.clear();
+    //     return props.history.push("/");
+    // }
+// }
 export default Page
