@@ -68,4 +68,6 @@ public interface UserService {
     ResponseEntity<?> getvolientiers();
 
     ResponseEntity<?> volientierprograms(Map<String, String> requestMap);
+    
+    ResponseEntity<?> getquestionsnew();
 }
