@@ -58,4 +58,6 @@ public class Trip {
 
     private String transpoterprice;
 
+    private  String stutus;
+
 }
