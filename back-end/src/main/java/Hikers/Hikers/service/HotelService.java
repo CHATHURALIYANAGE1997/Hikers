@@ -26,4 +26,7 @@ public interface HotelService {
     ResponseEntity<List<Hotelpackage>> getPackage();
 
     ResponseEntity<List<Hotelbooking>> getBookings(Long hotel_id);
+
+
+    ResponseEntity<?> hotelbooking(Map<String, String> requestMap);
 }
