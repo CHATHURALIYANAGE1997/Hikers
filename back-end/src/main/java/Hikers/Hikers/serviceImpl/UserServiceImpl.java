@@ -640,6 +640,16 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<?> getarticles() {
+        try {
+            return new ResponseEntity(articleRepo.findAll(),HttpStatus.OK);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 
     private void sendEmailToVolientiers(String email,String messge) throws MessagingException, UnsupportedEncodingException {
         String toAddress = email;
