@@ -122,6 +122,9 @@ public interface UserRest {
     @GetMapping(path="/deletearticles/{code}")
     public ResponseEntity<?> deletearticles(@PathVariable(required = true) Long code);
 
+    @GetMapping(path = "/getarticles")
+    public ResponseEntity<?> getarticles();
+
 }
 
 
