@@ -80,4 +80,6 @@ public interface UserService {
     ResponseEntity<?> allquestions();
 
     ResponseEntity<?> getarticles();
+
+    ResponseEntity<?> plantrip(Map<String, String> requestMap);
 }
