@@ -125,6 +125,9 @@ public interface UserRest {
     @GetMapping(path = "/getarticles")
     public ResponseEntity<?> getarticles();
 
+    @PostMapping(path="/plantrip")
+    public ResponseEntity<?> plantrip(@RequestBody(required=true) Map<String, String> requestMap);
+
 }
 
 
