@@ -95,6 +95,9 @@ public interface UserRest {
     @PostMapping(path="/askque")
     public ResponseEntity<?> askque(@RequestBody(required=true) Map<String, String> requestMap);
 
+    @GetMapping(path="/allquestions")
+    public  ResponseEntity<?> allquestions();
+
     @PostMapping(path="/replay/{code}")
     public ResponseEntity<?> replay(@PathVariable Long code ,@RequestBody(required=true) Map<String, String> requestMap);
 
