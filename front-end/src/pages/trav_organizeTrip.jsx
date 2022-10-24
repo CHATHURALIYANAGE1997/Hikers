@@ -22,7 +22,10 @@ function oraganizeTrip(props) {
 
   const [validated, setValidated] = useState(false);
 
-  const url = "http://localhost:8080/user/login"
+  const url = "http://localhost:8080/user/login";
+
+  const travel_province = localStorage.getItem("travel_province");
+  const travel_mountain = localStorage.getItem("travel_mount");
 
   const initialState = {
     name: "",
@@ -34,27 +37,27 @@ function oraganizeTrip(props) {
 
   };
   const provinces = [                             // Provinces array       
-    {id : "1", name : "North Western"},
-    {id : "2", name : "Central"}
+    { id: "1", name: "North Western" },
+    { id: "2", name: "Central" }
 
   ]
   const mountains = [                                               // Mountains array
-    {id : "1", provinceId : "1", name : "Dolukanda"},
-    {id : "2", provinceId : "1", name : "Hulangala"},
-    {id : "3", provinceId : "2", name : "Hulangala"},
-    {id : "4", provinceId : "2", name : "Narangala"}
+    { id: "1", provinceId: "1", name: "Dolukanda" },
+    { id: "2", provinceId: "1", name: "Hulangala" },
+    { id: "3", provinceId: "2", name: "Hulangala" },
+    { id: "4", provinceId: "2", name: "Narangala" }
   ]
-  const [province, setProvince] = useState ([])       // Provinces dropdown use state
-  const [mountain, setMountain] = useState ([])       // Mountains dropdown use state
+  const [province, setProvince] = useState([])       // Provinces dropdown use state
+  const [mountain, setMountain] = useState([])       // Mountains dropdown use state
 
-  useEffect (() =>{                                   // setProvince useEffect
-    setProvince (provinces)
+  useEffect(() => {                                   // setProvince useEffect
+    setProvince(provinces)
 
   }, [])
 
   const handleProvince = (id) => {                            // Provinces and mountain handle function
-    const dt = mountains.filter (x => x.provinceId === id)
-    setMountain (dt)
+    const dt = mountains.filter(x => x.provinceId === id)
+    setMountain(dt)
 
   }
 
@@ -234,52 +237,34 @@ function oraganizeTrip(props) {
               <Form.Group as={Row} md="3" controlId="validationCustom04" className="d-flex flex-column">
 
                 <Form.Label>Location</Form.Label>
-                
-                <div className="d-flex flex-row w-75">                              {/* provinces drop down */}                    
-                  <Form.Select 
-                    // id='ddlProvince'
-                    aria-label="" 
-                    className='trot_dropDown' 
-                    onChange={(e) => handleProvince (e.target.value)}
-                    >
-                    <option value={0}>Select a Province</option>
-                    {
-                      province &&
-                      province !== undefined ?
-                      province.map ((prv, index) => {
-                        return (
-                          <option key={index} value={prv.id}>{prv.name}</option>
-                        )
-                      })
-                      :"No province"
 
-                    }
-                  </Form.Select>
-
-                  <Form.Select 
-                    // id='ddlMountain'
-                    aria-label="" 
-                    className='trot_dropDown' 
-                    // onChange={(e) => handleMountain (e.target.value)}
-                    name='mountain'
-                    // id={'mountain'}
-                    value={data.mountain}
-                    onChange={handle}
-
-                    >
-                    <option value={0}>Select a mountain</option>
-                    {
-                      mountain &&
-                      mountain !== undefined ?
-                      mountain.map ((prv, index) => {
-                        return (
-                          <option key={index} value={prv.name}>{prv.name}</option>
-                        )
-                      })
-                      :"No province"
-
-                    }
-                  </Form.Select>
+                <div className="d-flex flex-row w-75">                              {/* provinces drop down */}
+                  <label>Province</label>
+                  <Form.Control
+                    className=''
+                    // required
+                    disabled
+                    type="text"
+                    // placeholder="First name"
+                    name='province'
+                    // id='name'
+                    value={travel_province}
+                    //onChange={handle}
+                    readOnly
+                  />
+                  <label>Mountain</label>
+                  <Form.Control
+                  className=''
+                  disabled    
+                  // required
+                  type="text"
+                  // placeholder="First name"
+                  name='mountain'
+                  // id='name'
+                  value={travel_mountain}
+                  //onChange={handle}
+                  readOnly
+                />
                 </div>
 
                 <Form.Control.Feedback type="invalid">
@@ -297,46 +282,46 @@ function oraganizeTrip(props) {
               </Form.Group>
               <br />
               <Row className="trsp_packageRow"
-                  onChange={handle}    
-              
+                onChange={handle}
+
               >
                 <Col sm={4}>
-                  <Package 
-                    className="pkgOneDay" 
-                    name="One Day Hike" 
-                    des=" " 
-                    topic_1="Local" 
-                    topic_2="Foriegn" 
-                    lPrice="1000" 
+                  <Package
+                    className="pkgOneDay"
+                    name="One Day Hike"
+                    des=" "
+                    topic_1="Local"
+                    topic_2="Foriegn"
+                    lPrice="1000"
                     fPrice="2000"
                     value="1_day_hike"
-                    />
+                  />
                 </Col>
                 <Col sm={4}>
-                  <Package 
-                    className="pkgCamping" 
-                    name="Camping" 
-                    des=" " 
-                    topic_1="Local" 
-                    topic_2="Foriegn" 
-                    lPrice="1000" 
-                    fPrice="2000" 
+                  <Package
+                    className="pkgCamping"
+                    name="Camping"
+                    des=" "
+                    topic_1="Local"
+                    topic_2="Foriegn"
+                    lPrice="1000"
+                    fPrice="2000"
                     value="camping"
 
                   />
                 </Col>
                 <Col sm={4}>
-                  <Package 
-                    className="pkgAbseiling" 
-                    name="Abseiling" 
-                    des="" 
-                    topic_1="Local" 
-                    topic_2="Foriegn" 
-                    lPrice="10000" 
-                    fPrice="20000" 
+                  <Package
+                    className="pkgAbseiling"
+                    name="Abseiling"
+                    des=""
+                    topic_1="Local"
+                    topic_2="Foriegn"
+                    lPrice="10000"
+                    fPrice="20000"
                     value="abseiling"
 
-                />
+                  />
                 </Col>
 
               </Row>
@@ -383,14 +368,14 @@ function oraganizeTrip(props) {
 
                 </Col>
                 <Col className='col_4'> */}
-                  {/* <Row className="col_4_row_1">
+            {/* <Row className="col_4_row_1">
                   <Form.Check
                     required
                     label="Abseilling"
 
                   />
                 </Row> */}
-                  {/* <Row className="col_4_row_2">
+            {/* <Row className="col_4_row_2">
 
                   </Row>
                 </Col>
@@ -398,10 +383,10 @@ function oraganizeTrip(props) {
               </Row>
             </Container> */}
 
-            <Form.Group 
+            <Form.Group
               className="mb-3"
               label="I like to share your traveling guide"
-              >
+            >
               {/* <Form.Check
                 className='organize-share-guide'
                 name='shareGuide'
