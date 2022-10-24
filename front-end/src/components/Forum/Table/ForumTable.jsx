@@ -1,12 +1,13 @@
-import React from "react";
-import './forumtable.css';
+import React, { useState } from "react";import './forumtable.css';
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
 
-const ForumTable = () => {
+const ForumTable = (props) => {
 
     const accessToken = localStorage.jwtToken;
 
-    const url = 'http://localhost:8080/user/getquestionsnew';
+    const url = 'http://localhost:8080/user/allquestions';
 
     const [question, setQuestion] = useState('');
 
@@ -20,16 +21,17 @@ const ForumTable = () => {
         }).then((response) => {
             const allGuide = response.data;
             setQuestion(allGuide);
-            console.log(allGuide);
+            //console.log(allGuide);
         }).catch((error) => {
             console.log(error);
         })
     }
 
-    const displayDetails = () => {
+    const displayDetails = (props) => {
         if (question.length > 0) {
             return (
                 question.map((question, index) => {
+                    console.log(question);
                     if (question.status == 'ture') {
                         return (
                             <tr class="forumrows">
@@ -62,7 +64,7 @@ const ForumTable = () => {
     }
     return (
         <>
-            {displayDetails()}
+            {displayDetails(props)}
         </>
     )
 

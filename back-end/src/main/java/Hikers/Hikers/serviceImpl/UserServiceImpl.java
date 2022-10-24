@@ -468,16 +468,19 @@ public class UserServiceImpl implements UserService {
     public ResponseEntity<?> askque(Map<String, String> requestMap) {
         try {
             Question question=new Question();
-            question.setEmail(jwtFilter.getCurrentUser());
-            question.setName(requestMap.get("name"));
-            question.setAddress(requestMap.get("address"));
-            question.setQuestion(requestMap.get("question"));
-            question.setStatus("false");
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            Date date = new Date();
-            question.setDate(date);
-            questionRepo.save(question);
-            return Hutils.getResponseEntity("Question Add suceesfully", HttpStatus.OK);
+            if(! (requestMap.get("name").isEmpty() || requestMap.get("äddress").isEmpty() || requestMap.get("question").isEmpty())){
+                question.setEmail(jwtFilter.getCurrentUser());
+                question.setName(requestMap.get("name"));
+                question.setAddress(requestMap.get("address"));
+                question.setQuestion(requestMap.get("question"));
+                question.setStatus("false");
+                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                Date date = new Date();
+                question.setDate(date);
+                questionRepo.save(question);
+                return Hutils.getResponseEntity("Question Add suceesfully", HttpStatus.OK);
+            }
+            return Hutils.getResponseEntity("Invalid", HttpStatus.BAD_REQUEST);
         }catch (Exception ex){
             ex.printStackTrace();
         }
