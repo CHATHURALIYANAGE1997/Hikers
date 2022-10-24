@@ -704,6 +704,7 @@ public class UserServiceImpl implements UserService {
                 trip.setFirstprice(String.valueOf(firstprice));
                 trip.setGuideprice(String.valueOf((firstprice*80)/100));
                 trip.setTotalprice(String.valueOf(firstprice));
+                trip.setStutus("false");
                 tripRepo.save(trip);
                 return Hutils.getResponseEntity("First part successfully", HttpStatus.OK);
 
