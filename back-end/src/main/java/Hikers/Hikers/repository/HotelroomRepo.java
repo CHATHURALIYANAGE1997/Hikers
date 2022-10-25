@@ -18,7 +18,7 @@ public interface HotelroomRepo extends JpaRepository<Hotelroom,Long> {
 
 
 //    List<Hotelroom> findAll();
-    Hotelroom findByHotel_idAndRoom_type( String hotel_id,String room_type);
+   Hotelroom findByHotelidAndRoomtype( String hotel_id,String room_type);
 
 
 }
