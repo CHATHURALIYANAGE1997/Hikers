@@ -38,7 +38,7 @@ const VolunteerEvent = () => {
                             <textarea id="w3review" name="w3review" rows="4" cols="35"/>
                             </div>
                             <div className="d-flex flex-row justify-content-right">
-                                <Link to={"/adminvolunteer"}><button type="button" className=" btn btn-outline-primary forumpreviewbtn" >Back</button></Link>
+                                <Link to={"/admin/volunteers"}><button type="button" className=" btn btn-outline-primary forumpreviewbtn" >Back</button></Link>
                                 <button type="button" className="btn btn-primary forumpreviewbtn" >Submit</button>
                             </div>
                         </form>

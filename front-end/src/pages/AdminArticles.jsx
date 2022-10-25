@@ -28,9 +28,6 @@ const AdminArticles = (props) => {
                                 <Questions />
                             </div>
                         </div>
-                        <div className="d-flex flex-row">
-
-                        </div>
                     </div>
                 </div>
             </div>

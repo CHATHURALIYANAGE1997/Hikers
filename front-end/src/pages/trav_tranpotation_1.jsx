@@ -47,6 +47,9 @@ const Transport = () => {
                 <Navbar />
                 {/* <span className="tr_leftDiv"></span>
                 <span className="tr_rightDiv"></span> */}
+                <div className="w-100">
+                    <button className=""></button>
+                </div>
                 <div class="md-stepper-horizontal orange">
                     <div class="md-step active done">
                         <div class="md-step-circle"><span>1</span></div>
