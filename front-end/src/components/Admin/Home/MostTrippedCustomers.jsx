@@ -15,26 +15,32 @@ const MostTrippedCustomer = () => {
                 <span className="popular-places-province vc-bold">Image</span>
                 <span className="popular-places-province vc-bold">Name</span>
                 <span className="popular-places-province vc-bold">Spent Amount</span>
+                <span className="popular-places-province vc-bold">Promotion</span>
+
             </div>
             <div className="d-flex flex-row justify-content-between valuable-customers">
                 <img src={avishi} className="valuable-customer-profile-img" alt="Profile Picture"></img>
                 <span className="popular-places-province">Avishi Jayaweera</span>
-                <span className="popular-places-province">7</span>
+                <span className="popular-places-province">13</span>
+                <span className="promotion-applied">Applied</span>
             </div>
             <div className="d-flex flex-row justify-content-between valuable-customers">
                 <img src={kasun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Kasun Perera</span>
-                <span className="popular-places-province">6</span>
+                <span className="popular-places-province">Chathura Liyanage</span>
+                <span className="popular-places-province">11</span>
+                <span className="promotion-notapplied">Not applied</span>
             </div>
             <div className="d-flex flex-row justify-content-between valuable-customers">
                 <img src={sadun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Sadun Kamilka</span>
-                <span className="popular-places-province">5</span>
+                <span className="popular-places-province">Kasun Perera</span>
+                <span className="popular-places-province">7</span>
+                <span className="promotion-notapplied">Not applied</span>
             </div>
             <div className="d-flex flex-row justify-content-between valuable-customers">
                 <img src={chathura} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Chathura Liyanage</span>
+                <span className="popular-places-province">Sadun Kamilka</span>
                 <span className="popular-places-province">5</span>
+                <span className="promotion-notapplied">Not applied</span>
             </div>
         </div>
     );
