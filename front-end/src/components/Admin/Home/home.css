@@ -68,3 +68,13 @@
     color:grey;
     font-weight: bold;
 }
+.mostengagedtopic{
+    text-align: center;
+    font-weight: bold;
+}
+.mostengagedhead{
+    background-color: grey;
+}
+.hscname{
+    text-align: left;
+}

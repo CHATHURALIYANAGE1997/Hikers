@@ -42,10 +42,8 @@ const AdminHome = (props) => {
                             <IncomeChart />
                         </div>
                         <h4 className="admin-hotel-top">Most Valuable Customers</h4>
-                        <div className="d-flex flex-row">\
-                        <h3 className="admin-hotel-top">Highest spending customers</h3>
-                            <ValuableCustomer />
-                        <h3 className="admin-hotel-top">Most engaged customers</h3>
+                        <div className="d-flex flex-row">
+                            <ValuableCustomer />   
                             <MostTrippedCustomer />
                         </div>
 
