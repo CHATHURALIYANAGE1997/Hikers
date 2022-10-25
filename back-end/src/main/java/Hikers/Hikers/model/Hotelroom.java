@@ -19,10 +19,10 @@ public class Hotelroom implements Serializable {
     private Long room_id;
 
 
-    private Long hotel_id;
+    private Long hotelid;
 
     @Column(name="room_type")
-    private String room_type;
+    private String roomtype;
 
     @Column(name="sleeps")
     private String sleeps;
