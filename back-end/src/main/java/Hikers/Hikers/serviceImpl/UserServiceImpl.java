@@ -2,9 +2,6 @@ package Hikers.Hikers.serviceImpl;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,6 +10,7 @@ import Hikers.Hikers.cons.Hcons;
 import Hikers.Hikers.jwt.CustomerUserDetailsService;
 import Hikers.Hikers.jwt.JwtFilter;
 import Hikers.Hikers.jwt.JwtUtil;
+
 import Hikers.Hikers.model.*;
 import Hikers.Hikers.repository.*;
 import Hikers.Hikers.service.UserService;
@@ -717,6 +715,23 @@ public class UserServiceImpl implements UserService {
         return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @Override
+    public ResponseEntity<?> assignguideandtran(Long code, Long code1, Long code2) {
+        try {
+            Trip trip=tripRepo.findAllId(code);
+            Travelingguide travelingguide=travelingguideRepo.findAllById(code1);
+            Transportprovider transportprovider=transportproviderRepo.findAllById(code2);
+            trip.setTranspotername(transportprovider.getFirstname());
+            trip.setTranspoterid(String.valueOf(transportprovider.getService_provider_id()));
+            trip.setGuidename(travelingguide.getFirstname());
+            trip.setGuideid(String.valueOf(travelingguide.getGuide_id()));
+            tripRepo.save(trip);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(),HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
 
     private void sendEmailToVolientiers(String email,String messge) throws MessagingException, UnsupportedEncodingException {
         String toAddress = email;
@@ -828,8 +843,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public ResponseEntity<?> forgotpassword(Map<String, String> requestMap) {
         try {
+            log.info("dfdsfdfsd");
             String siteURL="http://localhost:3000";
             User user=userRepo.findByEmailAndAccountstatusAndEnabled(requestMap.get("email"),"ture",true);
+            System.out.println(requestMap);
             Hotel hotel=hotelRepo.findByEmailAndAccountstatus(requestMap.get("email"),"ture");
             Equipmentprovider equipmentprovider=equipmentproviderRepo.findByEmailAndAccountstatusAndEnabled(requestMap.get("email"),"ture",true);
             Transportprovider transportprovider=transportproviderRepo.findByEmailAndAccountstatus(requestMap.get("email"),"ture");
