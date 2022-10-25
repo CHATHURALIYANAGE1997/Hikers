@@ -10,6 +10,7 @@ import authToken from "../../utils/authToken";
 import PreviousData from "./PreviousData";
 import NotFoundPage from "../../pages/NotFoundPage";
 
+
 const RoomType = (props) => {
 
 
