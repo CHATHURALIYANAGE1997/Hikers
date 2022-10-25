@@ -69,6 +69,8 @@ import HotelUpcomingBooking from './pages/HotelUpcomingBooking';
 import AdminGuide from './pages/AdminGuide';
 import CampingAd from './pages/CampingAd';
 import LandingPageNew from './pages/LandingPage';
+import Volunteer from './pages/Volunteer';
+import VolunteerEvent from './pages/VolunteerEvent';
 
 
 function App() {
@@ -179,6 +181,8 @@ function App() {
               <Route path="/map" component={MyComponent}></Route>
               <Route path="/campingad" component={CampingAd}></Route>
               <Route path="/landing" component={LandingPageNew}></Route>
+              <Route path="/volunteer" component={Volunteer}></Route>
+              <Route path="/volunteerevent" component={VolunteerEvent}></Route>
 
             </Switch>
             
