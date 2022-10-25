@@ -49,11 +49,10 @@ import AdminHome from './pages/AdminHome';
 import AdminHotels from './pages/AdminHotels';
 import AdminTranspotation from './pages/AdminTranspotation';
 import AdminArticles from './pages/AdminArticles';
-import AdminAddArticle from './pages/AdminAddArticle';
+import AdminAddArticle from './pages/AdminVolunteer';
 import AdminAddHotel from './pages/AdminAddHotel';
 import AdminAddTransporter from './pages/AdminAddTransporter';
 import DayDistribution from './pages/trav_dayDistribution';
-
 import verifyaccount from "./pages/verifyaccount";
 import TravelerProfile from './pages/TravelerProfile';
 import TravelerTrips from './pages/TravelerTrips';
@@ -69,7 +68,7 @@ import HotelUpcomingBooking from './pages/HotelUpcomingBooking';
 import AdminGuide from './pages/AdminGuide';
 import CampingAd from './pages/CampingAd';
 import LandingPageNew from './pages/LandingPage';
-import Volunteer from './pages/Volunteer';
+import AdminVolunteer from './pages/AdminVolunteer';
 import VolunteerEvent from './pages/VolunteerEvent';
 import Map from './components/Trav_map/trav_map';
 
@@ -182,7 +181,7 @@ function App() {
               <Route path="/map" component={MyComponent}></Route>
               <Route path="/campingad" component={CampingAd}></Route>
               <Route path="/landing" component={LandingPageNew}></Route>
-              <Route path="/volunteer" component={Volunteer}></Route>
+              <Route path="/adminvolunteer" component={AdminVolunteer}></Route>
               <Route path="/volunteerevent" component={VolunteerEvent}></Route>
               <Route path="/travmap" component={Map}></Route>
 
