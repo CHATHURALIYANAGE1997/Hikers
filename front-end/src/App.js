@@ -120,8 +120,8 @@ function App() {
               <Route path = "/forums/" component= {Forums}></Route>
               <Route path = "/forumDetails/" component= {ForumDetails}></Route>
               <Route path = "/forumQuestion/" component= {forumQuestion}></Route>
-              <Route path = "/rateTransport/" component= {RateTransport}></Route>
-              <Route path = "/rateGuide/" component= {RateGuide}></Route>
+              <Route path = "/rateTransport/:id?" component= {RateTransport}></Route>
+              <Route path = "/rateGuide/:id?" component= {RateGuide}></Route>
               <Route path="/equipments/" component={Equipments}></Route>
               <Route path="/organizeTrip" component={oraganizeTrip}></Route>
               {/* <Route path = "/guide" component = {TravelingGuide}></Route> */}
