@@ -1,12 +1,13 @@
 .landingContainer{
-    margin-top: 80px;
+    margin-top: 85px;
+    margin-bottom: 2%;
     width:100%;
+  
 }
-.landing-row{
+/* .landing-row{
+    background-color: #D3E0EA;
    
-    background-color: rgb(255, 255, 255);
-   
-}
+} */
 .LandPic{
     height: 45px;
 }
@@ -14,9 +15,20 @@
     margin-right: 5%;
 }
 .landing-col{
-    margin-left: 5%;
+    margin-left: 2%;
     text-align: center;
+    background-color: #D3E0EA;
 }
 .landing-col1{
-    margin-right: 5%;
+    margin-right: 2%;
+    background-color: #D3E0EA;
+}
+.hikingTitle{
+    margin-top:70px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #0c3250;
+}
+.hikingTitleSub{
+    font-weight: 700;
 }

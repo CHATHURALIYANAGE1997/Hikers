@@ -3,7 +3,8 @@ import Navbar from "../components/Navbar/Navbar";
 import { Container, Image } from "react-bootstrap";
 import { Row, Col } from "react-bootstrap";
 import "../components/Landing/Landing.css";
-import LandingWall1 from "../components/Landing/LandingWall1.jpg";
+import Couple from "../components/Landing/couple.png";
+import Articlecarousel from "../components/Carousel/carousel";
 
 const LandingPageNew = () => {
   return (
@@ -27,14 +28,22 @@ const LandingPageNew = () => {
           <div class="row landing-row">
             <div class="col landing-col">
               <h1 className="hikingTitle">Welcome To Hikers</h1>
-              <h3>Safe Trip to the peak</h3>
-              <p>The carousel is a slideshow for cycling through a series of content, 
-                built with CSS 3D transforms and a bit of JavaScript. It works with a 
-              .</p>
+              <h4 className="hikingTitleSub">
+                <i>Safe trip to the pea</i>k
+              </h4>
+              <p>Hikers provide you the best hiking experiance in Sri Lanka.</p>
             </div>
             <div class="col landing-col1">
-              <img src={LandingWall1} className="rounded img-fluid landingImage"></img>
+              <img
+                src={Couple}
+                className="rounded img-fluid landingImage"
+              ></img>
             </div>
+          </div>
+        </div>
+        <div className="Container2">
+          <div className="row articlecarouselrow">
+            <Articlecarousel />
           </div>
         </div>
       </div>
