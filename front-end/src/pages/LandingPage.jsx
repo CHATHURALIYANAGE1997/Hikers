@@ -5,6 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import "../components/Landing/Landing.css";
 import Couple from "../components/Landing/couple.png";
 import Articlecarousel from "../components/Carousel/carousel";
+import LandingFooter from "../components/Footer/footer";
 
 const LandingPageNew = () => {
   return (
@@ -59,6 +60,9 @@ const LandingPageNew = () => {
               in
             </p>
           </div>
+        </div>
+        <div className="Container4">
+          <LandingFooter />
         </div>
       </div>
     </div>
