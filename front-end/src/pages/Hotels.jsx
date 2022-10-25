@@ -75,11 +75,11 @@ export default function Parent(props) {
                 <div className="mb-4 d-flex flex-row justify-content-between">
                     <div className="text-light d-flex flex-column box">
                         <span className="pr-2 nb-text">Check-In</span>
-                        <input type="date" value={user.checkin} onChange={credentialChange} name="checkin" required min="2022-10-27"></input>
+                        <input type="date" value={user.checkin} onChange={credentialChange} name="checkin" required min="2022-11-01"></input>
                     </div>
                     <div className="text-light d-flex flex-column justify-content-center box">
                         <span className="nb-text">Check-Out</span>
-                        <input type="date" value={user.checkout} onChange={credentialChange} name="checkout" required min="2022-10-27"></input>
+                        <input type="date" value={user.checkout} onChange={credentialChange} name="checkout" required min="2022-11-01"></input>
                     </div>
                     <div className="text-light d-flex flex-row box">
                         <label className="mt-auto mr-2 mb-auto r-label">Crowd</label>

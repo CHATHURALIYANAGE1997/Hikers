@@ -25,7 +25,7 @@ const Price = () => {
             <div className="d-flex flex-column p-3 mt-2 price-booking">
                 <div className="d-flex flex-row justify-content-between">
                     <div className="price-price">Price</div>
-                    <div className="price-price">LKR 34000.00</div>
+                    <div className="price-price">LKR {localStorage.getItem("price")}</div>
                 </div>
                 <div className="price-currency mb-2">(Your currency)</div>
 

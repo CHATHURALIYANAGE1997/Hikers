@@ -138,7 +138,7 @@ const RoomType = (props) => {
                             } else if (room.roomtype == 'Triple room') {
                                 bedcount = 2;
                                 localStorage.setItem("trippleprice", room.amount);
-                                beds = "01 Single bed + 01 Double bed"
+                                beds = "01 Single bed + 01 Double bed220000000000000000000000000"
                                 return (
                                     <tr>
                                         <td>

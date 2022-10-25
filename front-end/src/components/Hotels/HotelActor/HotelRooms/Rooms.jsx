@@ -35,7 +35,7 @@ const Rooms = (props) => {
                     else if(room.sleeps == 5){
                         beds = "02 Double beds + 01 Single bed";
                     }
-                    if (id == room.hotel_id) {
+                    if (id == room.hotelid) {
                         return (
                             <>
                                 <div className='d-flex flex-column rooms-card'
