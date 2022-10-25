@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -415,6 +414,16 @@ public class UserRestImpl implements UserRest {
     public ResponseEntity<?> plantrip(Map<String, String> requestMap) {
         try {
             return userService.plantrip(requestMap);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return new ResponseEntity(new ArrayList<>(), HttpStatus.BAD_REQUEST);
+    }
+
+    @Override
+    public ResponseEntity<?> assignguideandtran(Long code, Long code1, Long code2) {
+        try {
+            return userService.assignguideandtran(code,code1,code2);
         }catch (Exception ex){
             ex.printStackTrace();
         }
