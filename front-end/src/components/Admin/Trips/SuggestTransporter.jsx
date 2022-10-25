@@ -33,7 +33,7 @@ function SuggestTransporter(props) {
         }).then((response) => {
             const allGuide = response.data;
             setTransport(allGuide);
-            console.log(allGuide);
+            //console.log(allGuide);
         }).catch((error) => {
             console.log(error);
         })
