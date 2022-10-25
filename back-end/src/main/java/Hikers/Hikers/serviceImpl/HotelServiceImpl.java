@@ -203,9 +203,9 @@ public class HotelServiceImpl implements HotelService {
                 String sin="Single bed";
                 String dou="Double bed";
                 String tre="Trible bed";
-                Hotelroom hotelroom=hotelroomRepo.findByHotel_idAndRoom_type(requestMap.get("hotel_id"),sin);
-                Hotelroom hotelroom1=hotelroomRepo.findByHotel_idAndRoom_type(requestMap.get("hotel_id"),dou);
-                Hotelroom hotelroom2=hotelroomRepo.findByHotel_idAndRoom_type(requestMap.get("hotel_id"),tre);
+                Hotelroom hotelroom=hotelroomRepo.findByHotelidAndRoomtype(requestMap.get("hotel_id"),sin);
+                Hotelroom hotelroom1=hotelroomRepo.findByHotelidAndRoomtype(requestMap.get("hotel_id"),dou);
+                Hotelroom hotelroom2=hotelroomRepo.findByHotelidAndRoomtype(requestMap.get("hotel_id"),tre);
                 int singlebedroomprice=Integer.parseInt(hotelroom.getAmount());
                 int doublebedroomprice=Integer.parseInt(hotelroom1.getAmount());
                 int triblebedroomprice=Integer.parseInt(hotelroom2.getAmount());
