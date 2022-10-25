@@ -110,11 +110,11 @@ function TripRequest(props) {
                                             <div className="">
                                                 <label>Assign : </label>
                                                 <select className="option-input" name="guide">
-                                                    <GuideOption />
+                                                    <GuideOption province={trip.province}/>
                                                 </select>
                                                 <div className="w-50 mb-2 d-flex flex-column">
                                                     <label className="mb-2 font-weight-bold text-info trip-request-suggest">Suggestions : </label>
-                                                    <SuggestGuide />
+                                                    <SuggestGuide province={trip.province}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,11 +123,11 @@ function TripRequest(props) {
                                             <div className="">
                                                 <label>Assign : </label>
                                                 <select className="option-input" name="transporter">
-                                                    <TransportOption />
+                                                    <TransportOption province={trip.province}/>
                                                 </select>
                                                 <div className="w-50 mb-2 d-flex flex-column">
                                                     <label className="mb-2 font-weight-bold text-info trip-request-suggest">Suggestions : </label>
-                                                    <SuggestTransporter />
+                                                    <SuggestTransporter province={trip.province}/>
                                                 </div>
                                             </div>
                                         </div>

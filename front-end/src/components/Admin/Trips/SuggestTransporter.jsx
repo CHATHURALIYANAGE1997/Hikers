@@ -11,10 +11,9 @@ import axios from "axios";
 
 function SuggestTransporter(props) {
 
-    const accessToken = localStorage.jwtToken;
+    const {province} = props;
 
-    //Trip province
-    let province = "Southern";
+    const accessToken = localStorage.jwtToken;
 
     //Trip date
     let tripdate = '10-10-2022';
@@ -47,16 +46,16 @@ function SuggestTransporter(props) {
                     .reverse().map((transport, index) => {
                         //console.log(transport);
                         //console.log(index);
-                        if (transport.province == province) {
+                        if (transport.province == province && transport.accountstatus == 'ture') {
                             return (
                                 <div className="d-flex flex-column w-100 mb-2">
                                     <label className="mr-2 trip-request-suggest" value={index}>{transport.firstname} {" "} {transport.lastname}</label>
-                                    <label className="guide-option-overall">Overall Ratings : {transport.overrall}</label>
+                                    <label className="guide-option-overall">Overall Ratings : {transport.overrall}%</label>
                                     <div className="ml-3 d-flex flex-column w-100">
-                                        <label className="mr-2 w-50">Punctuality - {transport.securityoverrall}</label>
-                                        <lable className="mr-2 w-50">Security - {transport.neatandtidyoverrall}</lable>
-                                        <label className="mr-2 w-50">Communication - {transport.navigationcapacityoverrall}</label>
-                                        <label className="mr-2 w-50">Domain knowledge - {transport.punctualityoverrall}</label>
+                                        <label className="mr-2 w-50">Punctuality - {transport.securityoverrall}%</label>
+                                        <lable className="mr-2 w-50">Security - {transport.neatandtidyoverrall}%</lable>
+                                        <label className="mr-2 w-50">Communication - {transport.navigationcapacityoverrall}%</label>
+                                        <label className="mr-2 w-50">Domain knowledge - {transport.punctualityoverrall}%</label>
                                     </div>
                                 </div>
                             );

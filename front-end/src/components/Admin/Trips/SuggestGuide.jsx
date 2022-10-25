@@ -11,10 +11,9 @@ import axios from "axios";
 
 function SuggestGuide(props) {
 
-    const accessToken = localStorage.jwtToken;
+    const {province} = props;
 
-    //Trip province
-    let province = "Southern";
+    const accessToken = localStorage.jwtToken;
 
     //Trip date
     let tripdate = '10-10-2022';
@@ -50,12 +49,12 @@ function SuggestGuide(props) {
                             return (
                                 <div className="d-flex flex-column w-100 mb-2">
                                     <label className="mr-2 trip-request-suggest" value={index}>{guide.firstname} {" "} {guide.lastname}</label>
-                                    <label className="guide-option-overall">Overall Ratings : {guide.overrall}</label>
+                                    <label className="guide-option-overall">Overall Ratings : {guide.overrall}%</label>
                                     <div className="ml-3 d-flex flex-column w-100">
-                                        <lable className="mr-2 w-75">Security - {guide.securityoverrall}</lable>
-                                        <label className="mr-2 w-75">Communication - {guide.communicationoverrall}</label>
-                                        <label className="mr-2 w-75">Domain knowledge - {guide.domainknowledgeoverrall}</label>
-                                        <label className="mr-2 w-75">Punctuality - {guide.punctualityoverrall}</label>
+                                        <lable className="mr-2 w-75">Security - {guide.securityoverrall}%</lable>
+                                        <label className="mr-2 w-75">Communication - {guide.communicationoverrall}%</label>
+                                        <label className="mr-2 w-75">Domain knowledge - {guide.domainknowledgeoverrall}%</label>
+                                        <label className="mr-2 w-75">Punctuality - {guide.punctualityoverrall}%</label>
                                     </div>
                                 </div>
                             );

@@ -11,10 +11,9 @@ import axios from "axios";
 
 function GuideOption(props) {
 
-    const accessToken = localStorage.jwtToken;
+    const {province} = props;
 
-    //Trip province
-    let province = "Southern";
+    const accessToken = localStorage.jwtToken;
 
     //Trip date
     let tripdate = '10-10-2022';

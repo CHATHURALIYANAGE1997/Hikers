@@ -12,14 +12,14 @@ import { useEffect } from "react";
 
 function TrnasportOption(props) {
 
+    const {province} = props;
+
     const accessToken = localStorage.jwtToken;
 
     const [open, setOpen] = useState(false);
 
     const { details } = props;
 
-    //Trip province
-    let province = "Southern";
 
     //Trip date
     let tripdate = '10-10-2022';
@@ -51,7 +51,7 @@ function TrnasportOption(props) {
                 transporter.map((transporter, index) => {
                     //console.log(transporter);
                     //console.log(index);
-                    if (transporter.province == province) {
+                    if (transporter.province == province && transporter.accountstatus == 'ture') {
                         return (
                             <option value={index}>{transporter.firstname} {" "} {transporter.lastname}</option>
                         );
