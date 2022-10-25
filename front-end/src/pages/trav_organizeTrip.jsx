@@ -33,12 +33,6 @@ function oraganizeTrip(props) {
     adults: "",
     children: "",
     date: "",
-<<<<<<< refs/remotes/origin/main
-    mountain: "",
-    province: "",
-    package: "",
-
-=======
     province: travel_province,
     mountain: travel_mountain,
     abseiling: "",
@@ -46,7 +40,6 @@ function oraganizeTrip(props) {
     onedayhike: "",
     email: "",
     firstprice: "",
->>>>>>> Update Front end
   };
 
   const [data, setData] = useState(initialState);
@@ -265,63 +258,12 @@ function oraganizeTrip(props) {
 
             <Form.Group as={Row} md="3" controlId="validationCustom04" className="d-flex flex-column">
 
-<<<<<<< refs/remotes/origin/main
-            <Row className="mb-3">
-              <Form.Group as={Row} md="6" controlId="validationCustom03">
-                <Form.Label>Date</Form.Label>
-                <Form.Control
-                  type="date"
-                  // placeholder="DD/MM/YYYY" 
-                  name='date'
-                  // id='date'
-                  value={data.date}
-                  onChange={(e) => handle(e)}
-                  required
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please provide a valid city.
-                </Form.Control.Feedback>
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
 
-              <Form.Group as={Row} md="3" controlId="validationCustom04" className="d-flex flex-column">
-
-                <Form.Label>Location</Form.Label>
-
-                
-                
-
-                  {/* <Form.Select 
-                    // id='ddlMountain'
-                    aria-label="" 
-                    className='trot_dropDown' 
-                    // onChange={(e) => handleMountain (e.target.value)}
-                    name='mountain'
-                    // id={'mountain'}
-                    value={data.mountain}
-                    onChange={handle}
-
-                    >
-                    <option value={0}>Select a mountain</option>
-                    {
-                      mountain &&
-                      mountain !== undefined ?
-                      mountain.map ((prv, index) => {
-                        return (
-                          <option key={index} value={prv.name}>{prv.name}</option>
-                        )
-                      })
-                      :"No province"
-
-                    }
-                  </Form.Select> */}
-=======
               <Form.Label>Location</Form.Label>
 
               <div className="d-flex flex-row w-75 justify-content-between">
                 <div className='d-flex flex-column'>
                   <label>Province</label>
->>>>>>> Update Front end
                   <Form.Control
                     className=''
                     disabled
@@ -334,83 +276,12 @@ function oraganizeTrip(props) {
                 <div className='d-flex flex-column text-align-left'>
                   <label>Mountain</label>
                   <Form.Control
-<<<<<<< refs/remotes/origin/main
-                  className=''
-                  disabled    
-                  // required
-                  type="text"
-                  // placeholder="First name"
-                  name='mountain'
-                  // id='name'
-                  value={travel_mountain}
-                  //onChange={handle}
-                  readOnly
-                />
-
-  
-
-                <Form.Control.Feedback type="invalid">
-                  Please provide a valid state.
-                </Form.Control.Feedback>
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-              <br />
-              <Form.Group as={Row} md="3" controlId="validationCustom04">
-                <Form.Label>Packages</Form.Label>
-                <Form.Control.Feedback type="invalid">
-                  Please provide a valid state.
-                </Form.Control.Feedback>
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-              <br />
-              <Row className="trsp_packageRow"
-                onChange={handle}
-
-              >
-                <Col sm={4}>
-                  <Package
-                    className="pkgOneDay"
-                    name="One Day Hike"
-                    des=" "
-                    topic_1="Local"
-                    topic_2="Foriegn"
-                    lPrice="1000"
-                    fPrice="2000"
-                    value="1_day_hike"
-                  />
-                </Col>
-                <Col sm={4}>
-                  <Package
-                    className="pkgCamping"
-                    name="Camping"
-                    des=" "
-                    topic_1="Local"
-                    topic_2="Foriegn"
-                    lPrice="1000"
-                    fPrice="2000"
-                    value="camping"
-
-                  />
-                </Col>
-                <Col sm={4}>
-                  <Package
-                    className="pkgAbseiling"
-                    name="Abseiling"
-                    des=""
-                    topic_1="Local"
-                    topic_2="Foriegn"
-                    lPrice="10000"
-                    fPrice="20000"
-                    value="abseiling"
-
-=======
                     className=''
                     disable
                     type="text"
                     name='mountain'
                     value={travel_mountain}
                     readOnly
->>>>>>> Update Front end
                   />
                 </div>
               </div>
