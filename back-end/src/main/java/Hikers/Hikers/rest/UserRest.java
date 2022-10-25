@@ -3,15 +3,10 @@ package Hikers.Hikers.rest;
 
 import Hikers.Hikers.model.Hotel;
 import Hikers.Hikers.model.Transportprovider;
-import Hikers.Hikers.model.Travelingguide;
-import Hikers.Hikers.model.User;
-import com.sun.net.httpserver.Authenticator;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -127,6 +122,9 @@ public interface UserRest {
 
     @PostMapping(path="/plantrip")
     public ResponseEntity<?> plantrip(@RequestBody(required=true) Map<String, String> requestMap);
+
+    @GetMapping(path = "/assignguideandtran/{code,code1,code2}")
+    public ResponseEntity<?> assignguideandtran(@PathVariable(required = true) Long code,Long code1,Long code2);
 
 }
 
