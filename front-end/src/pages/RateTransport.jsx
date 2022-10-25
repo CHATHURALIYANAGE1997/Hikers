@@ -84,7 +84,6 @@ const rateTransport = () => {
                                 </div>
                             </div>
                             <div className="mb-3">
-
                                 <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                     <h5>Any comments or suggestions?</h5>
                                     <Form.Control as="textarea" rows={5} />

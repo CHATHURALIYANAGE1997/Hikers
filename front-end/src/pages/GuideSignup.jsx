@@ -179,7 +179,7 @@ const GuideSignup = (props) => {
                                 Already have an account <a className="loginahref" href="/Login">Login</a>
                             </div>
                             <div>
-                                <di>
+                                <div>
                                     {show && props.message && (
                                         <Alert variant="success" onClose={() => setShow(false)} dismissible>
                                             {props.message}
@@ -190,7 +190,7 @@ const GuideSignup = (props) => {
                                             {error}
                                         </Alert>
                                     )}
-                                </di>
+                                </div>
                             </div>
                             <div className="d-flex flex-row">
                                 <div class="col-2">
