@@ -103,8 +103,8 @@ function TripRequest(props) {
                             </div>
                         </div>
                         <div className="d-flex flex-row justify-content-between w-75 mt-3">
-                            <button className="reject-btn">Reject</button>
-                            <button className="accept-btn">Accept</button>
+                            {/*<button    className="reject-btn">Reject</button>*/}
+                            <button className="accept-btn">Complete</button>
                         </div>
                     </div>
                 </Collapse>
