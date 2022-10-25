@@ -49,7 +49,7 @@ import AdminHome from './pages/AdminHome';
 import AdminHotels from './pages/AdminHotels';
 import AdminTranspotation from './pages/AdminTranspotation';
 import AdminArticles from './pages/AdminArticles';
-import AdminAddArticle from './pages/AdminVolunteer';
+import AdminAddArticle from './pages/AdminAddArticle';
 import AdminAddHotel from './pages/AdminAddHotel';
 import AdminAddTransporter from './pages/AdminAddTransporter';
 import DayDistribution from './pages/trav_dayDistribution';
