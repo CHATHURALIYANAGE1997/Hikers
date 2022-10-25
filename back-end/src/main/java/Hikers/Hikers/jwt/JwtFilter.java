@@ -1,5 +1,7 @@
 package Hikers.Hikers.jwt;
 
+import Hikers.Hikers.model.User;
+import Hikers.Hikers.repository.UserRepo;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,6 +24,9 @@ public class JwtFilter  extends OncePerRequestFilter {
 
     @Autowired
     private JwtUtil jwtUtil;
+
+    @Autowired
+    private UserRepo userRepo;
 
     @Autowired
     private CustomerUserDetailsService service;
