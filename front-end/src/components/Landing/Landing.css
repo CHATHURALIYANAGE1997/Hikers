@@ -32,3 +32,18 @@
 .hikingTitleSub{
     font-weight: 700;
 }
+.Container3{
+   margin: 2%;
+}
+.aboutUsrow{
+    margin-top: 10%;
+    background-color: #D3E0EA;
+}
+.AboutUsTitle{
+    color: #0c3250;
+    font-weight: 700;
+    padding: 5px;
+}
+.AboutUsParagraph{
+    text-align: center;
+}
