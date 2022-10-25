@@ -164,11 +164,12 @@ const AdminAddTransporter = (props) => {
                                         <Form.Control type="file" className="form-control" value={user.vehicleimg} onChange={credentialChange} name="vehicleimg"/>
                                     </Form.Group>
 
-                                    <Button variant="primary" type="submit" onClick={addTransport} className='w-50'>
+                                    <Link to={"/admin/transportation"}><Button variant="primary" type="submit" onClick={addTransport} className='w-50'>
                                         Submit
-                                    </Button>
+                                    </Button></Link>
                                 </div>
-                            </Form>                        </div>
+                            </Form>                        
+                            </div>
                     </div>
                 </div>
             </div>

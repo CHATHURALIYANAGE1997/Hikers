@@ -30,6 +30,7 @@ import { useSelector } from "react-redux";
 import NotFoundPage from "./NotFoundPage";
 import MyComponent from "../components/Trav_map/trav_gMap";
 import Map from "../components/Trav_map/trav_map";
+import { Link } from "react-router-dom";
 
 const Transport = () => {
     const [currentMainStatus, updateCurrentMainStatus] = useState("")
@@ -47,8 +48,9 @@ const Transport = () => {
                 <Navbar />
                 {/* <span className="tr_leftDiv"></span>
                 <span className="tr_rightDiv"></span> */}
-                <div className="w-100">
-                    <button className=""></button>
+                <div className="w-100 d-flex flex-row">
+                    <h4>Do you want Transport Service from our site?</h4>
+                    <Link to={"/"}><button className="transport-skip">Skip Transport Service</button></Link>
                 </div>
                 <div class="md-stepper-horizontal orange">
                     <div class="md-step active done">
