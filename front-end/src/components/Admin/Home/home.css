@@ -60,3 +60,11 @@
 .transport-income-title {
     text-align: left !important;
 }
+.promotion-applied{
+    color:green;
+    font-weight: bold;
+}
+.promotion-notapplied{
+    color:grey;
+    font-weight: bold;
+}
