@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
 // import "../Styles/trav_editTrip.css"
@@ -9,7 +9,22 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import "./trav_vehicleDetails.css"
 import {Link} from "react-router-dom";
+// import { useState } from "react";
 
+const initialData = {
+    title: "",
+    passengers: "",
+
+}
+// const [data, setData] = useState('')
+
+// const handle = (e) => {
+//     const newData = { ...data }
+//     newData[e.target.name] = e.target.value
+//     setData(newData)
+//     console.log(newData)
+
+// }
 const VehicleDetails = ({data, vehiInd}) => {
     return (
         <div>
@@ -32,6 +47,7 @@ const VehicleDetails = ({data, vehiInd}) => {
                     </InputGroup.Text>
                     <Form.Control 
                         className="inputName"
+                        name='title'
                         value={item.title}
                         />
                 </InputGroup>
@@ -43,6 +59,7 @@ const VehicleDetails = ({data, vehiInd}) => {
                     </InputGroup.Text>
                     <Form.Control 
                         className="inputLocation"
+                        name='passengers'
                         value={item.passengers}
                         />
                 </InputGroup>
@@ -61,7 +78,7 @@ const VehicleDetails = ({data, vehiInd}) => {
 
                 <div className="trvd_buttonArea">
                     <Link to={"/editTrip"}>
-                        <Button className="trvd_Selectbutton" variant="success ">Select</Button>{' '}
+                        <Button type='submit' type='button'  className="trvd_Selectbutton" variant="success ">Select</Button>{' '}
 
                     </Link>
                         

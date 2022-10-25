@@ -71,6 +71,7 @@ import CampingAd from './pages/CampingAd';
 import LandingPageNew from './pages/LandingPage';
 import Volunteer from './pages/Volunteer';
 import VolunteerEvent from './pages/VolunteerEvent';
+import Map from './components/Trav_map/trav_map';
 
 
 function App() {
@@ -183,6 +184,8 @@ function App() {
               <Route path="/landing" component={LandingPageNew}></Route>
               <Route path="/volunteer" component={Volunteer}></Route>
               <Route path="/volunteerevent" component={VolunteerEvent}></Route>
+              <Route path="/travmap" component={Map}></Route>
+
 
             </Switch>
             

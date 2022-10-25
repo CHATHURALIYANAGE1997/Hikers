@@ -4,8 +4,6 @@ import profile from './Picture.png';
 
 const ProfileDetails = (props) => {
 
-    
-
     const displayGuide = (props) => {
 
         const {guide} = props;

@@ -19,6 +19,8 @@ const GuideSchedule = (props) => {
 
     const auth = useSelector((state) => state.auth);
 
+    const email = auth.username
+
     // useEffect(() => {
     //     if(auth.isLoggedIn === true && auth.role === "Travelguide"){
     //         return propTypes.history.push("/guide/schedule");
@@ -29,7 +31,7 @@ const GuideSchedule = (props) => {
     //     }
     // },[]);
 
-    if (auth.isLoggedIn === true && auth.role === "Travelguide") {
+    // if (auth.isLoggedIn === true && auth.role === "Travelguide") {
         return (
             <div className="d-flex flex-column tg-container">
                 <GuideHeader />
@@ -37,7 +39,7 @@ const GuideSchedule = (props) => {
                     <GuideNav />
                     <div className="d-flex flex-column gs-schedule">
                     <div className="d-flex flex-row">
-                        <Today />
+                        <Today email={email}/>
                         <Calendar/>
                         </div>
                         <div className="d-flex flex-row gs-upcoming">
@@ -49,13 +51,13 @@ const GuideSchedule = (props) => {
 
             </div>
         );
-    }
-    else {
-        localStorage.clear();
-        // return props.history.push("/");
-        {return <div><NotFoundPage/></div>}
+    // }
+    // else {
+    //     localStorage.clear();
+    //     // return props.history.push("/");
+    //     {return <div><NotFoundPage/></div>}
 
-    }
+    // }
 }
 
 export default GuideSchedule;

@@ -24,11 +24,12 @@ import savedPlaces from "../components/Trav_savedPlaces/savedPlaces";
 import SavedPlaces from "../components/Trav_savedPlaces/trav_savedPlaces";
 import Navbar from "../components/Navbar/Navbar";
 import "../Styles/trav_transpotation.css"
-import Map from "../components/Trav_map/trav_map";
+// import Map from "../components/Trav_map/trav_map";
 import authToken from "../utils/authToken";
 import { useSelector } from "react-redux";
 import NotFoundPage from "./NotFoundPage";
 import MyComponent from "../components/Trav_map/trav_gMap";
+import Map from "../components/Trav_map/trav_map";
 
 const Transport = () => {
     const [currentMainStatus, updateCurrentMainStatus] = useState("")
@@ -136,7 +137,7 @@ const Transport = () => {
                                 <div className="tr_contMenu">
                                     {currentMainStatus === "start" &&
                                         <TransportStart labelName="Start" />
-
+                                           
                                     }
                                     {currentMainStatus === "destination" &&
                                         <TransportStart labelName="Destination" />
@@ -249,19 +250,15 @@ const Transport = () => {
                         </div>
                         <div className="tr_rightContainer">
                             
-                            {currentMainStatus === "" && <MyComponent/>}           {/* Initial right div */}
-                            {currentMainStatus === "start" && <MyComponent/>}           {/* Start right div */}
-                            {currentMainStatus === "destination" && <MyComponent/>}           {/* Destination right div */}
+                            {currentMainStatus === "" && <Map/>}           {/* Initial right div */}
+                            {currentMainStatus === "start" && <Map/>}           {/* Start right div */}
+                            {currentMainStatus === "destination" && <Map/>}           {/* Destination right div */}
                             
                             {currentMainStatus === "ride" && currentStatus === "bike" && <VehicleDetails data={vehicleDetails} vehiInd={0}/>}           {/* vehicle information */}
                             {currentMainStatus === "ride" && currentStatus === "tuk" && <VehicleDetails data={vehicleDetails} vehiInd={1}/>}
                             {currentMainStatus === "ride" && currentStatus === "car" && <VehicleDetails data={vehicleDetails} vehiInd={2}/>}
                             {currentMainStatus === "ride" && currentStatus === "van" && <VehicleDetails data={vehicleDetails} vehiInd={3}/>}
                             {currentMainStatus === "ride" && currentStatus === "bus" && <VehicleDetails data={vehicleDetails} vehiInd={4}/>}
-                            
-                            {currentMainStatus === "saved" && currentStatus === "dolukanda" && <SavedPlaces data_1={savedPlaces} placeInd={0}/>}           {/* saved places pics */}
-                            {currentMainStatus === "saved" && currentStatus === "hulangala" && <SavedPlaces data_1={savedPlaces} placeInd={1}/>}
-                            {currentMainStatus === "saved" && currentStatus === "sigiriya" && <SavedPlaces data_1={savedPlaces} placeInd={2}/>}
 
                         </div>
                     </Col>

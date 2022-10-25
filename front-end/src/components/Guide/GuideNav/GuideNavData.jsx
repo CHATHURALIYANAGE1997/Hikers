@@ -8,11 +8,11 @@ export const GuideNavData = [
         icon: <FontAwesomeIcon icon={faHome}/>,
         link: "/guide/profile"
     },
-    {
-        title: "Trips",
-        icon: <FontAwesomeIcon icon={faPersonHiking}/>,
-        link: "/guide/trips"
-    },
+    // {
+    //     title: "Trips",
+    //     icon: <FontAwesomeIcon icon={faPersonHiking}/>,
+    //     link: "/guide/trips"
+    // },
     {
         title: "Schedules",
         icon: <FontAwesomeIcon icon={faCalendarCheck}/>,

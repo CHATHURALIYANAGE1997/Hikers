@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Carousel from "react-elastic-carousel";
-import Item from "./Item";
+// import Carousel from "react-elastic-carousel";
+// import Item from "./Item";
 import "./carouselarticle.css";
 import { Link } from "react-router-dom";
 import mountain1 from "./mountain1.JPG";
@@ -27,7 +27,7 @@ function Articlecarousel() {
         <>
             <br></br>
             <div className="carouselarticle">
-                <Carousel breakPoints={breakPoints}>
+                {/* <Carousel breakPoints={breakPoints}>
                     <Item>
                         <div>
                             <div>
@@ -158,7 +158,7 @@ function Articlecarousel() {
                             </div>
                         </div>
                     </Item>
-                </Carousel>
+                </Carousel> */}
             </div>
         </>
     );

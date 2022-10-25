@@ -254,32 +254,9 @@ function oraganizeTrip(props) {
               <Form.Group as={Row} md="3" controlId="validationCustom04" className="d-flex flex-column">
 
                 <Form.Label>Location</Form.Label>
-<<<<<<< refs/remotes/origin/main
 
-                <div className="d-flex flex-row w-75">                              {/* provinces drop down */}
-                  <label>Province</label>
-=======
                 
-                <div className="d-flex flex-row w-75">                              {/* provinces drop down */}                    
-                  {/* <Form.Select 
-                    // id='ddlProvince'
-                    aria-label="" 
-                    className='trot_dropDown' 
-                    onChange={(e) => handleProvince (e.target.value)}
-                    >
-                    <option value={0}>Select a Province</option>
-                    {
-                      province &&
-                      province !== undefined ?
-                      province.map ((prv, index) => {
-                        return (
-                          <option key={index} value={prv.id}>{prv.name}</option>
-                        )
-                      })
-                      :"No province"
-
-                    }
-                  </Form.Select> */}
+                
 
                   {/* <Form.Select 
                     // id='ddlMountain'
@@ -305,7 +282,6 @@ function oraganizeTrip(props) {
 
                     }
                   </Form.Select> */}
->>>>>>> Hide 2 Dropdowns.
                   <Form.Control
                     className=''
                     // required
@@ -314,7 +290,6 @@ function oraganizeTrip(props) {
                     // placeholder="First name"
                     name='province'
                     // id='name'
-<<<<<<< refs/remotes/origin/main
                     value={travel_province}
                     //onChange={handle}
                     readOnly
@@ -332,25 +307,8 @@ function oraganizeTrip(props) {
                   //onChange={handle}
                   readOnly
                 />
-=======
-                    value={data.name}
-                    onChange={handle}
 
-                  />
-                  <Form.Control
-                    className=''
-                    disabled
-                    // required
-                    type="text"
-                    // placeholder="First name"
-                    name='mountain'
-                    // id='name'
-                    value={data.name}
-                    onChange={handle}
-
-                  />
->>>>>>> Hide 2 Dropdowns.
-                </div>
+  
 
                 <Form.Control.Feedback type="invalid">
                   Please provide a valid state.
