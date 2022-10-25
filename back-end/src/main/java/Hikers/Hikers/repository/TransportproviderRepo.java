@@ -16,5 +16,6 @@ public interface TransportproviderRepo extends JpaRepository<Transportprovider,L
     
     Transportprovider findByVerificationCodeAndAccountstatus(String id, String ture);
 
+    Transportprovider findAllById(Long code2);
 
 }
