@@ -5,7 +5,6 @@ import Hikers.Hikers.model.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -82,4 +81,6 @@ public interface UserService {
     ResponseEntity<?> getarticles();
 
     ResponseEntity<?> plantrip(Map<String, String> requestMap);
+
+    ResponseEntity<?> assignguideandtran(Long code, Long code1, Long code2);
 }
