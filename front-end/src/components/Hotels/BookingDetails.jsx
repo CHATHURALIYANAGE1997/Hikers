@@ -1,9 +1,22 @@
 import React from "react";
 import "./bookingdetails.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome,faBanSmoking} from '@fortawesome/free-solid-svg-icons'
+import { faHome, faBanSmoking } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 
 const BookingDetails = () => {
+
+    const checkin = localStorage.getItem("checkin");
+    const checkout = localStorage.getItem("checkout");
+    const crowd = localStorage.getItem("crowd");
+
+    var d1 = new Date(localStorage.getItem("checkin"));
+    var d2 = new Date(localStorage.getItem("checkout"));
+
+    var diff = d2.getTime() - d1.getTime();
+
+    var daydiff = diff / (1000 * 60 * 60 * 24);
+
     return (
         <div>
             <div className="d-flex flex-column bg-light p-3 bd-booking-details">
@@ -11,13 +24,13 @@ const BookingDetails = () => {
                 <div className="d-flex flex-row mb-3 justify-content-center">
                     <div className="d-flex flex-column bd-check">
                         <h6 className="pb-2">Check-in</h6>
-                        <h7>Thu 14 2022</h7>
+                        <h7>{checkin}</h7>
                         <h7>12:00 - 20:00</h7>
-                        
+
                     </div>
                     <div className="d-flex flex-column ml-3">
                         <h6 className="pb-2">Check-out</h6>
-                        <h7>Sat 17 2022</h7>
+                        <h7>{checkout}</h7>
                         <h7>05:00 - 13:00</h7>
                     </div>
                 </div>
@@ -28,14 +41,13 @@ const BookingDetails = () => {
                         <h6 className="font-weight-bold">Standard single room x 01</h6>
                     </div>
                     <div className="w-50">
-                        Total length of stay : 3 nights
+                        Total length of stay : {daydiff} nights
                     </div>
                 </div>
                 <h7><FontAwesomeIcon icon={faBanSmoking} />
                     <span className="bd-icon">No smoking </span></h7>
-                <h7><FontAwesomeIcon icon={faHome} />
-                <span className="bd-icon">25m^2</span></h7>
-                <a href="/hotel"><h7 className="bd-change"><u>Change your selection</u></h7></a>
+                <h7><FontAwesomeIcon icon={faHome} /></h7>
+                <Link to={"/hotel"}><h7 className="bd-change"><u>Change your selection</u></h7></Link>
             </div>
         </div>
     );

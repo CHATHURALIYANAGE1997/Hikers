@@ -23,6 +23,10 @@ const HotelRooms = () => {
 
     if (auth.isLoggedIn === true && auth.role === "User") {
 
+
+    // const saveRoomTypes = (s, d, t) => {
+        
+    // }
     
     return (
         <>

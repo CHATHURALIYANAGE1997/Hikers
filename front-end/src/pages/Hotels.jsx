@@ -26,7 +26,7 @@ export default function Parent(props) {
 
     const auth = useSelector((state) => state.auth);
 
-    if (auth.isLoggedIn === true && auth.role === "User") {
+    // if (auth.isLoggedIn === true && auth.role === "User") {
 
     const accessToken = localStorage.jwtToken;
 
@@ -69,8 +69,9 @@ export default function Parent(props) {
 
         <div>
             <Navbar />
+            <div></div>
             <div className="p-5 text-left container">
-                <h2 className="mb-3 title hotel-name">North-Western Province: 3 properties found</h2>
+                <h2 className="mb-3 title hotel-name">{localStorage.getItem("travel_province")}: 3 properties found</h2>
                 <div className="mb-4 d-flex flex-row justify-content-between">
                     <div className="text-light d-flex flex-column box">
                         <span className="pr-2 nb-text">Check-In</span>
@@ -91,13 +92,13 @@ export default function Parent(props) {
             </div>
         </div>
     );
-    }
-    else {
-        localStorage.clear();
-        // return props.history.push("/");
-        { return <div><NotFoundPage /></div> }
+    // }
+    // else {
+    //     localStorage.clear();
+    //     // return props.history.push("/");
+    //     { return <div><NotFoundPage /></div> }
 
-    }
+    // }
 }
 
 // export default Hotels;

@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 import authToken from "../utils/authToken";
 import NotFoundPage from './NotFoundPage';
 import { useEffect } from 'react';
+import axios from "axios";
 
 function oraganizeTrip(props) {
 
@@ -28,39 +29,25 @@ function oraganizeTrip(props) {
   const travel_mountain = localStorage.getItem("travel_mount");
 
   const initialState = {
-    name: "",
+    // name: "",
     adults: "",
     children: "",
     date: "",
+<<<<<<< refs/remotes/origin/main
     mountain: "",
     province: "",
     package: "",
 
+=======
+    province: travel_province,
+    mountain: travel_mountain,
+    abseiling: "",
+    camping: "",
+    onedayhike: "",
+    email: "",
+    firstprice: "",
+>>>>>>> Update Front end
   };
-  const provinces = [                             // Provinces array       
-    { id: "1", name: "North Western" },
-    { id: "2", name: "Central" }
-
-  ]
-  const mountains = [                                               // Mountains array
-    { id: "1", provinceId: "1", name: "Dolukanda" },
-    { id: "2", provinceId: "1", name: "Hulangala" },
-    { id: "3", provinceId: "2", name: "Hulangala" },
-    { id: "4", provinceId: "2", name: "Narangala" }
-  ]
-  const [province, setProvince] = useState([])       // Provinces dropdown use state
-  const [mountain, setMountain] = useState([])       // Mountains dropdown use state
-
-  useEffect(() => {                                   // setProvince useEffect
-    setProvince(provinces)
-
-  }, [])
-
-  const handleProvince = (id) => {                            // Provinces and mountain handle function
-    const dt = mountains.filter(x => x.provinceId === id)
-    setMountain(dt)
-
-  }
 
   const [data, setData] = useState(initialState);
 
@@ -122,117 +109,163 @@ function oraganizeTrip(props) {
 
   const auth = useSelector((state) => state.auth);
 
-  if (auth.isLoggedIn === true && auth.role === "User") {
-    return (
-      <div className='trot_mainDiv'>
-        <Navbar />
+  const dispatch = useDispatch();
 
-        <div className="md-stepper-horizontal editable orange">
-          <div className="md-step active done">
-            <div className="md-step-circle"><span>1</span></div>
-            <div className="md-step-title">Trip Package</div>
-            <div className="md-step-bar-left"></div>
-            <div className="md-step-bar-right"></div>
-          </div>
-          <div className="md-step">
-            <div className="md-step-circle"><span>2</span></div>
-            <div className="md-step-title">Hotel</div>
-            <div className="md-step-optional">Optional</div>
-            <div className="md-step-bar-left"></div>
-            <div className="md-step-bar-right"></div>
-          </div>
-          <div className="md-step">
-            <div className="md-step-circle"><span>3</span></div>
-            <div className="md-step-title">Transport Service</div>
-            <div className="md-step-optional">Optional</div>
-            <div className="md-step-bar-left"></div>
-            <div className="md-step-bar-right"></div>
-          </div>
-          <div className="md-step">
-            <div className="md-step-circle"><span>4</span></div>
-            <div className="md-step-title">Payment</div>
-            <div className="md-step-bar-left"></div>
-            <div className="md-step-bar-right"></div>
-          </div>
+  const addTrip = () => {
+    const api = 'http://localhost:8080/user/plantrip';
+    const token = localStorage.jwtToken;
+    axios.post(api, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((response) => {
+      console.log(response);
+      resetLoginForm();
+      console.log("trip ok");
+    }).catch((error) => {
+      console.log(error.message);
+      resetLoginForm();
+      console.log("Not ok");
+    })
+  };
+  const resetLoginForm = () => {
+    setData(initialState);
+  };
+
+  // if (auth.isLoggedIn === true && auth.role === "User") {
+
+  return (
+    <div className='trot_mainDiv'>
+      <Navbar />
+
+      <div className="md-stepper-horizontal editable orange">
+        <div className="md-step active done">
+          <div className="md-step-circle"><span>1</span></div>
+          <div className="md-step-title">Trip Package</div>
+          <div className="md-step-bar-left"></div>
+          <div className="md-step-bar-right"></div>
         </div>
-        <div className="formContainer">
+        <div className="md-step">
+          <div className="md-step-circle"><span>2</span></div>
+          <div className="md-step-title">Hotel</div>
+          <div className="md-step-optional">Optional</div>
+          <div className="md-step-bar-left"></div>
+          <div className="md-step-bar-right"></div>
+        </div>
+        <div className="md-step">
+          <div className="md-step-circle"><span>3</span></div>
+          <div className="md-step-title">Transport Service</div>
+          <div className="md-step-optional">Optional</div>
+          <div className="md-step-bar-left"></div>
+          <div className="md-step-bar-right"></div>
+        </div>
+        <div className="md-step">
+          <div className="md-step-circle"><span>4</span></div>
+          <div className="md-step-title">Payment</div>
+          <div className="md-step-bar-left"></div>
+          <div className="md-step-bar-right"></div>
+        </div>
+      </div>
+      <div className="formContainer">
 
-          <div className="trot_mainTextDiv">
-            <p className="txtOrganizeTrip">Organize Your Trip...</p>
-          </div>
+        <div className="trot_mainTextDiv">
+          <p className="txtOrganizeTrip">Organize Your Trip...</p>
+        </div>
 
-          <Form noValidate validated={validated}>
+        <Form noValidate validated={validated}>
 
-            <Row className="mb-3">                                                {/* Name */}
-              <Form.Group as={Row} md="" controlId="validationCustom01">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  className=''
-                  required
-                  type="text"
-                  placeholder="First name"
-                  name='name'
-                  // id='name'
-                  value={data.name}
-                  onChange={handle}
+          <Row className="mb-3">                                                {/* Name */}
+            <Form.Group as={Row} md="" controlId="validationCustom01">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                className=''
+                required
+                type="text"
+                placeholder="First name"
+                name='name'
+                // id='name'
+                value={data.name}
+                onChange={handle}
 
-                />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                <Form.Control.Feedback type="invalid">
-                  Enter the name
-                </Form.Control.Feedback>
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Enter the name
+              </Form.Control.Feedback>
 
-              </Form.Group>
+            </Form.Group>
 
-            </Row>
-            {/* # of crowd */}
-            <Row className="mb-3">
-              <Form.Group as={Col} md="4" controlId="validationCustom01">
-                <Form.Label>No of Crowd : </Form.Label>
-                <div className='d-flex flex-row justify-content-between'>
-                  <Form.Group as={Col} md="5" controlId="validationCustom02" className="w-100 adults">
-                    <Form.Label className='trot_adults'>Adults</Form.Label>
+          </Row>
+          {/* # of crowd */}
+          <Row className="mb-3">
+            <Form.Group as={Col} md="4" controlId="validationCustom01">
+              <Form.Label>No of Crowd : </Form.Label>
+              <div className='d-flex flex-row justify-content-between'>
+                <Form.Group as={Col} md="5" controlId="validationCustom02" className="w-100 adults">
+                  <Form.Label className='trot_adults'>Adults</Form.Label>
+                  <Form.Control
+                    required
+                    type="text"
+                    placeholder="Less than 15"
+                    name='adults'
+                    // min={0}
+                    // max={15}
+                    value={data.adults}
+                    onChange={handle}
+                    className='w-100'
+
+                  />
+                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">
+                    Please a valid number
+                  </Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group as={Col} md="5" controlId="validationCustomUsername" className="w-100">
+                  <Form.Label>Children</Form.Label>
+                  <InputGroup hasValidation>
                     <Form.Control
+                      type="text"
+                      placeholder="Less than 10"
+                      aria-describedby="inputGroupPrepend"
+                      name='children'
                       required
-                      type="number"
-                      placeholder="Less than 20"
-                      name='adults'
-                      // id='adults'
-                      value={data.adults}
+                      // min={0}
+                      // max={10}
+                      value={data.children}
                       onChange={handle}
-                      className='w-100'
-
                     />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
                       Please a valid number
                     </Form.Control.Feedback>
-                  </Form.Group>
+                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  </InputGroup>
+                </Form.Group>
+              </div>
+            </Form.Group>
 
-                  <Form.Group as={Col} md="5" controlId="validationCustomUsername" className="w-100">
-                    <Form.Label>Children</Form.Label>
-                    <InputGroup hasValidation>
-                      <Form.Control
-                        type="number"
-                        placeholder="Less than 20"
-                        aria-describedby="inputGroupPrepend"
-                        name='children'
-                        required
-                        // id='children'
-                        value={data.children}
-                        onChange={handle}
-                      />
-                      <Form.Control.Feedback type="invalid">
-                        Please a valid number
-                      </Form.Control.Feedback>
-                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </InputGroup>
-                  </Form.Group>
-                </div>
-              </Form.Group>
+          </Row>
 
-            </Row>
+          <Row className="mb-3">
+            <Form.Group as={Row} md="6" controlId="validationCustom03">
+              <Form.Label>Date</Form.Label>
+              <Form.Control
+                type="date"
+                name='date'
+                value={data.date}
+                onChange={(e) => handle(e)}
+                min="2022-11-01"
+                required
+              />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid city.
+              </Form.Control.Feedback>
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
 
+            <Form.Group as={Row} md="3" controlId="validationCustom04" className="d-flex flex-column">
+
+<<<<<<< refs/remotes/origin/main
             <Row className="mb-3">
               <Form.Group as={Row} md="6" controlId="validationCustom03">
                 <Form.Label>Date</Form.Label>
@@ -282,20 +315,26 @@ function oraganizeTrip(props) {
 
                     }
                   </Form.Select> */}
+=======
+              <Form.Label>Location</Form.Label>
+
+              <div className="d-flex flex-row w-75 justify-content-between">
+                <div className='d-flex flex-column'>
+                  <label>Province</label>
+>>>>>>> Update Front end
                   <Form.Control
                     className=''
-                    // required
                     disabled
                     type="text"
-                    // placeholder="First name"
                     name='province'
-                    // id='name'
                     value={travel_province}
-                    //onChange={handle}
                     readOnly
                   />
+                </div>
+                <div className='d-flex flex-column text-align-left'>
                   <label>Mountain</label>
                   <Form.Control
+<<<<<<< refs/remotes/origin/main
                   className=''
                   disabled    
                   // required
@@ -364,100 +403,118 @@ function oraganizeTrip(props) {
                     fPrice="20000"
                     value="abseiling"
 
+=======
+                    className=''
+                    disable
+                    type="text"
+                    name='mountain'
+                    value={travel_mountain}
+                    readOnly
+>>>>>>> Update Front end
                   />
-                </Col>
+                </div>
+              </div>
 
-              </Row>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid state.
+              </Form.Control.Feedback>
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            <br />
+            <Form.Group as={Row} md="3" controlId="validationCustom04">
+              <Form.Label>Packages</Form.Label>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid state.
+              </Form.Control.Feedback>
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+            <br />
+            <Row className="trsp_packageRow"
+              onChange={handle}
+
+            >
+              <Col sm={4}>
+                <div className="package_1">
+                  <div className="trp_checkBox">
+                    <Form.Check
+                      reverse
+                      label="One Day Hike"
+                      id="1"
+                      type='radio'
+                      name="onedayhike"
+                      value="önedayhike"
+                    />
+                  </div>
+                  {/* <Row><div className="divDecText"><h5>{props.des}</h5></div></Row> */}
+                  <Row><div><h6 className="localDes">LKR 2000 per adult. LKR 1200 per child</h6></div></Row>
+                  <Row><div><p className="">One day hike with guidancee service. Start at morning and end at evening</p></div></Row>
+                </div>
+              </Col>
+              <Col sm={4}>
+                <div className="package_1">
+                  <div className="trp_checkBox">
+                    <Form.Check
+                      reverse
+                      label="Camping"
+                      id="1"
+                      type='radio'
+                      name="camping"
+                      value="camping"
+                    />
+                  </div>
+                  {/* <Row><div className="divDecText"><h5>{props.des}</h5></div></Row> */}
+                  <Row><div><h6 className="localDes">LKR 3500 per adult. 2000 per child</h6></div></Row>
+                  <Row><div><p className="">Hike with 01 night & camping. Camping adventures can be collect during night</p></div></Row>
+                </div>
+              </Col>
+              <Col sm={4}>
+                <div className="package_1">
+                  <div className="trp_checkBox">
+                    <Form.Check
+                      reverse
+                      label="Abseiling"
+                      id="1"
+                      type='radio'
+                      name="abseiling"
+                      value="Abseiling"
+                    />
+                  </div>
+                  {/* <Row><div className="divDecText"><h5>{props.des}</h5></div></Row> */}
+                  <Row><div><h6 className="localDes">LKR 7500 per person.</h6></div></Row>
+                  <Row><div><p className="">Hike with abseiling. Only 10 people will be able to experience abseiling adventures.</p></div></Row>
+                </div>
+              </Col>
 
             </Row>
-            {/* <Container>
-              <Row>
-                <Col className="col_1 organize-optional">
-                  <Form.Label>Optional</Form.Label>
 
-                </Col>
-                <Col className="col_2">
-                  <Row className="col_2_row_1">
-                    <Form.Check
-                      required
-                      label="Hotel"
+          </Row>
 
-                    />
-                  </Row>
-                  <Row className='col_2_row_2'>
-                    <Form.Check
-                      required
-                      label="BBQ"
+          <Form.Group
+            className="mb-3"
+            label="I like to share your traveling guide"
+          >
+          </Form.Group>
 
-                    />
-                  </Row>
+          <div className=' d-flex flex-row justify-content-end'>
+            <Stack direction="horizontal" gap={3} className="d-flex flex-row justify-content-right">
+              <Link to={"/welcome"}><Button variant=" ms-auto" className='organize-trip-back'>Back</Button></Link>{' '}
+              <Link to={"/hotels"}><Button type='submit' type='button' variant=" ms-auto" className="organize-trip-next" onClick={addTrip}>Next</Button></Link>
 
-                </Col>
-                <Col className="col_3">
-                  <Row className="col_3_row_1">
-                    <Form.Check
-                      required
-                      label="Transport"
+            </Stack>
+          </div>
 
-                    />
-                  </Row>
-                  <Row className="col_3_row_2">
-                    <Form.Check
-                      required
-                      label="Photoshoot"
-
-                    />
-                  </Row>
-
-                </Col>
-                <Col className='col_4'> */}
-            {/* <Row className="col_4_row_1">
-                  <Form.Check
-                    required
-                    label="Abseilling"
-
-                  />
-                </Row> */}
-            {/* <Row className="col_4_row_2">
-
-                  </Row>
-                </Col>
-
-              </Row>
-            </Container> */}
-
-            <Form.Group
-              className="mb-3"
-              label="I like to share your traveling guide"
-            >
-              {/* <Form.Check
-                className='organize-share-guide'
-                name='shareGuide'
-                value={data.shareGuide}
-                onChange={handle}
-              /> */}
-            </Form.Group>
-
-            <div className=' d-flex flex-row justify-content-end'>
-              <Stack direction="horizontal" gap={3} className="d-flex flex-row justify-content-right">
-                <Link to={"/welcome"}><Button variant=" ms-auto" className='organize-trip-back'>Back</Button></Link>{' '}
-                <Button type='submit' type='button' variant=" ms-auto" className="organize-trip-next" onClick={handleSubmit}>Next</Button>
-
-              </Stack>
-            </div>
-
-          </Form>
-        </div>
+        </Form>
       </div>
+    </div>
 
-    );
-  }
-  else {
-    localStorage.clear();
-    // return props.history.push("/");
-    { return <div><NotFoundPage /></div> }
+  );
+  // }
+  // else {
+  //   localStorage.clear();
+  //   // return props.history.push("/");
+  //   { return <div><NotFoundPage /></div> }
 
-  }
+  // }
 }
 
 // render(<oraganizeTrip />);

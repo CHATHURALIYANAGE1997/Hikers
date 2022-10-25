@@ -24,30 +24,18 @@ const Package = (props) => {
 
                 </div>
             </Row>
+           
             <Row>
                 <div>
-                    <h5 className="txtLocal"><u>{props.topic_1}</u></h5>
-
+                    <h6 className="localDes">Rs. {props.lPrice} per person.</h6>
                 </div>
             </Row>
             <Row>
                 <div>
-                    <p className="localDes">Rs. {props.lPrice} per person.</p>
-
+                    <p className="">{props.con}</p>
                 </div>
             </Row>
-            <Row>
-                <div>
-                    <h5 className="txtForiegn"><u>{props.topic_2}</u></h5>
-
-                </div>
-            </Row>
-            <Row>
-                <div>
-                    <p className="foriegnDes">Rs. {props.fPrice} per person.</p>
-
-                </div>
-            </Row>            
+                      
         </div>
     )
 }

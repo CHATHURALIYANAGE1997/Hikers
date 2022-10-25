@@ -59,7 +59,7 @@ const ArticleChild = (props) => {
                                     <div className="articleauthor">
                                         <h8 className="articledate">{article.date}</h8>
                                     </div>
-                                    <Link to="/organize/hello">
+                                    <Link to="/organize">
                                         <button type="button" onClick={() => {saveTripData(article.province,article.mountname)}} className="article-child-button">Let's Travel <FontAwesomeIcon icon={faChevronRight}/></button>
                                     </Link>
                                 </div>

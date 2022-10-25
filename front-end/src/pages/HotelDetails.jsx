@@ -74,7 +74,7 @@ export default function BasicTabs(props) {
 
   const hotel_name = localStorage.getItem("hotelname");
 
-  // if (auth.isLoggedIn === true && auth.role === "User") {
+  if (auth.isLoggedIn === true && auth.role === "User") {
     return (
       <div>
         <Navbar name={hotel_name}/>
@@ -122,13 +122,13 @@ export default function BasicTabs(props) {
         </div>
       </div >
     );
-  // }
-  // else {
-  //   localStorage.clear();
-  //   // return props.history.push("/");
-  //   {return <div><NotFoundPage/></div>}
+  }
+  else {
+    localStorage.clear();
+    // return props.history.push("/");
+    {return <div><NotFoundPage/></div>}
 
-  // }
+  }
 }
 
 
