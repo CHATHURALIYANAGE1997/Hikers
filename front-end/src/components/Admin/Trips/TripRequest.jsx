@@ -56,25 +56,25 @@ function TripRequest(props) {
                             <div className="d-flex flex-row w-100">
                                 <span className="w-50">Traveler's name</span>
                                 <span>: </span>
-                                <span className="w-50">Saranaga Disanayake</span>
+                                <span className="w-50">Chathura Liyanage</span>
                             </div>
                         </div>
                         <div className="d-flex flex-row w-100 mt-2">
                             <div className="d-flex flex-row w-100">
                                 <span className="w-50">Email</span>
                                 <span>: </span>
-                                <span className="w-50">sarangadisanaya@gmail.com</span>
+                                <span className="w-50">chathura1@gmail.com</span>
                             </div>
                             <div className="d-flex flex-row w-100">
                                 <span className="w-50">Contact number</span>
                                 <span>: </span>
-                                <span className="w-50">0778765432</span>
+                                <span className="w-50">0766964138</span>
                             </div>
-                            <div className="d-flex flex-row w-100">
-                                <span className="w-50">NIC</span>
-                                <span>: </span>
-                                <span className="w-50">9823456789 V</span>
-                            </div>
+                            {/*<div className="d-flex flex-row w-100">*/}
+                            {/*    <span className="w-50">NIC</span>*/}
+                            {/*    <span>: </span>*/}
+                            {/*    <span className="w-50">9823456789 V</span>*/}
+                            {/*</div>*/}
                         </div>
                         <div className="d-flex flex-column mt-3">
                             <h5>Assign Travel Guide</h5>
