@@ -1,8 +1,12 @@
 import React from "react";
 import './wallpaperdonation.css';
-
+import StripeCheckout from 'react-stripe-checkout';
 
 const Wallpaper = () => {
+
+    const onToken = (token) => {
+        console.log(token)
+    }
   return (
 
     <div className="donationwallpaper">
@@ -16,7 +20,17 @@ const Wallpaper = () => {
               Your donation goes to the most just and effective way to fight the crises we all face today,
               from the climate to the massive gap between rich and poor. Give to have the biggest impact!</h5>
             <br />
-            <button type="button" class="btn btn-warning donatebtn">Donate fund</button>
+              <StripeCheckout
+                  token={onToken}
+                  name="Active Premium Account"
+                  currency="USD"
+                  stripeKey="sk_test_51LweAOClJMWXZRzEsNr7KLdTxcojGgSL0xGDBuUv0yXefYzAsLCQAuMaOyIsFbHHqVjLmBXhmdVPoil0eMsyPVVo00QfoinBTT"
+              >
+
+                  <button className="stripe-button-el"></button>
+                  <button type="button" className="btn btn-warning donatebtn">Donate fund</button>
+              </StripeCheckout>
+            {/*<button type="button" class="btn btn-warning donatebtn">Donate fund</button>*/}
           </div>
         <div class="col-4">
           <div class="donationform-box">
