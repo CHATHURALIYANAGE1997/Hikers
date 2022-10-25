@@ -13,6 +13,7 @@ import whitehouse from "../components/Hotels/Whitehouse.jfif";
 import epitome from "../components/Hotels/Theepitome.jfif";
 import araliya from "../components/Hotels/Arliyavilla.jfif";
 import HotelCard from "../components/Hotels/HotelCard";
+import { Data } from "@react-google-maps/api";
 // import axios from 'axios';
 
 export default function Parent(props) {
@@ -26,7 +27,7 @@ export default function Parent(props) {
 
     const auth = useSelector((state) => state.auth);
 
-    // if (auth.isLoggedIn === true && auth.role === "User") {
+    if (auth.isLoggedIn === true && auth.role === "User") {
 
     const accessToken = localStorage.jwtToken;
 
@@ -53,7 +54,7 @@ export default function Parent(props) {
     // }
 
     const initialState = {
-        checkin: "",
+        checkin: "2022-11-01",
         checkout: "",
         crowd: ""
     };
@@ -65,6 +66,8 @@ export default function Parent(props) {
         setUser({ ...user, [name]: value });
     };
 
+    const odate = localStorage.getItem("odate");
+
     return (
 
         <div>
@@ -75,11 +78,11 @@ export default function Parent(props) {
                 <div className="mb-4 d-flex flex-row justify-content-between">
                     <div className="text-light d-flex flex-column box">
                         <span className="pr-2 nb-text">Check-In</span>
-                        <input type="date" value={user.checkin} onChange={credentialChange} name="checkin" required min="2022-11-01"></input>
+                        <input type="date" value={user.checkin} onChange={credentialChange} name="checkin" required min={user.checkin}></input>
                     </div>
                     <div className="text-light d-flex flex-column justify-content-center box">
                         <span className="nb-text">Check-Out</span>
-                        <input type="date" value={user.checkout} onChange={credentialChange} name="checkout" required min="2022-11-01"></input>
+                        <input type="date" value={user.checkout} onChange={credentialChange} name="checkout" required min={user.checkin}></input>
                     </div>
                     <div className="text-light d-flex flex-row box">
                         <label className="mt-auto mr-2 mb-auto r-label">Crowd</label>
@@ -92,13 +95,13 @@ export default function Parent(props) {
             </div>
         </div>
     );
-    // }
-    // else {
-    //     localStorage.clear();
-    //     // return props.history.push("/");
-    //     { return <div><NotFoundPage /></div> }
+    }
+    else {
+        localStorage.clear();
+        // return props.history.push("/");
+        { return <div><NotFoundPage /></div> }
 
-    // }
+    }
 }
 
 // export default Hotels;

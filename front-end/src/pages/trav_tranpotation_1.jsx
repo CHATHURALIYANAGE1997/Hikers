@@ -50,7 +50,7 @@ const Transport = () => {
                 <span className="tr_rightDiv"></span> */}
                 <div className="w-100 d-flex flex-row">
                     <h4>Do you want Transport Service from our site?</h4>
-                    <Link to={"/"}><button className="transport-skip">Skip Transport Service</button></Link>
+                    <Link to={"/editTrip"}><button className="transport-skip">Skip Transport Service</button></Link>
                 </div>
                 <div class="md-stepper-horizontal orange">
                     <div class="md-step active done">

@@ -55,10 +55,7 @@ export default function HotelCard(props) {
 
         const province = localStorage.getItem("travel_province");
 
-        console.log("province - ");
-        console.log(province);
-
-
+    
         const saveHotelData = (h, hid) => {
             localStorage.setItem("hotelname", h);
             localStorage.setItem("hotelid", hid);

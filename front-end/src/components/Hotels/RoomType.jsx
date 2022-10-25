@@ -59,8 +59,8 @@ const RoomType = (props) => {
             const { name, value } = event.target;
             setHike({ ...hike, [name]: value });
             localStorage.setItem("singleroom", hike.singleroom);
-            localStorage.setItem("doubleromm", hike.doubleroom);
-            localStorage.setItem("tripplerom", hike.trippleroom);  
+            localStorage.setItem("doubleroom", hike.doubleroom);
+            localStorage.setItem("trippleroom", hike.trippleroom);  
             console.log(hike);      
         }
 
