@@ -12,38 +12,46 @@ const MostTrippedCustomer = () => {
     return (
         <div className="d-flex flex-column popular-places-container w-50 valubale-customer-container">
             <div className="mostengagedhead">
-            <h6 className="mostengagedtopic">Most engaged customers</h6>
+                <h6 className="mostengagedtopic">Most engaged customers</h6>
             </div>
-             <div className="d-flex flex-row justify-content-between valuable-customers">
-                <span className="popular-places-province vc-bold">Image</span>
-                <span className="popular-places-province vc-bold">Name</span>
-                <span className="popular-places-province vc-bold">Trips</span>
-                <span className="popular-places-province vc-bold">Promotion</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <span className="popular-places-province vc-bold w-25">Image</span>
+                <span className="popular-places-province vc-bold w-25">Name</span>
+                <span className="popular-places-province vc-bold w-25">Trips</span>
+                <span className="popular-places-province vc-bold w-25">Promotion</span>
 
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={avishi} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Avishi Jayaweera</span>
-                <span className="popular-places-province">13</span>
-                <span className="promotion-applied">Applied</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <div className="w-25">
+                    <img src={avishi} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Avishi Jayaweera</span>
+                <span className="popular-places-province w-25">13</span>
+                <span className="promotion-applied w-25">Applied</span>
             </div>
-            <div className="d-flex flex-row justify-content-between w-100 valuable-customers">
-                <img src={kasun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province w-100">Chathura Liyanage</span>
-                <span className="popular-places-province w-100">11</span>
-                <span className="promotion-notapplied w-100">Not applied</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <div className="w-25">
+                    <img src={kasun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Chathu Gamage</span>
+                <span className="popular-places-province w-25">11</span>
+                <span className="promotion-notapplied w-25">Not applied</span>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={sadun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Kasun Perera</span>
-                <span className="popular-places-province">7</span>
-                <span className="promotion-notapplied">Not applied</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <div className="w-25">
+                    <img src={sadun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Kasun Perera</span>
+                <span className="popular-places-province w-25">7</span>
+                <span className="promotion-notapplied w-25">Not applied</span>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={chathura} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Sadun Kamilka</span>
-                <span className="popular-places-province">5</span>
-                <span className="promotion-notapplied">Not applied</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <div className="w-25">
+                    <img src={chathura} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Sadun Kamilka</span>
+                <span className="popular-places-province w-25">5</span>
+                <span className="promotion-notapplied w-25">Not applied</span>
             </div>
 
         </div>

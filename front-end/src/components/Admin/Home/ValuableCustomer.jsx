@@ -14,47 +14,59 @@ const ValuableCustomer = () => {
             <div className="mostengagedhead">
                 <h6 className="mostengagedtopic">Highest spending customers</h6>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <span className="popular-places-province vc-bold">Image</span>
-                <span className="popular-places-province vc-bold">Name</span>
-                <span className="popular-places-province vc-bold">Spend amount</span>
-                <span className="popular-places-province vc-bold">Promotion</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <span className="popular-places-province vc-bold w-25">Image</span>
+                <span className="popular-places-province vc-bold w-25">Name</span>
+                <span className="popular-places-province vc-bold w-25">Spend amount</span>
+                <span className="popular-places-province vc-bold w-25">Promotion</span>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={avishi} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Avishi Jayaweera</span>
-                <span className="popular-places-province">LKR 125 400</span>
-                <span className="promotion-applied">Applied</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <div className="w-25">
+                    <img src={avishi} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Avishi Jayaweera</span>
+                <span className="popular-places-province w-25">LKR 125 400</span>
+                <span className="promotion-applied w-25">Applied</span>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={kasun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Kasun Perera</span>
-                <span className="popular-places-province">LKR 118 000</span>
-                <span className="promotion-notapplied">Not applied</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <div className="w-25">
+                    <img src={kasun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Kasun Perera</span>
+                <span className="popular-places-province w-25">LKR 118 000</span>
+                <span className="promotion-notapplied w-25">Not applied</span>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={pramith} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Chathura Liyanage</span>
-                <span className="popular-places-province">LKR 46 560</span>
-                <span className="promotion-notapplied">Not applied</span>
+            <div className="d-flex flex-row w-100n valuable-customers">
+                <div className="w-25">
+                    <img src={pramith} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Chathu Gamage</span>
+                <span className="popular-places-province w-25">LKR 46 560</span>
+                <span className="promotion-notapplied w-25">Not applied</span>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={sadun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Sadun Kamilka</span>
-                <span className="popular-places-province">LKR 37 900</span>
-                <span className="promotion-notapplied">Not applied</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <div className="w-25">
+                    <img src={sadun} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Sadun Kamilka</span>
+                <span className="popular-places-province w-25">LKR 37 900</span>
+                <span className="promotion-notapplied w-25">Not applied</span>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={chathura} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Pramith Perera</span>
-                <span className="popular-places-province">LKR 35 500</span>
-                <span className="promotion-notapplied">Not applied</span>
+            <div className="d-flex flex-roww-100 valuable-customers">
+                <div className="w-25">
+                    <img src={chathura} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Pramith Perera</span>
+                <span className="popular-places-province w-25">LKR 35 500</span>
+                <span className="promotion-notapplied w-25">Not applied</span>
             </div>
-            <div className="d-flex flex-row justify-content-between valuable-customers">
-                <img src={subha} className="valuable-customer-profile-img" alt="Profile Picture"></img>
-                <span className="popular-places-province">Subha Jayaweera</span>
-                <span className="popular-places-province">LKR 29 500</span>
-                <span className="promotion-notapplied">Not applied</span>
+            <div className="d-flex flex-row w-100 valuable-customers">
+                <div className="w-25">
+                    <img src={subha} className="valuable-customer-profile-img" alt="Profile Picture"></img>
+                </div>
+                <span className="popular-places-province w-25">Subha Jayaweera</span>
+                <span className="popular-places-province w-25">LKR 29 500</span>
+                <span className="promotion-notapplied w-25">Not applied</span>
             </div>
         </div>
     );
