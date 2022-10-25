@@ -181,7 +181,7 @@ function App() {
               <Route path="/map" component={MyComponent}></Route>
               <Route path="/campingad" component={CampingAd}></Route>
               <Route path="/landing" component={LandingPageNew}></Route>
-              <Route path="/admin/volunteer" component={Volunteer}></Route>
+              <Route path="/admin/volunteers" component={AdminVolunteer}></Route>
               <Route path="/volunteerevent" component={VolunteerEvent}></Route>
               <Route path="/travmap" component={Map}></Route>
 
