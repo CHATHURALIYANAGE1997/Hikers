@@ -476,7 +476,7 @@ public class UserServiceImpl implements UserService {
             question.setEmail(jwtFilter.getCurrentUser());
             question.setName(requestMap.get("name"));
             question.setAddress(requestMap.get("address"));
-            question.setQuestion(requestMap.get("question"));
+            question.setQuestion(requestMap.get("description"));
             question.setStatus("false");
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             Date date = new Date();
