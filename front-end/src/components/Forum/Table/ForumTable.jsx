@@ -33,7 +33,8 @@ const ForumTable = (props) => {
                 question.map((question, index) => {
                     console.log(question);
                     if (question.status == 'ture') {
-                        
+                        let dataString = question.date;
+                        let result = dataString.substring(0, 10);
                         return (
                             <tr class="forumrows">
                                 <td>
@@ -47,7 +48,7 @@ const ForumTable = (props) => {
                                 <td>{index}</td>
                                 <td>
                                     <div>
-                                        {question.date}
+                                        {result}
                                     </div>
                                     <div className="forumauthor">
                                         by {question.name}
