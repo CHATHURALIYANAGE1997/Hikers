@@ -6,12 +6,27 @@ const REGISTER_URL = "http://localhost:8080/user/signup";
 // const VERIFY_URL=`http://localhost:8080/user/accountconfirm/${code}`;
 const REGISTER_URLEQRPROVIDER="http://localhost:8080/user/signupequipmentprovider"
 const REGISTER_URLGUIDESIGNUP="http://localhost:8080/user/signuptraveling"
+
 //const api = `http://localhost:8080/user/accountconfirm/${code}`;
 
 export const registerUser = (userObject) => async (dispatch) => {
     dispatch(userRequest());
     try {
         const response = await axios.post(REGISTER_URL, userObject);
+        dispatch(userSavedSuccess(response.data));
+        return Promise.resolve(response.data);
+    } catch (error) {
+        dispatch(userFailure(error.message));
+        return Promise.reject(error);
+    }
+};
+
+export const nav = (userObject) => async (dispatch) => {
+    console.log(userObject);
+    const FORGOT_PASSWORD_URL="http://localhost:8080/user/forgotpassword"
+    dispatch(userRequest());
+    try {
+        const response = await axios.post(FORGOT_PASSWORD_URL, userObject);
         dispatch(userSavedSuccess(response.data));
         return Promise.resolve(response.data);
     } catch (error) {
