@@ -7,6 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import authToken from "../../utils/authToken";
+import NotFoundPage from "../../pages/NotFoundPage";
 
 const PreviousData = () => {
 

@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import authToken from "../../utils/authToken";
 import PreviousData from "./PreviousData";
 import RoomType from "./RoomType";
+import NotFoundPage from "../../pages/NotFoundPage";
 
 const HotelRooms = () => {
 

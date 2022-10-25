@@ -8,6 +8,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import authToken from "../../utils/authToken";
 import PreviousData from "./PreviousData";
+import NotFoundPage from "../../pages/NotFoundPage";
 
 const RoomType = (props) => {
 
