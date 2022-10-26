@@ -139,7 +139,7 @@ export default function TravMap () {
                         aria-describedby="basic-addon1"
                         ref={destiantionRef}
                         name="destination"
-                        value={start.destination}
+                        // value={start.destination}
                         onClick={handle}
                         />
                     </InputGroup>
