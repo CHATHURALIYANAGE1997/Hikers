@@ -7,7 +7,10 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import TransporterShowModal from "./TransporterShowModal";
 import kasun from './kasun.jfif';
-
+import sadun from './sandun.jfif';
+import avishi from './avishi.jfif';
+import chathura from './chathura.jfif';
+import subha from './subha.jfif';
 
 export default function AllTransportProviders(props) {
 
@@ -24,6 +27,8 @@ export default function AllTransportProviders(props) {
         setTransporterId(e);
     }
 
+    const profiles = [sadun, avishi, kasun, chathura, subha];
+
     const displayTransport = (props) => {
 
         const { transports } = props;
@@ -36,7 +41,7 @@ export default function AllTransportProviders(props) {
                         <>
                             <div className="d-flex flex-row justify-content-between all-hotels-hotel">
                                 <div>
-                                    <img src={kasun} className="all-transporter-profile-img" alt="Profile Picture"></img>
+                                    <img src={profiles[index]} className="all-transporter-profile-img" alt="Profile Picture"></img>
                                     <span className="all-transpotation-provider-name">{transports.firstname} {" "} {transports.lastname} - {transports.province}</span>
                                     <button onClick={() => {setModalShow(true); handleTransporterClick(transports);}} className="all-articles-see-more-btn">see more..</button>
                                     <TransporterShowModal

@@ -112,3 +112,15 @@
 .add-article-form-description {
     height: 150px;
 }
+
+.question-accept-close {
+    background-color: white;
+    color: #276678;
+    border: 1px sollid #276678;
+}
+
+.question-accept-ok {
+    background-color: #276678;
+    color: #C1F8CF;
+    border: none;
+}

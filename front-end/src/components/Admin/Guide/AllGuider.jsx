@@ -5,8 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import kasun from './kasun.jfif';
 import GuiderShowModal from "./GuiderShowModal";
+import sadun from './sandun.jfif';
+import avishi from './avishi.jfif';
+import kasun from './kasun.jfif';
+import chathura from './chathura.jfif';
+import subha from './subha.jfif';
 
 
 export default function AllGuider(props) {
@@ -24,6 +28,8 @@ export default function AllGuider(props) {
         setGuideId(e);
     }
 
+    const profiles = [sadun, avishi, kasun, chathura, subha];
+
     const displayGuide = (props) => {
 
         const { guiders } = props;
@@ -36,7 +42,7 @@ export default function AllGuider(props) {
                             <>
                                 <div className="d-flex flex-row justify-content-between all-hotels-hotel">
                                     <div>
-                                        <img src={kasun} className="all-transporter-profile-img" alt="Profile Picture"></img>
+                                        <img src={profiles[index]} className="all-transporter-profile-img" alt="Profile Picture"></img>
                                         <span className="all-transpotation-provider-name text-capitalize">{guiders.firstname} {" "} {guiders.lastname} - {guiders.address}</span>
                                         <button onClick={() => { setModalShow(true); handleGuideClick(guiders); }} className="all-articles-see-more-btn">see more..</button>
                                         <GuiderShowModal
