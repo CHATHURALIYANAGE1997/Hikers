@@ -30,21 +30,17 @@ const TodayTrips = () => {
                     </div>
                 </div>
                 <hr/>
-                <h6>Team details</h6>
                 <div className="d-flex flex-row">
                     <div className="d-flex flex-column today-members">
-                        <h5>Member 1#</h5>
-                        <span>Mr. AW Perera</span>
-                        <span>95#######V</span>
-                        <span>078234567</span>
-                    </div>
-                    <div className="d-flex flex-column today-members">
-                        <h5>Member 1#</h5>
-                        <span>Mr. AW Perera</span>
-                        <span>95#######V</span>
+                        <h5>Organizer</h5>
+                        <span>Mr. BA Basnayake</span>
+                        <span>Basnayake95@gmail.com</span>
                         <span>078234567</span>
                     </div>
                 </div>
+              <div className="today-Cancel-Button">
+                <button className="today-cancel-btn">Cancel</button>
+            </div>
             </div>
         </div>
     );
