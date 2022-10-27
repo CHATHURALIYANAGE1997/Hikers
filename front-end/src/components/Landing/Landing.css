@@ -47,3 +47,7 @@
 .AboutUsParagraph{
     text-align: center;
 }
+.aboutUsDetails{
+    margin-top: 15px;
+    justify-content: center;
+}
