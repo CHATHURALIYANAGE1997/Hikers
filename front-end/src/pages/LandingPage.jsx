@@ -32,7 +32,16 @@ const LandingPageNew = () => {
               <h4 className="hikingTitleSub">
                 <i>Safe trip to the pea</i>k
               </h4>
-              <p>Hikers provide you the best hiking experiance in Sri Lanka.</p>
+              <div className="aboutUsDetailsDiv">
+                <h6 className="aboutUsDetails">
+                  Hikers provide you the best hiking experience in Sri Lanka
+                  Which facilitates the travelers to book flexible dates for
+                  hiking by having the optional to get
+                  accomadation,transportation service and guidance through the
+                  app which would help the travelers to get many adventurous
+                  experiance.
+                </h6>
+              </div>
             </div>
             <div class="col landing-col1">
               <img
@@ -51,13 +60,11 @@ const LandingPageNew = () => {
           <div className="row aboutUsrow">
             <h1 className="AboutUsTitle">About Us</h1>
             <p className="fw-bold AboutUsParagraph">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries,but also the leap into electronic
-              typesetting, remaining essentially unchanged. It was popularised
-              in
+               Hikers is a newly generated website which was made to overcome
+               the problems faced by the traditional method which was used for
+               hiking.The attractive and simple website will convert the manual
+               process of hiking into a web application which would facilitate the hikers to do 
+               their hiking  easily and in a secure way. 
             </p>
           </div>
         </div>
@@ -69,3 +76,4 @@ const LandingPageNew = () => {
   );
 };
 export default LandingPageNew;
+
