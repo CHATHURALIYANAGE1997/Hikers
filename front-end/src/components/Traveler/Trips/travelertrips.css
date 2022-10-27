@@ -59,3 +59,25 @@
     background-color: white !important;
     margin-bottom: 10px;
 }
+.today-date{
+    margin-right: 20px;
+}
+.today-Cancel-Button{
+    text-align: center;
+    margin-top: 10px;
+}
+.today-container{
+    width:60%;
+}
+.today-cancel-btn{
+    background-color: #1687A7;
+    color: #F6F5F5;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+}
+
+.today-cancel-btn:hover{
+    background-color: #276678;
+}
