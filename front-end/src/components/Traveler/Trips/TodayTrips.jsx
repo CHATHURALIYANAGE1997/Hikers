@@ -22,12 +22,6 @@ const TodayTrips = () => {
                             <h7 className="today-vehicle-number">CBA - ##### </h7>
                         </div>
                     </div>
-                    <div className="d-flex flex-column text-left">
-                        <h6 className="today-transport-mode">Food</h6>
-                        <div>
-                            <h7 className="today-food">03 - Veg, 05 - Chicken</h7>
-                        </div>
-                    </div>
                 </div>
                 <div className="d-flex flex-column text-left">
                     <h6 className="today-transport-mode">Hotel</h6>
