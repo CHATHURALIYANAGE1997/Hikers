@@ -10,3 +10,26 @@
 
 
 ---
+
+## What are we gonna do?
+
+---
+
+## Main functionalities of the system:
+
+
+---
+
+## Deliverables of the project
+
+
+---
+
+## Technologies to be used
+### Front-end development
+
+
+### Back-end development
+
+
+---
