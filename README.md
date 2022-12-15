@@ -27,7 +27,10 @@
 
 ## Technologies to be used
 ### Front-end development
-
+ReactJs
+Js
+Redux
+Google Map
 
 ### Back-end development
 
