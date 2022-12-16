@@ -33,6 +33,8 @@ Redux,
 Google Map
 
 ### Back-end development
-
+Spring Boot,
+MySQL,
+Java
 
 ---
