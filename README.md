@@ -11,8 +11,10 @@ Client's idea of expanding the service.
 ---
 
 ## Solution 
-
-
+An application that helps with hiking.
+Facilitate travelers to book a flexible date for the tour.
+Find accommodation, food, Transportation and Camping equipment according to their preference.
+Provide a safe guidance with a responsible guider.
 
 ---
 
