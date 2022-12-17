@@ -20,6 +20,7 @@ Provide a safe guidance with a responsible guider.
 
 ## What are we gonna do?
 Deliver a user-friendly, interactive web-based application. Attract more traverlers all over the world.
+
 ---
 
 ## Main functionalities of the system:
