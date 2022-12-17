@@ -39,3 +39,8 @@ Java
 
 ---
 ## Authors
+* [B.G.S.S.W.Jayaweera](https://github.com/jayaweera2)
+* [N.D.S.K.Jayasooriya](https://github.com/ShiranthaKellum)
+* [K.S.Udayangi](https://github.com/sathyaudayangi)
+* [J.M.A.U.Jayaweera](https://github.com/AvishiJayaweera)
+* [C.B.T. Liyanage](https://github.com/CHATHURALIYANAGE1997)
