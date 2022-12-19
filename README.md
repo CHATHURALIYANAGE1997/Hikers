@@ -24,12 +24,18 @@ Deliver a user-friendly, interactive web-based application. Attract more traverl
 ---
 
 ## Main functionalities of the system:
-
+Packages and activities. 
+Facility of Reserving a feasible date for the tour. 
+Hotel booking facilities. 
+Facility of Sharing the experiences with others.
+A platform for camping equipment providers.
+Facilitate transportation.
+Ticket raising option.
 
 ---
 
 ## Deliverables of the project
-
+Completed  fully functional web application
 
 ---
 
